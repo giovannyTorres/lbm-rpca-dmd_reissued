@@ -858,6 +858,58 @@ def _collect_completed_rows(ledger_entries: Sequence[Mapping[str, Any]]) -> list
     return list(latest_completed.values())
 
 
+def _validate_summary_rows_for_export(
+    summary_rows: Sequence[Mapping[str, Any]],
+    *,
+    benchmark_id: str,
+    metrics_root: Path,
+    ledger_path: Path,
+) -> None:
+    experiments_root = metrics_root / "experiments"
+    if not experiments_root.exists():
+        raise FileNotFoundError(
+            "FASE 6 could not export summary because the experiments folder does not exist: "
+            f"{experiments_root}"
+        )
+    if not any(path.is_dir() for path in experiments_root.iterdir()):
+        raise RuntimeError(
+            "FASE 6 could not export summary because the experiments folder is empty: "
+            f"{experiments_root}"
+        )
+    if not summary_rows:
+        raise RuntimeError(
+            "FASE 6 finished without completed cases, so summary.csv would be empty. "
+            f"Review ledger failures in: {ledger_path}"
+        )
+
+    for row in summary_rows:
+        experiment_id = str(row.get("experiment_id", "")).strip()
+        reconstruction_dir = Path(str(row.get("reconstruction_dir", ""))).resolve()
+        if not experiment_id:
+            raise ValueError("Invalid summary row: missing experiment_id")
+        expected_dir = experiments_root / experiment_id
+        if reconstruction_dir != expected_dir.resolve():
+            raise ValueError(
+                "Inconsistent reconstruction_dir in summary row for "
+                f"benchmark '{benchmark_id}', experiment '{experiment_id}'. "
+                f"Expected {expected_dir.resolve()}, found {reconstruction_dir}."
+            )
+        missing_files = [
+            str(path)
+            for path in (
+                reconstruction_dir / "reconstruction.npz",
+                reconstruction_dir / "metadata.json",
+                reconstruction_dir / "benchmark_result.json",
+            )
+            if not path.exists()
+        ]
+        if missing_files:
+            raise FileNotFoundError(
+                "FASE 6 found a completed summary row with missing files: "
+                + ", ".join(missing_files)
+            )
+
+
 def run_benchmark(
     config_payload: Mapping[str, Any],
     *,
@@ -1011,6 +1063,12 @@ def run_benchmark(
 
     final_entries = _load_ledger_entries(ledger_path)
     summary_rows = _collect_completed_rows(final_entries)
+    _validate_summary_rows_for_export(
+        summary_rows,
+        benchmark_id=benchmark_id,
+        metrics_root=metrics_root,
+        ledger_path=ledger_path,
+    )
     _export_summary_rows(
         summary_rows,
         csv_path=summary_csv_path,

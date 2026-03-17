@@ -266,13 +266,13 @@ class Phase6BenchmarkTest(unittest.TestCase):
             for case in {case.raw_run_dir: case for case in cases}.values():
                 self._write_raw_run_for_case(case)
 
-            summary = run_benchmark(config)
-            self.assertEqual(summary.completed, 0)
-            self.assertEqual(summary.failed, 2)
+            with self.assertRaisesRegex(RuntimeError, "finished without completed cases"):
+                run_benchmark(config)
 
+            ledger_path = root / "results" / "metrics" / "phase6_test_benchmark" / "ledger.jsonl"
             ledger_entries = [
                 json.loads(line)
-                for line in summary.ledger_path.read_text(encoding="utf-8").splitlines()
+                for line in ledger_path.read_text(encoding="utf-8").splitlines()
                 if line.strip()
             ]
             failed_entries = [entry for entry in ledger_entries if entry["status"] == "failed"]

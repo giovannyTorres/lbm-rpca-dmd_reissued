@@ -228,9 +228,83 @@ def _resolve_source_paths(
     metrics_root = _resolve_path(config_base_dir, str(source.get("metrics_root", "results/metrics")))
     tables_root = _resolve_path(config_base_dir, str(source.get("tables_root", "results/tables")))
     benchmark_metrics_root = metrics_root / benchmark_id
-    summary_csv_path = tables_root / benchmark_id / "summary.csv"
-    return benchmark_id, benchmark_metrics_root, tables_root / benchmark_id, summary_csv_path
+    benchmark_tables_root = tables_root / benchmark_id
+    summary_csv_path = benchmark_tables_root / "summary.csv"
+    return benchmark_id, benchmark_metrics_root, benchmark_tables_root, summary_csv_path
 
+
+def _validate_phase6_sources(
+    *,
+    benchmark_id: str,
+    benchmark_metrics_root: Path,
+    benchmark_tables_root: Path,
+    summary_csv_path: Path,
+) -> None:
+    if not benchmark_metrics_root.exists():
+        raise FileNotFoundError(
+            "FASE 7 cannot run because the benchmark metrics folder does not exist: "
+            f"{benchmark_metrics_root}"
+        )
+    experiments_root = benchmark_metrics_root / "experiments"
+    if not experiments_root.exists():
+        raise FileNotFoundError(
+            "FASE 7 cannot run because FASE 6 experiments are missing: "
+            f"{experiments_root}"
+        )
+    if not any(path.is_dir() for path in experiments_root.iterdir()):
+        raise RuntimeError(
+            "FASE 7 cannot run because FASE 6 experiments folder is empty: "
+            f"{experiments_root}"
+        )
+
+    if not benchmark_tables_root.exists():
+        raise FileNotFoundError(
+            "FASE 7 cannot run because the benchmark tables folder does not exist: "
+            f"{benchmark_tables_root}"
+        )
+    if not summary_csv_path.exists():
+        if list(benchmark_tables_root.glob("summary.*")):
+            raise ValueError(
+                "FASE 7 expects summary.csv but found a different extension in "
+                f"{benchmark_tables_root}. Configure FASE 6 export_formats to include CSV."
+            )
+        raise FileNotFoundError(f"Benchmark summary CSV not found: {summary_csv_path}")
+
+
+def _validate_summary_row_artifacts(
+    rows: Sequence[Mapping[str, Any]],
+    *,
+    benchmark_metrics_root: Path,
+) -> None:
+    experiments_root = benchmark_metrics_root / "experiments"
+    for row in rows:
+        experiment_id = str(row.get("experiment_id", "")).strip()
+        reconstruction_dir_raw = str(row.get("reconstruction_dir", "")).strip()
+        if not experiment_id:
+            raise ValueError("Invalid summary row: missing experiment_id")
+        if not reconstruction_dir_raw:
+            raise ValueError(f"Invalid summary row for experiment '{experiment_id}': missing reconstruction_dir")
+
+        reconstruction_dir = Path(reconstruction_dir_raw).resolve()
+        expected_dir = (experiments_root / experiment_id).resolve()
+        if reconstruction_dir != expected_dir:
+            raise ValueError(
+                "Summary row reconstruction_dir does not match the expected FASE 6 path for "
+                f"experiment '{experiment_id}'. Expected {expected_dir}, found {reconstruction_dir}."
+            )
+
+        npz_path = reconstruction_dir / "reconstruction.npz"
+        metadata_path = reconstruction_dir / "metadata.json"
+        if npz_path.suffix.lower() != ".npz":
+            raise ValueError(f"Unexpected reconstruction file extension: {npz_path}")
+        if metadata_path.suffix.lower() != ".json":
+            raise ValueError(f"Unexpected metadata file extension: {metadata_path}")
+        if not npz_path.exists() or not metadata_path.exists():
+            missing = [str(path) for path in (npz_path, metadata_path) if not path.exists()]
+            raise FileNotFoundError(
+                "FASE 7 found summary rows that reference missing FASE 6 outputs: "
+                + ", ".join(missing)
+            )
 
 def _resolve_output_paths(
     config_payload: Mapping[str, Any],
@@ -1344,11 +1418,22 @@ def generate_visual_results(
 ) -> VisualResultsSummary:
     _validate_visual_results_config(config_payload)
     config_base_dir = REPO_ROOT if config_path is None else Path(config_path).resolve().parent
-    benchmark_id, _, _, summary_csv_path = _resolve_source_paths(config_payload, config_base_dir=config_base_dir)
+    benchmark_id, benchmark_metrics_root, benchmark_tables_root, summary_csv_path = _resolve_source_paths(
+        config_payload,
+        config_base_dir=config_base_dir,
+    )
+    _validate_phase6_sources(
+        benchmark_id=benchmark_id,
+        benchmark_metrics_root=benchmark_metrics_root,
+        benchmark_tables_root=benchmark_tables_root,
+        summary_csv_path=summary_csv_path,
+    )
+
     output_paths = _resolve_output_paths(config_payload, config_base_dir=config_base_dir, benchmark_id=benchmark_id)
     _write_json(output_paths["config_snapshot_path"], dict(config_payload))
 
     rows = _load_summary_rows(summary_csv_path)
+    _validate_summary_row_artifacts(rows, benchmark_metrics_root=benchmark_metrics_root)
     selected_rows = _select_comparison_rows(rows, dict(config_payload.get("selection", {})))
     catalog_entries: list[dict[str, Any]] = []
 
