@@ -285,6 +285,11 @@ class Phase7VisualResultsTest(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "supports JSON configs only"):
                 load_visual_results_config(yaml_path)
 
+            metrics_benchmark_root = root / "results" / "metrics" / "missing_benchmark"
+            (metrics_benchmark_root / "experiments").mkdir(parents=True, exist_ok=True)
+            tables_benchmark_root = root / "results" / "tables" / "missing_benchmark"
+            tables_benchmark_root.mkdir(parents=True, exist_ok=True)
+
             config = {
                 "source": {
                     "benchmark_id": "missing_benchmark",
@@ -295,7 +300,28 @@ class Phase7VisualResultsTest(unittest.TestCase):
                     "root": str(root / "results" / "visuals"),
                 },
             }
+            with self.assertRaisesRegex(RuntimeError, "experiments folder is empty"):
+                generate_visual_results(config)
+
+            # add one fake experiment folder so validation reaches summary.csv checks
+            (metrics_benchmark_root / "experiments" / "dummy_case").mkdir(parents=True, exist_ok=True)
             with self.assertRaisesRegex(FileNotFoundError, "Benchmark summary CSV not found"):
+                generate_visual_results(config)
+
+    def test_generate_visual_results_fails_when_summary_references_missing_or_inconsistent_artifacts(self) -> None:
+        from fluid_denoise.phase7_visual_results import generate_visual_results
+
+        with tempfile.TemporaryDirectory(prefix="phase7_visuals_") as tmp:
+            root = Path(tmp)
+            benchmark_id, config = self._create_synthetic_benchmark(root)
+
+            summary_path = root / "results" / "tables" / benchmark_id / "summary.csv"
+            rows = list(csv.DictReader(summary_path.open("r", encoding="utf-8", newline="")))
+            first = dict(rows[0])
+            first["reconstruction_dir"] = str((root / "results" / "metrics" / benchmark_id / "experiments" / "wrong_dir").resolve())
+            self._write_summary_csv(summary_path, [first])
+
+            with self.assertRaisesRegex(ValueError, "does not match the expected FASE 6 path"):
                 generate_visual_results(config)
 
 
