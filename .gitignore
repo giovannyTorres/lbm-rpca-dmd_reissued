@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+cpp/lbm_core/build/
+cpp/lbm_core/build_test/
+data/raw/*
+!data/raw/.gitkeep
