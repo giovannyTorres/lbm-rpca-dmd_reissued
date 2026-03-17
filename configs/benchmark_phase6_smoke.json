@@ -1,0 +1,56 @@
+{
+  "benchmark": {
+    "benchmark_id": "phase6_smoke",
+    "metrics_root": "results/metrics",
+    "tables_root": "results/tables",
+    "export_formats": ["csv"],
+    "resume": true
+  },
+  "solver": {
+    "base_config_path": "configs/lbm_cylinder_clean_example.json",
+    "build_dir": "cpp/lbm_core/build_phase6_smoke",
+    "build_type": "Release",
+    "resolutions": [
+      {
+        "label": "smoke",
+        "nx": 64,
+        "ny": 32,
+        "overrides": {
+          "iterations": 40,
+          "save_stride": 10
+        }
+      }
+    ]
+  },
+  "noise": [
+    {
+      "label": "gaussian_low",
+      "noise_specs": [
+        {
+          "kind": "gaussian",
+          "intensity": 0.08,
+          "seed": 11,
+          "channels": ["ux", "uy"]
+        }
+      ]
+    }
+  ],
+  "models": [
+    {
+      "name": "truncated_svd",
+      "input": {
+        "kind": "space_time_matrix",
+        "variables": ["ux", "uy"],
+        "mask_policy": "flatten_fluid"
+      },
+      "params": {
+        "rank": 2
+      }
+    }
+  ],
+  "execution": {
+    "reuse_existing": true,
+    "clean_root": "data/clean",
+    "noisy_root": "data/noisy"
+  }
+}
