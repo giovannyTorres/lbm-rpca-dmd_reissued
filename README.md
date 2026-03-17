@@ -1,247 +1,187 @@
 # lbm-rpca-dmd_reissued
 
-FASE 1 now contains a minimal viable LBM solver for 2D D2Q9 BGK flow around a cylinder.
+Pipeline modular para tesis de licenciatura: simulación LBM 2D, estandarización de datasets, inyección de ruido, reconstrucción con baselines, benchmark y generación de figuras/tablas.
 
-FASE 2 adds a clean dataset standardization layer on top of the solver outputs.
+## Estado actual (resumen honesto)
 
-FASE 3 adds a configurable and reproducible artificial noise module that derives noisy datasets from the clean datasets, without introducing denoising models yet.
+- **Funcional**: FASE 1 (solver + validación), FASE 2 (dataset limpio), FASE 3 (dataset ruidoso), FASE 4 (contrato de datos), FASE 5 (baselines), FASE 6 (benchmark), FASE 7 (visuales).
+- **Parcial/incompleto**: integración de entorno Python (faltaba guía robusta e instalación de dependencias), trazabilidad de ejecución end-to-end en un solo entry point.
+- **Mejorado en esta iteración**:
+  - runner de pipeline con perfiles (`minimal`, `light`, `full`),
+  - configs smoke dedicadas,
+  - `pipeline_trace.json` para trazabilidad de corrida,
+  - README operativo paso a paso,
+  - test unitario para runner de pipeline.
 
-FASE 4 adds the model-facing data contract and preprocessing layer, with explicit packing rules for snapshots, temporal windows, and space-time matrices.
+---
 
-FASE 5 adds classical baseline denoising models behind a shared interface and saves reconstructed outputs with metadata for later comparison.
+## Requisitos del sistema
 
-FASE 6 adds a sequential experiment runner and benchmark table exporter on top of the earlier phases.
+- Linux/macOS/WSL (Windows también funciona, pero verificar rutas de binario en CMake multi-config).
+- Python recomendado: **3.10+**.
+- CMake: **3.16+**.
+- Compilador C++17 (GCC/Clang/MSVC).
 
-FASE 7 adds an automatic visual results pipeline that turns benchmark outputs into figures, tables, and a traceable catalog for thesis-ready assets.
+## Dependencias Python
 
-## What is included
-
-- Modular C++ solver in `cpp/lbm_core`
-- JSON experiment config in `configs/lbm_cylinder_base.json`
-- Python runner in `python/scripts/run_phase1_example.py`
-- Snapshot visualizer in `python/scripts/visualize_phase1_snapshot.py`
-- Smoke test in `tests/test_phase1_smoke.py`
-- Output validator in `python/src/fluid_denoise/phase1_validation.py`
-- Solver notes in `docs/phase1_solver_assumptions_limits_risks.md`
-- Clean dataset tools in `python/src/fluid_denoise/phase2_clean_dataset.py`
-- Clean dataset spec in `docs/phase2_clean_dataset_spec.md`
-- Noisy dataset tools in `python/src/fluid_denoise/phase3_noisy_dataset.py`
-- Noisy dataset spec in `docs/phase3_noisy_dataset_spec.md`
-- Model data contract tools in `python/src/fluid_denoise/phase4_model_data.py`
-- Model data contract doc in `docs/phase4_model_data_contract.md`
-- Baseline model tools in `python/src/fluid_denoise/phase5_baselines.py`
-- Baseline model doc in `docs/phase5_baseline_models.md`
-- Benchmark runner tools in `python/src/fluid_denoise/phase6_benchmark.py`
-- Benchmark runner doc in `docs/phase6_benchmark_runner.md`
-- Visual results tools in `python/src/fluid_denoise/phase7_visual_results.py`
-- Visual results doc in `docs/phase7_visual_results_pipeline.md`
-
-## Prerequisites
-
-- Python 3.10+
-- CMake 3.16+
-- A C++17 compiler available to CMake
-- `numpy` and `matplotlib` for visualization
-
-The runner and smoke test perform a clear preflight check for `cmake` in `PATH`.
-The runner also validates the generated output directory automatically after each run.
-
-## Build and run
-
-Build and run the example case:
+Dependencias mínimas para ejecutar tests y pipeline base:
 
 ```bash
-python python/scripts/run_phase1_example.py --config configs/lbm_cylinder_base.json
+pip install -r requirements.txt
 ```
 
-Manual CMake flow:
+`requirements.txt` incluye:
+- `numpy`
+- `matplotlib`
+
+> Nota: export a Parquet en FASE 6 requiere `pandas` + `pyarrow` opcionalmente.
+
+---
+
+## Setup local recomendado
+
+1. Clonar repo.
+2. Crear y activar entorno virtual.
+3. Instalar dependencias.
 
 ```bash
-cmake -S cpp/lbm_core -B cpp/lbm_core/build
-cmake --build cpp/lbm_core/build --config Release --parallel
-cpp/lbm_core/build/lbm_sim --config configs/lbm_cylinder_base.json
+python -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
 ```
 
-On Windows with a multi-config generator, the binary may be placed under `cpp/lbm_core/build/Release/lbm_sim.exe`.
+No hay compilación manual obligatoria: los scripts de pipeline construyen el solver automáticamente cuando hace falta.
 
-## Configuration
+---
 
-The solver accepts a flat JSON file through:
+## Estructura general del proyecto
 
-```text
-lbm_sim --config <config.json>
-```
+- `cpp/lbm_core/`: solver LBM (C++).
+- `python/src/fluid_denoise/`: módulos por fase.
+- `python/scripts/`: entry points CLI.
+- `configs/`: configuraciones JSON reproducibles.
+- `tests/`: pruebas unitarias y de integración ligera.
+- `docs/`: especificaciones y contratos por fase.
+- `data/`: salidas de datasets (`raw`, `clean`, `noisy`).
+- `results/`: métricas, tablas y visuales.
 
-Supported keys:
+---
 
-- `nx`, `ny`
-- `reynolds`, `u_in`
-- `iterations`, `save_stride`
-- `obstacle_cx`, `obstacle_cy`, `obstacle_r`
-- `output_root`, `run_id`
+## Scripts principales (qué hace cada uno)
 
-Example:
+- `python/scripts/run_phase1_example.py`: corre solver FASE 1.
+- `python/scripts/generate_clean_dataset_example.py`: genera dataset limpio FASE 2.
+- `python/scripts/generate_noisy_dataset_example.py`: genera dataset ruidoso FASE 3.
+- `python/scripts/run_baseline_example.py`: reconstrucción baseline FASE 5.
+- `python/scripts/run_benchmark_example.py`: benchmark FASE 6.
+- `python/scripts/run_visual_results_example.py`: visuales FASE 7.
+- `python/scripts/run_local_pipeline.py`: **nuevo** runner unificado por perfil.
+- `python/scripts/run_test_pipeline.py`: **nuevo** smoke end-to-end mínimo.
 
-```json
-{
-  "nx": 220,
-  "ny": 80,
-  "reynolds": 150.0,
-  "u_in": 0.06,
-  "iterations": 1200,
-  "save_stride": 200,
-  "obstacle_cx": 55,
-  "obstacle_cy": 40,
-  "obstacle_r": 8,
-  "output_root": "data/raw",
-  "run_id": "phase1_cylinder_re150"
-}
-```
+---
 
-## Outputs
+## Cómo correr
 
-Each run writes to `data/raw/<run_id>/` and produces:
-
-- `manifest.json`
-- `ux_tXXXXXX.csv`
-- `uy_tXXXXXX.csv`
-- `speed_tXXXXXX.csv`
-- `vorticity_tXXXXXX.csv`
-- `mask_tXXXXXX.csv`
-
-Snapshots are written at `t=0`, every `save_stride`, and at the final iteration. Each CSV has shape `ny x nx`.
-
-## Visualization
-
-Generate a basic PNG summary for one saved step:
+## 1) Prueba mínima (smoke)
 
 ```bash
-python python/scripts/visualize_phase1_snapshot.py --run-dir data/raw/phase1_cylinder_re150 --step 1200
+python python/scripts/run_test_pipeline.py
 ```
 
-This writes `snapshot_t001200.png` inside the run directory by default.
+Qué ejecuta:
+- benchmark smoke (`configs/benchmark_phase6_smoke.json`),
+- 1 resolución, 1 caso de ruido, 1 baseline,
+- escribe trazabilidad en `results/metrics/phase6_smoke/pipeline_trace.json`.
 
-## Test
-
-Run the smoke test:
+## 2) Pipeline ligero
 
 ```bash
-python -m unittest tests.test_phase1_smoke
+python python/scripts/run_local_pipeline.py --mode light
 ```
 
-The test builds the solver, runs a short simulation, and checks that the expected files exist and contain valid numeric data.
+Qué ejecuta:
+- benchmark smoke,
+- visuales smoke (`configs/visual_results_phase7_smoke.json`),
+- deja outputs en `results/metrics/phase6_smoke` y `results/visuals/phase6_smoke`.
 
-## Solver Safety Notes
-
-Short assumptions, limits, risks, and safe starter parameters are documented in `docs/phase1_solver_assumptions_limits_risks.md`.
-
-## Clean Dataset
-
-Recommended clean dataset format: compressed `NPZ` plus `metadata.json`.
-The detailed specification, metadata schema, naming convention, and validation rules are documented in `docs/phase2_clean_dataset_spec.md`.
-
-Generate a small clean dataset example:
+## 3) Pipeline completo (config de ejemplo)
 
 ```bash
-python python/scripts/generate_clean_dataset_example.py
+python python/scripts/run_local_pipeline.py --mode full
 ```
 
-Inspect a clean dataset:
+Qué ejecuta:
+- benchmark de ejemplo (`configs/benchmark_phase6_example.json`),
+- visuales de ejemplo (`configs/visual_results_phase7_example.json`).
 
-```bash
-python python/scripts/inspect_clean_run.py --run-dir data/clean/<experiment_id>
-```
+---
 
-Validate a clean dataset:
+## Archivos que deberían generarse
+
+- `data/raw/<run_id>/...csv + manifest.json`
+- `data/clean/<experiment_id>/fields.npz + metadata.json`
+- `data/noisy/<experiment_id>/fields.npz + metadata.json`
+- `results/metrics/<benchmark_id>/ledger.jsonl`
+- `results/metrics/<benchmark_id>/summary.csv`
+- `results/metrics/<benchmark_id>/pipeline_trace.json` (**nuevo**)
+- `results/visuals/<benchmark_id>/...` (si se ejecuta FASE 7)
+
+---
+
+## Cómo verificar que funcionó
+
+1. Revisar que no haya fallos en consola (`failed=0` en resumen).
+2. Confirmar existencia de `summary.csv` y `pipeline_trace.json`.
+3. En modo con visuales, confirmar catálogo (`catalog.json/csv/md`).
+4. Validar datasets puntualmente con:
 
 ```bash
 python python/scripts/validate_clean_dataset.py --run-dir data/clean/<experiment_id>
-```
-
-## Noisy Dataset
-
-Recommended noisy dataset format: compressed `NPZ` plus `metadata.json`, aligned with the clean dataset layout and extended with corruption masks and pipeline metadata.
-The detailed specification is documented in `docs/phase3_noisy_dataset_spec.md`.
-
-Generate a noisy dataset example:
-
-```bash
-python python/scripts/generate_noisy_dataset_example.py
-```
-
-Inspect a noisy dataset:
-
-```bash
-python python/scripts/inspect_noisy_run.py --run-dir data/noisy/<experiment_id>
-```
-
-Validate a noisy dataset:
-
-```bash
 python python/scripts/validate_noisy_dataset.py --run-dir data/noisy/<experiment_id>
 ```
 
-Create a clean-vs-noisy comparison figure:
+---
+
+## Tests
+
+Ejecutar suite:
 
 ```bash
-python python/scripts/visualize_noisy_comparison.py --run-dir data/noisy/<experiment_id> --variable ux --step 1200
+python -m unittest discover -s tests -p 'test_*.py'
 ```
 
-## Model Data Contract
+Si faltan dependencias, algunos tests fallarán por import error (por ejemplo `numpy` no instalado).
 
-The model-facing preprocessing API is documented in `docs/phase4_model_data_contract.md`.
-It defines three compatible processing units instead of a single forced representation:
+---
 
-- `SnapshotBatch` for frame-wise methods
-- `TemporalWindowBatch` for local temporal methods
-- `SpaceTimeMatrix` for RPCA, DMD, and related matrix-based methods
+## Errores comunes y depuración
 
-## Baseline Models
+- **`cmake was not found in PATH`**: instalar CMake y verificar PATH.
+- **`ModuleNotFoundError: numpy`**: instalar `requirements.txt`.
+- **No aparece `lbm_sim`**: revisar build dir y generador de CMake.
+- **Noisy/Clean validation falla**: revisar integridad de archivos y steps.
+- **Visuales no salen**: asegurar que benchmark previo terminó y existe `summary.csv`.
 
-FASE 5 adds the following baseline methods with a common interface:
+---
 
-- `rpca_ialm`
-- `dmd`
-- `truncated_svd`
-- `median_filter`
-- `wiener_filter`
+## Limitaciones pendientes
 
-Run a baseline reconstruction from a config file:
+- Algunas configuraciones reales de tesis pueden ser costosas en CPU/tiempo.
+- Export Parquet no está activado por defecto (depende de `pandas+pyarrow`).
+- El repositorio aún no incluye empaquetado Python formal (`pyproject.toml`) ni CI completa.
 
-```bash
-python python/scripts/run_baseline_example.py --config configs/baseline_phase5_example.json
-```
+---
 
-Inspect a saved reconstruction:
+## Trazabilidad recomendada para experimentos
 
-```bash
-python python/scripts/inspect_baseline_reconstruction.py --run-dir data/processed/baselines/<reconstruction_id>
-```
+Para cada corrida guardar y versionar:
+- config JSON utilizada,
+- seed,
+- dataset de entrada,
+- tipo/intensidad de ruido,
+- algoritmo y parámetros,
+- artefactos de salida,
+- `pipeline_trace.json` y `ledger.jsonl`.
 
-## Benchmark Runner
-
-FASE 6 adds a JSON-configured benchmark runner with resumable execution, experiment ledgering, and CSV/Parquet summary export.
-The benchmark interface is documented in `docs/phase6_benchmark_runner.md`.
-
-Run the example benchmark:
-
-```bash
-python python/scripts/run_benchmark_example.py --config configs/benchmark_phase6_example.json
-```
-
-## Visual Results Pipeline
-
-FASE 7 consumes a completed benchmark and produces:
-
-- per-experiment clean / noisy / reconstructed figures
-- error maps and temporal error series
-- aggregate comparisons by resolution and noise case
-- compute-time bar charts and performance heatmaps
-- summary tables in CSV and LaTeX
-- a figure catalog plus a `thesis_ready/` asset folder
-
-Run the example visual pipeline after FASE 6:
-
-```bash
-python python/scripts/run_visual_results_example.py --config configs/visual_results_phase7_example.json
-```
+Con esto cada resultado queda auditable y reproducible.
