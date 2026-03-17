@@ -1,0 +1,14 @@
+{
+  "nx": 96,
+  "ny": 48,
+  "reynolds": 100.0,
+  "u_in": 0.04,
+  "iterations": 40,
+  "save_stride": 10,
+  "obstacle_cx": 24,
+  "obstacle_cy": 24,
+  "obstacle_r": 6,
+  "output_root": "data/raw",
+  "run_id": "phase2_clean_example_raw",
+  "seed": 0
+}

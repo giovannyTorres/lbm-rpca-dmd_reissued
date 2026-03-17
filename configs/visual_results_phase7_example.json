@@ -1,0 +1,49 @@
+{
+  "source": {
+    "benchmark_id": "phase6_example",
+    "metrics_root": "results/metrics",
+    "tables_root": "results/tables"
+  },
+  "output": {
+    "root": "results/visuals",
+    "exploratory_formats": ["png"],
+    "final_formats": ["png", "pdf"]
+  },
+  "selection": {
+    "max_comparison_cases": 4,
+    "comparison_rank_metric": "rmse"
+  },
+  "figures": {
+    "variable": "ux",
+    "step_policy": "middle",
+    "summary_metric": "rmse",
+    "time_series_metric": "rmse",
+    "time_bar_metric": "reconstruction_time_sec"
+  },
+  "tables": {
+    "sort_by": "rmse",
+    "ascending": true,
+    "experiment_columns": [
+      "experiment_id",
+      "resolution_label",
+      "nx",
+      "ny",
+      "noise_label",
+      "model_variant",
+      "rmse",
+      "mae",
+      "relative_l2_error",
+      "vorticity_rmse",
+      "reconstruction_time_sec"
+    ],
+    "aggregate_columns": [
+      "model_variant",
+      "num_cases",
+      "mean_rmse",
+      "mean_mae",
+      "mean_relative_l2_error",
+      "mean_vorticity_rmse",
+      "mean_reconstruction_time_sec"
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "benchmark": {
+    "benchmark_id": "phase6_example",
+    "metrics_root": "results/metrics",
+    "tables_root": "results/tables",
+    "export_formats": ["csv"],
+    "resume": true
+  },
+  "solver": {
+    "base_config_path": "configs/lbm_cylinder_clean_example.json",
+    "build_dir": "cpp/lbm_core/build_phase6_example",
+    "build_type": "Release",
+    "resolutions": [
+      {
+        "label": "coarse",
+        "nx": 64,
+        "ny": 32
+      },
+      {
+        "label": "baseline",
+        "nx": 96,
+        "ny": 48
+      }
+    ]
+  },
+  "noise": [
+    {
+      "label": "gaussian_low",
+      "noise_specs": [
+        {
+          "kind": "gaussian",
+          "intensity": 0.1,
+          "seed": 11,
+          "channels": ["ux", "uy"]
+        }
+      ]
+    },
+    {
+      "label": "piv_mix",
+      "noise_specs": [
+        {
+          "kind": "gaussian",
+          "intensity": 0.15,
+          "seed": 13,
+          "channels": ["ux", "uy"]
+        },
+        {
+          "kind": "piv_outliers",
+          "intensity": 0.03,
+          "seed": 17,
+          "channels": ["ux", "uy"],
+          "params": {
+            "outlier_scale": 4.0,
+            "mode": "replace"
+          }
+        }
+      ]
+    }
+  ],
+  "models": [
+    {
+      "name": "truncated_svd",
+      "input": {
+        "kind": "space_time_matrix",
+        "variables": ["ux", "uy"],
+        "mask_policy": "flatten_fluid"
+      },
+      "param_grid": {
+        "rank": [2, 4]
+      }
+    },
+    {
+      "name": "median_filter",
+      "input": {
+        "kind": "snapshot_batch",
+        "variables": ["ux", "uy"],
+        "mask_policy": "fill_obstacle",
+        "obstacle_fill_value": 0.0
+      },
+      "params": {
+        "kernel_size": 3
+      }
+    }
+  ],
+  "execution": {
+    "reuse_existing": true,
+    "clean_root": "data/clean",
+    "noisy_root": "data/noisy"
+  }
+}

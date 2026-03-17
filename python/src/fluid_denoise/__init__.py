@@ -1,1 +1,1 @@
-"""Paquete base para orquestación del proyecto fluid_denoise."""
+"""Base package for Python-side orchestration."""

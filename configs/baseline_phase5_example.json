@@ -1,0 +1,25 @@
+{
+  "source": {
+    "run_dir": "data/noisy/<experiment_id>",
+    "reference_run_dir": "data/clean/<experiment_id>"
+  },
+  "input": {
+    "kind": "space_time_matrix",
+    "variables": ["ux", "uy"],
+    "mask_policy": "flatten_fluid",
+    "normalization": {
+      "mode": "none",
+      "scope": "global"
+    }
+  },
+  "model": {
+    "name": "truncated_svd",
+    "params": {
+      "rank": 2
+    }
+  },
+  "output": {
+    "root": "data/processed/baselines",
+    "overwrite": false
+  }
+}

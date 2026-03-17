@@ -6,6 +6,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_executable(lbm_sim
+    src/config.cpp
+    src/io.cpp
+    src/solver.cpp
     src/main.cpp
 )
 
