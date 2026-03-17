@@ -1,22 +1,12 @@
 # lbm-rpca-dmd_reissued
 
-Plataforma de investigación reproducible para simulación de fluidos y remoción de ruido.
+Estado actual: **FASE 0 solamente** (diseño de arquitectura y planificación).
 
-## Estado actual
-- ✅ FASE 0: diseño de arquitectura inicial.
-- 🚧 FASE 1: solver LBM 2D D2Q9 BGK (arranque).
-- ⏳ FASE 2+ pendientes.
+## Entrega vigente
+Esta iteración no incluye implementación de solver ni pipelines; únicamente definición de:
+1. árbol del repositorio,
+2. decisiones técnicas clave,
+3. entregables de FASE 1,
+4. criterios de validación de FASE 1.
 
-## Ejecución rápida (FASE 1)
-
-```bash
-python3 python/scripts/run_phase1_example.py --config configs/lbm_cylinder_base.cfg
-```
-
-Salida esperada en `data/raw/<run_id>/` con snapshots CSV y `manifest.txt`.
-
-## Prueba de humo
-
-```bash
-python3 -m unittest tests/test_phase1_smoke.py
-```
+Documento principal: `docs/phase0_only_plan.md`.
