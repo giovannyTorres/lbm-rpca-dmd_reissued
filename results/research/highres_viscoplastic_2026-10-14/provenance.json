@@ -1,0 +1,76 @@
+{
+  "created_utc": "2026-10-14T18:06:38.458406+00:00",
+  "source_commit": "450a8d3d84877afeddd7a98ad0d15cb1584bb116",
+  "source_hashes": {
+    "python/scripts/run_highres_viscoplastic.py": "5452f64dc38296d67b580c9b6bb7ef781c68fb05458a2988058215838c4f53c0",
+    "python/src/fluid_denoise/research/viscoplastic_dns.py": "fd7d028a4f0abafc0ced61a755c655d5c85daa0280fd498a7e2911a98b685aaf",
+    "python/src/fluid_denoise/research/dns.py": "fe692ebdd587c6eaced3aee5456ca8e56b42f6226cf05d2597f39cf9fd57846f"
+  },
+  "common_configuration": {
+    "case": "interacting_vortices",
+    "amplitude": 0.8,
+    "density": 1.0,
+    "length_x": 6.283185307179586,
+    "length_y": 6.283185307179586,
+    "seed": 0,
+    "diffusion_cfl": 0.8,
+    "cfl": 0.35,
+    "quadrature_factor": 1.5,
+    "yield_shear_threshold": 0.001,
+    "max_internal_steps": 200000
+  },
+  "matching_shear_rate": 1.9588300688233273,
+  "matching_apparent_viscosity": 0.04,
+  "material_parameters": {
+    "hb_thinning": {
+      "flow_index": 0.6,
+      "consistency": 0.04566262081575016,
+      "yield_stress": 0.01,
+      "regularization_m": 10.0,
+      "shear_epsilon": 0.001
+    },
+    "bingham": {
+      "flow_index": 1.0,
+      "consistency": 0.034894911953798846,
+      "yield_stress": 0.01,
+      "regularization_m": 10.0,
+      "shear_epsilon": 0.001
+    },
+    "hb_thickening": {
+      "flow_index": 1.4,
+      "consistency": 0.02666633799178199,
+      "yield_stress": 0.01,
+      "regularization_m": 10.0,
+      "shear_epsilon": 0.001
+    }
+  },
+  "long_evolution": {
+    "state_grids": [
+      64,
+      128
+    ],
+    "duration": 2.0,
+    "snapshots": 21
+  },
+  "short_reference": {
+    "state_grid": 256,
+    "duration": 0.1,
+    "executed": true
+  },
+  "resolution_interpretation": "Long 64/128 comparison and short 64/128/256 comparison are separate horizons. A larger mesh alone is not a representativeness or DNS certificate.",
+  "spatial_comparison": "Both fine same-solver field low-pass Fourier sampled onto coarse output grid and coarse field Fourier prolonged onto full unfiltered fine reference; all saved common times and maximum errors",
+  "matching_scope": "same initial velocity/density/domain/output times and eta_app at one declared shear. Constitutive curves remain different; no universal Reynolds equivalence.",
+  "temporal_check": "128 fixed state grid, maximum allowed dt 0.0004/0.0002/0.0001; actual dt diagnostics are reported",
+  "sensitivity_interpretation": "m and epsilon change the constitutive model; quadrature_factor changes nonlinear integration error; none is mesh convergence",
+  "limitations": [
+    "periodic unforced inelastic 2D flow; no cylinder, walls, elasticity or certified chaos",
+    "regularized yield indicators are declared proxies, not exactly unyielded rigid regions",
+    "nonpolynomial stress is not exactly dealiased by 3/2 padding",
+    "stress/shear reference fields are numerical, not experimental measurements",
+    "energy balance uses padded constitutive quadrature; output-grid quadrature may disagree"
+  ],
+  "viscosity_cap": null,
+  "dns_certification": false,
+  "total_wall_seconds": 2819.758614225997,
+  "runs": 18
+}

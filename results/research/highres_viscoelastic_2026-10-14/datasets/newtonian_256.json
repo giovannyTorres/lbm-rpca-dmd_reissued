@@ -1,0 +1,133 @@
+{
+  "complete": true,
+  "label": "newtonian_256",
+  "config": {
+    "model": "newtonian",
+    "common": {
+      "nx": 256,
+      "case": "interacting_vortices",
+      "amplitude": 0.8,
+      "dt": 0.004,
+      "n_steps": 600,
+      "sample_every": 25
+    },
+    "physical": {
+      "viscosity": 0.06
+    }
+  },
+  "config_sha256": "c2bf87cd2197b880ca63c5826858c8a31f47f0e9cc7a2e85d9f030534040d25c",
+  "source_hashes": {
+    "python/scripts/run_highres_viscoelastic.py": "a50b404fab27759f45e1a7ed9b39118f2e52be47532d1d1c425d1d23963045a3",
+    "python/src/fluid_denoise/research/__init__.py": "6b7eac9ccb7922c79e38fe019e31ffab79d64c36e7f721c06a978a86a8ebb91d",
+    "python/src/fluid_denoise/research/algorithms.py": "0991fb4773e87f88a9c3e6461339cb7f5b117f94bcc437b444f58c7152f14055",
+    "python/src/fluid_denoise/research/bridge.py": "96878ceb57016d81dcea5f94cc193898958a5a2ad6338a529c3d66f1d86cc670",
+    "python/src/fluid_denoise/research/cost.py": "9fe43b76236c835050ccc11d91ee1bce8371ebf63f927041fc3d41b4b4cd5e77",
+    "python/src/fluid_denoise/research/dns.py": "fe692ebdd587c6eaced3aee5456ca8e56b42f6226cf05d2597f39cf9fd57846f",
+    "python/src/fluid_denoise/research/forecast_runner.py": "2502facdfdf8bee7b8a34d32ea0f70baf9d17731a1386521ac76675cfdc00860",
+    "python/src/fluid_denoise/research/forecasting.py": "6e7147354394efdfbdf52aa35712d5029a13d521572659cdb7b11317549658c1",
+    "python/src/fluid_denoise/research/legacy_simulation.py": "7edf263a6e9d8d179f861ed9d2b4521230e212ec95389072e9ae2c6193b1b226",
+    "python/src/fluid_denoise/research/metrics.py": "7b7d4fdbcddca962f3d5195440dd5047f9922201ceb15411a1d2e1434a48dc1d",
+    "python/src/fluid_denoise/research/noise.py": "e11ab3d8d011897239618025ea53489400ad5948abf3e38153cdd6c5e083e023",
+    "python/src/fluid_denoise/research/physics.py": "391584c9e73d460f83775694c0310dedf4d7c8996c80df1c166ee36150da223a",
+    "python/src/fluid_denoise/research/rheology.py": "23879f127717e127bbc027780afbabc704f498878ac9c36ddcb33404412fbe64",
+    "python/src/fluid_denoise/research/runner.py": "4c38efa9be15824930f41df41b7dad1c513e86080098736cad76cda07ff612ba",
+    "python/src/fluid_denoise/research/viscoelastic_dns.py": "477a17f4176ef963816516012de38c1d475a8800474c6dd026ba57e262d063ec",
+    "python/src/fluid_denoise/research/viscoplastic_dns.py": "fd7d028a4f0abafc0ced61a755c655d5c85daa0280fd498a7e2911a98b685aaf"
+  },
+  "shape": [
+    25,
+    2,
+    256,
+    256
+  ],
+  "metadata": {
+    "case": "interacting_vortices",
+    "solver": "2D incompressible Navier-Stokes vorticity Fourier RK4",
+    "viscosity": 0.06,
+    "amplitude": 0.8,
+    "seed": 0,
+    "domain": [
+      6.283185307179586,
+      6.283185307179586
+    ],
+    "units": "nondimensional",
+    "nominal_dt": 0.004,
+    "nominal_steps": 600,
+    "sample_every": 25,
+    "internal_steps": 1056,
+    "internal_dt_min": 0.0008073817762350721,
+    "internal_dt_max": 0.002306805074971165,
+    "stability_limited_steps": 1032,
+    "max_advective_cfl": 0.2715986521170931,
+    "cfl_limit": 0.35,
+    "diffusion_stability_limit": "nu * internal_dt * max_retained_k_squared <= 2",
+    "dealiasing": "strict two-thirds component-wise Fourier cutoff",
+    "kinetic_energy": [
+      0.32000000000000006,
+      0.31026238725797733,
+      0.30117686215600253,
+      0.2926691831852424,
+      0.2846782622631856,
+      0.27715242317959826,
+      0.2700470786783705,
+      0.26332325009298696,
+      0.25694658886821237,
+      0.25088669368820593,
+      0.24511659845043926,
+      0.23961235801441033,
+      0.2343526916822477,
+      0.22931866467958145,
+      0.22449339940390606,
+      0.21986181389746867,
+      0.21541038720062347,
+      0.21112695158994083,
+      0.2070005112381625,
+      0.2030210861293253,
+      0.19917957940714542,
+      0.1954676658468429,
+      0.19187769885327982,
+      0.1884026332928451,
+      0.18503596153360735
+    ],
+    "dns_validation": "not certified; nonlinear grid and time refinement required",
+    "initial_condition": "four periodized Gaussian vorticity cores; two positive, two negative",
+    "centers_fractional": [
+      [
+        0.3,
+        0.35,
+        1.0
+      ],
+      [
+        0.55,
+        0.45,
+        1.0
+      ],
+      [
+        0.35,
+        0.7,
+        -1.0
+      ],
+      [
+        0.7,
+        0.65,
+        -1.0
+      ]
+    ],
+    "core_width": 0.4084070449666731,
+    "initial_speed_rms": 0.8,
+    "removed_vorticity_mean": 6.938893903907228e-18
+  },
+  "wall_seconds": 55.43946022399905,
+  "cpu_seconds": 44.089504139,
+  "archive_sha256": "d9bfb00e25b341e680955069ebd07da0b5bbf996addea8ef041c1ffcf67b2c7d",
+  "archive_bytes": 24831264,
+  "dx": 0.02454369260617026,
+  "dy": 0.02454369260617026,
+  "density": 1.0,
+  "saved_fields": [
+    "velocity",
+    "times"
+  ],
+  "constitutive_rhs_saved": false,
+  "timing_scope": "simulation, finite-array checks, compressed NPZ write; metadata write and archive checksum computation excluded"
+}

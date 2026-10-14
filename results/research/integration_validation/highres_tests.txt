@@ -1,0 +1,12 @@
+............................................................ [ 28%]
+.......................................................... [ 55%]
+.................................................................. [ 85%]
+..............................                                           [100%]
+=============================== warnings summary ===============================
+tests/test_research_runner.py::RunnerTests::test_failure_remains_a_failure
+tests/test_research_runner.py::RunnerTests::test_independent_fit_has_physics_and_measured_profile
+  /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=25631) is multi-threaded, use of fork() may lead to deadlocks in the child.
+    self.pid = os.fork()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+214 passed, 2 warnings, 32 subtests passed in 26.43s

@@ -1,0 +1,89 @@
+{
+  "configuration": {
+    "grids": [
+      128,
+      256
+    ],
+    "seeds": [
+      7,
+      23,
+      61
+    ],
+    "methods": [
+      [
+        "identity",
+        "identity",
+        1,
+        "none"
+      ],
+      [
+        "pod_r8",
+        "pod",
+        8,
+        "none"
+      ],
+      [
+        "tls_r8",
+        "tls_dmd",
+        8,
+        "none"
+      ],
+      [
+        "tls_r8_projected",
+        "tls_dmd",
+        8,
+        "helmholtz_dealias"
+      ],
+      [
+        "tls_r16_projected",
+        "tls_dmd",
+        16,
+        "helmholtz_dealias"
+      ]
+    ],
+    "noise_models": [
+      "gaussian_iid",
+      "spatial_fixed_length"
+    ],
+    "relative_rms": 0.2,
+    "spatial_correlation_length": 0.1,
+    "spatial_master_grid": 256,
+    "thresholds": {
+      "velocity_relative_l2": 0.15,
+      "vorticity_relative_l2": 0.25,
+      "extra_divergence_normalized": 0.1,
+      "kinetic_energy_relative_l2": 0.15
+    },
+    "scope": "in-window reconstruction; fixed ranks, no clean field selection; one resource repetition; simultaneous solver jobs may affect wall times"
+  },
+  "fingerprint": "d1a3836905f680650007d4d59e16f60381b873cdee491faf6eb908c3d6b083f1",
+  "source_files_sha256": {
+    "python/src/fluid_denoise/research/legacy_simulation.py": "7edf263a6e9d8d179f861ed9d2b4521230e212ec95389072e9ae2c6193b1b226",
+    "python/src/fluid_denoise/research/viscoelastic_dns.py": "477a17f4176ef963816516012de38c1d475a8800474c6dd026ba57e262d063ec",
+    "python/src/fluid_denoise/research/forecasting.py": "6e7147354394efdfbdf52aa35712d5029a13d521572659cdb7b11317549658c1",
+    "python/src/fluid_denoise/research/algorithms.py": "0991fb4773e87f88a9c3e6461339cb7f5b117f94bcc437b444f58c7152f14055",
+    "python/src/fluid_denoise/research/noise.py": "e11ab3d8d011897239618025ea53489400ad5948abf3e38153cdd6c5e083e023",
+    "python/src/fluid_denoise/research/cost.py": "9fe43b76236c835050ccc11d91ee1bce8371ebf63f927041fc3d41b4b4cd5e77",
+    "python/src/fluid_denoise/research/__init__.py": "6b7eac9ccb7922c79e38fe019e31ffab79d64c36e7f721c06a978a86a8ebb91d",
+    "python/src/fluid_denoise/research/dns.py": "fe692ebdd587c6eaced3aee5456ca8e56b42f6226cf05d2597f39cf9fd57846f",
+    "python/src/fluid_denoise/research/rheology.py": "23879f127717e127bbc027780afbabc704f498878ac9c36ddcb33404412fbe64",
+    "python/src/fluid_denoise/research/metrics.py": "7b7d4fdbcddca962f3d5195440dd5047f9922201ceb15411a1d2e1434a48dc1d",
+    "python/src/fluid_denoise/research/forecast_runner.py": "2502facdfdf8bee7b8a34d32ea0f70baf9d17731a1386521ac76675cfdc00860",
+    "python/src/fluid_denoise/research/physics.py": "391584c9e73d460f83775694c0310dedf4d7c8996c80df1c166ee36150da223a",
+    "python/src/fluid_denoise/research/bridge.py": "96878ceb57016d81dcea5f94cc193898958a5a2ad6338a529c3d66f1d86cc670",
+    "python/src/fluid_denoise/research/viscoplastic_dns.py": "fd7d028a4f0abafc0ced61a755c655d5c85daa0280fd498a7e2911a98b685aaf",
+    "python/src/fluid_denoise/research/runner.py": "4c38efa9be15824930f41df41b7dad1c513e86080098736cad76cda07ff612ba"
+  },
+  "script_sha256": "556e73e8186a4eac33569971351a01766918f9e1444297af2686ededd2cc8640",
+  "source_datasets": {
+    "128": "8ff4bbbb2acc863a35760a67d1935cd7221c8ac1f60fa05ad6f2181ea4625890",
+    "256": "d6f0c391439cc4339b78ba7a66e19992683714c015f4a617811bfcde79b3866c"
+  },
+  "filter_width_convention": {
+    "physical_gaussian_kernel_sigma": 0.1,
+    "continuum_gaussian_autocorrelation_standard_deviation": 0.14142135623730953,
+    "note": "spatial_correlation_length is the legacy configuration name for kernel sigma, not autocorrelation width"
+  },
+  "noise_resolution_note": "IID per-cell noise is not the same continuum realization on different meshes. Spatial noise is one Gaussian-smoothed master realization at 256 transferred to 128 without per-grid renormalization. Three seeds do not imply a confidence interval.",
+  "cost_scope": "Fresh child per fit; fit+reshape+postprocess with tracemalloc; reference evaluation and NPZ writing excluded. One repetition, contended host: no precision timing ranking."
+}

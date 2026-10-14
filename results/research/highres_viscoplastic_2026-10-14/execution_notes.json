@@ -1,0 +1,12 @@
+{
+  "purpose": "Record scheduling context without changing the frozen scientific solver or campaign script",
+  "control_precomputation_workers": 2,
+  "scheduling": "The main process completes long trajectories and short 256 references. During the stiff 128 HB evolution, independent workers precompute the exact temporal and sensitivity configurations. The main campaign later reuses their completed data only when configuration and all source hashes match.",
+  "temporal_worker_ids": ["hb_thinning_128_dt0p0004", "hb_thinning_128_dt0p0002", "hb_thinning_128_dt0p0001"],
+  "sensitivity_worker_ids": ["hb_thinning_64_short_control", "hb_thinning_64_quadrature_factor_2p0", "hb_thinning_64_regularization_m_5p0", "hb_thinning_64_regularization_m_20p0", "hb_thinning_64_shear_epsilon_0p002", "hb_thinning_64_shear_epsilon_0p0005"],
+  "mutation_independence": "Each worker writes different dataset IDs. Metadata is written after the compressed arrays are complete. All controls finish before the main process reaches their IDs.",
+  "measurement_scope": "Each dataset metadata reports CPU process time and wall time only for simulate_viscoplastic_periodic; compression, plotting and subsequent comparisons are outside that scope.",
+  "timing_interpretation": "Wall time may include CPU contention with other independent experiments. CPU, accepted/rejected internal steps, actual timesteps and viscosity bounds should be inspected together. Reproduction by the default campaign CLI is sequential unless independent controls are separately precomputed.",
+  "thread_limits": {"OPENBLAS_NUM_THREADS": 1, "OMP_NUM_THREADS": 1, "MKL_NUM_THREADS": 1},
+  "scientific_source_modified_for_parallelization": false
+}

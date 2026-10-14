@@ -1,0 +1,372 @@
+{
+  "status": "passed",
+  "date_utc": "2026-10-14",
+  "previous_verified_source_and_tests_unchanged": true,
+  "source_hash_checks": [
+    {
+      "campaign": "highres_newtonian",
+      "source": "python/src/fluid_denoise/research/dns.py",
+      "sha256": "fe692ebdd587c6eaced3aee5456ca8e56b42f6226cf05d2597f39cf9fd57846f"
+    },
+    {
+      "campaign": "highres_viscoelastic",
+      "source": "python/src/fluid_denoise/research/__init__.py",
+      "sha256": "6b7eac9ccb7922c79e38fe019e31ffab79d64c36e7f721c06a978a86a8ebb91d"
+    },
+    {
+      "campaign": "highres_viscoelastic",
+      "source": "python/src/fluid_denoise/research/algorithms.py",
+      "sha256": "0991fb4773e87f88a9c3e6461339cb7f5b117f94bcc437b444f58c7152f14055"
+    },
+    {
+      "campaign": "highres_viscoelastic",
+      "source": "python/src/fluid_denoise/research/bridge.py",
+      "sha256": "96878ceb57016d81dcea5f94cc193898958a5a2ad6338a529c3d66f1d86cc670"
+    },
+    {
+      "campaign": "highres_viscoelastic",
+      "source": "python/src/fluid_denoise/research/cost.py",
+      "sha256": "9fe43b76236c835050ccc11d91ee1bce8371ebf63f927041fc3d41b4b4cd5e77"
+    },
+    {
+      "campaign": "highres_viscoelastic",
+      "source": "python/src/fluid_denoise/research/dns.py",
+      "sha256": "fe692ebdd587c6eaced3aee5456ca8e56b42f6226cf05d2597f39cf9fd57846f"
+    },
+    {
+      "campaign": "highres_viscoelastic",
+      "source": "python/src/fluid_denoise/research/forecast_runner.py",
+      "sha256": "2502facdfdf8bee7b8a34d32ea0f70baf9d17731a1386521ac76675cfdc00860"
+    },
+    {
+      "campaign": "highres_viscoelastic",
+      "source": "python/src/fluid_denoise/research/forecasting.py",
+      "sha256": "6e7147354394efdfbdf52aa35712d5029a13d521572659cdb7b11317549658c1"
+    },
+    {
+      "campaign": "highres_viscoelastic",
+      "source": "python/src/fluid_denoise/research/legacy_simulation.py",
+      "sha256": "7edf263a6e9d8d179f861ed9d2b4521230e212ec95389072e9ae2c6193b1b226"
+    },
+    {
+      "campaign": "highres_viscoelastic",
+      "source": "python/src/fluid_denoise/research/metrics.py",
+      "sha256": "7b7d4fdbcddca962f3d5195440dd5047f9922201ceb15411a1d2e1434a48dc1d"
+    },
+    {
+      "campaign": "highres_viscoelastic",
+      "source": "python/src/fluid_denoise/research/noise.py",
+      "sha256": "e11ab3d8d011897239618025ea53489400ad5948abf3e38153cdd6c5e083e023"
+    },
+    {
+      "campaign": "highres_viscoelastic",
+      "source": "python/src/fluid_denoise/research/physics.py",
+      "sha256": "391584c9e73d460f83775694c0310dedf4d7c8996c80df1c166ee36150da223a"
+    },
+    {
+      "campaign": "highres_viscoelastic",
+      "source": "python/src/fluid_denoise/research/rheology.py",
+      "sha256": "23879f127717e127bbc027780afbabc704f498878ac9c36ddcb33404412fbe64"
+    },
+    {
+      "campaign": "highres_viscoelastic",
+      "source": "python/src/fluid_denoise/research/runner.py",
+      "sha256": "4c38efa9be15824930f41df41b7dad1c513e86080098736cad76cda07ff612ba"
+    },
+    {
+      "campaign": "highres_viscoelastic",
+      "source": "python/src/fluid_denoise/research/viscoelastic_dns.py",
+      "sha256": "477a17f4176ef963816516012de38c1d475a8800474c6dd026ba57e262d063ec"
+    },
+    {
+      "campaign": "highres_viscoelastic",
+      "source": "python/src/fluid_denoise/research/viscoplastic_dns.py",
+      "sha256": "fd7d028a4f0abafc0ced61a755c655d5c85daa0280fd498a7e2911a98b685aaf"
+    },
+    {
+      "campaign": "highres_viscoelastic",
+      "source": "python/src/fluid_denoise/research/__init__.py",
+      "sha256": "6b7eac9ccb7922c79e38fe019e31ffab79d64c36e7f721c06a978a86a8ebb91d"
+    },
+    {
+      "campaign": "highres_viscoelastic",
+      "source": "python/src/fluid_denoise/research/algorithms.py",
+      "sha256": "0991fb4773e87f88a9c3e6461339cb7f5b117f94bcc437b444f58c7152f14055"
+    },
+    {
+      "campaign": "highres_viscoelastic",
+      "source": "python/src/fluid_denoise/research/bridge.py",
+      "sha256": "96878ceb57016d81dcea5f94cc193898958a5a2ad6338a529c3d66f1d86cc670"
+    },
+    {
+      "campaign": "highres_viscoelastic",
+      "source": "python/src/fluid_denoise/research/cost.py",
+      "sha256": "9fe43b76236c835050ccc11d91ee1bce8371ebf63f927041fc3d41b4b4cd5e77"
+    },
+    {
+      "campaign": "highres_viscoelastic",
+      "source": "python/src/fluid_denoise/research/dns.py",
+      "sha256": "fe692ebdd587c6eaced3aee5456ca8e56b42f6226cf05d2597f39cf9fd57846f"
+    },
+    {
+      "campaign": "highres_viscoelastic",
+      "source": "python/src/fluid_denoise/research/forecast_runner.py",
+      "sha256": "2502facdfdf8bee7b8a34d32ea0f70baf9d17731a1386521ac76675cfdc00860"
+    },
+    {
+      "campaign": "highres_viscoelastic",
+      "source": "python/src/fluid_denoise/research/forecasting.py",
+      "sha256": "6e7147354394efdfbdf52aa35712d5029a13d521572659cdb7b11317549658c1"
+    },
+    {
+      "campaign": "highres_viscoelastic",
+      "source": "python/src/fluid_denoise/research/legacy_simulation.py",
+      "sha256": "7edf263a6e9d8d179f861ed9d2b4521230e212ec95389072e9ae2c6193b1b226"
+    },
+    {
+      "campaign": "highres_viscoelastic",
+      "source": "python/src/fluid_denoise/research/metrics.py",
+      "sha256": "7b7d4fdbcddca962f3d5195440dd5047f9922201ceb15411a1d2e1434a48dc1d"
+    },
+    {
+      "campaign": "highres_viscoelastic",
+      "source": "python/src/fluid_denoise/research/noise.py",
+      "sha256": "e11ab3d8d011897239618025ea53489400ad5948abf3e38153cdd6c5e083e023"
+    },
+    {
+      "campaign": "highres_viscoelastic",
+      "source": "python/src/fluid_denoise/research/physics.py",
+      "sha256": "391584c9e73d460f83775694c0310dedf4d7c8996c80df1c166ee36150da223a"
+    },
+    {
+      "campaign": "highres_viscoelastic",
+      "source": "python/src/fluid_denoise/research/rheology.py",
+      "sha256": "23879f127717e127bbc027780afbabc704f498878ac9c36ddcb33404412fbe64"
+    },
+    {
+      "campaign": "highres_viscoelastic",
+      "source": "python/src/fluid_denoise/research/runner.py",
+      "sha256": "4c38efa9be15824930f41df41b7dad1c513e86080098736cad76cda07ff612ba"
+    },
+    {
+      "campaign": "highres_viscoelastic",
+      "source": "python/src/fluid_denoise/research/viscoelastic_dns.py",
+      "sha256": "477a17f4176ef963816516012de38c1d475a8800474c6dd026ba57e262d063ec"
+    },
+    {
+      "campaign": "highres_viscoelastic",
+      "source": "python/src/fluid_denoise/research/viscoplastic_dns.py",
+      "sha256": "fd7d028a4f0abafc0ced61a755c655d5c85daa0280fd498a7e2911a98b685aaf"
+    },
+    {
+      "campaign": "highres_viscoplastic",
+      "source": "python/src/fluid_denoise/research/viscoplastic_dns.py",
+      "sha256": "fd7d028a4f0abafc0ced61a755c655d5c85daa0280fd498a7e2911a98b685aaf"
+    },
+    {
+      "campaign": "highres_viscoplastic",
+      "source": "python/src/fluid_denoise/research/dns.py",
+      "sha256": "fe692ebdd587c6eaced3aee5456ca8e56b42f6226cf05d2597f39cf9fd57846f"
+    },
+    {
+      "campaign": "highres_reconstruction",
+      "source": "python/src/fluid_denoise/research/legacy_simulation.py",
+      "sha256": "7edf263a6e9d8d179f861ed9d2b4521230e212ec95389072e9ae2c6193b1b226"
+    },
+    {
+      "campaign": "highres_reconstruction",
+      "source": "python/src/fluid_denoise/research/viscoelastic_dns.py",
+      "sha256": "477a17f4176ef963816516012de38c1d475a8800474c6dd026ba57e262d063ec"
+    },
+    {
+      "campaign": "highres_reconstruction",
+      "source": "python/src/fluid_denoise/research/forecasting.py",
+      "sha256": "6e7147354394efdfbdf52aa35712d5029a13d521572659cdb7b11317549658c1"
+    },
+    {
+      "campaign": "highres_reconstruction",
+      "source": "python/src/fluid_denoise/research/algorithms.py",
+      "sha256": "0991fb4773e87f88a9c3e6461339cb7f5b117f94bcc437b444f58c7152f14055"
+    },
+    {
+      "campaign": "highres_reconstruction",
+      "source": "python/src/fluid_denoise/research/noise.py",
+      "sha256": "e11ab3d8d011897239618025ea53489400ad5948abf3e38153cdd6c5e083e023"
+    },
+    {
+      "campaign": "highres_reconstruction",
+      "source": "python/src/fluid_denoise/research/cost.py",
+      "sha256": "9fe43b76236c835050ccc11d91ee1bce8371ebf63f927041fc3d41b4b4cd5e77"
+    },
+    {
+      "campaign": "highres_reconstruction",
+      "source": "python/src/fluid_denoise/research/__init__.py",
+      "sha256": "6b7eac9ccb7922c79e38fe019e31ffab79d64c36e7f721c06a978a86a8ebb91d"
+    },
+    {
+      "campaign": "highres_reconstruction",
+      "source": "python/src/fluid_denoise/research/dns.py",
+      "sha256": "fe692ebdd587c6eaced3aee5456ca8e56b42f6226cf05d2597f39cf9fd57846f"
+    },
+    {
+      "campaign": "highres_reconstruction",
+      "source": "python/src/fluid_denoise/research/rheology.py",
+      "sha256": "23879f127717e127bbc027780afbabc704f498878ac9c36ddcb33404412fbe64"
+    },
+    {
+      "campaign": "highres_reconstruction",
+      "source": "python/src/fluid_denoise/research/metrics.py",
+      "sha256": "7b7d4fdbcddca962f3d5195440dd5047f9922201ceb15411a1d2e1434a48dc1d"
+    },
+    {
+      "campaign": "highres_reconstruction",
+      "source": "python/src/fluid_denoise/research/forecast_runner.py",
+      "sha256": "2502facdfdf8bee7b8a34d32ea0f70baf9d17731a1386521ac76675cfdc00860"
+    },
+    {
+      "campaign": "highres_reconstruction",
+      "source": "python/src/fluid_denoise/research/physics.py",
+      "sha256": "391584c9e73d460f83775694c0310dedf4d7c8996c80df1c166ee36150da223a"
+    },
+    {
+      "campaign": "highres_reconstruction",
+      "source": "python/src/fluid_denoise/research/bridge.py",
+      "sha256": "96878ceb57016d81dcea5f94cc193898958a5a2ad6338a529c3d66f1d86cc670"
+    },
+    {
+      "campaign": "highres_reconstruction",
+      "source": "python/src/fluid_denoise/research/viscoplastic_dns.py",
+      "sha256": "fd7d028a4f0abafc0ced61a755c655d5c85daa0280fd498a7e2911a98b685aaf"
+    },
+    {
+      "campaign": "highres_reconstruction",
+      "source": "python/src/fluid_denoise/research/runner.py",
+      "sha256": "4c38efa9be15824930f41df41b7dad1c513e86080098736cad76cda07ff612ba"
+    },
+    {
+      "campaign": "highres_fixed_bandwidth",
+      "source": "python/src/fluid_denoise/research/legacy_simulation.py",
+      "sha256": "7edf263a6e9d8d179f861ed9d2b4521230e212ec95389072e9ae2c6193b1b226"
+    },
+    {
+      "campaign": "highres_fixed_bandwidth",
+      "source": "python/src/fluid_denoise/research/viscoelastic_dns.py",
+      "sha256": "477a17f4176ef963816516012de38c1d475a8800474c6dd026ba57e262d063ec"
+    },
+    {
+      "campaign": "highres_fixed_bandwidth",
+      "source": "python/src/fluid_denoise/research/forecasting.py",
+      "sha256": "6e7147354394efdfbdf52aa35712d5029a13d521572659cdb7b11317549658c1"
+    },
+    {
+      "campaign": "highres_fixed_bandwidth",
+      "source": "python/src/fluid_denoise/research/algorithms.py",
+      "sha256": "0991fb4773e87f88a9c3e6461339cb7f5b117f94bcc437b444f58c7152f14055"
+    },
+    {
+      "campaign": "highres_fixed_bandwidth",
+      "source": "python/src/fluid_denoise/research/noise.py",
+      "sha256": "e11ab3d8d011897239618025ea53489400ad5948abf3e38153cdd6c5e083e023"
+    },
+    {
+      "campaign": "highres_fixed_bandwidth",
+      "source": "python/src/fluid_denoise/research/cost.py",
+      "sha256": "9fe43b76236c835050ccc11d91ee1bce8371ebf63f927041fc3d41b4b4cd5e77"
+    },
+    {
+      "campaign": "highres_fixed_bandwidth",
+      "source": "python/src/fluid_denoise/research/__init__.py",
+      "sha256": "6b7eac9ccb7922c79e38fe019e31ffab79d64c36e7f721c06a978a86a8ebb91d"
+    },
+    {
+      "campaign": "highres_fixed_bandwidth",
+      "source": "python/src/fluid_denoise/research/dns.py",
+      "sha256": "fe692ebdd587c6eaced3aee5456ca8e56b42f6226cf05d2597f39cf9fd57846f"
+    },
+    {
+      "campaign": "highres_fixed_bandwidth",
+      "source": "python/src/fluid_denoise/research/rheology.py",
+      "sha256": "23879f127717e127bbc027780afbabc704f498878ac9c36ddcb33404412fbe64"
+    },
+    {
+      "campaign": "highres_fixed_bandwidth",
+      "source": "python/src/fluid_denoise/research/metrics.py",
+      "sha256": "7b7d4fdbcddca962f3d5195440dd5047f9922201ceb15411a1d2e1434a48dc1d"
+    },
+    {
+      "campaign": "highres_fixed_bandwidth",
+      "source": "python/src/fluid_denoise/research/forecast_runner.py",
+      "sha256": "2502facdfdf8bee7b8a34d32ea0f70baf9d17731a1386521ac76675cfdc00860"
+    },
+    {
+      "campaign": "highres_fixed_bandwidth",
+      "source": "python/src/fluid_denoise/research/physics.py",
+      "sha256": "391584c9e73d460f83775694c0310dedf4d7c8996c80df1c166ee36150da223a"
+    },
+    {
+      "campaign": "highres_fixed_bandwidth",
+      "source": "python/src/fluid_denoise/research/bridge.py",
+      "sha256": "96878ceb57016d81dcea5f94cc193898958a5a2ad6338a529c3d66f1d86cc670"
+    },
+    {
+      "campaign": "highres_fixed_bandwidth",
+      "source": "python/src/fluid_denoise/research/viscoplastic_dns.py",
+      "sha256": "fd7d028a4f0abafc0ced61a755c655d5c85daa0280fd498a7e2911a98b685aaf"
+    },
+    {
+      "campaign": "highres_fixed_bandwidth",
+      "source": "python/src/fluid_denoise/research/runner.py",
+      "sha256": "4c38efa9be15824930f41df41b7dad1c513e86080098736cad76cda07ff612ba"
+    }
+  ],
+  "tests": {
+    "command": "python -m pytest -q",
+    "passed": 214,
+    "subtests_passed": 32,
+    "skipped": 0,
+    "warnings": 2,
+    "warning_scope": "Existing multiprocessing fork deprecation warnings; no test failures."
+  },
+  "simulations": {
+    "newtonian_spatial": 8,
+    "newtonian_temporal_extra": 4,
+    "newtonian_analytical": 6,
+    "viscoelastic_and_control": 9,
+    "viscoplastic": 18,
+    "total": 45
+  },
+  "reconstruction": {
+    "original_conditions": 60,
+    "original_accepted": 0,
+    "followup_conditions": 24,
+    "followup_accepted": 18,
+    "followup_scope": "Exploratory same-flow followup after original outcomes, physical cutoff 10; includes filtered-observation control, not blind external validation."
+  },
+  "document": {
+    "path": "results/research/document/extension.pdf",
+    "sha256": "c2efc9ab92317da80fa7d3f7719b1fb7da30eb3f692b5edf11f7683e4206fc68",
+    "pages": 76,
+    "figures": 37,
+    "new_selected_figures": 28,
+    "new_schematic_diagrams": 6,
+    "companion_gifs": 5,
+    "full_page_visual_review_root": [
+      48,
+      49,
+      64,
+      68
+    ],
+    "additional_review": "Campaign authors and independent reviewer inspected simulation figures, diagrams and publication layouts.",
+    "compiled_from_staged_repository_without_full_npz": true,
+    "final_log_missing_refs_or_overflows": false
+  },
+  "visual_samples": {
+    "datasets": 8,
+    "frames_each": 5,
+    "bytes": 107068488,
+    "all_sample_and_source_hashes_verified": true,
+    "all_exported_arrays_equal_exact_source_selection": true,
+    "scope": "Five saved states per trajectory. The complete-time maxima require the full histories."
+  },
+  "provenance_scope": "Scientific solver modules and existing tests unchanged from previous verified main; historical viscoelastic simulation and later rendering driver hashes remain separately identified."
+}

@@ -1,0 +1,15 @@
+{
+  "retained_mode_interpolation_max_error": 5.10702591327572e-15,
+  "analytic_curl_max_error": 4.618527782440651e-14,
+  "ring_summed_energy_analytic_error": 0.0,
+  "ring_summed_enstrophy_analytic_error": 0.0,
+  "unresolved_mode_test": {
+    "expected_velocity_full_field_error": 0.09950371902099893,
+    "observed_velocity_full_field_error": 0.09950371902099894,
+    "expected_vorticity_full_field_error": 0.7399400733959437,
+    "observed_vorticity_full_field_error": 0.7399400733959436,
+    "common_modes_error": 0.0
+  },
+  "status": "passed",
+  "scope": "Known divergence-free Fourier modes and deliberate discarded high mode verify interpolation, curl, Parseval units and full-field versus common-mode errors."
+}

@@ -15,7 +15,7 @@ python -m unittest discover -s tests
 PYTHONPATH=python/src python -m pytest tests/test_research*.py
 ```
 
-Las dependencias incluyen NumPy, SciPy, pandas y matplotlib; pyarrow habilita Parquet. CMake y un compilador C++17 permiten ejecutar el solver de fases 1–7. La verificación consolidada registró 212 tests y 28 subtests sin omisiones; el pipeline completo de fases 1–7 produjo 12 experimentos y 80 figuras.
+Las dependencias incluyen NumPy, SciPy, pandas y matplotlib; pyarrow habilita Parquet. CMake y un compilador C++17 permiten ejecutar el solver de fases 1–7. La suite completa, incluida la ampliación de mallas, registra 214 tests y 32 subtests sin omisiones (`PYTHONPATH=python/src python -m pytest tests`). La verificación previa de fases 1–7 produjo 12 experimentos y 80 figuras.
 
 ## Pipeline integrado
 
@@ -47,6 +47,33 @@ python python/scripts/summarize_extended_research.py
 ```
 
 El primer comando produce los seis controles reológicos comunes y su GIF; el segundo deriva el resumen, la figura de pronóstico y la discusión integrada de las campañas completas. Este último reemplaza `docs/research/EXTENDED_RESULTS.md` y `extended_generated.tex`.
+
+## Campañas de mallas ampliadas
+
+Estas campañas se ejecutan con los scripts siguientes. El modo `full` del pipeline anterior conserva su banco original y no ejecuta automáticamente esta ampliación. Desde la raíz, después de instalar las dependencias:
+
+```bash
+python python/scripts/run_highres_newtonian.py --reuse
+python python/scripts/run_highres_viscoelastic.py --workers 2
+python python/scripts/run_highres_viscoplastic.py
+python results/research/highres_newtonian_2026-10-14/render_publication.py
+python results/research/highres_viscoplastic_2026-10-14/derive_stress_frobenius.py
+python results/research/highres_viscoplastic_2026-10-14/verify_data_integrity.py --require-complete
+python results/research/highres_viscoplastic_2026-10-14/render_publication.py
+python python/scripts/run_highres_reconstruction_visuals.py --reuse-completed
+python python/scripts/run_highres_fixed_bandwidth.py
+python python/scripts/export_highres_visual_samples.py
+python python/scripts/draw_research_diagrams.py
+python python/scripts/build_highres_chapter.py
+```
+
+Navier–Stokes integra 64²/128²/256²/512² hasta T=4 con 41 estados. Oldroyd-B/FENE-P integra 64²/128²/256² hasta T=2.4 con 25 estados, dos controles temporales y un control newtoniano. HB/Bingham integra 64²/128² hasta T=2 y 256² sólo hasta T=0.1; el control corto no valida el horizonte largo. Las campañas registran 45 integraciones/controles y 84 condiciones de reconstrucción adicionales. La ejecución completa requiere memoria para los tensores y varias horas de cálculo, según el equipo; los tiempos publicados proceden de un equipo compartido.
+
+`--reuse` verifica configuración y fuentes de los NPZ newtonianos; el script viscoelástico comprueba su caché por defecto y `--analyze-only` vuelve a generar análisis de los datos existentes. El script viscoplástico verifica su caché de configuraciones. `--reuse-completed` del script de reconstrucción exige hashes coincidentes de fuentes y entradas. El seguimiento de ancho fijo vuelve a ejecutar sus 24 condiciones y se distingue del resultado original 0/60: obtiene 18/24, con un control que aplica el mismo filtrado sin DMD. No constituye una validación ciega en otro flujo.
+
+Los NPZ completos se generan localmente y están excluidos de la rama principal. Las figuras PDF/PNG, las cinco animaciones, las tablas y la procedencia están incluidas. La [rama de muestras](https://github.com/giovannyTorres/lbm-rpca-dmd_reissued/tree/data/high-resolution-visuals-2026-10-14/results/research/highres_visual_samples_2026-10-14) contiene ocho NPZ con cinco estados exactos por trayectoria, sin interpolación. El [manifiesto](../../results/research/highres_visual_samples_2026-10-14/manifest.json) conserva los hashes de origen y de selección. Estas muestras no sustituyen los 41/25/21 estados usados en los máximos de error.
+
+Para compilar solamente el documento desde un clon nuevo, ejecutar directamente el comando LaTeX del final de esta guía: los archivos generados `.tex` y todas las figuras ya están incluidos. `build_highres_chapter.py`, incluso con `--check-only`, requiere las historias NPZ completas regeneradas localmente para verificar el cierre de las campañas. Las muestras de cinco cuadros no satisfacen ese requisito. `export_highres_visual_samples.py` también requiere las historias originales. Véanse [resultados ampliados](HIGHRES_RESULTS.md) y [revisión independiente](HIGHRES_REVIEW.md).
 
 ## Resultados completos y procedencia
 

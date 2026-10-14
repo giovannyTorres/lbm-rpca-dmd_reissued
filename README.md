@@ -2,7 +2,13 @@
 
 Guía operativa para correr el proyecto localmente, de punta a punta, sin asumir conocimiento previo.
 
-La ampliación de investigación incorpora solvers no newtonianos 2D, nueve tipos de ruido, métricas físicas y de recursos, y pronóstico cronológico. Consulta el [documento científico de 28 páginas](results/research/document/extension.pdf), los [resultados ejecutados](docs/research/EXTENDED_RESULTS.md) y la [guía de fase 8](docs/phase8_research.md).
+La ampliación de investigación incorpora solvers no newtonianos 2D, nueve tipos de ruido, métricas físicas y de recursos, y pronóstico cronológico. Consulta el [documento científico de 76 páginas](results/research/document/extension.pdf), los [resultados ejecutados](docs/research/EXTENDED_RESULTS.md) y la [guía de fase 8](docs/phase8_research.md).
+
+La nueva campaña de [mallas ampliadas y evolución física](docs/research/HIGHRES_RESULTS.md) integra Navier–Stokes hasta **512²** y Oldroyd-B/FENE-P hasta **256²**. HB/Bingham evoluciona hasta **128² durante T=2**, con referencias **256² solamente hasta T=0.1**. El documento conserva cinco capítulos e incluye **37 figuras**, seis diagramas explicativos y enlaces a **cinco animaciones**. Los mapas provienen de campos calculados; las mallas finas y los controles temporales permiten evaluar su resolución.
+
+Se ejecutaron 45 integraciones/controles de simulación y 84 condiciones de reconstrucción adicionales. La primera comparación acepta 0/60 condiciones; el seguimiento exploratorio de ancho físico fijo acepta 18/24 y conserva su control de filtrado sin DMD. La [revisión independiente](docs/research/HIGHRES_REVIEW.md) y la [guía de reproducción](docs/research/RUNNING.md#campañas-de-mallas-ampliadas) explican alcances, fuentes y comandos. La suite completa registra **214 pruebas y 32 subcasos**.
+
+Para inspeccionar campos sin regenerar todas las historias, descarga la [rama de muestras visuales](https://github.com/giovannyTorres/lbm-rpca-dmd_reissued/tree/data/high-resolution-visuals-2026-10-14/results/research/highres_visual_samples_2026-10-14): ocho NPZ con cinco estados exactos por trayectoria, [metadatos y hashes](results/research/highres_visual_samples_2026-10-14/manifest.json). Estas selecciones permiten reproducir imágenes, pero los máximos sobre todos los tiempos requieren las historias completas.
 
 ## 1) Propósito del proyecto
 

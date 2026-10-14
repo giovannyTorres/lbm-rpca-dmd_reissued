@@ -1,0 +1,510 @@
+{
+  "scope": "Five exact computed frames per long visual trajectory, not complete time histories. Full campaigns, errors and provenance remain in the study directories; regenerate full NPZ with their scripts.",
+  "interpolated": false,
+  "private_data": false,
+  "density": 1.0,
+  "density_note": "These specific periodic solvers explicitly declare constant unit density; no missing experimental density is inferred.",
+  "script_sha256": "e14a10e5c84e4e7f05da6f51f01099dd6bf0359872d7d89f32f46347df0cccc2",
+  "datasets": [
+    {
+      "name": "newtonian_vortices_512",
+      "path": "results/research/highres_visual_samples_2026-10-14/datasets/newtonian_vortices_512.npz",
+      "sha256": "14d3cfe5ecb58ed1d3e5df7f3b9358da776bbc026d36bc58fc752ae89ce63783",
+      "bytes": 19839293,
+      "source_npz": "results/research/highres_newtonian_2026-10-14/datasets/interacting_vortices_512_dt0.005.npz",
+      "source_npz_sha256": "42e360cca6d13f9fb9d8178c9b413854bc7b65d1055fb781512d62b517f3a7ee",
+      "source_shape": [
+        41,
+        2,
+        512,
+        512
+      ],
+      "frame_indices": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "times": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0
+      ],
+      "nx": 512,
+      "ny": 512,
+      "dx": 0.01227184630308513,
+      "dy": 0.01227184630308513,
+      "boundary": "periodic",
+      "fields": {
+        "times": [
+          5
+        ],
+        "velocity": [
+          5,
+          2,
+          512,
+          512
+        ]
+      }
+    },
+    {
+      "name": "newtonian_multiscale_512",
+      "path": "results/research/highres_visual_samples_2026-10-14/datasets/newtonian_multiscale_512.npz",
+      "sha256": "89315f11f92c7a8a8502cc284e364bdedb83120214e48b228ea546e1eb74cdf6",
+      "bytes": 20008604,
+      "source_npz": "results/research/highres_newtonian_2026-10-14/datasets/decaying_turbulence_512_dt0.005.npz",
+      "source_npz_sha256": "d945e358e8cdc611fa33ae6a64b2c382d0c042834ca1fcab4438aaad6fc5a9b0",
+      "source_shape": [
+        41,
+        2,
+        512,
+        512
+      ],
+      "frame_indices": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "times": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0
+      ],
+      "nx": 512,
+      "ny": 512,
+      "dx": 0.01227184630308513,
+      "dy": 0.01227184630308513,
+      "boundary": "periodic",
+      "fields": {
+        "times": [
+          5
+        ],
+        "velocity": [
+          5,
+          2,
+          512,
+          512
+        ]
+      }
+    },
+    {
+      "name": "oldroyd_b_256",
+      "path": "results/research/highres_visual_samples_2026-10-14/datasets/oldroyd_b_256.npz",
+      "sha256": "d9a551fd5f4c14e95065f82ce31f862392e5ce9d394729a5a0936db5ab6dffe5",
+      "bytes": 20884671,
+      "source_npz": "results/research/highres_viscoelastic_2026-10-14/datasets/oldroyd_b_256.npz",
+      "source_npz_sha256": "6560b7d3ba6121b81fd0166269c7ff4f15dda13569b4e2d5f35f845468f9654c",
+      "source_shape": [
+        25,
+        2,
+        256,
+        256
+      ],
+      "frame_indices": [
+        0,
+        6,
+        12,
+        18,
+        24
+      ],
+      "times": [
+        0.0,
+        0.6,
+        1.2,
+        1.8,
+        2.4
+      ],
+      "nx": 256,
+      "ny": 256,
+      "dx": 0.02454369260617026,
+      "dy": 0.02454369260617026,
+      "boundary": "periodic",
+      "fields": {
+        "times": [
+          5
+        ],
+        "velocity": [
+          5,
+          2,
+          256,
+          256
+        ],
+        "conformation": [
+          5,
+          3,
+          3,
+          256,
+          256
+        ],
+        "stress": [
+          5,
+          3,
+          3,
+          256,
+          256
+        ]
+      }
+    },
+    {
+      "name": "fene_p_256",
+      "path": "results/research/highres_visual_samples_2026-10-14/datasets/fene_p_256.npz",
+      "sha256": "dece5bd04efeda9427ad10f894d32bfb3db3b0a66f29d22bfee446182ac5836c",
+      "bytes": 24608238,
+      "source_npz": "results/research/highres_viscoelastic_2026-10-14/datasets/fene_p_256.npz",
+      "source_npz_sha256": "21093a51dac9099f2b44f9503ed77dbd5e064da3d7c53a83f4cf37aaeb8248b1",
+      "source_shape": [
+        25,
+        2,
+        256,
+        256
+      ],
+      "frame_indices": [
+        0,
+        6,
+        12,
+        18,
+        24
+      ],
+      "times": [
+        0.0,
+        0.6,
+        1.2,
+        1.8,
+        2.4
+      ],
+      "nx": 256,
+      "ny": 256,
+      "dx": 0.02454369260617026,
+      "dy": 0.02454369260617026,
+      "boundary": "periodic",
+      "fields": {
+        "times": [
+          5
+        ],
+        "velocity": [
+          5,
+          2,
+          256,
+          256
+        ],
+        "conformation": [
+          5,
+          3,
+          3,
+          256,
+          256
+        ],
+        "stress": [
+          5,
+          3,
+          3,
+          256,
+          256
+        ]
+      }
+    },
+    {
+      "name": "visco_newtonian_256",
+      "path": "results/research/highres_visual_samples_2026-10-14/datasets/visco_newtonian_256.npz",
+      "sha256": "8bf1780127e6883f47725a54ed2d48cb0f9790931c346107c559ad10158b3bbf",
+      "bytes": 4966198,
+      "source_npz": "results/research/highres_viscoelastic_2026-10-14/datasets/newtonian_256.npz",
+      "source_npz_sha256": "d9bfb00e25b341e680955069ebd07da0b5bbf996addea8ef041c1ffcf67b2c7d",
+      "source_shape": [
+        25,
+        2,
+        256,
+        256
+      ],
+      "frame_indices": [
+        0,
+        6,
+        12,
+        18,
+        24
+      ],
+      "times": [
+        0.0,
+        0.6,
+        1.2,
+        1.8,
+        2.4
+      ],
+      "nx": 256,
+      "ny": 256,
+      "dx": 0.02454369260617026,
+      "dy": 0.02454369260617026,
+      "boundary": "periodic",
+      "fields": {
+        "times": [
+          5
+        ],
+        "velocity": [
+          5,
+          2,
+          256,
+          256
+        ]
+      }
+    },
+    {
+      "name": "hb_thinning_128",
+      "path": "results/research/highres_visual_samples_2026-10-14/datasets/hb_thinning_128.npz",
+      "sha256": "381103b7e1907f0098531e40ed91ac6ae14217630c0a280bfe51f88d0a1e3a62",
+      "bytes": 5592017,
+      "source_npz": "results/research/highres_viscoplastic_2026-10-14/datasets/hb_thinning_128.npz",
+      "source_npz_sha256": "b41f4a0763a286526c379844a081b2c27fa5750c974bce334d8c0c27f354873f",
+      "source_shape": [
+        21,
+        2,
+        128,
+        128
+      ],
+      "frame_indices": [
+        0,
+        5,
+        10,
+        15,
+        20
+      ],
+      "times": [
+        0.0,
+        0.5,
+        1.0,
+        1.5,
+        2.0
+      ],
+      "nx": 128,
+      "ny": 128,
+      "dx": 0.04908738521234052,
+      "dy": 0.04908738521234052,
+      "boundary": "periodic",
+      "fields": {
+        "times": [
+          5
+        ],
+        "velocity": [
+          5,
+          2,
+          128,
+          128
+        ],
+        "pressure": [
+          5,
+          128,
+          128
+        ],
+        "shear_rate": [
+          5,
+          128,
+          128
+        ],
+        "apparent_viscosity": [
+          5,
+          128,
+          128
+        ],
+        "deviatoric_stress": [
+          5,
+          3,
+          128,
+          128
+        ],
+        "stress_invariant": [
+          5,
+          128,
+          128
+        ],
+        "approximate_yielded": [
+          5,
+          128,
+          128
+        ],
+        "over_yield_stress": [
+          5,
+          128,
+          128
+        ],
+        "mask": [
+          128,
+          128
+        ]
+      }
+    },
+    {
+      "name": "bingham_128",
+      "path": "results/research/highres_visual_samples_2026-10-14/datasets/bingham_128.npz",
+      "sha256": "4d6ec7d47e36f2bc2d84425671c010f0da9b9e1dee3c06cdc2575f629edbd86f",
+      "bytes": 5589313,
+      "source_npz": "results/research/highres_viscoplastic_2026-10-14/datasets/bingham_128.npz",
+      "source_npz_sha256": "52b61b37762d5e3abfa0f9000dd0beb1f416fc0628900e8221670b7e4eabb52d",
+      "source_shape": [
+        21,
+        2,
+        128,
+        128
+      ],
+      "frame_indices": [
+        0,
+        5,
+        10,
+        15,
+        20
+      ],
+      "times": [
+        0.0,
+        0.5,
+        1.0,
+        1.5,
+        2.0
+      ],
+      "nx": 128,
+      "ny": 128,
+      "dx": 0.04908738521234052,
+      "dy": 0.04908738521234052,
+      "boundary": "periodic",
+      "fields": {
+        "times": [
+          5
+        ],
+        "velocity": [
+          5,
+          2,
+          128,
+          128
+        ],
+        "pressure": [
+          5,
+          128,
+          128
+        ],
+        "shear_rate": [
+          5,
+          128,
+          128
+        ],
+        "apparent_viscosity": [
+          5,
+          128,
+          128
+        ],
+        "deviatoric_stress": [
+          5,
+          3,
+          128,
+          128
+        ],
+        "stress_invariant": [
+          5,
+          128,
+          128
+        ],
+        "approximate_yielded": [
+          5,
+          128,
+          128
+        ],
+        "over_yield_stress": [
+          5,
+          128,
+          128
+        ],
+        "mask": [
+          128,
+          128
+        ]
+      }
+    },
+    {
+      "name": "hb_thickening_128",
+      "path": "results/research/highres_visual_samples_2026-10-14/datasets/hb_thickening_128.npz",
+      "sha256": "dce19aa6d5648844b35bfcbca084914e628cf739ff6f7227ae8291c389bfb811",
+      "bytes": 5580154,
+      "source_npz": "results/research/highres_viscoplastic_2026-10-14/datasets/hb_thickening_128.npz",
+      "source_npz_sha256": "1d27b5a8a6d6f89c429d63868732b111bdb3846130f9ee79e5c237e4e76ed540",
+      "source_shape": [
+        21,
+        2,
+        128,
+        128
+      ],
+      "frame_indices": [
+        0,
+        5,
+        10,
+        15,
+        20
+      ],
+      "times": [
+        0.0,
+        0.5,
+        1.0,
+        1.5,
+        2.0
+      ],
+      "nx": 128,
+      "ny": 128,
+      "dx": 0.04908738521234052,
+      "dy": 0.04908738521234052,
+      "boundary": "periodic",
+      "fields": {
+        "times": [
+          5
+        ],
+        "velocity": [
+          5,
+          2,
+          128,
+          128
+        ],
+        "pressure": [
+          5,
+          128,
+          128
+        ],
+        "shear_rate": [
+          5,
+          128,
+          128
+        ],
+        "apparent_viscosity": [
+          5,
+          128,
+          128
+        ],
+        "deviatoric_stress": [
+          5,
+          3,
+          128,
+          128
+        ],
+        "stress_invariant": [
+          5,
+          128,
+          128
+        ],
+        "approximate_yielded": [
+          5,
+          128,
+          128
+        ],
+        "over_yield_stress": [
+          5,
+          128,
+          128
+        ],
+        "mask": [
+          128,
+          128
+        ]
+      }
+    }
+  ]
+}

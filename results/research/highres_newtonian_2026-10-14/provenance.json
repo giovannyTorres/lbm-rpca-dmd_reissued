@@ -1,0 +1,27 @@
+{
+  "command": [
+    "python/scripts/run_highres_newtonian.py",
+    "--reuse"
+  ],
+  "git_commit": "450a8d3d84877afeddd7a98ad0d15cb1584bb116",
+  "source_sha256": {
+    "python/src/fluid_denoise/research/dns.py": "fe692ebdd587c6eaced3aee5456ca8e56b42f6226cf05d2597f39cf9fd57846f",
+    "python/scripts/run_highres_newtonian.py": "5e7d31840c0583a7a656fa3df3ed0670c14c17a43a8994fc8b8d0360f8b07cdc"
+  },
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "matplotlib": "3.10.8",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "threads": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "duration_wall_seconds": 174.29542370200215,
+  "sum_recorded_nonlinear_solver_wall_seconds": 1382.1955593870007,
+  "reuse_requested": true,
+  "cost_scope": "solver wall/CPU includes initial construction, integration and output field construction; per-run diagnostics, compression, I/O and visual export excluded",
+  "timing_limitation": "Shared computational host may run concurrent campaigns; these per-run timings are resource records, not controlled solver-speed comparisons."
+}

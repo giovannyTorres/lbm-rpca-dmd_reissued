@@ -1,0 +1,1806 @@
+[
+  {
+    "run": "bingham_64",
+    "reference": "bingham_128",
+    "scope": "long_horizon_spatial_64_vs_128",
+    "reference_kind": "same-solver numerical reference; not analytical truth",
+    "spatial_transfer": "periodic Fourier low-pass resampling with Nyquist handling",
+    "times": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7000000000000001,
+      0.8,
+      0.9,
+      1.0,
+      1.1,
+      1.2,
+      1.3,
+      1.4000000000000001,
+      1.5,
+      1.6,
+      1.7,
+      1.8,
+      1.9000000000000001,
+      2.0
+    ],
+    "errors": {
+      "velocity": {
+        "all_times_relative_l2": 9.788876285602123e-05,
+        "final_relative_l2": 3.0295705994920887e-05,
+        "maximum_per_time_relative_l2": 0.00015046483016707324,
+        "per_time_relative_l2": [
+          5.258794020381793e-16,
+          0.0001417479518556792,
+          0.00014360410446611312,
+          0.00014753727927951287,
+          0.00015046483016707324,
+          0.00014057164583403478,
+          0.00012643450433706988,
+          0.00011508377189186009,
+          0.00010508187930634467,
+          9.36450787848464e-05,
+          8.344122428659617e-05,
+          7.649685917047028e-05,
+          6.851571200880866e-05,
+          5.8992175928633634e-05,
+          5.164597811098759e-05,
+          4.7756330064879353e-05,
+          4.648514190707033e-05,
+          4.4381817824058855e-05,
+          4.038081116734571e-05,
+          3.567617932942742e-05,
+          3.0295705994920887e-05
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.00010040615516118044,
+        "full_field_final_relative_l2": 3.0482757077642355e-05,
+        "full_field_maximum_per_time_relative_l2": 0.00015466841031433782,
+        "full_field_per_time_relative_l2": [
+          5.390070177860858e-16,
+          0.00014748655407389528,
+          0.00014921686937493866,
+          0.0001526204322601625,
+          0.00015466841031433782,
+          0.0001443162081985225,
+          0.00012921187762262646,
+          0.00011717467441479155,
+          0.00010667192807368524,
+          9.475849629884697e-05,
+          8.442000818291066e-05,
+          7.73053580876684e-05,
+          6.9016203121091e-05,
+          5.930323998465728e-05,
+          5.189303572865241e-05,
+          4.8010386575752796e-05,
+          4.675707839961977e-05,
+          4.470085444430211e-05,
+          4.062980473441208e-05,
+          3.5903881263011884e-05,
+          3.0482757077642355e-05
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "shear_rate": {
+        "all_times_relative_l2": 0.001871758234102789,
+        "final_relative_l2": 0.0005796893076108402,
+        "maximum_per_time_relative_l2": 0.002984751229544377,
+        "per_time_relative_l2": [
+          0.0020598005224998182,
+          0.0028680443134705856,
+          0.0027538465334318407,
+          0.002984751229544377,
+          0.0023176916359413375,
+          0.0023509056543345756,
+          0.002108494759005751,
+          0.0019077117216747487,
+          0.0015338808983129382,
+          0.0012850340294438514,
+          0.0012291961464543546,
+          0.001170785387628375,
+          0.001049109004465481,
+          0.0009525387324264266,
+          0.0008474211904575681,
+          0.0008091396471570544,
+          0.000878642301632049,
+          0.0009402659863653699,
+          0.0009290573922240046,
+          0.000759687757994716,
+          0.0005796893076108402
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.0022745718930707866,
+        "full_field_final_relative_l2": 0.0006965000623497895,
+        "full_field_maximum_per_time_relative_l2": 0.003622551793252563,
+        "full_field_per_time_relative_l2": [
+          0.002989479365627682,
+          0.003622551793252563,
+          0.0035417958013343512,
+          0.0035876331075697173,
+          0.0027923126365934524,
+          0.0026735459561168066,
+          0.002353288213402259,
+          0.002057276398394392,
+          0.0016370390874758858,
+          0.0013822085135068141,
+          0.0013237018042824597,
+          0.0012385210488917082,
+          0.0011130733366261488,
+          0.0010274233328124178,
+          0.000939246550787401,
+          0.0009287930562521634,
+          0.0010406324507988489,
+          0.0011587527512676317,
+          0.001193787801115968,
+          0.0009064796432056305,
+          0.0006965000623497895
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "deviatoric_stress": {
+        "all_times_relative_l2": 0.0026238482619345624,
+        "final_relative_l2": 0.0007331679382832573,
+        "maximum_per_time_relative_l2": 0.004191768888219631,
+        "per_time_relative_l2": [
+          0.0033085424134144392,
+          0.004191768888219631,
+          0.004111059503943042,
+          0.003946972991547801,
+          0.0033116365949208315,
+          0.0033408624734805785,
+          0.0027963912575727024,
+          0.0024230041711568507,
+          0.0023245077704926037,
+          0.0019812186042712614,
+          0.0017463089287949312,
+          0.001659951934688191,
+          0.0014567490697901717,
+          0.001264961025296249,
+          0.0011752863914687888,
+          0.0011423486806462742,
+          0.0011446602378360118,
+          0.001206470177119948,
+          0.0010268678133064301,
+          0.0009291158334773031,
+          0.0007331679382832573
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.0031605641498522823,
+        "full_field_final_relative_l2": 0.0007842007763179616,
+        "full_field_maximum_per_time_relative_l2": 0.005166980644041881,
+        "full_field_per_time_relative_l2": [
+          0.0047673726109638695,
+          0.005166980644041881,
+          0.005122182429191491,
+          0.0048002176163745025,
+          0.003964375527963889,
+          0.003767548158150163,
+          0.0031162157456016957,
+          0.002684138458293141,
+          0.0025011195538664744,
+          0.002092848378858266,
+          0.0018248869487565505,
+          0.001713359396024438,
+          0.0014968487782451674,
+          0.0013010242910500116,
+          0.0012182168880181434,
+          0.001220030851382897,
+          0.0012689661284429829,
+          0.0013699638022957703,
+          0.001216744195644131,
+          0.0010281242846770055,
+          0.0007842007763179616
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "apparent_viscosity": {
+        "all_times_relative_l2": 0.009035998354532282,
+        "final_relative_l2": 0.002832693829099328,
+        "maximum_per_time_relative_l2": 0.01803473370784546,
+        "per_time_relative_l2": [
+          0.01378173243800951,
+          0.016617559311019162,
+          0.016228928166012,
+          0.01803473370784546,
+          0.011172339955790244,
+          0.011120026949948772,
+          0.00935414639858618,
+          0.009321972866955979,
+          0.006247218584938734,
+          0.004897693892597362,
+          0.005199721264458362,
+          0.004876978018209955,
+          0.00471784559152822,
+          0.004913055259751532,
+          0.004140876303153469,
+          0.004048694112775795,
+          0.004823106750281699,
+          0.005542026886888375,
+          0.006060025140215455,
+          0.00421499089221079,
+          0.002832693829099328
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.012625336385326267,
+        "full_field_final_relative_l2": 0.004184873789053828,
+        "full_field_maximum_per_time_relative_l2": 0.023994563449634774,
+        "full_field_per_time_relative_l2": [
+          0.02007291903669104,
+          0.023471728044918753,
+          0.02384354222374705,
+          0.023994563449634774,
+          0.01598107009990548,
+          0.014651408554499288,
+          0.012569400716946271,
+          0.011913014964975665,
+          0.008819410382777062,
+          0.007742149176727149,
+          0.007766012233990863,
+          0.006826290366865632,
+          0.006310052901686437,
+          0.006337261769354171,
+          0.00569681732588193,
+          0.005707880623554588,
+          0.006675412513477173,
+          0.007846772604262156,
+          0.008627148799795611,
+          0.0058371197248335525,
+          0.004184873789053828
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "vorticity": {
+        "all_times_relative_l2": 0.0017170118366893036,
+        "final_relative_l2": 0.0005564982643074015,
+        "maximum_per_time_relative_l2": 0.0024928721319537354,
+        "per_time_relative_l2": [
+          4.2052655707271284e-15,
+          0.0023758158693092577,
+          0.0024041133142543992,
+          0.002449728522496253,
+          0.0024928721319537354,
+          0.002356454338289681,
+          0.0021406097073788976,
+          0.001968380057863833,
+          0.0018060118614294904,
+          0.0016146160757840927,
+          0.001455374869367472,
+          0.001344863914108118,
+          0.001208279961823734,
+          0.0010485599044052437,
+          0.0009303212360952704,
+          0.0008633843398439967,
+          0.0008322419526466746,
+          0.0007872549400251828,
+          0.0007115754717906828,
+          0.0006394660541193573,
+          0.0005564982643074015
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.0018142008120778487,
+        "full_field_final_relative_l2": 0.0005634862554550967,
+        "full_field_maximum_per_time_relative_l2": 0.0026619616373531087,
+        "full_field_per_time_relative_l2": [
+          7.30599454327479e-15,
+          0.0025809531007877826,
+          0.002588479779094362,
+          0.002630863670221844,
+          0.0026619616373531087,
+          0.00248494092768189,
+          0.002238980852042165,
+          0.002042193010910117,
+          0.0018677594199093415,
+          0.001669586998365595,
+          0.0014967873741890756,
+          0.0013726302542352875,
+          0.001228817192307482,
+          0.0010640263785388956,
+          0.000942502895820209,
+          0.0008738579745074622,
+          0.000844245352767541,
+          0.0007979632399620013,
+          0.0007239603532690082,
+          0.0006487364406572046,
+          0.0005634862554550967
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      }
+    },
+    "energy_relative_l2": 5.222665225352196e-07,
+    "dissipation_relative_l2": 3.016324238621805e-06
+  },
+  {
+    "run": "bingham_64_short",
+    "reference": "bingham_256_short",
+    "scope": "short_horizon_spatial_vs_256",
+    "reference_kind": "same-solver numerical reference; not analytical truth",
+    "spatial_transfer": "periodic Fourier low-pass resampling with Nyquist handling",
+    "times": [
+      0.0,
+      0.1
+    ],
+    "errors": {
+      "velocity": {
+        "all_times_relative_l2": 9.870712004645936e-05,
+        "final_relative_l2": 0.0001403448803894934,
+        "maximum_per_time_relative_l2": 0.0001403448803894934,
+        "per_time_relative_l2": [
+          5.123950008525892e-16,
+          0.0001403448803894934
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.00010284579419884121,
+        "full_field_final_relative_l2": 0.00014622937709513702,
+        "full_field_maximum_per_time_relative_l2": 0.00014622937709513702,
+        "full_field_per_time_relative_l2": [
+          5.724386871146703e-16,
+          0.00014622937709513702
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "shear_rate": {
+        "all_times_relative_l2": 0.002457288912661854,
+        "final_relative_l2": 0.0028416055793607756,
+        "maximum_per_time_relative_l2": 0.0028416055793607756,
+        "per_time_relative_l2": [
+          0.002024341166401265,
+          0.0028416055793607756
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.0033540685052869963,
+        "full_field_final_relative_l2": 0.0036681185206872504,
+        "full_field_maximum_per_time_relative_l2": 0.0036681185206872504,
+        "full_field_per_time_relative_l2": [
+          0.0030246604564891466,
+          0.0036681185206872504
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "deviatoric_stress": {
+        "all_times_relative_l2": 0.0037230863372514694,
+        "final_relative_l2": 0.004123662389449681,
+        "maximum_per_time_relative_l2": 0.004123662389449681,
+        "per_time_relative_l2": [
+          0.0032902059299156315,
+          0.004123662389449681
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.0049114671183271485,
+        "full_field_final_relative_l2": 0.005103189968080992,
+        "full_field_maximum_per_time_relative_l2": 0.005103189968080992,
+        "full_field_per_time_relative_l2": [
+          0.004718900382345126,
+          0.005103189968080992
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "apparent_viscosity": {
+        "all_times_relative_l2": 0.014840552370319235,
+        "final_relative_l2": 0.016163349132396077,
+        "maximum_per_time_relative_l2": 0.016163349132396077,
+        "per_time_relative_l2": [
+          0.013376400753495476,
+          0.016163349132396077
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.02222645247591928,
+        "full_field_final_relative_l2": 0.023816041716755547,
+        "full_field_maximum_per_time_relative_l2": 0.023816041716755547,
+        "full_field_per_time_relative_l2": [
+          0.020500801835246066,
+          0.023816041716755547
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "vorticity": {
+        "all_times_relative_l2": 0.0016405238193460357,
+        "final_relative_l2": 0.002348615131602149,
+        "maximum_per_time_relative_l2": 0.002348615131602149,
+        "per_time_relative_l2": [
+          3.444628515023996e-15,
+          0.002348615131602149
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.0018016000829859128,
+        "full_field_final_relative_l2": 0.002579215208564767,
+        "full_field_maximum_per_time_relative_l2": 0.002579215208564767,
+        "full_field_per_time_relative_l2": [
+          1.3429003694514396e-14,
+          0.002579215208564767
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      }
+    },
+    "energy_relative_l2": 8.16282333478094e-08,
+    "dissipation_relative_l2": 4.0047118533197275e-06
+  },
+  {
+    "run": "bingham_128_short",
+    "reference": "bingham_256_short",
+    "scope": "short_horizon_spatial_vs_256",
+    "reference_kind": "same-solver numerical reference; not analytical truth",
+    "spatial_transfer": "periodic Fourier low-pass resampling with Nyquist handling",
+    "times": [
+      0.0,
+      0.1
+    ],
+    "errors": {
+      "velocity": {
+        "all_times_relative_l2": 1.0844768661362125e-05,
+        "final_relative_l2": 1.5419432349639677e-05,
+        "maximum_per_time_relative_l2": 1.5419432349639677e-05,
+        "per_time_relative_l2": [
+          4.654611215221987e-16,
+          1.5419432349639677e-05
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 1.096645051953617e-05,
+        "full_field_final_relative_l2": 1.559244343347668e-05,
+        "full_field_maximum_per_time_relative_l2": 1.559244343347668e-05,
+        "full_field_per_time_relative_l2": [
+          5.394629294079022e-16,
+          1.559244343347668e-05
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "shear_rate": {
+        "all_times_relative_l2": 0.0006029198528940914,
+        "final_relative_l2": 0.0006568653763783663,
+        "maximum_per_time_relative_l2": 0.0006568653763783663,
+        "per_time_relative_l2": [
+          0.0005465903065459503,
+          0.0006568653763783663
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.0008410058835463612,
+        "full_field_final_relative_l2": 0.0008816779114217612,
+        "full_field_maximum_per_time_relative_l2": 0.0008816779114217612,
+        "full_field_per_time_relative_l2": [
+          0.000800333449627273,
+          0.0008816779114217612
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "deviatoric_stress": {
+        "all_times_relative_l2": 0.0009207271275162441,
+        "final_relative_l2": 0.000981500845842855,
+        "maximum_per_time_relative_l2": 0.000981500845842855,
+        "per_time_relative_l2": [
+          0.0008579508943105053,
+          0.000981500845842855
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.0012280028467098482,
+        "full_field_final_relative_l2": 0.0012495600056118652,
+        "full_field_maximum_per_time_relative_l2": 0.0012495600056118652,
+        "full_field_per_time_relative_l2": [
+          0.001206816128184202,
+          0.0012495600056118652
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "apparent_viscosity": {
+        "all_times_relative_l2": 0.005528448225836717,
+        "final_relative_l2": 0.005592003947886747,
+        "maximum_per_time_relative_l2": 0.005592003947886747,
+        "per_time_relative_l2": [
+          0.0054636729755694795,
+          0.005592003947886747
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.008123175974789138,
+        "full_field_final_relative_l2": 0.008217593851937603,
+        "full_field_maximum_per_time_relative_l2": 0.008217593851937603,
+        "full_field_per_time_relative_l2": [
+          0.00802693381259059,
+          0.008217593851937603
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "vorticity": {
+        "all_times_relative_l2": 0.00033802592781914176,
+        "final_relative_l2": 0.0004839262747743065,
+        "maximum_per_time_relative_l2": 0.0004839262747743065,
+        "per_time_relative_l2": [
+          8.680309549155487e-15,
+          0.0004839262747743065
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.00034718738346831997,
+        "full_field_final_relative_l2": 0.0004970420395292026,
+        "full_field_maximum_per_time_relative_l2": 0.0004970420395292026,
+        "full_field_per_time_relative_l2": [
+          1.4483240249253255e-14,
+          0.0004970420395292026
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      }
+    },
+    "energy_relative_l2": 8.171473399210707e-09,
+    "dissipation_relative_l2": 3.2982834485788446e-07
+  },
+  {
+    "run": "hb_thickening_64",
+    "reference": "hb_thickening_128",
+    "scope": "long_horizon_spatial_64_vs_128",
+    "reference_kind": "same-solver numerical reference; not analytical truth",
+    "spatial_transfer": "periodic Fourier low-pass resampling with Nyquist handling",
+    "times": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7000000000000001,
+      0.8,
+      0.9,
+      1.0,
+      1.1,
+      1.2,
+      1.3,
+      1.4000000000000001,
+      1.5,
+      1.6,
+      1.7,
+      1.8,
+      1.9000000000000001,
+      2.0
+    ],
+    "errors": {
+      "velocity": {
+        "all_times_relative_l2": 0.00011796379103405699,
+        "final_relative_l2": 6.626589202266846e-05,
+        "maximum_per_time_relative_l2": 0.00015958773870347232,
+        "per_time_relative_l2": [
+          5.258794020381793e-16,
+          0.00013526140814273146,
+          0.0001462032814953216,
+          0.00015529498447128335,
+          0.00015958773870347232,
+          0.0001485920881550192,
+          0.00013969143403598876,
+          0.00013655568495226215,
+          0.0001341436328406556,
+          0.00012678841645079336,
+          0.00011813254207759364,
+          0.00011317894760962077,
+          0.00010857407146079082,
+          0.0001013092455015159,
+          9.478543109722414e-05,
+          9.203304968668764e-05,
+          9.069814033890156e-05,
+          8.983186830833341e-05,
+          8.610276149311662e-05,
+          7.722408114460708e-05,
+          6.626589202266846e-05
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.00012258846933850653,
+        "full_field_final_relative_l2": 6.683512296207666e-05,
+        "full_field_maximum_per_time_relative_l2": 0.00016708724949921635,
+        "full_field_per_time_relative_l2": [
+          5.390070177860858e-16,
+          0.0001436184190417714,
+          0.00015597657220988207,
+          0.0001644516366882799,
+          0.00016708724949921635,
+          0.00015640688797707373,
+          0.00014596119221953834,
+          0.0001421856339521028,
+          0.00013930775671193237,
+          0.00013077615888683165,
+          0.0001212339396208953,
+          0.00011580162684279536,
+          0.00011056863559957769,
+          0.00010269760268660156,
+          9.574492844757411e-05,
+          9.280526451362035e-05,
+          9.13853758684253e-05,
+          9.044701484431487e-05,
+          8.666835256132762e-05,
+          7.785579486153353e-05,
+          6.683512296207666e-05
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "shear_rate": {
+        "all_times_relative_l2": 0.0022378660355717585,
+        "final_relative_l2": 0.0011197812959953183,
+        "maximum_per_time_relative_l2": 0.003022154940419516,
+        "per_time_relative_l2": [
+          0.0020598005224998182,
+          0.002842020218307911,
+          0.003022154940419516,
+          0.0029686335729561465,
+          0.002613835975142876,
+          0.0027862560360231814,
+          0.0024192306362124097,
+          0.0025561628128339692,
+          0.0023912782750232842,
+          0.0020181065810125133,
+          0.0018715484835838906,
+          0.0018964141611552084,
+          0.0017971526654537069,
+          0.0016989388760271,
+          0.0015258563647732512,
+          0.001480182451144898,
+          0.0015147547365212248,
+          0.001590243795520384,
+          0.0016222971920659744,
+          0.0013626154347275655,
+          0.0011197812959953183
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.002613892262666863,
+        "full_field_final_relative_l2": 0.0012333695448826746,
+        "full_field_maximum_per_time_relative_l2": 0.0037919895466461116,
+        "full_field_per_time_relative_l2": [
+          0.002989479365627682,
+          0.0036347062841841954,
+          0.0037919895466461116,
+          0.00359812453886332,
+          0.0030872993952046923,
+          0.0031186210802970236,
+          0.002645834875549829,
+          0.0027545832171285943,
+          0.0025038872656106903,
+          0.0020962689292044452,
+          0.001932456783628203,
+          0.001961849979137171,
+          0.0018485143047418317,
+          0.0017648613921127242,
+          0.0015816192111784567,
+          0.0015839833936643261,
+          0.0016768992138476446,
+          0.001801565079302554,
+          0.001840795673081719,
+          0.0015091000999496434,
+          0.0012333695448826746
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "deviatoric_stress": {
+        "all_times_relative_l2": 0.0027880438226489863,
+        "final_relative_l2": 0.0013789917873813127,
+        "maximum_per_time_relative_l2": 0.003782229381668169,
+        "per_time_relative_l2": [
+          0.0027455652380960135,
+          0.00356182690901444,
+          0.003782229381668169,
+          0.00361043396611594,
+          0.0032954218740152315,
+          0.0033124161343401582,
+          0.0028493200874558423,
+          0.002789212303824149,
+          0.002903724054929075,
+          0.0025763925538990493,
+          0.00241506515855518,
+          0.002319465866701136,
+          0.0023098281311873564,
+          0.002183104340782514,
+          0.002082368607413763,
+          0.0019255075013573269,
+          0.0019930088816877065,
+          0.0019075557107516732,
+          0.0019265717397619275,
+          0.001653697704284552,
+          0.0013789917873813127
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.003233638699661912,
+        "full_field_final_relative_l2": 0.001470767168037057,
+        "full_field_maximum_per_time_relative_l2": 0.004622892446146539,
+        "full_field_per_time_relative_l2": [
+          0.0039543991280465525,
+          0.004431282277762879,
+          0.004622892446146539,
+          0.004289738112187867,
+          0.0038165817400286537,
+          0.003693428644247222,
+          0.0032296052379708396,
+          0.0029951606513469358,
+          0.0030684901468369854,
+          0.002701860347903268,
+          0.0024992666571903204,
+          0.0023779538000020914,
+          0.0023476660860101304,
+          0.0022093201922071533,
+          0.002112178885273074,
+          0.001988309607273734,
+          0.002122793213977397,
+          0.002101200804806929,
+          0.002145113452697714,
+          0.0018109508908200943,
+          0.001470767168037057
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "apparent_viscosity": {
+        "all_times_relative_l2": 0.010672049231156498,
+        "final_relative_l2": 0.004301068610572527,
+        "maximum_per_time_relative_l2": 0.01692069989320387,
+        "per_time_relative_l2": [
+          0.014411457134205717,
+          0.016870107482634518,
+          0.01692069989320387,
+          0.016368963023367492,
+          0.01210895674836576,
+          0.0140828385512632,
+          0.011614707762674184,
+          0.011529975003620395,
+          0.010133461849811006,
+          0.008882460647241212,
+          0.008294004786792533,
+          0.008411517794035686,
+          0.007230307234476162,
+          0.0074026496892186195,
+          0.005714244813048162,
+          0.0066779567448684895,
+          0.006897889865969286,
+          0.008207917786481387,
+          0.008608806865722256,
+          0.006198596581941196,
+          0.004301068610572527
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.014577494300071606,
+        "full_field_final_relative_l2": 0.006044376529987022,
+        "full_field_maximum_per_time_relative_l2": 0.02452286937099796,
+        "full_field_per_time_relative_l2": [
+          0.02094201320120482,
+          0.02392695741568738,
+          0.02452286937099796,
+          0.023003624164171302,
+          0.01743099797192277,
+          0.018149433412650018,
+          0.014850866476303638,
+          0.01524088315817868,
+          0.013155481371036016,
+          0.011486306769641711,
+          0.01049178482175664,
+          0.010591041784010094,
+          0.008991936942425815,
+          0.009159088764000536,
+          0.007299099167871007,
+          0.008552957556364059,
+          0.009469931689367645,
+          0.010999476108794924,
+          0.011521916531484879,
+          0.008358281446282806,
+          0.006044376529987022
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "vorticity": {
+        "all_times_relative_l2": 0.0021287544166623236,
+        "final_relative_l2": 0.0012176157135487943,
+        "maximum_per_time_relative_l2": 0.0027148128327814237,
+        "per_time_relative_l2": [
+          4.2052655707271284e-15,
+          0.002315865529201677,
+          0.0025438915174477894,
+          0.0026650627286692275,
+          0.0027148128327814237,
+          0.002601544258482239,
+          0.002454179886108632,
+          0.0024362036583271992,
+          0.0024204356914936786,
+          0.00230895081103629,
+          0.002183818965630652,
+          0.0021146270402576475,
+          0.002036071640889208,
+          0.0019044558599389297,
+          0.0017783413617354256,
+          0.0017150077956456632,
+          0.0016657211314132269,
+          0.001625743038163625,
+          0.0015416403869974605,
+          0.0013899329411723655,
+          0.0012176157135487943
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.0022945128723970134,
+        "full_field_final_relative_l2": 0.0012444336307044406,
+        "full_field_maximum_per_time_relative_l2": 0.0030237513365584624,
+        "full_field_per_time_relative_l2": [
+          7.30599454327479e-15,
+          0.0026167042299451455,
+          0.002827433481295599,
+          0.002979228748131421,
+          0.0030237513365584624,
+          0.002841840212783038,
+          0.0026764272637708393,
+          0.0026179773417679686,
+          0.0025720219936455607,
+          0.0024410295116348226,
+          0.0022932108369815045,
+          0.0022017374657232395,
+          0.002100914270365777,
+          0.0019509145327258179,
+          0.001817774396337219,
+          0.0017510216036086344,
+          0.0016986439889013656,
+          0.0016543948113897427,
+          0.0015624285874975361,
+          0.0014108736613324647,
+          0.0012444336307044406
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      }
+    },
+    "energy_relative_l2": 1.9749685332346236e-07,
+    "dissipation_relative_l2": 1.6640705185121401e-06
+  },
+  {
+    "run": "hb_thickening_64_short",
+    "reference": "hb_thickening_256_short",
+    "scope": "short_horizon_spatial_vs_256",
+    "reference_kind": "same-solver numerical reference; not analytical truth",
+    "spatial_transfer": "periodic Fourier low-pass resampling with Nyquist handling",
+    "times": [
+      0.0,
+      0.1
+    ],
+    "errors": {
+      "velocity": {
+        "all_times_relative_l2": 9.362490664999031e-05,
+        "final_relative_l2": 0.0001331144595173957,
+        "maximum_per_time_relative_l2": 0.0001331144595173957,
+        "per_time_relative_l2": [
+          5.123950008525892e-16,
+          0.0001331144595173957
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.0001003578223671276,
+        "full_field_final_relative_l2": 0.00014268721595390893,
+        "full_field_maximum_per_time_relative_l2": 0.00014268721595390893,
+        "full_field_per_time_relative_l2": [
+          5.724386871146703e-16,
+          0.00014268721595390893
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "shear_rate": {
+        "all_times_relative_l2": 0.002473201843459535,
+        "final_relative_l2": 0.0028701907354934963,
+        "maximum_per_time_relative_l2": 0.0028701907354934963,
+        "per_time_relative_l2": [
+          0.002024341166401265,
+          0.0028701907354934963
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.0034085795256063485,
+        "full_field_final_relative_l2": 0.003770100115171697,
+        "full_field_maximum_per_time_relative_l2": 0.003770100115171697,
+        "full_field_per_time_relative_l2": [
+          0.0030246604564891466,
+          0.003770100115171697
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "deviatoric_stress": {
+        "all_times_relative_l2": 0.0031298468414248967,
+        "final_relative_l2": 0.003502998519156081,
+        "maximum_per_time_relative_l2": 0.003502998519156081,
+        "per_time_relative_l2": [
+          0.0027304281095114156,
+          0.003502998519156081
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.004130522846169112,
+        "full_field_final_relative_l2": 0.0043492121521495975,
+        "full_field_maximum_per_time_relative_l2": 0.0043492121521495975,
+        "full_field_per_time_relative_l2": [
+          0.0039124746230733915,
+          0.0043492121521495975
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "apparent_viscosity": {
+        "all_times_relative_l2": 0.015534438004507626,
+        "final_relative_l2": 0.016929125507111318,
+        "maximum_per_time_relative_l2": 0.016929125507111318,
+        "per_time_relative_l2": [
+          0.014003036071196706,
+          0.016929125507111318
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.023340444834652616,
+        "full_field_final_relative_l2": 0.025134217045010895,
+        "full_field_maximum_per_time_relative_l2": 0.025134217045010895,
+        "full_field_per_time_relative_l2": [
+          0.021398573966248526,
+          0.025134217045010895
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "vorticity": {
+        "all_times_relative_l2": 0.0015906774086363565,
+        "final_relative_l2": 0.002277932905868642,
+        "maximum_per_time_relative_l2": 0.002277932905868642,
+        "per_time_relative_l2": [
+          3.444628515023996e-15,
+          0.002277932905868642
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.00185420158796653,
+        "full_field_final_relative_l2": 0.002655311990909199,
+        "full_field_maximum_per_time_relative_l2": 0.002655311990909199,
+        "full_field_per_time_relative_l2": [
+          1.3429003694514396e-14,
+          0.002655311990909199
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      }
+    },
+    "energy_relative_l2": 5.256694433895497e-08,
+    "dissipation_relative_l2": 2.5021814199320378e-06
+  },
+  {
+    "run": "hb_thickening_128_short",
+    "reference": "hb_thickening_256_short",
+    "scope": "short_horizon_spatial_vs_256",
+    "reference_kind": "same-solver numerical reference; not analytical truth",
+    "spatial_transfer": "periodic Fourier low-pass resampling with Nyquist handling",
+    "times": [
+      0.0,
+      0.1
+    ],
+    "errors": {
+      "velocity": {
+        "all_times_relative_l2": 1.5074090475811415e-05,
+        "final_relative_l2": 2.1432111142943262e-05,
+        "maximum_per_time_relative_l2": 2.1432111142943262e-05,
+        "per_time_relative_l2": [
+          4.654611215221987e-16,
+          2.1432111142943262e-05
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 1.5229404673996811e-05,
+        "full_field_final_relative_l2": 2.1652934492925356e-05,
+        "full_field_maximum_per_time_relative_l2": 2.1652934492925356e-05,
+        "full_field_per_time_relative_l2": [
+          5.394629294079022e-16,
+          2.1652934492925356e-05
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "shear_rate": {
+        "all_times_relative_l2": 0.0006687001146558182,
+        "final_relative_l2": 0.000776590704042842,
+        "maximum_per_time_relative_l2": 0.000776590704042842,
+        "per_time_relative_l2": [
+          0.0005465903065459503,
+          0.000776590704042842
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.0008971309997574516,
+        "full_field_final_relative_l2": 0.0009886843135423406,
+        "full_field_maximum_per_time_relative_l2": 0.0009886843135423406,
+        "full_field_per_time_relative_l2": [
+          0.000800333449627273,
+          0.0009886843135423406
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "deviatoric_stress": {
+        "all_times_relative_l2": 0.0008781527563578242,
+        "final_relative_l2": 0.000999201207251688,
+        "maximum_per_time_relative_l2": 0.000999201207251688,
+        "per_time_relative_l2": [
+          0.0007458133722340936,
+          0.000999201207251688
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.0011361950840702304,
+        "full_field_final_relative_l2": 0.0012214773700791788,
+        "full_field_maximum_per_time_relative_l2": 0.0012214773700791788,
+        "full_field_per_time_relative_l2": [
+          0.0010491836665130591,
+          0.0012214773700791788
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "apparent_viscosity": {
+        "all_times_relative_l2": 0.005888790968614867,
+        "final_relative_l2": 0.0061214122279101175,
+        "maximum_per_time_relative_l2": 0.0061214122279101175,
+        "per_time_relative_l2": [
+          0.00564680896963665,
+          0.0061214122279101175
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.008555220148897832,
+        "full_field_final_relative_l2": 0.008805580835098055,
+        "full_field_maximum_per_time_relative_l2": 0.008805580835098055,
+        "full_field_per_time_relative_l2": [
+          0.008297534811557806,
+          0.008805580835098055
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "vorticity": {
+        "all_times_relative_l2": 0.000467230047191008,
+        "final_relative_l2": 0.0006690974494364208,
+        "maximum_per_time_relative_l2": 0.0006690974494364208,
+        "per_time_relative_l2": [
+          8.680309549155487e-15,
+          0.0006690974494364208
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.00047767006691499375,
+        "full_field_final_relative_l2": 0.0006840480908921956,
+        "full_field_maximum_per_time_relative_l2": 0.0006840480908921956,
+        "full_field_per_time_relative_l2": [
+          1.4483240249253255e-14,
+          0.0006840480908921956
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      }
+    },
+    "energy_relative_l2": 1.1266071801574836e-08,
+    "dissipation_relative_l2": 5.370458791339387e-07
+  },
+  {
+    "run": "hb_thinning_64",
+    "reference": "hb_thinning_128",
+    "scope": "long_horizon_spatial_64_vs_128",
+    "reference_kind": "same-solver numerical reference; not analytical truth",
+    "spatial_transfer": "periodic Fourier low-pass resampling with Nyquist handling",
+    "times": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7000000000000001,
+      0.8,
+      0.9,
+      1.0,
+      1.1,
+      1.2,
+      1.3,
+      1.4000000000000001,
+      1.5,
+      1.6,
+      1.7,
+      1.8,
+      1.9000000000000001,
+      2.0
+    ],
+    "errors": {
+      "velocity": {
+        "all_times_relative_l2": 0.00012746758393458336,
+        "final_relative_l2": 3.1079376849516225e-05,
+        "maximum_per_time_relative_l2": 0.00022160379209006665,
+        "per_time_relative_l2": [
+          5.258794020381793e-16,
+          0.00022160379209006665,
+          0.00020237219414374186,
+          0.00019422852158621623,
+          0.000192654641941551,
+          0.0001800785366299666,
+          0.00016020109049526802,
+          0.00014312402016633616,
+          0.00012727223526897962,
+          0.00011117193044393943,
+          9.675024882778084e-05,
+          8.414123380166696e-05,
+          7.127662033150433e-05,
+          5.9748587050337864e-05,
+          5.1273341006731345e-05,
+          4.8985351359514427e-05,
+          4.785018239811253e-05,
+          4.4643577940777164e-05,
+          4.292667933984842e-05,
+          3.6732024430284354e-05,
+          3.1079376849516225e-05
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.00012983298214447534,
+        "full_field_final_relative_l2": 3.1292062965156036e-05,
+        "full_field_maximum_per_time_relative_l2": 0.00022702302119117322,
+        "full_field_per_time_relative_l2": [
+          5.390070177860858e-16,
+          0.00022702302119117322,
+          0.00020676990798596103,
+          0.00019874629656687926,
+          0.00019695593277667132,
+          0.00018302826260397403,
+          0.0001628343494215557,
+          0.00014487828362611693,
+          0.00012859551273701518,
+          0.00011223815006204676,
+          9.761577307824711e-05,
+          8.481262624317638e-05,
+          7.183601228009972e-05,
+          6.02437694738232e-05,
+          5.1748402622001345e-05,
+          4.950613617187886e-05,
+          4.837968966311871e-05,
+          4.5196496260811144e-05,
+          4.342782324391081e-05,
+          3.7031309926659333e-05,
+          3.1292062965156036e-05
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "shear_rate": {
+        "all_times_relative_l2": 0.00208867191701713,
+        "final_relative_l2": 0.0005141568546550109,
+        "maximum_per_time_relative_l2": 0.003527999216797411,
+        "per_time_relative_l2": [
+          0.0020598005224998182,
+          0.003527999216797411,
+          0.003172234478440964,
+          0.003080399084929654,
+          0.002772276006847659,
+          0.002598092749080007,
+          0.002315099231107629,
+          0.001999018087530496,
+          0.0017417911618793347,
+          0.0016061441832729744,
+          0.0014362302636220746,
+          0.0012636185815390506,
+          0.001055057992208901,
+          0.0008787714654966704,
+          0.0007714585513496563,
+          0.0007840194162703276,
+          0.0008032058226122241,
+          0.0008484980393834312,
+          0.000806179409623524,
+          0.0006667079662001323,
+          0.0005141568546550109
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.002489824321979802,
+        "full_field_final_relative_l2": 0.000558247702044268,
+        "full_field_maximum_per_time_relative_l2": 0.004243986761544545,
+        "full_field_per_time_relative_l2": [
+          0.002989479365627682,
+          0.004243986761544545,
+          0.003932808687457302,
+          0.003716026733457083,
+          0.0032924534397798548,
+          0.0029671727280955857,
+          0.002568123329215491,
+          0.002185062541756746,
+          0.0018599352746644258,
+          0.0016843998257854457,
+          0.0014971025498960646,
+          0.001326668675981,
+          0.0011161104163262354,
+          0.0009532849473286997,
+          0.0008508215963415738,
+          0.0008856073324085037,
+          0.0009144549723137102,
+          0.0010049633598091955,
+          0.0009503518306247055,
+          0.0007578830351446435,
+          0.000558247702044268
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "deviatoric_stress": {
+        "all_times_relative_l2": 0.0042821361298350305,
+        "final_relative_l2": 0.0011325839747504502,
+        "maximum_per_time_relative_l2": 0.007810580143349109,
+        "per_time_relative_l2": [
+          0.006511312953085361,
+          0.007810580143349109,
+          0.007078693820966485,
+          0.006761460833707986,
+          0.005631897466053474,
+          0.004669541042508074,
+          0.004167625630568688,
+          0.0036419240424868616,
+          0.0030551795866938874,
+          0.0026951261044127436,
+          0.0024359233398457305,
+          0.002140286822003195,
+          0.0019379877035959451,
+          0.0018237433001486105,
+          0.001746147641834256,
+          0.0019576745309907695,
+          0.002008954523682356,
+          0.002171989189160968,
+          0.0020794008094108547,
+          0.001663462709863699,
+          0.0011325839747504502
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.005493706991162836,
+        "full_field_final_relative_l2": 0.0013103973308359858,
+        "full_field_maximum_per_time_relative_l2": 0.009928567119057803,
+        "full_field_per_time_relative_l2": [
+          0.009396925765335703,
+          0.009928567119057803,
+          0.009445154267764164,
+          0.00872267222215727,
+          0.007117905728994898,
+          0.005797950742494394,
+          0.0049662770154780276,
+          0.0042089104841438645,
+          0.0035051770916356344,
+          0.0030593059795572517,
+          0.0027035595829387783,
+          0.0023785439004688266,
+          0.002200967587181765,
+          0.002098466547490528,
+          0.002004981494043712,
+          0.0023067332128660443,
+          0.0023989074319232194,
+          0.0027212905974377307,
+          0.002589256054445299,
+          0.0019925738764484226,
+          0.0013103973308359858
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "apparent_viscosity": {
+        "all_times_relative_l2": 0.038490118306914484,
+        "final_relative_l2": 0.05659612919174691,
+        "maximum_per_time_relative_l2": 0.06095629174579371,
+        "per_time_relative_l2": [
+          0.03645543761689357,
+          0.04969142089152782,
+          0.04588076731406715,
+          0.042497091156019004,
+          0.02708595070507791,
+          0.02847286169807778,
+          0.0398702385834503,
+          0.06095629174579371,
+          0.027139960401592268,
+          0.027154619878530406,
+          0.023754684490967827,
+          0.03838755587831722,
+          0.031111616001498983,
+          0.035989436773085026,
+          0.01892292268910343,
+          0.02631682076070173,
+          0.03510582114538952,
+          0.04074923801564995,
+          0.040430866225725656,
+          0.04292552365838739,
+          0.05659612919174691
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.056548596887616195,
+        "full_field_final_relative_l2": 0.06957061060353661,
+        "full_field_maximum_per_time_relative_l2": 0.07906294382096335,
+        "full_field_per_time_relative_l2": [
+          0.0623108633211922,
+          0.07906294382096335,
+          0.06539225857645133,
+          0.06502213914527338,
+          0.042413474699065264,
+          0.040543005356840287,
+          0.06021126948324765,
+          0.07594615307938217,
+          0.03939937909753204,
+          0.04837734981872036,
+          0.038003653355222516,
+          0.053276255893613414,
+          0.04981792732178941,
+          0.05969354082381841,
+          0.03309022802425542,
+          0.04044873366149966,
+          0.04885728323771485,
+          0.05858475114231704,
+          0.06325163042779915,
+          0.06465646646842241,
+          0.06957061060353661
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "vorticity": {
+        "all_times_relative_l2": 0.002163062203267684,
+        "final_relative_l2": 0.0005488436059619583,
+        "maximum_per_time_relative_l2": 0.0035778787652878206,
+        "per_time_relative_l2": [
+          4.2052655707271284e-15,
+          0.0035778787652878206,
+          0.0032051456625474227,
+          0.0030964159785396893,
+          0.003104785897720298,
+          0.002893569093490348,
+          0.0026336849724548344,
+          0.002365844076403503,
+          0.002118307546423623,
+          0.0018635353282210059,
+          0.0016292863717450143,
+          0.0014193547956388012,
+          0.001215540640649734,
+          0.001041566825887591,
+          0.0009141322036377436,
+          0.0008779501666135035,
+          0.0008524955745223653,
+          0.0007918366218427543,
+          0.0007475512245652781,
+          0.0006390411822944908,
+          0.0005488436059619583
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.0022609733946443444,
+        "full_field_final_relative_l2": 0.0005603099073506765,
+        "full_field_maximum_per_time_relative_l2": 0.0037750618870935554,
+        "full_field_per_time_relative_l2": [
+          7.30599454327479e-15,
+          0.0037750618870935554,
+          0.0034005073485151257,
+          0.003272788564237116,
+          0.0032509439194571476,
+          0.0030236105325462514,
+          0.0027258564002781717,
+          0.002442622736890068,
+          0.002173879554553344,
+          0.001901420301289626,
+          0.0016581218327719788,
+          0.0014445990763106657,
+          0.0012385093614105886,
+          0.001063174890270847,
+          0.0009370853267284078,
+          0.0009003990432859355,
+          0.0008760299673691455,
+          0.0008172374690471058,
+          0.0007689756604790909,
+          0.0006540744179407518,
+          0.0005603099073506765
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      }
+    },
+    "energy_relative_l2": 1.022814000140174e-06,
+    "dissipation_relative_l2": 4.872160417264591e-06
+  },
+  {
+    "run": "hb_thinning_64_short",
+    "reference": "hb_thinning_256_short",
+    "scope": "short_horizon_spatial_vs_256",
+    "reference_kind": "same-solver numerical reference; not analytical truth",
+    "spatial_transfer": "periodic Fourier low-pass resampling with Nyquist handling",
+    "times": [
+      0.0,
+      0.1
+    ],
+    "errors": {
+      "velocity": {
+        "all_times_relative_l2": 0.00015529483238453748,
+        "final_relative_l2": 0.0002208524259025018,
+        "maximum_per_time_relative_l2": 0.0002208524259025018,
+        "per_time_relative_l2": [
+          5.123950008525892e-16,
+          0.0002208524259025018
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.00015899874669600427,
+        "full_field_final_relative_l2": 0.00022611994464451465,
+        "full_field_maximum_per_time_relative_l2": 0.00022611994464451465,
+        "full_field_per_time_relative_l2": [
+          5.724386871146703e-16,
+          0.00022611994464451465
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "shear_rate": {
+        "all_times_relative_l2": 0.0028451985497853034,
+        "final_relative_l2": 0.0035055573375036907,
+        "maximum_per_time_relative_l2": 0.0035055573375036907,
+        "per_time_relative_l2": [
+          0.002024341166401265,
+          0.0035055573375036907
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.003700101867881444,
+        "full_field_final_relative_l2": 0.004296081183139929,
+        "full_field_maximum_per_time_relative_l2": 0.004296081183139929,
+        "full_field_per_time_relative_l2": [
+          0.0030246604564891466,
+          0.004296081183139929
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "deviatoric_stress": {
+        "all_times_relative_l2": 0.007070588285531269,
+        "final_relative_l2": 0.007625559070984419,
+        "maximum_per_time_relative_l2": 0.007625559070984419,
+        "per_time_relative_l2": [
+          0.006480875148893299,
+          0.007625559070984419
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.009534230126658891,
+        "full_field_final_relative_l2": 0.009752478331337317,
+        "full_field_maximum_per_time_relative_l2": 0.009752478331337317,
+        "full_field_per_time_relative_l2": [
+          0.00931542591152006,
+          0.009752478331337317
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "apparent_viscosity": {
+        "all_times_relative_l2": 0.03612920159252919,
+        "final_relative_l2": 0.042288067862874416,
+        "maximum_per_time_relative_l2": 0.042288067862874416,
+        "per_time_relative_l2": [
+          0.02825529492907214,
+          0.042288067862874416
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.06252966122049328,
+        "full_field_final_relative_l2": 0.07095337597419335,
+        "full_field_maximum_per_time_relative_l2": 0.07095337597419335,
+        "full_field_per_time_relative_l2": [
+          0.05223139565563872,
+          0.07095337597419335
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "vorticity": {
+        "all_times_relative_l2": 0.0024872118830440893,
+        "final_relative_l2": 0.00356043311480205,
+        "maximum_per_time_relative_l2": 0.00356043311480205,
+        "per_time_relative_l2": [
+          3.444628515023996e-15,
+          0.00356043311480205
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.0026377364185108812,
+        "full_field_final_relative_l2": 0.003775906811960203,
+        "full_field_maximum_per_time_relative_l2": 0.003775906811960203,
+        "full_field_per_time_relative_l2": [
+          1.3429003694514396e-14,
+          0.003775906811960203
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      }
+    },
+    "energy_relative_l2": 2.280903819952673e-07,
+    "dissipation_relative_l2": 7.992141248095466e-06
+  },
+  {
+    "run": "hb_thinning_128_short",
+    "reference": "hb_thinning_256_short",
+    "scope": "short_horizon_spatial_vs_256",
+    "reference_kind": "same-solver numerical reference; not analytical truth",
+    "spatial_transfer": "periodic Fourier low-pass resampling with Nyquist handling",
+    "times": [
+      0.0,
+      0.1
+    ],
+    "errors": {
+      "velocity": {
+        "all_times_relative_l2": 1.3539972191960593e-05,
+        "final_relative_l2": 1.925586098108954e-05,
+        "maximum_per_time_relative_l2": 1.925586098108954e-05,
+        "per_time_relative_l2": [
+          4.654611215221987e-16,
+          1.925586098108954e-05
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 1.3804757248066532e-05,
+        "full_field_final_relative_l2": 1.963242484377528e-05,
+        "full_field_maximum_per_time_relative_l2": 1.963242484377528e-05,
+        "full_field_per_time_relative_l2": [
+          5.394629294079022e-16,
+          1.963242484377528e-05
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "shear_rate": {
+        "all_times_relative_l2": 0.000647634663134641,
+        "final_relative_l2": 0.0007389415975347398,
+        "maximum_per_time_relative_l2": 0.0007389415975347398,
+        "per_time_relative_l2": [
+          0.0005465903065459503,
+          0.0007389415975347398
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.000886658498132176,
+        "full_field_final_relative_l2": 0.0009689967854757171,
+        "full_field_maximum_per_time_relative_l2": 0.0009689967854757171,
+        "full_field_per_time_relative_l2": [
+          0.000800333449627273,
+          0.0009689967854757171
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "deviatoric_stress": {
+        "all_times_relative_l2": 0.0020725709683667537,
+        "final_relative_l2": 0.002150698006606499,
+        "maximum_per_time_relative_l2": 0.002150698006606499,
+        "per_time_relative_l2": [
+          0.001993051512860987,
+          0.002150698006606499
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.0028359688509348746,
+        "full_field_final_relative_l2": 0.002885537087319158,
+        "full_field_maximum_per_time_relative_l2": 0.002885537087319158,
+        "full_field_per_time_relative_l2": [
+          0.0027865453417306608,
+          0.002885537087319158
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "apparent_viscosity": {
+        "all_times_relative_l2": 0.03558140136461627,
+        "final_relative_l2": 0.037413209890693244,
+        "maximum_per_time_relative_l2": 0.037413209890693244,
+        "per_time_relative_l2": [
+          0.03354923384293285,
+          0.037413209890693244
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.046851132233978465,
+        "full_field_final_relative_l2": 0.05022535586914862,
+        "full_field_maximum_per_time_relative_l2": 0.05022535586914862,
+        "full_field_per_time_relative_l2": [
+          0.04302028140718285,
+          0.05022535586914862
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "vorticity": {
+        "all_times_relative_l2": 0.000436741834715411,
+        "final_relative_l2": 0.0006251938111350706,
+        "maximum_per_time_relative_l2": 0.0006251938111350706,
+        "per_time_relative_l2": [
+          8.680309549155487e-15,
+          0.0006251938111350706
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 0.0004567793511803069,
+        "full_field_final_relative_l2": 0.0006538774123072478,
+        "full_field_maximum_per_time_relative_l2": 0.0006538774123072478,
+        "full_field_per_time_relative_l2": [
+          1.4483240249253255e-14,
+          0.0006538774123072478
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      }
+    },
+    "energy_relative_l2": 1.1715457108994144e-08,
+    "dissipation_relative_l2": 3.597792778655649e-07
+  },
+  {
+    "run": "hb_thinning_128_dt0p0004",
+    "reference": "hb_thinning_128_dt0p0001",
+    "scope": "fixed_grid_temporal_refinement",
+    "reference_kind": "same-solver numerical reference; not analytical truth",
+    "spatial_transfer": "periodic Fourier low-pass resampling with Nyquist handling",
+    "times": [
+      0.0,
+      0.05,
+      0.1
+    ],
+    "errors": {
+      "velocity": {
+        "all_times_relative_l2": 2.5449760864325536e-13,
+        "final_relative_l2": 3.0248537516855215e-13,
+        "maximum_per_time_relative_l2": 3.222292372884804e-13,
+        "per_time_relative_l2": [
+          3.0166968471172443e-16,
+          3.222292372884804e-13,
+          3.0248537516855215e-13
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 2.5450264054740535e-13,
+        "full_field_final_relative_l2": 3.0248985134198273e-13,
+        "full_field_maximum_per_time_relative_l2": 3.2223700514684064e-13,
+        "full_field_per_time_relative_l2": [
+          3.0166968471172443e-16,
+          3.2223700514684064e-13,
+          3.0248985134198273e-13
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "shear_rate": {
+        "all_times_relative_l2": 4.116406789060552e-12,
+        "final_relative_l2": 4.753936525422599e-12,
+        "maximum_per_time_relative_l2": 5.364962112384683e-12,
+        "per_time_relative_l2": [
+          2.853083752579062e-16,
+          5.364962112384683e-12,
+          4.753936525422599e-12
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 4.116404697564168e-12,
+        "full_field_final_relative_l2": 4.753929518643107e-12,
+        "full_field_maximum_per_time_relative_l2": 5.3649633593075385e-12,
+        "full_field_per_time_relative_l2": [
+          2.853083752579062e-16,
+          5.3649633593075385e-12,
+          4.753929518643107e-12
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "deviatoric_stress": {
+        "all_times_relative_l2": 1.5453690374181244e-11,
+        "final_relative_l2": 2.0269522439448832e-11,
+        "maximum_per_time_relative_l2": 2.0269522439448832e-11,
+        "per_time_relative_l2": [
+          3.359333800341872e-16,
+          1.7601935190319604e-11,
+          2.0269522439448832e-11
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 1.5453688829160087e-11,
+        "full_field_final_relative_l2": 2.0269522045251193e-11,
+        "full_field_maximum_per_time_relative_l2": 2.0269522045251193e-11,
+        "full_field_per_time_relative_l2": [
+          3.359333800341872e-16,
+          1.7601931568795555e-11,
+          2.0269522045251193e-11
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "apparent_viscosity": {
+        "all_times_relative_l2": 6.666836560899125e-11,
+        "final_relative_l2": 9.597158499598098e-11,
+        "maximum_per_time_relative_l2": 9.597158499598098e-11,
+        "per_time_relative_l2": [
+          2.7679592821351194e-16,
+          6.244271616872613e-11,
+          9.597158499598098e-11
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 6.66683651895054e-11,
+        "full_field_final_relative_l2": 9.597158356336708e-11,
+        "full_field_maximum_per_time_relative_l2": 9.597158356336708e-11,
+        "full_field_per_time_relative_l2": [
+          2.7679592821351194e-16,
+          6.244271707568937e-11,
+          9.597158356336708e-11
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "vorticity": {
+        "all_times_relative_l2": 6.450828321571144e-12,
+        "final_relative_l2": 7.851263825559614e-12,
+        "maximum_per_time_relative_l2": 8.042894354631608e-12,
+        "per_time_relative_l2": [
+          3.3068297870432277e-16,
+          8.042894354631608e-12,
+          7.851263825559614e-12
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 6.450825989807748e-12,
+        "full_field_final_relative_l2": 7.851259935361345e-12,
+        "full_field_maximum_per_time_relative_l2": 8.042892450393953e-12,
+        "full_field_per_time_relative_l2": [
+          3.3068297870432277e-16,
+          8.042892450393953e-12,
+          7.851259935361345e-12
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      }
+    },
+    "energy_relative_l2": 6.911110766016382e-14,
+    "dissipation_relative_l2": 4.793493573976612e-14
+  },
+  {
+    "run": "hb_thinning_128_dt0p0002",
+    "reference": "hb_thinning_128_dt0p0001",
+    "scope": "fixed_grid_temporal_refinement",
+    "reference_kind": "same-solver numerical reference; not analytical truth",
+    "spatial_transfer": "periodic Fourier low-pass resampling with Nyquist handling",
+    "times": [
+      0.0,
+      0.05,
+      0.1
+    ],
+    "errors": {
+      "velocity": {
+        "all_times_relative_l2": 3.851512838563909e-14,
+        "final_relative_l2": 5.5009026191841085e-14,
+        "maximum_per_time_relative_l2": 5.5009026191841085e-14,
+        "per_time_relative_l2": [
+          3.0166968471172443e-16,
+          3.818159324726051e-14,
+          5.5009026191841085e-14
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 3.854613616435898e-14,
+        "full_field_final_relative_l2": 5.504014166268658e-14,
+        "full_field_maximum_per_time_relative_l2": 5.504014166268658e-14,
+        "full_field_per_time_relative_l2": [
+          3.0166968471172443e-16,
+          3.8231094295288147e-14,
+          5.504014166268658e-14
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "shear_rate": {
+        "all_times_relative_l2": 3.2333077375776984e-13,
+        "final_relative_l2": 3.387658171874266e-13,
+        "maximum_per_time_relative_l2": 4.4907564018511667e-13,
+        "per_time_relative_l2": [
+          2.853083752579062e-16,
+          4.4907564018511667e-13,
+          3.387658171874266e-13
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 3.2332610093958924e-13,
+        "full_field_final_relative_l2": 3.387551908667606e-13,
+        "full_field_maximum_per_time_relative_l2": 4.4907337122658966e-13,
+        "full_field_per_time_relative_l2": [
+          2.853083752579062e-16,
+          4.4907337122658966e-13,
+          3.387551908667606e-13
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "deviatoric_stress": {
+        "all_times_relative_l2": 1.0375777260561269e-12,
+        "final_relative_l2": 1.2636144013864822e-12,
+        "maximum_per_time_relative_l2": 1.28437547908512e-12,
+        "per_time_relative_l2": [
+          3.359333800341872e-16,
+          1.28437547908512e-12,
+          1.2636144013864822e-12
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 1.0375772882473696e-12,
+        "full_field_final_relative_l2": 1.2636153232923248e-12,
+        "full_field_maximum_per_time_relative_l2": 1.2843735192360941e-12,
+        "full_field_per_time_relative_l2": [
+          3.359333800341872e-16,
+          1.2843735192360941e-12,
+          1.2636153232923248e-12
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "apparent_viscosity": {
+        "all_times_relative_l2": 4.355469804842831e-12,
+        "final_relative_l2": 5.921188086326971e-12,
+        "maximum_per_time_relative_l2": 5.921188086326971e-12,
+        "per_time_relative_l2": [
+          2.7679592821351194e-16,
+          4.580325154123203e-12,
+          5.921188086326971e-12
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 4.355469045346357e-12,
+        "full_field_final_relative_l2": 5.921184770718381e-12,
+        "full_field_maximum_per_time_relative_l2": 5.921184770718381e-12,
+        "full_field_per_time_relative_l2": [
+          2.7679592821351194e-16,
+          4.580327367367125e-12,
+          5.921184770718381e-12
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      },
+      "vorticity": {
+        "all_times_relative_l2": 4.823593518040438e-13,
+        "final_relative_l2": 5.269931189345284e-13,
+        "maximum_per_time_relative_l2": 6.534924428483203e-13,
+        "per_time_relative_l2": [
+          3.3068297870432277e-16,
+          6.534924428483203e-13,
+          5.269931189345284e-13
+        ],
+        "common_band_definition": "Fourier resampled fine reference on complete coarse output grid; constitutive fields may include Nyquist modes",
+        "full_field_all_times_relative_l2": 4.82360831868994e-13,
+        "full_field_final_relative_l2": 5.269950503721399e-13,
+        "full_field_maximum_per_time_relative_l2": 6.534942004213902e-13,
+        "full_field_per_time_relative_l2": [
+          3.3068297870432277e-16,
+          6.534942004213902e-13,
+          5.269950503721399e-13
+        ],
+        "full_field_definition": "coarse output field periodically Fourier interpolated onto entire finer output grid, compared with unfiltered fine reference"
+      }
+    },
+    "energy_relative_l2": 5.5256071658699875e-14,
+    "dissipation_relative_l2": 4.414156940703931e-14
+  }
+]

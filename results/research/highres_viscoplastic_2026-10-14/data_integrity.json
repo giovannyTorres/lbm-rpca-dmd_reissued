@@ -1,0 +1,261 @@
+{
+  "valid": true,
+  "campaign_complete": true,
+  "datasets_verified": 18,
+  "script_sha256": "b26568f72b65d33dce7d60b48911bd7c49fdff8d847733b3d1c261d8c56e7329",
+  "audit_scope": "finite fields, source and canonical dataset hashes, positive density/geometry, strict time ordering and configured horizon",
+  "records": [
+    {
+      "run": "bingham_128",
+      "dataset_sha256": "6822aa4e4a518b0d080b349708af46179a4a542acbd55e97610ab6228127b8c0",
+      "all_fields_finite": true,
+      "canonical_dataset_hash_matches": true,
+      "all_source_hashes_match": true,
+      "horizon_matches_configuration": true,
+      "velocity_shape": [
+        21,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "run": "bingham_256_short",
+      "dataset_sha256": "6334c011f6471766d744f63c367ee336772574ecddaa84779549758aca53df41",
+      "all_fields_finite": true,
+      "canonical_dataset_hash_matches": true,
+      "all_source_hashes_match": true,
+      "horizon_matches_configuration": true,
+      "velocity_shape": [
+        2,
+        2,
+        256,
+        256
+      ]
+    },
+    {
+      "run": "bingham_64",
+      "dataset_sha256": "0ad6be497df190bb13e75aa45bb20824185ae5288eef1a280eb33ea09f2f0909",
+      "all_fields_finite": true,
+      "canonical_dataset_hash_matches": true,
+      "all_source_hashes_match": true,
+      "horizon_matches_configuration": true,
+      "velocity_shape": [
+        21,
+        2,
+        64,
+        64
+      ]
+    },
+    {
+      "run": "hb_thickening_128",
+      "dataset_sha256": "3064b12eb889ca068daf48c54c4e418fd7c136c6ccdb8455ad5c6f871d0aa3cc",
+      "all_fields_finite": true,
+      "canonical_dataset_hash_matches": true,
+      "all_source_hashes_match": true,
+      "horizon_matches_configuration": true,
+      "velocity_shape": [
+        21,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "run": "hb_thickening_256_short",
+      "dataset_sha256": "384b398f5dfcb83c0e6a052991b9c25b76be9059809d9efb0a32a9617f6d8a76",
+      "all_fields_finite": true,
+      "canonical_dataset_hash_matches": true,
+      "all_source_hashes_match": true,
+      "horizon_matches_configuration": true,
+      "velocity_shape": [
+        2,
+        2,
+        256,
+        256
+      ]
+    },
+    {
+      "run": "hb_thickening_64",
+      "dataset_sha256": "105ef6a573274abd5c9067ef467c1187a9a6ae822b844f23baac0f880cec500b",
+      "all_fields_finite": true,
+      "canonical_dataset_hash_matches": true,
+      "all_source_hashes_match": true,
+      "horizon_matches_configuration": true,
+      "velocity_shape": [
+        21,
+        2,
+        64,
+        64
+      ]
+    },
+    {
+      "run": "hb_thinning_128",
+      "dataset_sha256": "b39902f9d8cbf0ad405be6607c8b20c76e52b843532ae71b3a707a8364ecfc4b",
+      "all_fields_finite": true,
+      "canonical_dataset_hash_matches": true,
+      "all_source_hashes_match": true,
+      "horizon_matches_configuration": true,
+      "velocity_shape": [
+        21,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "run": "hb_thinning_128_dt0p0001",
+      "dataset_sha256": "2f4dece8c6b715ea1aa138260568dea179ed4c6cad9cce624de552db274ac87c",
+      "all_fields_finite": true,
+      "canonical_dataset_hash_matches": true,
+      "all_source_hashes_match": true,
+      "horizon_matches_configuration": true,
+      "velocity_shape": [
+        3,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "run": "hb_thinning_128_dt0p0002",
+      "dataset_sha256": "13ed467e1431c8ceb6473b39f99ac9076228e941306cdca37af89d9a651420e4",
+      "all_fields_finite": true,
+      "canonical_dataset_hash_matches": true,
+      "all_source_hashes_match": true,
+      "horizon_matches_configuration": true,
+      "velocity_shape": [
+        3,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "run": "hb_thinning_128_dt0p0004",
+      "dataset_sha256": "d179379ee2e2a45319f6b321f6e558b0d50fc9c66c3a8f7dea865369e9d2d469",
+      "all_fields_finite": true,
+      "canonical_dataset_hash_matches": true,
+      "all_source_hashes_match": true,
+      "horizon_matches_configuration": true,
+      "velocity_shape": [
+        3,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "run": "hb_thinning_256_short",
+      "dataset_sha256": "edf331d21704ea3940545ae8becb803c21822ffb7ef00e58adc17dbb0e6302e4",
+      "all_fields_finite": true,
+      "canonical_dataset_hash_matches": true,
+      "all_source_hashes_match": true,
+      "horizon_matches_configuration": true,
+      "velocity_shape": [
+        2,
+        2,
+        256,
+        256
+      ]
+    },
+    {
+      "run": "hb_thinning_64",
+      "dataset_sha256": "8a1f3c8616aebc1c5a9af3b5d8e286f8d3513f9332ddd79ebc8e2edfcad46aac",
+      "all_fields_finite": true,
+      "canonical_dataset_hash_matches": true,
+      "all_source_hashes_match": true,
+      "horizon_matches_configuration": true,
+      "velocity_shape": [
+        21,
+        2,
+        64,
+        64
+      ]
+    },
+    {
+      "run": "hb_thinning_64_quadrature_factor_2p0",
+      "dataset_sha256": "74188f76063c5e3f4b6528f7ad486ff0feb2203d94c934b9d65216034caa9612",
+      "all_fields_finite": true,
+      "canonical_dataset_hash_matches": true,
+      "all_source_hashes_match": true,
+      "horizon_matches_configuration": true,
+      "velocity_shape": [
+        3,
+        2,
+        64,
+        64
+      ]
+    },
+    {
+      "run": "hb_thinning_64_regularization_m_20p0",
+      "dataset_sha256": "e36808eafd3994b995573f00c059346ad6df00e3ca70b221e1e1b7fa5f29b1d5",
+      "all_fields_finite": true,
+      "canonical_dataset_hash_matches": true,
+      "all_source_hashes_match": true,
+      "horizon_matches_configuration": true,
+      "velocity_shape": [
+        3,
+        2,
+        64,
+        64
+      ]
+    },
+    {
+      "run": "hb_thinning_64_regularization_m_5p0",
+      "dataset_sha256": "d6ae039395014119a02bfc12ab7d3f3a15c76b4ba067655479bd69577f398dba",
+      "all_fields_finite": true,
+      "canonical_dataset_hash_matches": true,
+      "all_source_hashes_match": true,
+      "horizon_matches_configuration": true,
+      "velocity_shape": [
+        3,
+        2,
+        64,
+        64
+      ]
+    },
+    {
+      "run": "hb_thinning_64_shear_epsilon_0p0005",
+      "dataset_sha256": "6951233f45561b299ab2fed2da8993cbdb88d0f017f3a3796fabd49be7307418",
+      "all_fields_finite": true,
+      "canonical_dataset_hash_matches": true,
+      "all_source_hashes_match": true,
+      "horizon_matches_configuration": true,
+      "velocity_shape": [
+        3,
+        2,
+        64,
+        64
+      ]
+    },
+    {
+      "run": "hb_thinning_64_shear_epsilon_0p002",
+      "dataset_sha256": "90a4382067f3fa9d2fa29b73f9d1fa81d9f6a8ccc40ee89c316061518c1b490c",
+      "all_fields_finite": true,
+      "canonical_dataset_hash_matches": true,
+      "all_source_hashes_match": true,
+      "horizon_matches_configuration": true,
+      "velocity_shape": [
+        3,
+        2,
+        64,
+        64
+      ]
+    },
+    {
+      "run": "hb_thinning_64_short_control",
+      "dataset_sha256": "7b292a3a899e50339c836b6602b2711be7d6cfeb1729f55280eba7ca4789d21f",
+      "all_fields_finite": true,
+      "canonical_dataset_hash_matches": true,
+      "all_source_hashes_match": true,
+      "horizon_matches_configuration": true,
+      "velocity_shape": [
+        3,
+        2,
+        64,
+        64
+      ]
+    }
+  ]
+}

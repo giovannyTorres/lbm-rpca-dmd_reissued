@@ -1,0 +1,138 @@
+{
+  "configuration": {
+    "case": "interacting_vortices",
+    "amplitude": 0.8,
+    "density": 1.0,
+    "length_x": 6.283185307179586,
+    "length_y": 6.283185307179586,
+    "seed": 0,
+    "diffusion_cfl": 0.8,
+    "cfl": 0.35,
+    "quadrature_factor": 1.5,
+    "yield_shear_threshold": 0.001,
+    "max_internal_steps": 200000,
+    "nx": 64,
+    "dt": 0.005,
+    "n_steps": 20,
+    "sample_every": 10,
+    "flow_index": 0.6,
+    "consistency": 0.04566262081575016,
+    "yield_stress": 0.01,
+    "regularization_m": 10.0,
+    "shear_epsilon": 0.002
+  },
+  "metadata": {
+    "case": "interacting_vortices",
+    "solver": "2D incompressible generalized-Newtonian momentum Fourier projection RK4",
+    "constitutive_model": "Papanastasiou-regularized Herschel-Bulkley",
+    "consistency": 0.04566262081575016,
+    "flow_index": 0.6,
+    "yield_stress": 0.01,
+    "regularization_m": 10.0,
+    "shear_epsilon": 0.002,
+    "solvent_viscosity": 0.0,
+    "constant_density": 1.0,
+    "amplitude": 0.8,
+    "seed": 0,
+    "domain": [
+      6.283185307179586,
+      6.283185307179586
+    ],
+    "units": "nondimensional",
+    "dimensionless_scaling": {
+      "velocity": "U",
+      "length": "L",
+      "time": "L/U",
+      "density": "rho_ref",
+      "stress": "rho_ref*U^2",
+      "shear_rate": "U/L",
+      "apparent_viscosity": "rho_ref*U*L",
+      "consistency": "rho_ref*U^2/(U/L)^n",
+      "regularization_m": "L/U",
+      "shear_epsilon": "U/L"
+    },
+    "nominal_dt": 0.005,
+    "nominal_steps": 20,
+    "sample_every": 10,
+    "internal_steps": 77,
+    "rejected_steps": 60,
+    "internal_dt_min": 0.000949138051797981,
+    "internal_dt_max": 0.0021566080206932175,
+    "stability_limited_steps": 75,
+    "max_advective_cfl": 0.06286070844622117,
+    "cfl_limit": 0.35,
+    "max_diffusive_number": 0.8000000000000002,
+    "diffusion_cfl_limit": 0.8,
+    "diffusion_stability_limit": "dt*max(1,n)*max(eta_app)/rho*max_retained_k_squared <= diffusion_cfl",
+    "maximum_stage_viscosity": 0.47792842075463654,
+    "viscosity_cap": null,
+    "dealiasing": "strict two-thirds state cutoff; padded nonlinear/constitutive quadrature",
+    "quadrature_factor": 1.5,
+    "quadrature_shape": [
+      96,
+      96
+    ],
+    "constitutive_aliasing_limit": "nonpolynomial stress requires grid and quadrature refinement; 3/2 padding is not exact dealiasing",
+    "stress_components": [
+      "xx",
+      "xy",
+      "yy"
+    ],
+    "shear_rate_definition": "sqrt(2*D:D)",
+    "stress_invariant_definition": "sqrt(tau:tau/2)=eta_app*shear_rate",
+    "yield_estimate": {
+      "kind": "approximate shear threshold, not exact unyielded regions",
+      "shear_threshold": 0.001,
+      "approximate_yielded_definition": "shear_rate > shear_threshold",
+      "over_yield_stress_definition": "stress_invariant > yield_stress"
+    },
+    "energy_definition": "rho/2*mean(|u|^2)",
+    "dissipation_definition": "padded-grid mean(eta_app*shear_rate^2), nonnegative",
+    "energy_budget_definition": "E(t)-E(0)+RK4_stage_integral(dissipation)",
+    "physical_scope": "inelastic generalized-Newtonian periodic flow; no walls, cylinder, elasticity or chaos certification",
+    "dns_validation": "not certified; nonlinear grid, time, constitutive quadrature and regularization refinement required",
+    "initial_condition": "four periodized Gaussian vorticity cores; two positive, two negative",
+    "centers_fractional": [
+      [
+        0.3,
+        0.35,
+        1.0
+      ],
+      [
+        0.55,
+        0.45,
+        1.0
+      ],
+      [
+        0.35,
+        0.7,
+        -1.0
+      ],
+      [
+        0.7,
+        0.65,
+        -1.0
+      ]
+    ],
+    "core_width": 0.4084070449666731,
+    "initial_speed_rms": 0.8,
+    "removed_vorticity_mean": 6.938893903907228e-18
+  },
+  "wall_seconds_simulation": 3.094984158000443,
+  "cpu_seconds_simulation": 3.0943186790000006,
+  "dx": 0.09817477042468103,
+  "dy": 0.09817477042468103,
+  "dataset_sha256": "90a4382067f3fa9d2fa29b73f9d1fa81d9f6a8ccc40ee89c316061518c1b490c",
+  "source_hashes": {
+    "python/scripts/run_highres_viscoplastic.py": "5452f64dc38296d67b580c9b6bb7ef781c68fb05458a2988058215838c4f53c0",
+    "python/src/fluid_denoise/research/viscoplastic_dns.py": "fd7d028a4f0abafc0ced61a755c655d5c85daa0280fd498a7e2911a98b685aaf",
+    "python/src/fluid_denoise/research/dns.py": "fe692ebdd587c6eaced3aee5456ca8e56b42f6226cf05d2597f39cf9fd57846f"
+  },
+  "velocity_shape": [
+    3,
+    2,
+    64,
+    64
+  ],
+  "complete": true
+}
