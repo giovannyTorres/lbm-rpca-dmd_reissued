@@ -1,0 +1,57 @@
+{
+  "status": "completed",
+  "integration_performed": false,
+  "sources_sha256": {
+    "results/research/highres_newtonian_2026-10-14/render_publication.py": "c74df810818ba102b54eb483fa9c93d117ddc662c02f93d34fa6ef1da7d42a80",
+    "python/scripts/run_highres_newtonian.py": "5e7d31840c0583a7a656fa3df3ed0670c14c17a43a8994fc8b8d0360f8b07cdc"
+  },
+  "datasets_sha256": {
+    "results/research/highres_newtonian_2026-10-14/datasets/interacting_vortices_512_dt0.005.npz": "42e360cca6d13f9fb9d8178c9b413854bc7b65d1055fb781512d62b517f3a7ee",
+    "results/research/highres_newtonian_2026-10-14/datasets/decaying_turbulence_512_dt0.005.npz": "d945e358e8cdc611fa33ae6a64b2c382d0c042834ca1fcab4438aaad6fc5a9b0"
+  },
+  "csv_sha256": "f43902b9ce4252f0a9ae94a0a1937593a9f7ea1fda485cf5c88e7af5e0bc372e",
+  "artifacts_sha256": {
+    "results/research/highres_newtonian_2026-10-14/figures/interacting_vortices_evolution_publication.pdf": "56d850bcc68458227946a8be4b070e20890bccd957e192729c83b9cc9e6db0e1",
+    "results/research/highres_newtonian_2026-10-14/figures/interacting_vortices_evolution_publication.png": "fcd261aa4a86b88a2b959b77e9e1de2c331a94d635399e062b93674d0528032d",
+    "results/research/highres_newtonian_2026-10-14/figures/interacting_vortices_diagnostics_publication.pdf": "34576933a0f1c356aeed9e0054872fa99505a5b10fbd07ad2d38230addd11b71",
+    "results/research/highres_newtonian_2026-10-14/figures/interacting_vortices_diagnostics_publication.png": "25bd5efe8ed09da0bafc52904ab87f8e578b4b9de45a6370559e9fb2b28bc3c0",
+    "results/research/highres_newtonian_2026-10-14/figures/decaying_turbulence_evolution_publication.pdf": "2d5e00453aba19ef88e2002a97862aa69b07d13943225420bc874d5e936ad234",
+    "results/research/highres_newtonian_2026-10-14/figures/decaying_turbulence_evolution_publication.png": "70b0a90b187f5f3a4dd14fe925141328d563a2ff89b0cce7b1db5b5a86488cf4",
+    "results/research/highres_newtonian_2026-10-14/figures/decaying_turbulence_diagnostics_publication.pdf": "b6679ec3f7be7a0366df0ce9e2acc73fbd80cce30e227fa36e936e1393b0969a",
+    "results/research/highres_newtonian_2026-10-14/figures/decaying_turbulence_diagnostics_publication.png": "4dccd75c7ed6189ad03779eb0c7509b1877cd9e7596871c7a09ae72cf771e652"
+  },
+  "evolution": {
+    "layout": "2 rows x 3 columns",
+    "times": [
+      0.0,
+      2.0,
+      4.0
+    ],
+    "fields": [
+      "vorticity",
+      "speed with velocity arrows"
+    ],
+    "constant_color_scale_per_row": true,
+    "matches_original_five_frame_color_limits": true
+  },
+  "diagnostics": {
+    "layout": "2 rows x 2 columns",
+    "panels": [
+      "energy",
+      "enstrophy",
+      "velocity full-field relative L2",
+      "vorticity full-field relative L2"
+    ],
+    "log_error_display": "from t=.1; all-times acceptance still includes initial t=0"
+  },
+  "fontsize_points": {
+    "base": 14,
+    "ticks": 12,
+    "titles": 15,
+    "figure_title": 16,
+    "global_legend": 13
+  },
+  "numpy": "2.3.5",
+  "matplotlib": "3.10.8",
+  "wall_seconds": 7.6525963629974285
+}

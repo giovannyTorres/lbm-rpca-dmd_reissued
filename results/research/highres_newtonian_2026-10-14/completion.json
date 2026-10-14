@@ -1,0 +1,12 @@
+{
+  "status": "completed",
+  "nonlinear_spatial_runs": 8,
+  "additional_temporal_runs": 4,
+  "analytical_checks": 6,
+  "frames_per_nonlinear_run": 41,
+  "largest_grid": 512,
+  "spatial_cells_at_largest_grid": 262144,
+  "comparison_rows": 410,
+  "failures": 0,
+  "duration_wall_seconds": 174.29576359099883
+}

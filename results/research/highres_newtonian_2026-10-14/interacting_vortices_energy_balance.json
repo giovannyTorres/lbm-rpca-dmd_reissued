@@ -1,0 +1,26 @@
+{
+  "quadrature": "cumulative trapezoid at sampled output times; includes sampling quadrature error",
+  "equation": "E(t)=E(0)-2*nu*integral(Z dt); E=.5 mean |u|², Z=.5 mean omega²",
+  "rows": [
+    {
+      "nx": 64,
+      "maximum_absolute_normalized_sampled_energy_balance_defect": 2.2207762189960226e-06,
+      "final_normalized_sampled_energy_balance_defect": 2.2207762189960226e-06
+    },
+    {
+      "nx": 128,
+      "maximum_absolute_normalized_sampled_energy_balance_defect": 2.2207744776805986e-06,
+      "final_normalized_sampled_energy_balance_defect": 2.2207744776805986e-06
+    },
+    {
+      "nx": 256,
+      "maximum_absolute_normalized_sampled_energy_balance_defect": 2.220726443707965e-06,
+      "final_normalized_sampled_energy_balance_defect": 2.220726443707965e-06
+    },
+    {
+      "nx": 512,
+      "maximum_absolute_normalized_sampled_energy_balance_defect": 2.2207128531903653e-06,
+      "final_normalized_sampled_energy_balance_defect": 2.2207128531903653e-06
+    }
+  ]
+}

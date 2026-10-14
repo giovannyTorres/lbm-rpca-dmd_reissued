@@ -1,0 +1,417 @@
+{
+  "stress_order": [
+    "xx",
+    "xy",
+    "yy"
+  ],
+  "norm_definition": "symmetric 2x2 tensor Frobenius: sqrt(sum(xx^2+2xy^2+yy^2))",
+  "difference_from_comparisons_json": "the primary comparison uses an unweighted packed-component vector L2 norm; both definitions are explicit",
+  "spatial_transfer": "periodic Fourier resampling with scipy.signal.resample, including even-grid Nyquist handling",
+  "script_sha256": "f85970d251f085168164d1b712f29b04b32d5332c524d8bb7c70333ab3b4e949",
+  "source_file_hashes": {
+    "comparisons.json": "e92e8c754d9f71b615b20574da04535cd0f0ca0382d67a1045a876aad39b0bfa",
+    "sensitivity.json": "9cc71f152c4c740908d6819405fd934eda930f746b04de7c87823b98a2dc9464"
+  },
+  "comparisons": [
+    {
+      "run": "bingham_64",
+      "reference": "bingham_128",
+      "scope": "long_horizon_spatial_64_vs_128",
+      "times": [
+        0.0,
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7000000000000001,
+        0.8,
+        0.9,
+        1.0,
+        1.1,
+        1.2,
+        1.3,
+        1.4000000000000001,
+        1.5,
+        1.6,
+        1.7,
+        1.8,
+        1.9000000000000001,
+        2.0
+      ],
+      "coarse_output_grid_all_times_relative_l2": 0.002592627840232389,
+      "full_field_all_times_relative_l2": 0.0030668285991859974,
+      "full_field_final_relative_l2": 0.0007703290433135279,
+      "full_field_maximum_per_time_relative_l2": 0.004960405796834008,
+      "full_field_per_time_relative_l2": [
+        0.004497889711922153,
+        0.004918612631677125,
+        0.004960405796834008,
+        0.004664223577883638,
+        0.003954064856642755,
+        0.00376787800704498,
+        0.0031444120418282814,
+        0.0026998674236261965,
+        0.002429490881260076,
+        0.001981900880961286,
+        0.0017838679697840813,
+        0.0017012294402579326,
+        0.0014824033334048733,
+        0.0012706116058739626,
+        0.001179749726514896,
+        0.00119000295427153,
+        0.001252236159478569,
+        0.0013622710261819045,
+        0.001187305347961888,
+        0.001016773296303608,
+        0.0007703290433135279
+      ]
+    },
+    {
+      "run": "bingham_64_short",
+      "reference": "bingham_256_short",
+      "scope": "short_horizon_spatial_vs_256",
+      "times": [
+        0.0,
+        0.1
+      ],
+      "coarse_output_grid_all_times_relative_l2": 0.0035815218488782583,
+      "full_field_all_times_relative_l2": 0.004650071316808502,
+      "full_field_final_relative_l2": 0.004847685102353493,
+      "full_field_maximum_per_time_relative_l2": 0.004847685102353493,
+      "full_field_per_time_relative_l2": [
+        0.0044518304684289575,
+        0.004847685102353493
+      ]
+    },
+    {
+      "run": "bingham_128_short",
+      "reference": "bingham_256_short",
+      "scope": "short_horizon_spatial_vs_256",
+      "times": [
+        0.0,
+        0.1
+      ],
+      "coarse_output_grid_all_times_relative_l2": 0.0008602499469265474,
+      "full_field_all_times_relative_l2": 0.0011361939269440861,
+      "full_field_final_relative_l2": 0.0011571844610831364,
+      "full_field_maximum_per_time_relative_l2": 0.0011571844610831364,
+      "full_field_per_time_relative_l2": [
+        0.0011156421460567993,
+        0.0011571844610831364
+      ]
+    },
+    {
+      "run": "hb_thickening_64",
+      "reference": "hb_thickening_128",
+      "scope": "long_horizon_spatial_64_vs_128",
+      "times": [
+        0.0,
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7000000000000001,
+        0.8,
+        0.9,
+        1.0,
+        1.1,
+        1.2,
+        1.3,
+        1.4000000000000001,
+        1.5,
+        1.6,
+        1.7,
+        1.8,
+        1.9000000000000001,
+        2.0
+      ],
+      "coarse_output_grid_all_times_relative_l2": 0.0027503525044113874,
+      "full_field_all_times_relative_l2": 0.003139869389248489,
+      "full_field_final_relative_l2": 0.0014290348259216044,
+      "full_field_maximum_per_time_relative_l2": 0.004497780827387888,
+      "full_field_per_time_relative_l2": [
+        0.0036832338780344973,
+        0.004133910390687985,
+        0.004497780827387888,
+        0.004149672066676935,
+        0.003743604521724189,
+        0.0037039664631789257,
+        0.003223467558447394,
+        0.003042094138204405,
+        0.003047395829077781,
+        0.002669683551034414,
+        0.0024400972932083443,
+        0.002346939249020776,
+        0.0022891158301442073,
+        0.002102969842355566,
+        0.0019728277841064602,
+        0.0019010302545795063,
+        0.002046832138376607,
+        0.0020640167227204765,
+        0.0021257204223922585,
+        0.001797061476470283,
+        0.0014290348259216044
+      ]
+    },
+    {
+      "run": "hb_thickening_64_short",
+      "reference": "hb_thickening_256_short",
+      "scope": "short_horizon_spatial_vs_256",
+      "times": [
+        0.0,
+        0.1
+      ],
+      "coarse_output_grid_all_times_relative_l2": 0.002954127796468245,
+      "full_field_all_times_relative_l2": 0.003842318551198764,
+      "full_field_final_relative_l2": 0.004042960098717297,
+      "full_field_maximum_per_time_relative_l2": 0.004042960098717297,
+      "full_field_per_time_relative_l2": [
+        0.0036438426154455387,
+        0.004042960098717297
+      ]
+    },
+    {
+      "run": "hb_thickening_128_short",
+      "reference": "hb_thickening_256_short",
+      "scope": "short_horizon_spatial_vs_256",
+      "times": [
+        0.0,
+        0.1
+      ],
+      "coarse_output_grid_all_times_relative_l2": 0.0008248556730561898,
+      "full_field_all_times_relative_l2": 0.0010488778071087994,
+      "full_field_final_relative_l2": 0.00113954062498198,
+      "full_field_maximum_per_time_relative_l2": 0.00113954062498198,
+      "full_field_per_time_relative_l2": [
+        0.0009559352062399133,
+        0.00113954062498198
+      ]
+    },
+    {
+      "run": "hb_thinning_64",
+      "reference": "hb_thinning_128",
+      "scope": "long_horizon_spatial_64_vs_128",
+      "times": [
+        0.0,
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7000000000000001,
+        0.8,
+        0.9,
+        1.0,
+        1.1,
+        1.2,
+        1.3,
+        1.4000000000000001,
+        1.5,
+        1.6,
+        1.7,
+        1.8,
+        1.9000000000000001,
+        2.0
+      ],
+      "coarse_output_grid_all_times_relative_l2": 0.004192698398112597,
+      "full_field_all_times_relative_l2": 0.005311993060971483,
+      "full_field_final_relative_l2": 0.001245671258818186,
+      "full_field_maximum_per_time_relative_l2": 0.009630428567799327,
+      "full_field_per_time_relative_l2": [
+        0.009011102959448743,
+        0.009630428567799327,
+        0.00903007555163944,
+        0.008523411248589985,
+        0.007134787759993303,
+        0.005673344313487301,
+        0.004936371591436005,
+        0.004023291508359372,
+        0.0034869663908255336,
+        0.0030679974654841597,
+        0.0027225538637920973,
+        0.0023315085301140685,
+        0.002173195140369523,
+        0.0020295876114539892,
+        0.0019977687649334183,
+        0.0022883380268927432,
+        0.0022587455831433534,
+        0.0025966550262156744,
+        0.0024724750394612125,
+        0.0018781887544570735,
+        0.001245671258818186
+      ]
+    },
+    {
+      "run": "hb_thinning_64_short",
+      "reference": "hb_thinning_256_short",
+      "scope": "short_horizon_spatial_vs_256",
+      "times": [
+        0.0,
+        0.1
+      ],
+      "coarse_output_grid_all_times_relative_l2": 0.006927208031754768,
+      "full_field_all_times_relative_l2": 0.009197777944649644,
+      "full_field_final_relative_l2": 0.009459527622987735,
+      "full_field_maximum_per_time_relative_l2": 0.009459527622987735,
+      "full_field_per_time_relative_l2": [
+        0.008934439842026631,
+        0.009459527622987735
+      ]
+    },
+    {
+      "run": "hb_thinning_128_short",
+      "reference": "hb_thinning_256_short",
+      "scope": "short_horizon_spatial_vs_256",
+      "times": [
+        0.0,
+        0.1
+      ],
+      "coarse_output_grid_all_times_relative_l2": 0.0019585860580279865,
+      "full_field_all_times_relative_l2": 0.002670232835787848,
+      "full_field_final_relative_l2": 0.0027138228472492103,
+      "full_field_maximum_per_time_relative_l2": 0.0027138228472492103,
+      "full_field_per_time_relative_l2": [
+        0.002626913267270324,
+        0.0027138228472492103
+      ]
+    },
+    {
+      "run": "hb_thinning_128_dt0p0004",
+      "reference": "hb_thinning_128_dt0p0001",
+      "scope": "fixed_grid_temporal_refinement",
+      "times": [
+        0.0,
+        0.05,
+        0.1
+      ],
+      "coarse_output_grid_all_times_relative_l2": 1.3651983020830631e-11,
+      "full_field_all_times_relative_l2": 1.365198153716101e-11,
+      "full_field_final_relative_l2": 1.7785751713754505e-11,
+      "full_field_maximum_per_time_relative_l2": 1.7785751713754505e-11,
+      "full_field_per_time_relative_l2": [
+        3.2977104388162927e-16,
+        1.5696774942929376e-11,
+        1.7785751713754505e-11
+      ]
+    },
+    {
+      "run": "hb_thinning_128_dt0p0002",
+      "reference": "hb_thinning_128_dt0p0001",
+      "scope": "fixed_grid_temporal_refinement",
+      "times": [
+        0.0,
+        0.05,
+        0.1
+      ],
+      "coarse_output_grid_all_times_relative_l2": 9.269955283172835e-13,
+      "full_field_all_times_relative_l2": 9.26995210214556e-13,
+      "full_field_final_relative_l2": 1.1167143768490432e-12,
+      "full_field_maximum_per_time_relative_l2": 1.1598318543157336e-12,
+      "full_field_per_time_relative_l2": [
+        3.2977104388162927e-16,
+        1.1598318543157336e-12,
+        1.1167143768490432e-12
+      ]
+    },
+    {
+      "run": "hb_thinning_64_quadrature_factor_2p0",
+      "reference": "hb_thinning_64_short_control",
+      "scope": "quadrature_sensitivity",
+      "times": [
+        0.0,
+        0.05,
+        0.1
+      ],
+      "coarse_output_grid_all_times_relative_l2": 0.00031149883219955135,
+      "full_field_all_times_relative_l2": 0.00031149883219955173,
+      "full_field_final_relative_l2": 0.00039429259095636004,
+      "full_field_maximum_per_time_relative_l2": 0.00039429259095636004,
+      "full_field_per_time_relative_l2": [
+        2.956653129856467e-16,
+        0.00037066167172419736,
+        0.00039429259095636004
+      ]
+    },
+    {
+      "run": "hb_thinning_64_regularization_m_5p0",
+      "reference": "hb_thinning_64_short_control",
+      "scope": "constitutive_model_sensitivity",
+      "times": [
+        0.0,
+        0.05,
+        0.1
+      ],
+      "coarse_output_grid_all_times_relative_l2": 0.014885248979794877,
+      "full_field_all_times_relative_l2": 0.014885248979794926,
+      "full_field_final_relative_l2": 0.014654550193382332,
+      "full_field_maximum_per_time_relative_l2": 0.015175421328779087,
+      "full_field_per_time_relative_l2": [
+        0.015175421328779087,
+        0.014815112308694032,
+        0.014654550193382332
+      ]
+    },
+    {
+      "run": "hb_thinning_64_regularization_m_20p0",
+      "reference": "hb_thinning_64_short_control",
+      "scope": "constitutive_model_sensitivity",
+      "times": [
+        0.0,
+        0.05,
+        0.1
+      ],
+      "coarse_output_grid_all_times_relative_l2": 0.006974983157067118,
+      "full_field_all_times_relative_l2": 0.006974983157067092,
+      "full_field_final_relative_l2": 0.00671623091124458,
+      "full_field_maximum_per_time_relative_l2": 0.007328359988148563,
+      "full_field_per_time_relative_l2": [
+        0.007328359988148563,
+        0.006858675469460566,
+        0.00671623091124458
+      ]
+    },
+    {
+      "run": "hb_thinning_64_shear_epsilon_0p002",
+      "reference": "hb_thinning_64_short_control",
+      "scope": "constitutive_model_sensitivity",
+      "times": [
+        0.0,
+        0.05,
+        0.1
+      ],
+      "coarse_output_grid_all_times_relative_l2": 4.434212057710697e-06,
+      "full_field_all_times_relative_l2": 4.434212057733507e-06,
+      "full_field_final_relative_l2": 4.755284904638822e-06,
+      "full_field_maximum_per_time_relative_l2": 4.755284904638822e-06,
+      "full_field_per_time_relative_l2": [
+        4.066165833637981e-06,
+        4.461892664845006e-06,
+        4.755284904638822e-06
+      ]
+    },
+    {
+      "run": "hb_thinning_64_shear_epsilon_0p0005",
+      "reference": "hb_thinning_64_short_control",
+      "scope": "constitutive_model_sensitivity",
+      "times": [
+        0.0,
+        0.05,
+        0.1
+      ],
+      "coarse_output_grid_all_times_relative_l2": 1.1178739315629672e-06,
+      "full_field_all_times_relative_l2": 1.1178739315409395e-06,
+      "full_field_final_relative_l2": 1.2006712980574213e-06,
+      "full_field_maximum_per_time_relative_l2": 1.2006712980574213e-06,
+      "full_field_per_time_relative_l2": [
+        1.02156017390085e-06,
+        1.126142671128416e-06,
+        1.2006712980574213e-06
+      ]
+    }
+  ]
+}

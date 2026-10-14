@@ -1,0 +1,533 @@
+{
+  "status": "completed",
+  "parameters": {
+    "case": "interacting_vortices",
+    "nx": 512,
+    "dt": 0.005,
+    "n_steps": 800,
+    "sample_every": 20,
+    "viscosity": 0.01,
+    "amplitude": 0.8,
+    "seed": 17,
+    "length_x": 6.283185307179586,
+    "length_y": 6.283185307179586,
+    "cfl": 0.35
+  },
+  "solver_sha256": "fe692ebdd587c6eaced3aee5456ca8e56b42f6226cf05d2597f39cf9fd57846f",
+  "wall_seconds": 485.8501604599951,
+  "cpu_seconds": 420.546747368,
+  "metadata": {
+    "case": "interacting_vortices",
+    "solver": "2D incompressible Navier-Stokes vorticity Fourier RK4",
+    "viscosity": 0.01,
+    "amplitude": 0.8,
+    "seed": 17,
+    "domain": [
+      6.283185307179586,
+      6.283185307179586
+    ],
+    "units": "nondimensional",
+    "nominal_dt": 0.005,
+    "nominal_steps": 800,
+    "sample_every": 20,
+    "internal_steps": 2325,
+    "internal_dt_min": 7.514390742646704e-05,
+    "internal_dt_max": 0.0020321382535012566,
+    "stability_limited_steps": 2285,
+    "max_advective_cfl": 0.35000000000000003,
+    "cfl_limit": 0.35,
+    "diffusion_stability_limit": "nu * internal_dt * max_retained_k_squared <= 2",
+    "dealiasing": "strict two-thirds component-wise Fourier cutoff",
+    "kinetic_energy": [
+      0.32,
+      0.3183281134945347,
+      0.31667648104442114,
+      0.31504485057692666,
+      0.31343309524239227,
+      0.31184118428518304,
+      0.3102691551575627,
+      0.30871708693883587,
+      0.307185075036668,
+      0.30567320733997927,
+      0.30418154254434776,
+      0.30271009205798105,
+      0.3012588072643921,
+      0.29982757360239604,
+      0.2984162119507108,
+      0.29702448657272584,
+      0.29565211786529555,
+      0.29429879764396494,
+      0.29296420470404705,
+      0.291648018780296,
+      0.29034993160707545,
+      0.28906965440181376,
+      0.28780692164719746,
+      0.28656149146852083,
+      0.2853331431731206,
+      0.28412167265414434,
+      0.2829268863931411,
+      0.28174859475830955,
+      0.2805866052142727,
+      0.27944071595407566,
+      0.27831071034821664,
+      0.277196352488627,
+      0.2760973839946719,
+      0.2750135221484852,
+      0.27394445934126027,
+      0.2728898637415766,
+      0.27184938104101,
+      0.27082263709017684,
+      0.2698092412096661,
+      0.2688087899456351,
+      0.2678208710402289
+    ],
+    "dns_validation": "not certified; nonlinear grid and time refinement required",
+    "initial_condition": "four periodized Gaussian vorticity cores; two positive, two negative",
+    "centers_fractional": [
+      [
+        0.3,
+        0.35,
+        1.0
+      ],
+      [
+        0.55,
+        0.45,
+        1.0
+      ],
+      [
+        0.35,
+        0.7,
+        -1.0
+      ],
+      [
+        0.7,
+        0.65,
+        -1.0
+      ]
+    ],
+    "core_width": 0.4084070449666731,
+    "initial_speed_rms": 0.8,
+    "removed_vorticity_mean": 0.0
+  },
+  "shape": [
+    41,
+    2,
+    512,
+    512
+  ],
+  "density": "constant rho=1; implicit rather than duplicated in NPZ",
+  "diagnostics": [
+    {
+      "energy": 0.32,
+      "enstrophy": 0.8410674349873343,
+      "divergence_rms": 2.6531928806627294e-14,
+      "radial_energy_tail": 1.6137130595772084e-33,
+      "component_energy_tail": 1.2042467506874797e-32,
+      "component_enstrophy_tail": 7.470414175047459e-29,
+      "max_abs_vorticity": 5.648270624781028,
+      "max_speed": 2.1213362478653863
+    },
+    {
+      "energy": 0.3183281134945347,
+      "enstrophy": 0.8308527683665345,
+      "divergence_rms": 2.7686018810660667e-14,
+      "radial_energy_tail": 1.741867092951493e-33,
+      "component_energy_tail": 1.2231417647462647e-32,
+      "component_enstrophy_tail": 7.472023756129492e-29,
+      "max_abs_vorticity": 5.581245597124854,
+      "max_speed": 2.1213608993351825
+    },
+    {
+      "energy": 0.31667648104442114,
+      "enstrophy": 0.820800436035404,
+      "divergence_rms": 2.7367729768672096e-14,
+      "radial_energy_tail": 1.7417350070931856e-33,
+      "component_energy_tail": 1.2212637484907942e-32,
+      "component_enstrophy_tail": 7.507002447554097e-29,
+      "max_abs_vorticity": 5.515483678085849,
+      "max_speed": 2.1138526342938526
+    },
+    {
+      "energy": 0.31504485057692666,
+      "enstrophy": 0.8108403592643445,
+      "divergence_rms": 2.7540045942649743e-14,
+      "radial_energy_tail": 1.748064176011682e-33,
+      "component_energy_tail": 1.3007325931129311e-32,
+      "component_enstrophy_tail": 7.872641585535155e-29,
+      "max_abs_vorticity": 5.4504507985507615,
+      "max_speed": 2.100789182361056
+    },
+    {
+      "energy": 0.31343309524239227,
+      "enstrophy": 0.8009173057903338,
+      "divergence_rms": 2.7130504986347883e-14,
+      "radial_energy_tail": 1.7196496701064197e-33,
+      "component_energy_tail": 1.3866142283388658e-32,
+      "component_enstrophy_tail": 8.587101193708431e-29,
+      "max_abs_vorticity": 5.3863652993836,
+      "max_speed": 2.0841946713730244
+    },
+    {
+      "energy": 0.31184118428518304,
+      "enstrophy": 0.7909903089822191,
+      "divergence_rms": 2.7147372075572136e-14,
+      "radial_energy_tail": 1.718937454118081e-33,
+      "component_energy_tail": 1.2547890836741547e-32,
+      "component_enstrophy_tail": 7.897718224234298e-29,
+      "max_abs_vorticity": 5.321910883647925,
+      "max_speed": 2.0656844002273496
+    },
+    {
+      "energy": 0.3102691551575627,
+      "enstrophy": 0.7810320177602249,
+      "divergence_rms": 2.78622092570801e-14,
+      "radial_energy_tail": 1.717496157433458e-33,
+      "component_energy_tail": 1.2848145046517921e-32,
+      "component_enstrophy_tail": 8.058291408389162e-29,
+      "max_abs_vorticity": 5.25806642078304,
+      "max_speed": 2.046393783363749
+    },
+    {
+      "energy": 0.30871708693883587,
+      "enstrophy": 0.7710280507859579,
+      "divergence_rms": 2.767880598494477e-14,
+      "radial_energy_tail": 1.701209996479659e-33,
+      "component_energy_tail": 1.284524534009527e-32,
+      "component_enstrophy_tail": 7.871542021004284e-29,
+      "max_abs_vorticity": 5.194494424082444,
+      "max_speed": 2.0271619881949214
+    },
+    {
+      "energy": 0.307185075036668,
+      "enstrophy": 0.7609763449459622,
+      "divergence_rms": 2.7422840698615314e-14,
+      "radial_energy_tail": 1.7828229171352336e-33,
+      "component_energy_tail": 1.2830532582912176e-32,
+      "component_enstrophy_tail": 8.084252625606457e-29,
+      "max_abs_vorticity": 5.131297724038898,
+      "max_speed": 2.0438506169294066
+    },
+    {
+      "energy": 0.30567320733997927,
+      "enstrophy": 0.7508863073998264,
+      "divergence_rms": 2.7134046849271707e-14,
+      "radial_energy_tail": 1.7680737371688173e-33,
+      "component_energy_tail": 1.2627660319221526e-32,
+      "component_enstrophy_tail": 8.3325795035923e-29,
+      "max_abs_vorticity": 5.068370783240885,
+      "max_speed": 2.0592887207273476
+    },
+    {
+      "energy": 0.30418154254434776,
+      "enstrophy": 0.74077742952473,
+      "divergence_rms": 2.6714147190676587e-14,
+      "radial_energy_tail": 1.751165169595443e-33,
+      "component_energy_tail": 1.3332864092089287e-32,
+      "component_enstrophy_tail": 9.288610761069683e-29,
+      "max_abs_vorticity": 5.006597453981637,
+      "max_speed": 2.0699995187160405
+    },
+    {
+      "energy": 0.30271009205798105,
+      "enstrophy": 0.7306770582558566,
+      "divergence_rms": 2.7220403617102438e-14,
+      "radial_energy_tail": 1.7270502938906903e-33,
+      "component_energy_tail": 1.2666468440773777e-32,
+      "component_enstrophy_tail": 7.83907977206174e-29,
+      "max_abs_vorticity": 4.946108675877438,
+      "max_speed": 2.0758403477352942
+    },
+    {
+      "energy": 0.3012588072643921,
+      "enstrophy": 0.7206172945833382,
+      "divergence_rms": 2.7328990194297802e-14,
+      "radial_energy_tail": 1.7259493387918698e-33,
+      "component_energy_tail": 1.2411706655720886e-32,
+      "component_enstrophy_tail": 7.882708619406872e-29,
+      "max_abs_vorticity": 4.886283404047286,
+      "max_speed": 2.076764227516568
+    },
+    {
+      "energy": 0.29982757360239604,
+      "enstrophy": 0.7106313626011672,
+      "divergence_rms": 2.6912220057035095e-14,
+      "radial_energy_tail": 1.683012786523809e-33,
+      "component_energy_tail": 1.3374422944116544e-32,
+      "component_enstrophy_tail": 8.611292015717475e-29,
+      "max_abs_vorticity": 4.827329975464721,
+      "max_speed": 2.0726971360913238
+    },
+    {
+      "energy": 0.2984162119507108,
+      "enstrophy": 0.7007500428579585,
+      "divergence_rms": 2.701426046992633e-14,
+      "radial_energy_tail": 1.698904771645843e-33,
+      "component_energy_tail": 1.3377545548703015e-32,
+      "component_enstrophy_tail": 9.298448074430235e-29,
+      "max_abs_vorticity": 4.769516469412621,
+      "max_speed": 2.0636424535581224
+    },
+    {
+      "energy": 0.29702448657272584,
+      "enstrophy": 0.690998765541442,
+      "divergence_rms": 2.6879840233005197e-14,
+      "radial_energy_tail": 1.7494275220254744e-33,
+      "component_energy_tail": 1.1994385073773588e-32,
+      "component_enstrophy_tail": 8.008375902932504e-29,
+      "max_abs_vorticity": 4.713371207288984,
+      "max_speed": 2.049545156885116
+    },
+    {
+      "energy": 0.29565211786529555,
+      "enstrophy": 0.6813957558841406,
+      "divergence_rms": 2.7961961608998257e-14,
+      "radial_energy_tail": 1.6836512648168398e-33,
+      "component_energy_tail": 1.285079196304787e-32,
+      "component_enstrophy_tail": 8.718299010006653e-29,
+      "max_abs_vorticity": 4.658203861492758,
+      "max_speed": 2.030382459900864
+    },
+    {
+      "energy": 0.29429879764396494,
+      "enstrophy": 0.6719513503960787,
+      "divergence_rms": 2.7649506886821802e-14,
+      "radial_energy_tail": 1.7941089704089795e-33,
+      "component_energy_tail": 1.3571546110434573e-32,
+      "component_enstrophy_tail": 9.25971967314913e-29,
+      "max_abs_vorticity": 4.603825173067199,
+      "max_speed": 2.0062842855467022
+    },
+    {
+      "energy": 0.29296420470404705,
+      "enstrophy": 0.6626683712614776,
+      "divergence_rms": 2.7794110065970802e-14,
+      "radial_energy_tail": 1.7704247888589835e-33,
+      "component_energy_tail": 1.4688266705673043e-32,
+      "component_enstrophy_tail": 1.1294054338352501e-28,
+      "max_abs_vorticity": 4.549554639377456,
+      "max_speed": 1.97754865098658
+    },
+    {
+      "energy": 0.291648018780296,
+      "enstrophy": 0.6535433037857101,
+      "divergence_rms": 2.7579310982446054e-14,
+      "radial_energy_tail": 1.70303451419772e-33,
+      "component_energy_tail": 1.4666571706786324e-32,
+      "component_enstrophy_tail": 1.0819392486568638e-28,
+      "max_abs_vorticity": 4.4963938335005675,
+      "max_speed": 1.944544424194459
+    },
+    {
+      "energy": 0.29034993160707545,
+      "enstrophy": 0.6445679657947025,
+      "divergence_rms": 2.7682510360787167e-14,
+      "radial_energy_tail": 1.7677077306878852e-33,
+      "component_energy_tail": 1.3575985957171297e-32,
+      "component_enstrophy_tail": 9.720790870904608e-29,
+      "max_abs_vorticity": 4.443283672978037,
+      "max_speed": 1.9077323572081275
+    },
+    {
+      "energy": 0.28906965440181376,
+      "enstrophy": 0.6357313683635601,
+      "divergence_rms": 2.7017547109734605e-14,
+      "radial_energy_tail": 1.7577295989070385e-33,
+      "component_energy_tail": 1.4329872840301318e-32,
+      "component_enstrophy_tail": 1.0538465150942444e-28,
+      "max_abs_vorticity": 4.390193837450909,
+      "max_speed": 1.8680149208923387
+    },
+    {
+      "energy": 0.28780692164719746,
+      "enstrophy": 0.627021521128845,
+      "divergence_rms": 2.6881091997428276e-14,
+      "radial_energy_tail": 1.7123398343486513e-33,
+      "component_energy_tail": 1.194666148266835e-32,
+      "component_enstrophy_tail": 8.452889036140465e-29,
+      "max_abs_vorticity": 4.336678152312396,
+      "max_speed": 1.8259920401341967
+    },
+    {
+      "energy": 0.28656149146852083,
+      "enstrophy": 0.6184270094251494,
+      "divergence_rms": 2.6303781061188696e-14,
+      "radial_energy_tail": 1.686158310636114e-33,
+      "component_energy_tail": 1.284370381350252e-32,
+      "component_enstrophy_tail": 9.744038170218655e-29,
+      "max_abs_vorticity": 4.28294974373446,
+      "max_speed": 1.7824961048058645
+    },
+    {
+      "energy": 0.2853331431731206,
+      "enstrophy": 0.6099382440752239,
+      "divergence_rms": 2.6073605859111244e-14,
+      "radial_energy_tail": 1.6172473729879908e-33,
+      "component_energy_tail": 1.2685755913970364e-32,
+      "component_enstrophy_tail": 8.59244823280085e-29,
+      "max_abs_vorticity": 4.229160556767303,
+      "max_speed": 1.738497942054272
+    },
+    {
+      "energy": 0.28412167265414434,
+      "enstrophy": 0.6015483448649573,
+      "divergence_rms": 2.6999552333562823e-14,
+      "radial_energy_tail": 1.6563623013327753e-33,
+      "component_energy_tail": 1.2704649897505858e-32,
+      "component_enstrophy_tail": 9.546339410206451e-29,
+      "max_abs_vorticity": 4.174921278781012,
+      "max_speed": 1.6946439280045043
+    },
+    {
+      "energy": 0.2829268863931411,
+      "enstrophy": 0.5932536616051759,
+      "divergence_rms": 2.58159499861636e-14,
+      "radial_energy_tail": 1.6680780749508244e-33,
+      "component_energy_tail": 1.2738899511290365e-32,
+      "component_enstrophy_tail": 9.299932969268535e-29,
+      "max_abs_vorticity": 4.1204440555823245,
+      "max_speed": 1.6517062260354878
+    },
+    {
+      "energy": 0.28174859475830955,
+      "enstrophy": 0.5850539643160695,
+      "divergence_rms": 2.555806009597614e-14,
+      "radial_energy_tail": 1.6613133221773238e-33,
+      "component_energy_tail": 1.1401269454252754e-32,
+      "component_enstrophy_tail": 8.503144464933885e-29,
+      "max_abs_vorticity": 4.0671679411755575,
+      "max_speed": 1.6102185320752338
+    },
+    {
+      "energy": 0.2805866052142727,
+      "enstrophy": 0.5769523503909542,
+      "divergence_rms": 2.5615203357391203e-14,
+      "radial_energy_tail": 1.6541286922319533e-33,
+      "component_energy_tail": 1.2966724077302614e-32,
+      "component_enstrophy_tail": 1.027436997553034e-28,
+      "max_abs_vorticity": 4.021548038619676,
+      "max_speed": 1.5706012342978153
+    },
+    {
+      "energy": 0.27944071595407566,
+      "enstrophy": 0.568954924945638,
+      "divergence_rms": 2.5235366870501436e-14,
+      "radial_energy_tail": 1.674788774303863e-33,
+      "component_energy_tail": 1.3776419355990807e-32,
+      "component_enstrophy_tail": 1.0347484025254293e-28,
+      "max_abs_vorticity": 3.977708077574225,
+      "max_speed": 1.5643713502600542
+    },
+    {
+      "energy": 0.27831071034821664,
+      "enstrophy": 0.5610703132351196,
+      "divergence_rms": 2.5780573557025233e-14,
+      "radial_energy_tail": 1.6592225734861096e-33,
+      "component_energy_tail": 1.1950290748659312e-32,
+      "component_enstrophy_tail": 8.84673794294848e-29,
+      "max_abs_vorticity": 3.934929580834838,
+      "max_speed": 1.5713133510724295
+    },
+    {
+      "energy": 0.277196352488627,
+      "enstrophy": 0.55330906256887,
+      "divergence_rms": 2.5255277459600508e-14,
+      "radial_energy_tail": 1.6141752234935815e-33,
+      "component_energy_tail": 1.2815385196045727e-32,
+      "component_enstrophy_tail": 1.0664239277200828e-28,
+      "max_abs_vorticity": 3.893514895767413,
+      "max_speed": 1.576899050654714
+    },
+    {
+      "energy": 0.2760973839946719,
+      "enstrophy": 0.545682986710513,
+      "divergence_rms": 2.4846470322210976e-14,
+      "radial_energy_tail": 1.6333412015839467e-33,
+      "component_energy_tail": 1.247397155514801e-32,
+      "component_enstrophy_tail": 1.0194908448144007e-28,
+      "max_abs_vorticity": 3.8530354866380163,
+      "max_speed": 1.5809307655832283
+    },
+    {
+      "energy": 0.2750135221484852,
+      "enstrophy": 0.5382044992941737,
+      "divergence_rms": 2.456256564706456e-14,
+      "radial_energy_tail": 1.5570668431210967e-33,
+      "component_energy_tail": 1.254553123987365e-32,
+      "component_enstrophy_tail": 1.030796045278903e-28,
+      "max_abs_vorticity": 3.8139556464526763,
+      "max_speed": 1.5830024064449677
+    },
+    {
+      "energy": 0.27394445934126027,
+      "enstrophy": 0.5308859753264905,
+      "divergence_rms": 2.431184097603375e-14,
+      "radial_energy_tail": 1.5446580372499902e-33,
+      "component_energy_tail": 1.2438759995964563e-32,
+      "component_enstrophy_tail": 9.264101928943402e-29,
+      "max_abs_vorticity": 3.7759901718089415,
+      "max_speed": 1.5830228148349341
+    },
+    {
+      "energy": 0.2728898637415766,
+      "enstrophy": 0.5237391722904143,
+      "divergence_rms": 2.5095983976134107e-14,
+      "radial_energy_tail": 1.566879309209945e-33,
+      "component_energy_tail": 1.327479859665249e-32,
+      "component_enstrophy_tail": 1.0946360861348294e-28,
+      "max_abs_vorticity": 3.7391093948804,
+      "max_speed": 1.5809029923409126
+    },
+    {
+      "energy": 0.27184938104101,
+      "enstrophy": 0.5167747352638534,
+      "divergence_rms": 2.4636646793485777e-14,
+      "radial_energy_tail": 1.585842702557542e-33,
+      "component_energy_tail": 1.2452204698703043e-32,
+      "component_enstrophy_tail": 9.775477917359797e-29,
+      "max_abs_vorticity": 3.703024280592662,
+      "max_speed": 1.5766790118830907
+    },
+    {
+      "energy": 0.27082263709017684,
+      "enstrophy": 0.510001803763909,
+      "divergence_rms": 2.4622460268366273e-14,
+      "radial_energy_tail": 1.554454863989617e-33,
+      "component_energy_tail": 1.1452407306100209e-32,
+      "component_enstrophy_tail": 9.939457766213505e-29,
+      "max_abs_vorticity": 3.668106583657748,
+      "max_speed": 1.5705165695740544
+    },
+    {
+      "energy": 0.2698092412096661,
+      "enstrophy": 0.5034277312482061,
+      "divergence_rms": 2.508398366458061e-14,
+      "radial_energy_tail": 1.5032409816474505e-33,
+      "component_energy_tail": 1.277515069576823e-32,
+      "component_enstrophy_tail": 1.0695844138513157e-28,
+      "max_abs_vorticity": 3.6340417710830186,
+      "max_speed": 1.562768421185659
+    },
+    {
+      "energy": 0.2688087899456351,
+      "enstrophy": 0.49705792092111917,
+      "divergence_rms": 2.4725072793750757e-14,
+      "radial_energy_tail": 1.581609363328836e-33,
+      "component_energy_tail": 1.2750734376406223e-32,
+      "component_enstrophy_tail": 1.071731673288511e-28,
+      "max_abs_vorticity": 3.6010847826023253,
+      "max_speed": 1.5538233592703623
+    },
+    {
+      "energy": 0.2678208710402289,
+      "enstrophy": 0.49089577378547516,
+      "divergence_rms": 2.4824906250399552e-14,
+      "radial_energy_tail": 1.606906059381547e-33,
+      "component_energy_tail": 1.267486187271312e-32,
+      "component_enstrophy_tail": 1.074919097260106e-28,
+      "max_abs_vorticity": 3.568656488566858,
+      "max_speed": 1.5441457637047462
+    }
+  ],
+  "npz_sha256": "42e360cca6d13f9fb9d8178c9b413854bc7b65d1055fb781512d62b517f3a7ee",
+  "diagnostics_script_sha256": "5e7d31840c0583a7a656fa3df3ed0670c14c17a43a8994fc8b8d0360f8b07cdc"
+}

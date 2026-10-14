@@ -1,0 +1,131 @@
+{
+  "case": "interacting_vortices",
+  "reference_nx": 512,
+  "grids": [
+    64,
+    128,
+    256,
+    512
+  ],
+  "duration": 4.0,
+  "frames": 41,
+  "grid_refinement": [
+    {
+      "case": "interacting_vortices",
+      "nx": 64,
+      "reference_nx": 512,
+      "initial": {
+        "case": "interacting_vortices",
+        "comparison": "spatial",
+        "nx": 64,
+        "reference_nx": 512,
+        "time": 0.0,
+        "velocity_common_modes_relative_l2": 4.020380408871139e-16,
+        "vorticity_common_modes_relative_l2": 2.703644899844893e-15,
+        "velocity_full_field_relative_l2": 4.286915794506096e-16,
+        "vorticity_full_field_relative_l2": 2.4515909143526203e-14,
+        "energy_relative_error": 3.469446951953614e-16,
+        "enstrophy_relative_error": 2.640033315858616e-16,
+        "reference_unresolved_energy_fraction": 2.220446049250313e-16,
+        "reference_unresolved_enstrophy_fraction": 0.0
+      },
+      "final": {
+        "case": "interacting_vortices",
+        "comparison": "spatial",
+        "nx": 64,
+        "reference_nx": 512,
+        "time": 4.0,
+        "velocity_common_modes_relative_l2": 2.5678957256916326e-05,
+        "vorticity_common_modes_relative_l2": 0.00022169974774627967,
+        "velocity_full_field_relative_l2": 2.9984569756585637e-05,
+        "vorticity_full_field_relative_l2": 0.00035254173276989153,
+        "energy_relative_error": 8.058802143930078e-08,
+        "enstrophy_relative_error": 1.483334201971982e-07,
+        "reference_unresolved_energy_fraction": 2.396655096603695e-10,
+        "reference_unresolved_enstrophy_fraction": 7.513489863608669e-08
+      },
+      "maximum_velocity_full_field_error": 0.0002337398437230163,
+      "maximum_vorticity_full_field_error": 0.003626043881686163,
+      "maximum_component_enstrophy_tail": 5.5101962497376335e-05,
+      "meets_scoped_exploratory_spatial_targets": true
+    },
+    {
+      "case": "interacting_vortices",
+      "nx": 128,
+      "reference_nx": 512,
+      "initial": {
+        "case": "interacting_vortices",
+        "comparison": "spatial",
+        "nx": 128,
+        "reference_nx": 512,
+        "time": 0.0,
+        "velocity_common_modes_relative_l2": 3.389908295697945e-16,
+        "vorticity_common_modes_relative_l2": 5.295082815141807e-15,
+        "velocity_full_field_relative_l2": 4.18118781318024e-16,
+        "vorticity_full_field_relative_l2": 2.484190381721512e-14,
+        "energy_relative_error": 1.734723475976807e-16,
+        "enstrophy_relative_error": 0.0,
+        "reference_unresolved_energy_fraction": 0.0,
+        "reference_unresolved_enstrophy_fraction": 0.0
+      },
+      "final": {
+        "case": "interacting_vortices",
+        "comparison": "spatial",
+        "nx": 128,
+        "reference_nx": 512,
+        "time": 4.0,
+        "velocity_common_modes_relative_l2": 9.112438907396835e-10,
+        "vorticity_common_modes_relative_l2": 8.261334842175795e-09,
+        "velocity_full_field_relative_l2": 9.871058730591874e-10,
+        "vorticity_full_field_relative_l2": 1.51684835869999e-08,
+        "energy_relative_error": 2.6655919594196134e-11,
+        "enstrophy_relative_error": 2.257010792511083e-10,
+        "reference_unresolved_energy_fraction": 0.0,
+        "reference_unresolved_enstrophy_fraction": 0.0
+      },
+      "maximum_velocity_full_field_error": 2.4713899982383456e-07,
+      "maximum_vorticity_full_field_error": 7.410033308673116e-06,
+      "maximum_component_enstrophy_tail": 6.961645590303594e-09,
+      "meets_scoped_exploratory_spatial_targets": true
+    },
+    {
+      "case": "interacting_vortices",
+      "nx": 256,
+      "reference_nx": 512,
+      "initial": {
+        "case": "interacting_vortices",
+        "comparison": "spatial",
+        "nx": 256,
+        "reference_nx": 512,
+        "time": 0.0,
+        "velocity_common_modes_relative_l2": 3.6463849609973577e-16,
+        "vorticity_common_modes_relative_l2": 1.1402991423135189e-14,
+        "velocity_full_field_relative_l2": 4.138215418703622e-16,
+        "vorticity_full_field_relative_l2": 2.660834402472268e-14,
+        "energy_relative_error": 1.734723475976807e-16,
+        "enstrophy_relative_error": 1.320016657929308e-16,
+        "reference_unresolved_energy_fraction": 0.0,
+        "reference_unresolved_enstrophy_fraction": 0.0
+      },
+      "final": {
+        "case": "interacting_vortices",
+        "comparison": "spatial",
+        "nx": 256,
+        "reference_nx": 512,
+        "time": 4.0,
+        "velocity_common_modes_relative_l2": 1.9878421997508885e-10,
+        "vorticity_common_modes_relative_l2": 1.2888545238056552e-09,
+        "velocity_full_field_relative_l2": 1.9878421679038867e-10,
+        "vorticity_full_field_relative_l2": 1.2888545208902776e-09,
+        "energy_relative_error": 6.592005495694676e-12,
+        "enstrophy_relative_error": 6.828563639378572e-11,
+        "reference_unresolved_energy_fraction": 0.0,
+        "reference_unresolved_enstrophy_fraction": 0.0
+      },
+      "maximum_velocity_full_field_error": 4.0265188111352045e-10,
+      "maximum_vorticity_full_field_error": 2.67110578210083e-09,
+      "maximum_component_enstrophy_tail": 1.0094394099437177e-19,
+      "meets_scoped_exploratory_spatial_targets": true
+    }
+  ]
+}

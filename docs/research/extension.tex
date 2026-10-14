@@ -7,6 +7,7 @@
 \usepackage{amsmath,amssymb,mathtools}
 \usepackage{booktabs,longtable,array}
 \usepackage{graphicx}
+\usepackage{pdflscape}
 \usepackage{microtype}
 \usepackage[round,authoryear]{natbib}
 \usepackage{url}
@@ -71,7 +72,15 @@ Los casos de canal no representan una estela viscoelástica alrededor de un
 cilindro; el uso de una formulación de Navier--Stokes tampoco certifica
 automáticamente que una malla resuelva todas las escalas relevantes.
 
+La ampliación de resolución añade 45 integraciones y verificaciones físicas,
+con mallas hasta $512^2$ en Navier--Stokes y $256^2$ en los modelos reológicos.
+Incluye 84 reconstrucciones adicionales, seis diagramas explicativos y 28
+figuras nuevas de evolución, constitutiva, espectros, errores y balances.
+La suficiencia se examina por observable e intervalo: una velocidad bien
+resuelta puede coexistir con esfuerzos o viscosidad todavía sensibles a malla.
+
 \tableofcontents
+\listoffigures
 \mainmatter
 
 \chapter{Introducción}
@@ -167,6 +176,11 @@ ruido blanco y del límite considerado; la constante $4/\sqrt3$ corresponde
 al caso cuadrado. No se utiliza como garantía para ruido correlacionado.
 En el piloto, POD usa rango predeclarado; no implementa selección mediante el umbral de Gavish--Donoho. Las alternativas aleatorias o truncadas también deben registrar tolerancia,
 pasadas y rango, pues su costo y precisión difieren \citep{halko2011randomness}.
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=\textwidth]{docs/research/figures/diagram_matrix_methods.pdf}
+\caption{Representación esquemática de componentes y tiempos. POD, RPCA y DMD usan la misma organización de observaciones, pero imponen supuestos distintos. Los bloques coloreados son un esquema, no datos simulados.}
+\label{fig:matrix-methods}\end{figure}
 
 \section{PCP, RPCA estable y corrupción de columnas}
 PCP modela una matriz de bajo rango más una componente dispersa:
@@ -470,6 +484,11 @@ La implementación y sus controles están en
 \path{docs/research/VISCOPLASTIC_2D.md} y
 \path{results/research/solver_validation_2d/viscoplastic.json}.
 
+\begin{figure}[htbp]\centering
+\includegraphics[width=\textwidth]{docs/research/figures/diagram_constitutive_loop.pdf}
+\caption{La memoria polimérica realimenta el momento; la viscoplasticidad integra un esfuerzo variable instantáneo. Ambos acoplamientos modifican la evolución espacial, y no equivalen a reescalar una trayectoria newtoniana.}
+\label{fig:constitutive-loop}\end{figure}
+
 \section{Proyección física y residuo de movimiento}
 Para dominios periódicos sin sólidos, la proyección de Helmholtz usa sólo la
 geometría y elimina la componente longitudinal:
@@ -730,6 +749,83 @@ Los cambios respecto al Newtoniano son diferencias físicas simuladas, no
 errores de reconstrucción. La animación y las tablas se conservan en
 \path{results/research/rheology_matched_2026-10-14/}.
 
+\begin{figure}[htbp]\centering
+\includegraphics[width=\textwidth]{docs/research/figures/diagram_chronological_protocol.pdf}
+\caption{Separación cronológica: la limpieza y el ajuste ven sólo entrenamiento; la elección utiliza validación ruidosa; la referencia limpia futura evalúa después de seleccionar. La observación de prueba no se utiliza para reajustar.}
+\label{fig:chronological-protocol}\end{figure}
+
+\section{Campañas de mayor resolución y evolución espacial}
+La ampliación visual ejecuta cada malla mediante una nueva integración del
+sistema. Comparar imágenes interpoladas de un único campo no equivale a
+resolver el flujo de nuevo. Se mantienen dentro de cada estudio dominio,
+condición inicial física, constitutiva y tiempos de salida; se modifica la
+malla, con los subpasos internos limitados por estabilidad.
+
+El banco newtoniano compara $64^2,128^2,256^2,512^2$ en dos condiciones
+no lineales, con velocidad RMS inicial $.8$, viscosidad $.01$, lado $2\pi$
+y duración $4$. Conserva 41 instantáneas. Las referencias Oldroyd-B/FENE-P
+comparan $64^2,128^2,256^2$ hasta $2.4$, con 25 instantáneas, RMS inicial
+$.8$, $\nu_s=.02$, $\nu_p=.04$, $\lambda=.5$, $L^2=12$ y $\kappa=0$.
+No se confunden estas condiciones con los parámetros de los bancos anteriores.
+
+Los flujos HB/Bingham tienen trayectorias $64^2$ y $128^2$ hasta $2$, con
+21 instantáneas. La referencia adicional $256^2$ sólo alcanza $.1$ por el
+costo del esquema explícito con viscosidad aparente variable. Verifica un
+intervalo corto y no certifica automáticamente la evolución larga de $128^2$.
+La viscosidad nominal aparente se iguala en la tasa de corte declarada a
+$.04$, con $\tau_y=.01$, $m=10$, $\epsilon=.001$ y RMS inicial $.8$.
+Estos parámetros difieren del banco viscoelástico; los contrastes entre
+familias no se presentan como una comparación reológica controlada única.
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=\textwidth]{docs/research/figures/diagram_spectral_resolution.pdf}
+\caption{Relación entre dominio, escala física y resolución. Las mallas dibujadas son esquemas. El número de nodos y el corte 2/3 por eje describen la capacidad de representación; la convergencia exige además comparar campos y observables.}
+\label{fig:spectral-resolution}\end{figure}
+
+Se muestran dos errores espaciales: los modos que ambas mallas pueden
+representar, y el campo completo de la referencia fina frente al grueso
+prolongado por Fourier. El segundo incluye las estructuras que el grueso no
+resuelve. La interpolación se emplea para comparar soluciones independientes,
+no para generar nuevos datos. Se conservan curvas y máximos sobre todos los
+tiempos muestreados: el estado final por sí solo puede ocultar picos intermedios.
+
+La velocidad se acompaña de vorticidad, energía, enstrofía y espectros; en
+viscoelasticidad también de $C-I$, esfuerzos, autovalor mínimo, traza y defectos
+constitutivos. Comparar sólo $C$ puede ocultar deformación pequeña detrás de
+la identidad. En HB/Bingham se examinan viscosidad aparente, tasa de corte,
+esfuerzo y disipación. Una medida relativa con referencia nula se registra
+como indefinida y se acompaña de error absoluto.
+
+El ancho inicial $\sigma=.065L$ de los núcleos tiene 2.08 celdas en la
+malla anterior de $32^2$, frente a 4.16, 8.32, 16.64 y 33.28 en las nuevas
+$64^2,128^2,256^2,512^2$. Esa relación hace concreto el refinamiento,
+pero los filamentos y esfuerzos pueden generar escalas menores durante el flujo.
+
+La lectura exploratoria utiliza 1\% como tolerancia de velocidad/vorticidad
+frente a la referencia numérica, y examina separadamente colas espectrales y
+errores temporales. Son decisiones operativas de estos casos, no una
+certificación DNS, una preregistración ciega o una regla universal de
+representatividad. La duración, geometría, esfuerzo y régimen deben formar
+parte de cualquier afirmación de suficiencia.
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=\textwidth]{docs/research/figures/diagram_independent_checks.pdf}
+\caption{Controles distintos para causas distintas de error. Malla, paso efectivo, cuadratura y regularización no se sustituyen entre sí. Una simulación finita o con balance discreto pequeño todavía puede estar espacialmente subresuelta.}
+\label{fig:independent-checks}\end{figure}
+
+La demostración de reconstrucción añade 60 condiciones sobre campos
+$128^2$ y $256^2$, cinco estimadores o variantes y tres semillas. Contrasta
+ruido gaussiano independiente por celda con ruido espacial generado por un
+filtro gaussiano de ancho físico $\sigma_f=.10$. El ancho del filtro no es
+el de la autocorrelación: en el límite continuo gaussiano, la desviación
+estándar de ésta es $\sqrt2\sigma_f$. En el segundo, una misma realización sobre $256^2$ se
+transfiere a $128^2$, sin renormalizar cada malla. Para el primero, refinar
+la observación cambia su contenido de altas frecuencias: RMS igual no hace
+equivalentes sus errores de derivadas. Los rangos ocho y dieciséis se fijan
+antes de evaluar; esta limpieza utiliza el intervalo observado y no es una
+campaña de pronóstico. El costo tiene una sola réplica sobre un host ocupado
+por las simulaciones: no se presenta como una clasificación precisa de tiempos.
+
 \section{Costo computacional y Pareto}
 El vector de costo registra tiempo wall, CPU, RSS pico absoluta del
 proceso, memoria visible a \code{tracemalloc}, dimensiones de entrada,
@@ -785,6 +881,11 @@ también enstrofía y balance de materia, aunque no integren todos ellos el
 criterio de aceptación del piloto. Un ensayo posterior debe ajustar sus
 umbrales al uso físico y declararlos antes de interpretar el test.
 
+\begin{figure}[htbp]\centering
+\includegraphics[width=\textwidth]{docs/research/figures/diagram_research_pipeline.pdf}
+\caption{Flujo de trabajo de simulación, observación, estimación y evaluación. La referencia limpia sustenta la comparación física; la elección predictiva utiliza validación ruidosa. La frontera de recursos se interpreta junto con tolerancias y convergencia.}
+\label{fig:research-pipeline}\end{figure}
+
 \section{Verificación y trazabilidad}
 Se verifica el solver frente a soluciones exactas, límites constitutivos,
 residuos y refinamiento; las comprobaciones y sus configuraciones forman
@@ -811,6 +912,7 @@ los criterios permanecen visibles.
 
 \input{docs/research/results_generated.tex}
 \input{docs/research/extended_generated.tex}
+\input{docs/research/highres_generated.tex}
 
 \section{Límites comunes de interpretación}
 Una ventaja de un método bajo una distribución no acredita superioridad
@@ -836,6 +938,28 @@ Los residuos constitutivos y de cuadratura no se sustituyen por cero.
 
 \chapter{Conclusiones y líneas de trabajo futuro}
 \section{Conclusiones metodológicas y alcance}
+La campaña de mayor resolución muestra que la suficiencia depende de la
+magnitud que se quiere observar. Frente a $512^2$, el caso multiescala en
+$64^2$ tiene un error máximo de velocidad de $0.2007\%$, pero $1.312\%$ en
+vorticidad; en $128^2$ esta última diferencia baja a $0.03032\%$. Las
+imágenes y los espectros acompañan esa comparación, sin sustituirla.
+
+En Oldroyd-B, frente a $256^2$, la velocidad de $128^2$ difiere apenas
+$0.0008872\%$ mientras que conformación y esfuerzo difieren $4.383\%$.
+FENE-P alcanza $0.1165\%$ en esfuerzo bajo los mismos parámetros nominales.
+La cola tensorial de Oldroyd-B en $256^2$ todavía exige una referencia
+superior antes de afirmar resolución constitutiva completa. En HB adelgazante,
+la viscosidad aparente conserva $5.023\%$ de diferencia $128^2\to256^2$ en
+la prueba corta; esa referencia no valida todo el horizonte largo.
+
+Las 60 reconstrucciones de mayor malla incumplen los umbrales físicos pese
+a reducir error de velocidad. El seguimiento exploratorio de banda física
+fija alcanza 18 aceptaciones de 24, conservando un control de filtrado directo.
+En gaussiano IID sobre $256^2$, ese control supera a TLS-DMD en vorticidad:
+la mejora corresponde al conjunto de supuestos y operaciones, y no prueba
+una ventaja universal del modelo dinámico. Una validación independiente
+de ese nuevo prior permanece pendiente.
+
 La ampliación establece una comparación verificable entre estructura de
 contaminación, estimador, referencia física y recursos. El juicio de éxito
 separa convergencia del algoritmo, fidelidad de reconstrucción,
