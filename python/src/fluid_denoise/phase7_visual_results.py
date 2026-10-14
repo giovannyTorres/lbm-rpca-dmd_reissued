@@ -1417,7 +1417,8 @@ def generate_visual_results(
     config_path: Path | str | None = None,
 ) -> VisualResultsSummary:
     _validate_visual_results_config(config_payload)
-    config_base_dir = REPO_ROOT if config_path is None else Path(config_path).resolve().parent
+    config_base_dir = (REPO_ROOT if config_path is None or config_payload.get("path_base") == "repository"
+                       else Path(config_path).resolve().parent)
     benchmark_id, benchmark_metrics_root, benchmark_tables_root, summary_csv_path = _resolve_source_paths(
         config_payload,
         config_base_dir=config_base_dir,

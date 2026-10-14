@@ -409,7 +409,9 @@ def _subset_dataset(dataset, indices):
     for key in ("velocity", "times", "density", "pressure", "stress", "conformation", "forcing_curl"):
         value = dataset.get(key)
         if isinstance(value, np.ndarray) and value.ndim and value.shape[0] == count:
-            if key == "density" and value.ndim == 2:
+            minimum_time_dimensions = {"velocity":4,"times":1,"density":3,
+                                       "pressure":3,"stress":5,"conformation":5,"forcing_curl":3}
+            if value.ndim < minimum_time_dimensions[key]:
                 continue
             result[key] = value[indices]
     result["velocity"] = np.asarray(dataset["velocity"])[indices]

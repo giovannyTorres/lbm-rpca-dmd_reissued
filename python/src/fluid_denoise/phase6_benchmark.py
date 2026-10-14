@@ -916,7 +916,8 @@ def run_benchmark(
     config_path: Path | str | None = None,
 ) -> BenchmarkRunSummary:
     _validate_benchmark_config(config_payload)
-    config_base_dir = REPO_ROOT if config_path is None else Path(config_path).resolve().parent
+    config_base_dir = (REPO_ROOT if config_path is None or config_payload.get("path_base") == "repository"
+                       else Path(config_path).resolve().parent)
     benchmark_config = config_payload["benchmark"]
     solver_section = config_payload["solver"]
     execution = dict(config_payload.get("execution", {}))

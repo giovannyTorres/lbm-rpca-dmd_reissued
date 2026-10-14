@@ -69,7 +69,8 @@ def apply_postprocessing(dataset, velocity, kind="none"):
         return np.asarray(velocity), {"postprocess": "none", "reference_velocity_used": False}
     if kind not in ("helmholtz", "helmholtz_dealias"):
         raise ValueError("unknown postprocessing")
-    if dataset["boundary"] != "periodic" or np.any(dataset["mask"]):
+    mask = np.asarray(dataset.get("mask", np.zeros(np.asarray(velocity).shape[-2:], dtype=bool)))
+    if dataset["boundary"] != "periodic" or np.any(mask):
         raise ValueError("periodic Helmholtz projection cannot enforce channel or obstacle boundaries")
     return helmholtz_project(velocity, dataset["dx"], dataset["dy"], dealias=kind.endswith("dealias"))
 
@@ -88,7 +89,8 @@ def vorticity_residual_metrics(reference, candidate_velocity):
                    "reference_vorticity_equation_residual_rms": None,
                    "extra_vorticity_equation_residual_rms": None,
                    "extra_vorticity_equation_residual_normalized": None}
-    if reference.get("boundary") != "periodic" or np.any(reference["mask"]) or model != "newtonian" or "viscosity" not in metadata:
+    mask = np.asarray(reference.get("mask", np.zeros(np.asarray(candidate_velocity).shape[-2:], dtype=bool)))
+    if reference.get("boundary") != "periodic" or np.any(mask) or model != "newtonian" or "viscosity" not in metadata:
         return {**unsupported, "vorticity_equation_reason": "Requires periodic Newtonian velocity with viscosity and known forcing; non-Newtonian stress not inferred"}
     times = np.asarray(reference["times"], dtype=float)
     if len(times) < 3:
@@ -103,6 +105,12 @@ def vorticity_residual_metrics(reference, candidate_velocity):
     if not np.isfinite(viscosity) or viscosity < 0:
         raise ValueError("viscosity must be finite and nonnegative")
     kx, ky, k2 = _wavenumbers(*ref.shape[-2:], reference["dx"], reference["dy"])
+    # A real Nyquist first derivative vanishes at sampled nodes, but its
+    # second derivative does not. Do not reuse the projection's k2 here.
+    ny, nx = ref.shape[-2:]
+    raw_x, raw_y = np.meshgrid(2*np.pi*np.fft.fftfreq(nx,d=reference["dx"]),
+                               2*np.pi*np.fft.fftfreq(ny,d=reference["dy"]))
+    laplacian_k2 = raw_x**2+raw_y**2
     forcing_curl = reference.get("forcing_curl")
     if forcing_curl is None and metadata.get("forcing") not in (None, "none", 0):
         return {**unsupported, "vorticity_equation_reason": "Forcing present but its curl is unavailable"}
@@ -116,7 +124,7 @@ def vorticity_residual_metrics(reference, candidate_velocity):
         omega = derivative(v, kx)-derivative(u, ky)
         temporal = np.gradient(omega, times, axis=0, edge_order=2)
         convection = u*derivative(omega, kx)+v*derivative(omega, ky)
-        diffusion = np.fft.ifft2(-k2*np.fft.fft2(omega), axes=(-2,-1)).real
+        diffusion = np.fft.ifft2(-laplacian_k2*np.fft.fft2(omega), axes=(-2,-1)).real
         return temporal+convection-viscosity*diffusion-forcing_curl, omega
 
     clean_residual, omega = residual(ref)

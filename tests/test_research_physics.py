@@ -45,3 +45,16 @@ class PhysicalProjectionTests(unittest.TestCase):
         metrics=vorticity_residual_metrics(dataset,dataset['velocity'])
         self.assertFalse(metrics['vorticity_equation_applicable'])
         self.assertIsNone(metrics['vorticity_equation_residual_rms'])
+
+    def test_nyquist_second_derivative_not_erased(self):
+        dataset=taylor_green_reference(nx=8,times=np.linspace(0,1,5),viscosity=1.)
+        x,y=np.meshgrid(np.arange(8)*dataset['dx'],np.arange(8)*dataset['dy'])
+        dataset['velocity'][:,0]=np.cos(y)*np.cos(4*x)
+        dataset['velocity'][:,1]=0
+        result=vorticity_residual_metrics(dataset,dataset['velocity'])
+        self.assertAlmostEqual(result['vorticity_equation_residual_rms'],17/np.sqrt(2),places=11)
+
+    def test_optional_empty_mask_geometry(self):
+        dataset=taylor_green_reference(nx=8,times=np.linspace(0,1,5));dataset.pop('mask')
+        projected,_=apply_postprocessing(dataset,dataset['velocity'],'helmholtz')
+        self.assertTrue(vorticity_residual_metrics(dataset,projected)['vorticity_equation_applicable'])
