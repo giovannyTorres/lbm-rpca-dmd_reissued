@@ -1,0 +1,65 @@
+[
+  {
+    "flow": "ns_vortices",
+    "physical_cutoff": 10.0,
+    "clean_velocity_band_floor": 0.004609925873293007,
+    "clean_vorticity_band_floor": 0.03541062944205546,
+    "pod_r8_vorticity_raw": 0.045767480988603226,
+    "pod_r8_vorticity_band": 0.055574307119041266,
+    "qualification": "Orthogonal periodic spectral-band floor relative to the computed full clean field, not an absolute continuum DNS error."
+  },
+  {
+    "flow": "ns_multiscale",
+    "physical_cutoff": 10.0,
+    "clean_velocity_band_floor": 0.030679754864329258,
+    "clean_vorticity_band_floor": 0.10836598630484197,
+    "pod_r8_vorticity_raw": 0.042103072856384066,
+    "pod_r8_vorticity_band": 0.11124943184461741,
+    "qualification": "Orthogonal periodic spectral-band floor relative to the computed full clean field, not an absolute continuum DNS error."
+  },
+  {
+    "flow": "oldroyd_b",
+    "physical_cutoff": 10.0,
+    "clean_velocity_band_floor": 0.001671061817797245,
+    "clean_vorticity_band_floor": 0.01447648101616776,
+    "pod_r8_vorticity_raw": 0.005634221605212722,
+    "pod_r8_vorticity_band": 0.014920896106693688,
+    "qualification": "Orthogonal periodic spectral-band floor relative to the computed full clean field, not an absolute continuum DNS error."
+  },
+  {
+    "flow": "fene_p",
+    "physical_cutoff": 10.0,
+    "clean_velocity_band_floor": 0.0013881647233195261,
+    "clean_vorticity_band_floor": 0.011896010684364402,
+    "pod_r8_vorticity_raw": 0.0046938086420424754,
+    "pod_r8_vorticity_band": 0.012339536525039793,
+    "qualification": "Orthogonal periodic spectral-band floor relative to the computed full clean field, not an absolute continuum DNS error."
+  },
+  {
+    "flow": "hb_thinning",
+    "physical_cutoff": 10.0,
+    "clean_velocity_band_floor": 0.0025555260845872294,
+    "clean_vorticity_band_floor": 0.020123395119425527,
+    "pod_r8_vorticity_raw": 0.004510175375123696,
+    "pod_r8_vorticity_band": 0.020222160354841968,
+    "qualification": "Orthogonal periodic spectral-band floor relative to the computed full clean field, not an absolute continuum DNS error."
+  },
+  {
+    "flow": "bingham",
+    "physical_cutoff": 10.0,
+    "clean_velocity_band_floor": 0.0013245705410491187,
+    "clean_vorticity_band_floor": 0.01071897057073552,
+    "pod_r8_vorticity_raw": 0.0028421039035220093,
+    "pod_r8_vorticity_band": 0.010784593317457677,
+    "qualification": "Orthogonal periodic spectral-band floor relative to the computed full clean field, not an absolute continuum DNS error."
+  },
+  {
+    "flow": "hb_thickening",
+    "physical_cutoff": 10.0,
+    "clean_velocity_band_floor": 0.0008294681025681734,
+    "clean_vorticity_band_floor": 0.007561117827819688,
+    "pod_r8_vorticity_raw": 0.002533845288686552,
+    "pod_r8_vorticity_band": 0.007643519257333164,
+    "qualification": "Orthogonal periodic spectral-band floor relative to the computed full clean field, not an absolute continuum DNS error."
+  }
+]

@@ -1,0 +1,1689 @@
+{
+  "complete": true,
+  "data_branch": "data/model-comparison-fidelity-2026-10-14",
+  "datasets": [
+    {
+      "case": "ns_vortices",
+      "path": "results/research/highres_newtonian_2026-10-14/datasets/interacting_vortices_128_dt0.005.npz",
+      "sha256": "8ff4bbbb2acc863a35760a67d1935cd7221c8ac1f60fa05ad6f2181ea4625890",
+      "bytes": 10217717,
+      "stored_fields": {
+        "velocity": [
+          41,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          41
+        ]
+      },
+      "velocity_shape": [
+        41,
+        2,
+        128,
+        128
+      ],
+      "complete_time_history": true,
+      "hash_validation": "archive_bytes_sha256",
+      "canonical_dataset_sha256": null,
+      "density_scope": "Constant unit density explicitly declared by these periodic solvers.",
+      "estimator_input_scope": "Observed velocity and times; geometry for postprocessing. Constitutive fields remain evaluation data."
+    },
+    {
+      "case": "ns_multiscale",
+      "path": "results/research/highres_newtonian_2026-10-14/datasets/decaying_turbulence_128_dt0.005.npz",
+      "sha256": "2b99c1d857d89a2dc7a3ef317ed869fa3d3b63f51c130dad50307a6792612158",
+      "bytes": 10278724,
+      "stored_fields": {
+        "velocity": [
+          41,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          41
+        ]
+      },
+      "velocity_shape": [
+        41,
+        2,
+        128,
+        128
+      ],
+      "complete_time_history": true,
+      "hash_validation": "archive_bytes_sha256",
+      "canonical_dataset_sha256": null,
+      "density_scope": "Constant unit density explicitly declared by these periodic solvers.",
+      "estimator_input_scope": "Observed velocity and times; geometry for postprocessing. Constitutive fields remain evaluation data."
+    },
+    {
+      "case": "oldroyd_b",
+      "path": "results/research/highres_viscoelastic_2026-10-14/datasets/oldroyd_b_128.npz",
+      "sha256": "5918dbaae151efd56a2881046868f18ca052fa1605a279d03253ff85b1ec1065",
+      "bytes": 30183894,
+      "stored_fields": {
+        "velocity": [
+          25,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          25
+        ],
+        "conformation": [
+          25,
+          3,
+          3,
+          128,
+          128
+        ],
+        "stress": [
+          25,
+          3,
+          3,
+          128,
+          128
+        ]
+      },
+      "velocity_shape": [
+        25,
+        2,
+        128,
+        128
+      ],
+      "complete_time_history": true,
+      "hash_validation": "archive_bytes_sha256",
+      "canonical_dataset_sha256": null,
+      "density_scope": "Constant unit density explicitly declared by these periodic solvers.",
+      "estimator_input_scope": "Observed velocity and times; geometry for postprocessing. Constitutive fields remain evaluation data."
+    },
+    {
+      "case": "fene_p",
+      "path": "results/research/highres_viscoelastic_2026-10-14/datasets/fene_p_128.npz",
+      "sha256": "28146ac24585182adf54c7efda3731a58588773427f7e18aa45a99b0fcb1e9ae",
+      "bytes": 35757062,
+      "stored_fields": {
+        "velocity": [
+          25,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          25
+        ],
+        "conformation": [
+          25,
+          3,
+          3,
+          128,
+          128
+        ],
+        "stress": [
+          25,
+          3,
+          3,
+          128,
+          128
+        ]
+      },
+      "velocity_shape": [
+        25,
+        2,
+        128,
+        128
+      ],
+      "complete_time_history": true,
+      "hash_validation": "archive_bytes_sha256",
+      "canonical_dataset_sha256": null,
+      "density_scope": "Constant unit density explicitly declared by these periodic solvers.",
+      "estimator_input_scope": "Observed velocity and times; geometry for postprocessing. Constitutive fields remain evaluation data."
+    },
+    {
+      "case": "hb_thinning",
+      "path": "results/research/highres_viscoplastic_2026-10-14/datasets/hb_thinning_128.npz",
+      "sha256": "b41f4a0763a286526c379844a081b2c27fa5750c974bce334d8c0c27f354873f",
+      "bytes": 23484349,
+      "stored_fields": {
+        "velocity": [
+          21,
+          2,
+          128,
+          128
+        ],
+        "pressure": [
+          21,
+          128,
+          128
+        ],
+        "shear_rate": [
+          21,
+          128,
+          128
+        ],
+        "apparent_viscosity": [
+          21,
+          128,
+          128
+        ],
+        "deviatoric_stress": [
+          21,
+          3,
+          128,
+          128
+        ],
+        "stress_invariant": [
+          21,
+          128,
+          128
+        ],
+        "approximate_yielded": [
+          21,
+          128,
+          128
+        ],
+        "over_yield_stress": [
+          21,
+          128,
+          128
+        ],
+        "kinetic_energy": [
+          21
+        ],
+        "dissipation_rate": [
+          21
+        ],
+        "cumulative_dissipation": [
+          21
+        ],
+        "energy_budget_residual": [
+          21
+        ],
+        "times": [
+          21
+        ],
+        "density": [
+          21,
+          128,
+          128
+        ],
+        "mask": [
+          128,
+          128
+        ]
+      },
+      "velocity_shape": [
+        21,
+        2,
+        128,
+        128
+      ],
+      "complete_time_history": true,
+      "hash_validation": "canonical_field_digest_and_solver_sources",
+      "canonical_dataset_sha256": "b39902f9d8cbf0ad405be6607c8b20c76e52b843532ae71b3a707a8364ecfc4b",
+      "density_scope": "Constant unit density explicitly declared by these periodic solvers.",
+      "estimator_input_scope": "Observed velocity and times; geometry for postprocessing. Constitutive fields remain evaluation data."
+    },
+    {
+      "case": "bingham",
+      "path": "results/research/highres_viscoplastic_2026-10-14/datasets/bingham_128.npz",
+      "sha256": "52b61b37762d5e3abfa0f9000dd0beb1f416fc0628900e8221670b7e4eabb52d",
+      "bytes": 23471793,
+      "stored_fields": {
+        "velocity": [
+          21,
+          2,
+          128,
+          128
+        ],
+        "pressure": [
+          21,
+          128,
+          128
+        ],
+        "shear_rate": [
+          21,
+          128,
+          128
+        ],
+        "apparent_viscosity": [
+          21,
+          128,
+          128
+        ],
+        "deviatoric_stress": [
+          21,
+          3,
+          128,
+          128
+        ],
+        "stress_invariant": [
+          21,
+          128,
+          128
+        ],
+        "approximate_yielded": [
+          21,
+          128,
+          128
+        ],
+        "over_yield_stress": [
+          21,
+          128,
+          128
+        ],
+        "kinetic_energy": [
+          21
+        ],
+        "dissipation_rate": [
+          21
+        ],
+        "cumulative_dissipation": [
+          21
+        ],
+        "energy_budget_residual": [
+          21
+        ],
+        "times": [
+          21
+        ],
+        "density": [
+          21,
+          128,
+          128
+        ],
+        "mask": [
+          128,
+          128
+        ]
+      },
+      "velocity_shape": [
+        21,
+        2,
+        128,
+        128
+      ],
+      "complete_time_history": true,
+      "hash_validation": "canonical_field_digest_and_solver_sources",
+      "canonical_dataset_sha256": "6822aa4e4a518b0d080b349708af46179a4a542acbd55e97610ab6228127b8c0",
+      "density_scope": "Constant unit density explicitly declared by these periodic solvers.",
+      "estimator_input_scope": "Observed velocity and times; geometry for postprocessing. Constitutive fields remain evaluation data."
+    },
+    {
+      "case": "hb_thickening",
+      "path": "results/research/highres_viscoplastic_2026-10-14/datasets/hb_thickening_128.npz",
+      "sha256": "1d27b5a8a6d6f89c429d63868732b111bdb3846130f9ee79e5c237e4e76ed540",
+      "bytes": 23433426,
+      "stored_fields": {
+        "velocity": [
+          21,
+          2,
+          128,
+          128
+        ],
+        "pressure": [
+          21,
+          128,
+          128
+        ],
+        "shear_rate": [
+          21,
+          128,
+          128
+        ],
+        "apparent_viscosity": [
+          21,
+          128,
+          128
+        ],
+        "deviatoric_stress": [
+          21,
+          3,
+          128,
+          128
+        ],
+        "stress_invariant": [
+          21,
+          128,
+          128
+        ],
+        "approximate_yielded": [
+          21,
+          128,
+          128
+        ],
+        "over_yield_stress": [
+          21,
+          128,
+          128
+        ],
+        "kinetic_energy": [
+          21
+        ],
+        "dissipation_rate": [
+          21
+        ],
+        "cumulative_dissipation": [
+          21
+        ],
+        "energy_budget_residual": [
+          21
+        ],
+        "times": [
+          21
+        ],
+        "density": [
+          21,
+          128,
+          128
+        ],
+        "mask": [
+          128,
+          128
+        ]
+      },
+      "velocity_shape": [
+        21,
+        2,
+        128,
+        128
+      ],
+      "complete_time_history": true,
+      "hash_validation": "canonical_field_digest_and_solver_sources",
+      "canonical_dataset_sha256": "3064b12eb889ca068daf48c54c4e418fd7c136c6ccdb8455ad5c6f871d0aa3cc",
+      "density_scope": "Constant unit density explicitly declared by these periodic solvers.",
+      "estimator_input_scope": "Observed velocity and times; geometry for postprocessing. Constitutive fields remain evaluation data."
+    }
+  ],
+  "total_bytes": 156826965,
+  "scope": "Seven complete computed 128x128 source trajectories for the new model comparison, sensitivity and no-noise controls. Not complete 512x512 or 256x256 simulation-refinement banks.",
+  "interpolation": false,
+  "private_data": false,
+  "selected_reconstruction_samples": [
+    {
+      "flow": "ns_multiscale",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "method": "pod_r8",
+      "variant": "raw",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/ns_multiscale__gaussian_iid__s101__pod_r8__raw.npz",
+      "sha256": "0e0c81de73eb17194d6f9f2816d3218e8fe14b35556ed54d0c9faa1c19c04e99",
+      "bytes": 753385,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        20,
+        40
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "method": "pod_r8",
+      "variant": "helmholtz_k10",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/ns_multiscale__gaussian_iid__s101__pod_r8__helmholtz_k10.npz",
+      "sha256": "25dd1662411bac5f1bcde67e8fb3d6c89dea55c05562487a94764276aa4ac0cf",
+      "bytes": 752882,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        20,
+        40
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "method": "identity",
+      "variant": "raw",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/ns_multiscale__gaussian_iid__s101__identity__raw.npz",
+      "sha256": "bb122d8033cf33e23b09de0a7ef12e317c7000be65ac052427ef51747e695939",
+      "bytes": 753365,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        20,
+        40
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "method": "identity",
+      "variant": "helmholtz_k10",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/ns_multiscale__gaussian_iid__s101__identity__helmholtz_k10.npz",
+      "sha256": "669883bd892e9533632106a33f4f733a6075c2bf6f278d013777ac3d08b33aa6",
+      "bytes": 752850,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        20,
+        40
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "method": "dmd_r8",
+      "variant": "raw",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/ns_multiscale__gaussian_iid__s101__dmd_r8__raw.npz",
+      "sha256": "f0d90d934fc9a834e8ab59f943f07d53783e6f7fd4889f5a3584eb85e91cb87b",
+      "bytes": 753118,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        20,
+        40
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "method": "dmd_r8",
+      "variant": "helmholtz_k10",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/ns_multiscale__gaussian_iid__s101__dmd_r8__helmholtz_k10.npz",
+      "sha256": "2eb49fc3402bfe1d536d6b4b932e92ef9ba5f37708609e9cd8748addbdf1ef47",
+      "bytes": 752825,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        20,
+        40
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "method": "tls_r8",
+      "variant": "raw",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/ns_multiscale__gaussian_iid__s101__tls_r8__raw.npz",
+      "sha256": "f6ad08b6755ec2e22706247b8045e2b8c2095837c8d864c6ea8af8c5e49afed2",
+      "bytes": 753129,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        20,
+        40
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "method": "tls_r8",
+      "variant": "helmholtz_k10",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/ns_multiscale__gaussian_iid__s101__tls_r8__helmholtz_k10.npz",
+      "sha256": "bcd3dd011f4e17734b38fd46abe04d1289760631dfc0fa7939179dfb94382150",
+      "bytes": 752716,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        20,
+        40
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "method": "stable_rpca",
+      "variant": "raw",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/ns_multiscale__gaussian_iid__s101__stable_rpca__raw.npz",
+      "sha256": "73676a727660fd966d0a97f7dd5b33dccfc597a3e71a5a06273a6e36d8c86c2b",
+      "bytes": 753153,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        20,
+        40
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "method": "stable_rpca",
+      "variant": "helmholtz_k10",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/ns_multiscale__gaussian_iid__s101__stable_rpca__helmholtz_k10.npz",
+      "sha256": "b001734f7b84f1b2a76858a49ed83249e301ff2b903a0bcdc9c2cd22b90c4f8e",
+      "bytes": 752765,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        20,
+        40
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "method": "pcp",
+      "variant": "raw",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/ns_multiscale__gaussian_iid__s101__pcp__raw.npz",
+      "sha256": "7d25c4222cd047f95f1d540c36671539a18346b9ee147941e36080f21bd32533",
+      "bytes": 753196,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        20,
+        40
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "method": "pcp",
+      "variant": "helmholtz_k10",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/ns_multiscale__gaussian_iid__s101__pcp__helmholtz_k10.npz",
+      "sha256": "7d1e7e1272aaf7f9a6243d2190f66ed0b80d0f2132229a74f1033c3897b0caa2",
+      "bytes": 752725,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        20,
+        40
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "method": "outlier_pursuit",
+      "variant": "raw",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/ns_multiscale__gaussian_iid__s101__outlier_pursuit__raw.npz",
+      "sha256": "bf8b4fd3fca0f8e84622e30691aafe46b748202cc075b2e4a9a328cb320d5883",
+      "bytes": 752761,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        20,
+        40
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "method": "outlier_pursuit",
+      "variant": "helmholtz_k10",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/ns_multiscale__gaussian_iid__s101__outlier_pursuit__helmholtz_k10.npz",
+      "sha256": "ff267e193af6ab827a62f2641a9385afe2564d4e027b69f2dab0ec2c1d572861",
+      "bytes": 752364,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        20,
+        40
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "method": "pcp_tls_r8",
+      "variant": "raw",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/ns_multiscale__gaussian_iid__s101__pcp_tls_r8__raw.npz",
+      "sha256": "7511ae43400fcd5b231cc4aac9a62e9035ac0b1961fd47fc5a2c51172906cbee",
+      "bytes": 753216,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        20,
+        40
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "method": "pcp_tls_r8",
+      "variant": "helmholtz_k10",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/ns_multiscale__gaussian_iid__s101__pcp_tls_r8__helmholtz_k10.npz",
+      "sha256": "9c324c08c7ead70c675eea09f67654993fd6f9780672a387b02a25209ec41d69",
+      "bytes": 752813,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        20,
+        40
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "method": "stable_tls_r8",
+      "variant": "raw",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/ns_multiscale__gaussian_iid__s101__stable_tls_r8__raw.npz",
+      "sha256": "68c1d9bca5693913e12a57761ef7b0fb86691436010376acaee529a5a22bed98",
+      "bytes": 753106,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        20,
+        40
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "method": "stable_tls_r8",
+      "variant": "helmholtz_k10",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/ns_multiscale__gaussian_iid__s101__stable_tls_r8__helmholtz_k10.npz",
+      "sha256": "593724ed9c732b0aa0c7432b3a720331cb6eece29405060c2f33bc1431d80af6",
+      "bytes": 752755,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        20,
+        40
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "method": "optimized_r8",
+      "variant": "raw",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/ns_multiscale__gaussian_iid__s101__optimized_r8__raw.npz",
+      "sha256": "08c0125b19d64643b2f32313c9f44a9ba7fe52381014256475d1800109f66900",
+      "bytes": 753388,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        20,
+        40
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "method": "optimized_r8",
+      "variant": "helmholtz_k10",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/ns_multiscale__gaussian_iid__s101__optimized_r8__helmholtz_k10.npz",
+      "sha256": "78fe3d7334fe2c769ca112a99b63e104bb9616be84e333e1189eb06fca7f4720",
+      "bytes": 752890,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        20,
+        40
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "method": "identity",
+      "variant": "raw",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/oldroyd_b__spatial_gaussian__s101__identity__raw.npz",
+      "sha256": "552fcd041bd6b305a12640a37a962b65f324e14f8fa30569c2ae660ad2405306",
+      "bytes": 749400,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        12,
+        24
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "method": "identity",
+      "variant": "helmholtz_k10",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/oldroyd_b__spatial_gaussian__s101__identity__helmholtz_k10.npz",
+      "sha256": "4ba3c93decc57c45ece4080c967ed0f2091722b745ef791dedbc7f99517889e9",
+      "bytes": 748231,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        12,
+        24
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "method": "pod_r8",
+      "variant": "raw",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/oldroyd_b__spatial_gaussian__s101__pod_r8__raw.npz",
+      "sha256": "e859e7ede0935cda56f10e1fefe8abe3528c63c7b787ea85002b4b7cba09c70a",
+      "bytes": 749258,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        12,
+        24
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "method": "pod_r8",
+      "variant": "helmholtz_k10",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/oldroyd_b__spatial_gaussian__s101__pod_r8__helmholtz_k10.npz",
+      "sha256": "d86eb43559f153f21a77d20a64b67d751e44e6c7d58f2cf3b8138769cf22f178",
+      "bytes": 748190,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        12,
+        24
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "method": "dmd_r8",
+      "variant": "raw",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/oldroyd_b__spatial_gaussian__s101__dmd_r8__raw.npz",
+      "sha256": "7e5f3f4e6e0421df57be006d2b486e3a15e526e54c54278e0ac8d9d709a57bfe",
+      "bytes": 748775,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        12,
+        24
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "method": "dmd_r8",
+      "variant": "helmholtz_k10",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/oldroyd_b__spatial_gaussian__s101__dmd_r8__helmholtz_k10.npz",
+      "sha256": "7608bda94b6083abe4f81d979b1df2b79ae6f6b1b993dfad5648f7fd255c4c2e",
+      "bytes": 748114,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        12,
+        24
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "method": "tls_r8",
+      "variant": "raw",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/oldroyd_b__spatial_gaussian__s101__tls_r8__raw.npz",
+      "sha256": "d66e2e82652704f64b0b464ad35949faa7a2754fb36ecdf1338b86f148316a80",
+      "bytes": 748564,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        12,
+        24
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "method": "tls_r8",
+      "variant": "helmholtz_k10",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/oldroyd_b__spatial_gaussian__s101__tls_r8__helmholtz_k10.npz",
+      "sha256": "48494b5d370e1bf08cbabc2131db204b7b69dd6481ccaf4fedc24a1fc9b7743d",
+      "bytes": 748138,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        12,
+        24
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "method": "stable_rpca",
+      "variant": "raw",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/oldroyd_b__spatial_gaussian__s101__stable_rpca__raw.npz",
+      "sha256": "65ec4bff6bb9f6a7a1704dcc2b814eff5c40f9e27c1598e5f0f193565bc63da6",
+      "bytes": 748586,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        12,
+        24
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "method": "stable_rpca",
+      "variant": "helmholtz_k10",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/oldroyd_b__spatial_gaussian__s101__stable_rpca__helmholtz_k10.npz",
+      "sha256": "6cc50400ae05e0cc23f5e4c907c66b06f7ecd114212b8d56113cefa16467b760",
+      "bytes": 747904,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        12,
+        24
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "method": "pcp",
+      "variant": "raw",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/oldroyd_b__spatial_gaussian__s101__pcp__raw.npz",
+      "sha256": "65ad22cdba70b091576f77a9b6cb4ec1694d58587152fcd60b417db1b8647e45",
+      "bytes": 748572,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        12,
+        24
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "method": "pcp",
+      "variant": "helmholtz_k10",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/oldroyd_b__spatial_gaussian__s101__pcp__helmholtz_k10.npz",
+      "sha256": "d3ac54742dfe7c2f8586a245edb0a8dc5bc9b9f6b52782be8d8eccdf8f3bb1f0",
+      "bytes": 747935,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        12,
+        24
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "method": "outlier_pursuit",
+      "variant": "raw",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/oldroyd_b__spatial_gaussian__s101__outlier_pursuit__raw.npz",
+      "sha256": "b1f6c42ba64e3a1303827add2fcbf36623e91c7727a38c81b222230a477bfe3e",
+      "bytes": 748477,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        12,
+        24
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "method": "outlier_pursuit",
+      "variant": "helmholtz_k10",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/oldroyd_b__spatial_gaussian__s101__outlier_pursuit__helmholtz_k10.npz",
+      "sha256": "83dc2b0cb264185013fd1cafedb82c8cf8a75a71484fd0f6cc0f8569ee7ad2ff",
+      "bytes": 747700,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        12,
+        24
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "method": "pcp_tls_r8",
+      "variant": "raw",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/oldroyd_b__spatial_gaussian__s101__pcp_tls_r8__raw.npz",
+      "sha256": "32ed29ec6fe9c03705d282d7e56fda2b833dbc052c99e8becac9d57527d24ee0",
+      "bytes": 751163,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        12,
+        24
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "method": "pcp_tls_r8",
+      "variant": "helmholtz_k10",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/oldroyd_b__spatial_gaussian__s101__pcp_tls_r8__helmholtz_k10.npz",
+      "sha256": "4a541404a48b7ca578da6fdf947fdd1a68e87bf56dd6f742c8d63c92e4c124de",
+      "bytes": 749295,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        12,
+        24
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "method": "optimized_r8",
+      "variant": "raw",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/oldroyd_b__spatial_gaussian__s101__optimized_r8__raw.npz",
+      "sha256": "e9abffef577104560c50e440b740edb315261363799f83b938f7050b9bf69bdc",
+      "bytes": 748933,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        12,
+        24
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "method": "optimized_r8",
+      "variant": "helmholtz_k10",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/oldroyd_b__spatial_gaussian__s101__optimized_r8__helmholtz_k10.npz",
+      "sha256": "f2a77a4ee57d450f0b819f944fdd8e9e367cfd4029e885629548098412c3e36e",
+      "bytes": 748086,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        12,
+        24
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "method": "stable_tls_r8",
+      "variant": "raw",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/oldroyd_b__spatial_gaussian__s101__stable_tls_r8__raw.npz",
+      "sha256": "fd9d11310293f168cdf4c1ae8948075191494cbddd08d703dc6ae58ced6b8d62",
+      "bytes": 748437,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        12,
+        24
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "method": "stable_tls_r8",
+      "variant": "helmholtz_k10",
+      "path": "results/research/model_fidelity_benchmark_2026-10-14/reconstructions/oldroyd_b__spatial_gaussian__s101__stable_tls_r8__helmholtz_k10.npz",
+      "sha256": "70624ae173df08ee0a5ba89a8ce8be372d8152ef00f562efd5e7336354cbb15b",
+      "bytes": 747962,
+      "stored_fields": {
+        "velocity": [
+          3,
+          2,
+          128,
+          128
+        ],
+        "times": [
+          3
+        ],
+        "frame_indices": [
+          3
+        ]
+      },
+      "frame_indices": [
+        0,
+        12,
+        24
+      ],
+      "full_time_history": false,
+      "converged": true,
+      "scope": "Three exact computed output states used in the four model snapshot plates; complete-time metrics remain in the ledger."
+    }
+  ],
+  "selected_reconstruction_sample_bytes": 30031122,
+  "total_published_data_bytes": 186858087
+}

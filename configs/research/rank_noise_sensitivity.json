@@ -1,0 +1,26 @@
+{
+  "campaign": "rank_noise_sensitivity_2026-10-14",
+  "flows": ["ns_multiscale", "oldroyd_b"],
+  "grid": 128,
+  "seeds": [101, 307, 911],
+  "noise_models": ["gaussian_iid", "sparse_impulsive"],
+  "intensities_relative_rms": [0.05, 0.2, 0.4],
+  "ranks": [2, 4, 8, 12, 16],
+  "methods": ["pod_r8", "tls_r8"],
+  "sparse_probability": 0.01,
+  "max_iter": 600,
+  "tol": 0.00001,
+  "timeout_seconds": 180,
+  "physical_cutoff": 10.0,
+  "postprocessing": ["raw", "helmholtz", "helmholtz_k10"],
+  "quality_thresholds": {
+    "velocity_relative_l2": 0.15,
+    "vorticity_relative_l2": 0.25,
+    "extra_divergence_normalized": 0.1,
+    "kinetic_energy_relative_l2": 0.15
+  },
+  "design": "Fixed finite rank/intensity grid before this campaign's results. New noise seeds on already inspected flows are new realizations, not independent flow generalization or blind confirmation. Clean arrays set synthetic injection RMS and evaluate estimates only. The inherited physical cutoff k=10 remains an exploratory signal-smoothness prior. No rank, intensity, or cutoff is selected by minimum clean-reference error.",
+  "oracle_diagnostic": "Separate clean-matrix POD residual at fixed ranks diagnoses matrix compressibility. Its velocity error is an unconstrained rank-r Frobenius lower bound; its vorticity error is descriptive and is not a lower bound for the vorticity metric. This clean oracle never enters a noisy estimator or model selection.",
+  "cost_scope": "360 fresh single-BLAS-thread fit processes, one measured fit each; separate measured raw/H/H+k10 postprocessing, evaluation excluded. No fit is reused across ranks or claimed as a saved compute comparison. 1080 postprocessing evaluations reuse each fitted result and are not 1080 independent fits. Shared-host wall time and absolute RSS are descriptive, not repeated-cost precision evidence.",
+  "overlap": "Rank 8 and RMS 20% overlap the paired model benchmark for these two flows/noises/methods/seeds (24 fits if it uses the same contract). Duplicate realizations are identified by observed-array SHA256 plus method parameters, not counted as independent evidence."
+}

@@ -1,0 +1,41 @@
+{
+  "complete": true,
+  "conditions": 2808,
+  "paired_blocks": 216,
+  "methods": 13,
+  "cases": 8,
+  "noises": 9,
+  "seeds": [
+    7,
+    23,
+    61
+  ],
+  "resource_measurements": 8424,
+  "resource_repeats_per_condition": 3,
+  "quality_observations_per_condition": 1,
+  "physical_pass_conditions": 430,
+  "admissible_conditions": 430,
+  "nonconverged_conditions": 6,
+  "fallback_conditions": 23,
+  "blocks_without_admissible_method": 66,
+  "figures": [
+    "acceptance_by_noise",
+    "acceptance_by_fluid",
+    "paired_gains_velocity_vorticity",
+    "physical_gates_and_joint_acceptance",
+    "seed_stability_and_macro_ranks",
+    "paired_physical_ablations",
+    "resources_and_feasible_pareto",
+    "admissible_coverage_all_seeds",
+    "tolerance_sensitivity"
+  ],
+  "publication_companions": [
+    "paired_gain_velocity",
+    "paired_gain_vorticity",
+    "resources_cpu",
+    "feasible_pareto_coverage",
+    "tolerance_sensitivity_matrix"
+  ],
+  "inferential_intervals": false,
+  "rank_requested": 4
+}

@@ -1,0 +1,8 @@
+flow,physical_cutoff,clean_velocity_band_floor,clean_vorticity_band_floor,pod_r8_vorticity_raw,pod_r8_vorticity_band,qualification
+ns_vortices,10.0,0.004609925873293007,0.03541062944205546,0.045767480988603226,0.055574307119041266,"Orthogonal periodic spectral-band floor relative to the computed full clean field, not an absolute continuum DNS error."
+ns_multiscale,10.0,0.030679754864329258,0.10836598630484197,0.042103072856384066,0.11124943184461741,"Orthogonal periodic spectral-band floor relative to the computed full clean field, not an absolute continuum DNS error."
+oldroyd_b,10.0,0.001671061817797245,0.01447648101616776,0.005634221605212722,0.014920896106693688,"Orthogonal periodic spectral-band floor relative to the computed full clean field, not an absolute continuum DNS error."
+fene_p,10.0,0.0013881647233195261,0.011896010684364402,0.0046938086420424754,0.012339536525039793,"Orthogonal periodic spectral-band floor relative to the computed full clean field, not an absolute continuum DNS error."
+hb_thinning,10.0,0.0025555260845872294,0.020123395119425527,0.004510175375123696,0.020222160354841968,"Orthogonal periodic spectral-band floor relative to the computed full clean field, not an absolute continuum DNS error."
+bingham,10.0,0.0013245705410491187,0.01071897057073552,0.0028421039035220093,0.010784593317457677,"Orthogonal periodic spectral-band floor relative to the computed full clean field, not an absolute continuum DNS error."
+hb_thickening,10.0,0.0008294681025681734,0.007561117827819688,0.002533845288686552,0.007643519257333164,"Orthogonal periodic spectral-band floor relative to the computed full clean field, not an absolute continuum DNS error."

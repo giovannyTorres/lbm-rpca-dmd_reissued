@@ -1,0 +1,21 @@
+{
+  "complete": true,
+  "expected_fits": 84,
+  "recorded_fits": 84,
+  "expected_evaluations": 252,
+  "recorded_evaluations": 252,
+  "failed_fits": 0,
+  "nonconverged_fits": 0,
+  "primary_contract_fits": 70,
+  "known_zero_noise_fits": 14,
+  "quality_passes_by_variant": {
+    "raw": 77,
+    "helmholtz": 77,
+    "helmholtz_k10": 77
+  },
+  "seed": 101,
+  "noise_realizations": 0,
+  "resource_repeats_per_fit": 1,
+  "workers": 1,
+  "scope": "Same seven computed trajectories without observation noise; diagnostics of representational/regularization bias, not new simulations or population inference."
+}

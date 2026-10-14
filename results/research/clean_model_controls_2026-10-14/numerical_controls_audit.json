@@ -1,0 +1,552 @@
+{
+  "checks": [
+    {
+      "flow": "ns_vortices",
+      "check": "POD r8 equals SVD Frobenius lower bound",
+      "absolute_difference": 6.938893903907228e-18,
+      "passed": true
+    },
+    {
+      "flow": "ns_vortices",
+      "check": "stable_rpca known-zero vs identity: raw/velocity_relative_l2",
+      "absolute_difference": 5.7532890876364515e-15,
+      "passed": true
+    },
+    {
+      "flow": "ns_vortices",
+      "check": "stable_rpca known-zero vs identity: raw/vorticity_relative_l2",
+      "absolute_difference": 2.3285423697305805e-14,
+      "passed": true
+    },
+    {
+      "flow": "ns_vortices",
+      "check": "stable_tls_r8 known-zero vs tls_r8: raw/velocity_relative_l2",
+      "absolute_difference": 3.8337388819087437e-16,
+      "passed": true
+    },
+    {
+      "flow": "ns_vortices",
+      "check": "stable_tls_r8 known-zero vs tls_r8: raw/vorticity_relative_l2",
+      "absolute_difference": 1.6861512186494565e-15,
+      "passed": true
+    },
+    {
+      "flow": "ns_vortices",
+      "check": "stable_rpca known-zero vs identity: helmholtz/velocity_relative_l2",
+      "absolute_difference": 5.465400693006967e-15,
+      "passed": true
+    },
+    {
+      "flow": "ns_vortices",
+      "check": "stable_rpca known-zero vs identity: helmholtz/vorticity_relative_l2",
+      "absolute_difference": 1.734763107906666e-14,
+      "passed": true
+    },
+    {
+      "flow": "ns_vortices",
+      "check": "stable_tls_r8 known-zero vs tls_r8: helmholtz/velocity_relative_l2",
+      "absolute_difference": 3.7990444123892075e-16,
+      "passed": true
+    },
+    {
+      "flow": "ns_vortices",
+      "check": "stable_tls_r8 known-zero vs tls_r8: helmholtz/vorticity_relative_l2",
+      "absolute_difference": 1.6792123247455493e-15,
+      "passed": true
+    },
+    {
+      "flow": "ns_vortices",
+      "check": "stable_rpca known-zero vs identity: helmholtz_k10/velocity_relative_l2",
+      "absolute_difference": 8.673617379884035e-19,
+      "passed": true
+    },
+    {
+      "flow": "ns_vortices",
+      "check": "stable_rpca known-zero vs identity: helmholtz_k10/vorticity_relative_l2",
+      "absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "flow": "ns_vortices",
+      "check": "stable_tls_r8 known-zero vs tls_r8: helmholtz_k10/velocity_relative_l2",
+      "absolute_difference": 3.382710778154774e-16,
+      "passed": true
+    },
+    {
+      "flow": "ns_vortices",
+      "check": "stable_tls_r8 known-zero vs tls_r8: helmholtz_k10/vorticity_relative_l2",
+      "absolute_difference": 1.3322676295501878e-15,
+      "passed": true
+    },
+    {
+      "flow": "ns_multiscale",
+      "check": "POD r8 equals SVD Frobenius lower bound",
+      "absolute_difference": 3.469446951953614e-18,
+      "passed": true
+    },
+    {
+      "flow": "ns_multiscale",
+      "check": "stable_rpca known-zero vs identity: raw/velocity_relative_l2",
+      "absolute_difference": 5.239047879424776e-15,
+      "passed": true
+    },
+    {
+      "flow": "ns_multiscale",
+      "check": "stable_rpca known-zero vs identity: raw/vorticity_relative_l2",
+      "absolute_difference": 1.1421852703635596e-14,
+      "passed": true
+    },
+    {
+      "flow": "ns_multiscale",
+      "check": "stable_tls_r8 known-zero vs tls_r8: raw/velocity_relative_l2",
+      "absolute_difference": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "flow": "ns_multiscale",
+      "check": "stable_tls_r8 known-zero vs tls_r8: raw/vorticity_relative_l2",
+      "absolute_difference": 1.1796119636642288e-16,
+      "passed": true
+    },
+    {
+      "flow": "ns_multiscale",
+      "check": "stable_rpca known-zero vs identity: helmholtz/velocity_relative_l2",
+      "absolute_difference": 4.95101140327921e-15,
+      "passed": true
+    },
+    {
+      "flow": "ns_multiscale",
+      "check": "stable_rpca known-zero vs identity: helmholtz/vorticity_relative_l2",
+      "absolute_difference": 8.865863160861732e-15,
+      "passed": true
+    },
+    {
+      "flow": "ns_multiscale",
+      "check": "stable_tls_r8 known-zero vs tls_r8: helmholtz/velocity_relative_l2",
+      "absolute_difference": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "flow": "ns_multiscale",
+      "check": "stable_tls_r8 known-zero vs tls_r8: helmholtz/vorticity_relative_l2",
+      "absolute_difference": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "flow": "ns_multiscale",
+      "check": "stable_rpca known-zero vs identity: helmholtz_k10/velocity_relative_l2",
+      "absolute_difference": 6.938893903907228e-18,
+      "passed": true
+    },
+    {
+      "flow": "ns_multiscale",
+      "check": "stable_rpca known-zero vs identity: helmholtz_k10/vorticity_relative_l2",
+      "absolute_difference": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "flow": "ns_multiscale",
+      "check": "stable_tls_r8 known-zero vs tls_r8: helmholtz_k10/velocity_relative_l2",
+      "absolute_difference": 6.938893903907228e-18,
+      "passed": true
+    },
+    {
+      "flow": "ns_multiscale",
+      "check": "stable_tls_r8 known-zero vs tls_r8: helmholtz_k10/vorticity_relative_l2",
+      "absolute_difference": 6.938893903907228e-17,
+      "passed": true
+    },
+    {
+      "flow": "oldroyd_b",
+      "check": "POD r8 equals SVD Frobenius lower bound",
+      "absolute_difference": 1.4094628242311558e-18,
+      "passed": true
+    },
+    {
+      "flow": "oldroyd_b",
+      "check": "stable_rpca known-zero vs identity: raw/velocity_relative_l2",
+      "absolute_difference": 4.5609530347831756e-15,
+      "passed": true
+    },
+    {
+      "flow": "oldroyd_b",
+      "check": "stable_rpca known-zero vs identity: raw/vorticity_relative_l2",
+      "absolute_difference": 2.3363867664113836e-14,
+      "passed": true
+    },
+    {
+      "flow": "oldroyd_b",
+      "check": "stable_tls_r8 known-zero vs tls_r8: raw/velocity_relative_l2",
+      "absolute_difference": 1.5200514458246772e-16,
+      "passed": true
+    },
+    {
+      "flow": "oldroyd_b",
+      "check": "stable_tls_r8 known-zero vs tls_r8: raw/vorticity_relative_l2",
+      "absolute_difference": 8.951173136040325e-16,
+      "passed": true
+    },
+    {
+      "flow": "oldroyd_b",
+      "check": "stable_rpca known-zero vs identity: helmholtz/velocity_relative_l2",
+      "absolute_difference": 4.264489216954622e-15,
+      "passed": true
+    },
+    {
+      "flow": "oldroyd_b",
+      "check": "stable_rpca known-zero vs identity: helmholtz/vorticity_relative_l2",
+      "absolute_difference": 1.7091780313676523e-14,
+      "passed": true
+    },
+    {
+      "flow": "oldroyd_b",
+      "check": "stable_tls_r8 known-zero vs tls_r8: helmholtz/velocity_relative_l2",
+      "absolute_difference": 1.5178830414797062e-16,
+      "passed": true
+    },
+    {
+      "flow": "oldroyd_b",
+      "check": "stable_tls_r8 known-zero vs tls_r8: helmholtz/vorticity_relative_l2",
+      "absolute_difference": 8.933825901280557e-16,
+      "passed": true
+    },
+    {
+      "flow": "oldroyd_b",
+      "check": "stable_rpca known-zero vs identity: helmholtz_k10/velocity_relative_l2",
+      "absolute_difference": 6.505213034913027e-19,
+      "passed": true
+    },
+    {
+      "flow": "oldroyd_b",
+      "check": "stable_rpca known-zero vs identity: helmholtz_k10/vorticity_relative_l2",
+      "absolute_difference": 8.673617379884035e-18,
+      "passed": true
+    },
+    {
+      "flow": "oldroyd_b",
+      "check": "stable_tls_r8 known-zero vs tls_r8: helmholtz_k10/velocity_relative_l2",
+      "absolute_difference": 1.5048726154098802e-16,
+      "passed": true
+    },
+    {
+      "flow": "oldroyd_b",
+      "check": "stable_tls_r8 known-zero vs tls_r8: helmholtz_k10/vorticity_relative_l2",
+      "absolute_difference": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "flow": "fene_p",
+      "check": "POD r8 equals SVD Frobenius lower bound",
+      "absolute_difference": 5.312590645178972e-18,
+      "passed": true
+    },
+    {
+      "flow": "fene_p",
+      "check": "stable_rpca known-zero vs identity: raw/velocity_relative_l2",
+      "absolute_difference": 4.873007627161604e-15,
+      "passed": true
+    },
+    {
+      "flow": "fene_p",
+      "check": "stable_rpca known-zero vs identity: raw/vorticity_relative_l2",
+      "absolute_difference": 2.69840073017941e-14,
+      "passed": true
+    },
+    {
+      "flow": "fene_p",
+      "check": "stable_tls_r8 known-zero vs tls_r8: raw/velocity_relative_l2",
+      "absolute_difference": 4.098284211995207e-17,
+      "passed": true
+    },
+    {
+      "flow": "fene_p",
+      "check": "stable_tls_r8 known-zero vs tls_r8: raw/vorticity_relative_l2",
+      "absolute_difference": 2.1094237467877974e-15,
+      "passed": true
+    },
+    {
+      "flow": "fene_p",
+      "check": "stable_rpca known-zero vs identity: helmholtz/velocity_relative_l2",
+      "absolute_difference": 4.553923038607198e-15,
+      "passed": true
+    },
+    {
+      "flow": "fene_p",
+      "check": "stable_rpca known-zero vs identity: helmholtz/vorticity_relative_l2",
+      "absolute_difference": 2.059071698241716e-14,
+      "passed": true
+    },
+    {
+      "flow": "fene_p",
+      "check": "stable_tls_r8 known-zero vs tls_r8: helmholtz/velocity_relative_l2",
+      "absolute_difference": 4.098284211995207e-17,
+      "passed": true
+    },
+    {
+      "flow": "fene_p",
+      "check": "stable_tls_r8 known-zero vs tls_r8: helmholtz/vorticity_relative_l2",
+      "absolute_difference": 2.1094237467877974e-15,
+      "passed": true
+    },
+    {
+      "flow": "fene_p",
+      "check": "stable_rpca known-zero vs identity: helmholtz_k10/velocity_relative_l2",
+      "absolute_difference": 4.336808689942018e-19,
+      "passed": true
+    },
+    {
+      "flow": "fene_p",
+      "check": "stable_rpca known-zero vs identity: helmholtz_k10/vorticity_relative_l2",
+      "absolute_difference": 3.469446951953614e-18,
+      "passed": true
+    },
+    {
+      "flow": "fene_p",
+      "check": "stable_tls_r8 known-zero vs tls_r8: helmholtz_k10/velocity_relative_l2",
+      "absolute_difference": 2.211772431870429e-17,
+      "passed": true
+    },
+    {
+      "flow": "fene_p",
+      "check": "stable_tls_r8 known-zero vs tls_r8: helmholtz_k10/vorticity_relative_l2",
+      "absolute_difference": 7.199102425303749e-16,
+      "passed": true
+    },
+    {
+      "flow": "hb_thinning",
+      "check": "POD r8 equals SVD Frobenius lower bound",
+      "absolute_difference": 8.673617379884035e-19,
+      "passed": true
+    },
+    {
+      "flow": "hb_thinning",
+      "check": "stable_rpca known-zero vs identity: raw/velocity_relative_l2",
+      "absolute_difference": 3.622110811041513e-15,
+      "passed": true
+    },
+    {
+      "flow": "hb_thinning",
+      "check": "stable_rpca known-zero vs identity: raw/vorticity_relative_l2",
+      "absolute_difference": 1.7493437419970168e-14,
+      "passed": true
+    },
+    {
+      "flow": "hb_thinning",
+      "check": "stable_tls_r8 known-zero vs tls_r8: raw/velocity_relative_l2",
+      "absolute_difference": 7.37257477290143e-18,
+      "passed": true
+    },
+    {
+      "flow": "hb_thinning",
+      "check": "stable_tls_r8 known-zero vs tls_r8: raw/vorticity_relative_l2",
+      "absolute_difference": 8.552186736565659e-16,
+      "passed": true
+    },
+    {
+      "flow": "hb_thinning",
+      "check": "stable_rpca known-zero vs identity: helmholtz/velocity_relative_l2",
+      "absolute_difference": 3.3209448929181505e-15,
+      "passed": true
+    },
+    {
+      "flow": "hb_thinning",
+      "check": "stable_rpca known-zero vs identity: helmholtz/vorticity_relative_l2",
+      "absolute_difference": 1.1825299060584285e-14,
+      "passed": true
+    },
+    {
+      "flow": "hb_thinning",
+      "check": "stable_tls_r8 known-zero vs tls_r8: helmholtz/velocity_relative_l2",
+      "absolute_difference": 9.324138683375338e-18,
+      "passed": true
+    },
+    {
+      "flow": "hb_thinning",
+      "check": "stable_tls_r8 known-zero vs tls_r8: helmholtz/vorticity_relative_l2",
+      "absolute_difference": 8.586881206085195e-16,
+      "passed": true
+    },
+    {
+      "flow": "hb_thinning",
+      "check": "stable_rpca known-zero vs identity: helmholtz_k10/velocity_relative_l2",
+      "absolute_difference": 8.673617379884035e-19,
+      "passed": true
+    },
+    {
+      "flow": "hb_thinning",
+      "check": "stable_rpca known-zero vs identity: helmholtz_k10/vorticity_relative_l2",
+      "absolute_difference": 1.0408340855860843e-17,
+      "passed": true
+    },
+    {
+      "flow": "hb_thinning",
+      "check": "stable_tls_r8 known-zero vs tls_r8: helmholtz_k10/velocity_relative_l2",
+      "absolute_difference": 3.8163916471489756e-17,
+      "passed": true
+    },
+    {
+      "flow": "hb_thinning",
+      "check": "stable_tls_r8 known-zero vs tls_r8: helmholtz_k10/vorticity_relative_l2",
+      "absolute_difference": 6.938893903907228e-18,
+      "passed": true
+    },
+    {
+      "flow": "bingham",
+      "check": "POD r8 equals SVD Frobenius lower bound",
+      "absolute_difference": 1.951563910473908e-18,
+      "passed": true
+    },
+    {
+      "flow": "bingham",
+      "check": "stable_rpca known-zero vs identity: raw/velocity_relative_l2",
+      "absolute_difference": 3.4803811654779524e-15,
+      "passed": true
+    },
+    {
+      "flow": "bingham",
+      "check": "stable_rpca known-zero vs identity: raw/vorticity_relative_l2",
+      "absolute_difference": 1.923782762249837e-14,
+      "passed": true
+    },
+    {
+      "flow": "bingham",
+      "check": "stable_tls_r8 known-zero vs tls_r8: raw/velocity_relative_l2",
+      "absolute_difference": 3.903127820947816e-17,
+      "passed": true
+    },
+    {
+      "flow": "bingham",
+      "check": "stable_tls_r8 known-zero vs tls_r8: raw/vorticity_relative_l2",
+      "absolute_difference": 7.216449660063518e-16,
+      "passed": true
+    },
+    {
+      "flow": "bingham",
+      "check": "stable_rpca known-zero vs identity: helmholtz/velocity_relative_l2",
+      "absolute_difference": 3.140214278775616e-15,
+      "passed": true
+    },
+    {
+      "flow": "bingham",
+      "check": "stable_rpca known-zero vs identity: helmholtz/vorticity_relative_l2",
+      "absolute_difference": 1.3455911378218993e-14,
+      "passed": true
+    },
+    {
+      "flow": "bingham",
+      "check": "stable_tls_r8 known-zero vs tls_r8: helmholtz/velocity_relative_l2",
+      "absolute_difference": 4.0549161250957866e-17,
+      "passed": true
+    },
+    {
+      "flow": "bingham",
+      "check": "stable_tls_r8 known-zero vs tls_r8: helmholtz/vorticity_relative_l2",
+      "absolute_difference": 7.129713486264677e-16,
+      "passed": true
+    },
+    {
+      "flow": "bingham",
+      "check": "stable_rpca known-zero vs identity: helmholtz_k10/velocity_relative_l2",
+      "absolute_difference": 4.336808689942018e-19,
+      "passed": true
+    },
+    {
+      "flow": "bingham",
+      "check": "stable_rpca known-zero vs identity: helmholtz_k10/vorticity_relative_l2",
+      "absolute_difference": 5.204170427930421e-18,
+      "passed": true
+    },
+    {
+      "flow": "bingham",
+      "check": "stable_tls_r8 known-zero vs tls_r8: helmholtz_k10/velocity_relative_l2",
+      "absolute_difference": 6.353424730765056e-17,
+      "passed": true
+    },
+    {
+      "flow": "bingham",
+      "check": "stable_tls_r8 known-zero vs tls_r8: helmholtz_k10/vorticity_relative_l2",
+      "absolute_difference": 3.9898639947466563e-17,
+      "passed": true
+    },
+    {
+      "flow": "hb_thickening",
+      "check": "POD r8 equals SVD Frobenius lower bound",
+      "absolute_difference": 1.1384122811097797e-18,
+      "passed": true
+    },
+    {
+      "flow": "hb_thickening",
+      "check": "stable_rpca known-zero vs identity: raw/velocity_relative_l2",
+      "absolute_difference": 2.5912083973791055e-15,
+      "passed": true
+    },
+    {
+      "flow": "hb_thickening",
+      "check": "stable_rpca known-zero vs identity: raw/vorticity_relative_l2",
+      "absolute_difference": 1.577340942617891e-14,
+      "passed": true
+    },
+    {
+      "flow": "hb_thickening",
+      "check": "stable_tls_r8 known-zero vs tls_r8: raw/velocity_relative_l2",
+      "absolute_difference": 1.1492543028346347e-16,
+      "passed": true
+    },
+    {
+      "flow": "hb_thickening",
+      "check": "stable_tls_r8 known-zero vs tls_r8: raw/vorticity_relative_l2",
+      "absolute_difference": 2.0469737016526324e-16,
+      "passed": true
+    },
+    {
+      "flow": "hb_thickening",
+      "check": "stable_rpca known-zero vs identity: helmholtz/velocity_relative_l2",
+      "absolute_difference": 2.2991682669640027e-15,
+      "passed": true
+    },
+    {
+      "flow": "hb_thickening",
+      "check": "stable_rpca known-zero vs identity: helmholtz/vorticity_relative_l2",
+      "absolute_difference": 9.913686043630481e-15,
+      "passed": true
+    },
+    {
+      "flow": "hb_thickening",
+      "check": "stable_tls_r8 known-zero vs tls_r8: helmholtz/velocity_relative_l2",
+      "absolute_difference": 1.1427490897997217e-16,
+      "passed": true
+    },
+    {
+      "flow": "hb_thickening",
+      "check": "stable_tls_r8 known-zero vs tls_r8: helmholtz/vorticity_relative_l2",
+      "absolute_difference": 2.1250362580715887e-16,
+      "passed": true
+    },
+    {
+      "flow": "hb_thickening",
+      "check": "stable_rpca known-zero vs identity: helmholtz_k10/velocity_relative_l2",
+      "absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "flow": "hb_thickening",
+      "check": "stable_rpca known-zero vs identity: helmholtz_k10/vorticity_relative_l2",
+      "absolute_difference": 6.938893903907228e-18,
+      "passed": true
+    },
+    {
+      "flow": "hb_thickening",
+      "check": "stable_tls_r8 known-zero vs tls_r8: helmholtz_k10/velocity_relative_l2",
+      "absolute_difference": 1.1882855810441129e-16,
+      "passed": true
+    },
+    {
+      "flow": "hb_thickening",
+      "check": "stable_tls_r8 known-zero vs tls_r8: helmholtz_k10/vorticity_relative_l2",
+      "absolute_difference": 2.1510571102112408e-16,
+      "passed": true
+    }
+  ],
+  "all_passed": true,
+  "definition": "Error-metric equality diagnostic; not identity of every predicted field or proof of constitutive dynamics."
+}

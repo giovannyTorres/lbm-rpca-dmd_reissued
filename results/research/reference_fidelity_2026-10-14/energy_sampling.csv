@@ -1,0 +1,13 @@
+case,grid,spacing,quadrature,maximum_absolute_normalized_defect,final_normalized_defect,scope
+interacting_vortices,512,0.1,trapezoid,2.220712853081945e-06,2.220712853081945e-06,"E-E0+2nu*integral(Zdt); sampled quadrature, not a PDE or internal RK4 error bound"
+interacting_vortices,512,0.1,simpson,2.075679259887415e-08,3.2510280275135917e-09,"E-E0+2nu*integral(Zdt); sampled quadrature, not a PDE or internal RK4 error bound"
+interacting_vortices,512,0.2,trapezoid,8.873098328483764e-06,8.873098328483764e-06,"E-E0+2nu*integral(Zdt); sampled quadrature, not a PDE or internal RK4 error bound"
+interacting_vortices,512,0.2,simpson,2.775944718517065e-07,5.189898768988982e-08,"E-E0+2nu*integral(Zdt); sampled quadrature, not a PDE or internal RK4 error bound"
+interacting_vortices,512,0.4,trapezoid,3.5336696350908754e-05,3.5336696350908754e-05,"E-E0+2nu*integral(Zdt); sampled quadrature, not a PDE or internal RK4 error bound"
+interacting_vortices,512,0.4,simpson,2.7961247953567792e-06,7.926615254146355e-07,"E-E0+2nu*integral(Zdt); sampled quadrature, not a PDE or internal RK4 error bound"
+decaying_turbulence,512,0.1,trapezoid,8.4884890500566e-05,8.4884890500566e-05,"E-E0+2nu*integral(Zdt); sampled quadrature, not a PDE or internal RK4 error bound"
+decaying_turbulence,512,0.1,simpson,4.58087640069953e-07,7.51669564265367e-08,"E-E0+2nu*integral(Zdt); sampled quadrature, not a PDE or internal RK4 error bound"
+decaying_turbulence,512,0.2,trapezoid,0.0003393140611328109,0.0003393140611328109,"E-E0+2nu*integral(Zdt); sampled quadrature, not a PDE or internal RK4 error bound"
+decaying_turbulence,512,0.2,simpson,5.674454915032077e-06,1.099686226715274e-06,"E-E0+2nu*integral(Zdt); sampled quadrature, not a PDE or internal RK4 error bound"
+decaying_turbulence,512,0.4,trapezoid,0.0013539571858509243,0.0013539571858509243,"E-E0+2nu*integral(Zdt); sampled quadrature, not a PDE or internal RK4 error bound"
+decaying_turbulence,512,0.4,simpson,4.322477191115795e-05,1.9024497515535144e-05,"E-E0+2nu*integral(Zdt); sampled quadrature, not a PDE or internal RK4 error bound"

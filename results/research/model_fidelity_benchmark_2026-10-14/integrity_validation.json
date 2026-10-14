@@ -1,0 +1,25 @@
+{
+  "valid": true,
+  "conditions_verified": 1050,
+  "expected_evaluations": 3150,
+  "failed_fits": 0,
+  "nonconverged_fits": 8,
+  "regenerated_paired_observations": 105,
+  "identity_rms_controls": 105,
+  "exact_identity_sample_archives": 35,
+  "archive_samples_verified": 1050,
+  "historical_executing_driver_epochs": [
+    "4076735b60a0c61b96aa16eab0ae41336a064410c869475c4b0ce3e076ebbf9a",
+    "870b42f310e479135a1e3c478ae7e09f9809d9d2dd327d2ffc2c3a5ff223ec29"
+  ],
+  "maximum_H_vorticity_error_difference": 1.7763568394002505e-15,
+  "Newtonian_PDE_evaluations": 900,
+  "quality_passes_by_variant": {
+    "raw": 6,
+    "helmholtz": 44,
+    "helmholtz_k10": 825
+  },
+  "scientific_sources_unchanged": true,
+  "validator_sha256": "463be18a8e83a82a04fcf34c744147d2492ad58526b6d457bb36aef5c88caadc",
+  "scope": "Arithmetic/provenance/controls audit, not independent scientific replication or DNS certification."
+}

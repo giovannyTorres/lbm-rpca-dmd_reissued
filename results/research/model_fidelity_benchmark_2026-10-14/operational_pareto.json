@@ -1,0 +1,4032 @@
+{
+  "blocks": [
+    {
+      "flow": "bingham",
+      "noise": "column_outliers",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "bingham",
+      "noise": "column_outliers",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 7,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "dmd_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "dmd_r8"
+      ]
+    },
+    {
+      "flow": "bingham",
+      "noise": "column_outliers",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "bingham",
+      "noise": "column_outliers",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "bingham",
+      "noise": "column_outliers",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "dmd_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "dmd_r8"
+      ]
+    },
+    {
+      "flow": "bingham",
+      "noise": "column_outliers",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "bingham",
+      "noise": "column_outliers",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "bingham",
+      "noise": "column_outliers",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "dmd_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "identity",
+        "dmd_r8"
+      ]
+    },
+    {
+      "flow": "bingham",
+      "noise": "column_outliers",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "bingham",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "bingham",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 7,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "bingham",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "bingham",
+      "noise": "gaussian_iid",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "bingham",
+      "noise": "gaussian_iid",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 7,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "pod_r8",
+        "dmd_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "bingham",
+      "noise": "gaussian_iid",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "bingham",
+      "noise": "gaussian_iid",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "bingham",
+      "noise": "gaussian_iid",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 7,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "bingham",
+      "noise": "gaussian_iid",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "bingham",
+      "noise": "sparse_impulsive",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "bingham",
+      "noise": "sparse_impulsive",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 8,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "identity"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "identity"
+      ]
+    },
+    {
+      "flow": "bingham",
+      "noise": "sparse_impulsive",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "bingham",
+      "noise": "sparse_impulsive",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "bingham",
+      "noise": "sparse_impulsive",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "bingham",
+      "noise": "sparse_impulsive",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "bingham",
+      "noise": "sparse_impulsive",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "bingham",
+      "noise": "sparse_impulsive",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "bingham",
+      "noise": "sparse_impulsive",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "bingham",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "bingham",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 3,
+      "dominant_matrix_work_pareto": [
+        "dmd_r8",
+        "stable_rpca"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "dmd_r8",
+        "stable_rpca"
+      ]
+    },
+    {
+      "flow": "bingham",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "bingham",
+      "noise": "spatial_gaussian",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "bingham",
+      "noise": "spatial_gaussian",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 4,
+      "dominant_matrix_work_pareto": [
+        "dmd_r8",
+        "stable_rpca",
+        "stable_tls_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "dmd_r8",
+        "stable_rpca",
+        "stable_tls_r8"
+      ]
+    },
+    {
+      "flow": "bingham",
+      "noise": "spatial_gaussian",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "bingham",
+      "noise": "spatial_gaussian",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "bingham",
+      "noise": "spatial_gaussian",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 3,
+      "dominant_matrix_work_pareto": [
+        "dmd_r8",
+        "stable_rpca"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "dmd_r8",
+        "stable_rpca"
+      ]
+    },
+    {
+      "flow": "bingham",
+      "noise": "spatial_gaussian",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "bingham",
+      "noise": "temporal_ar",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "bingham",
+      "noise": "temporal_ar",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "pod_r8",
+        "dmd_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "bingham",
+      "noise": "temporal_ar",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "bingham",
+      "noise": "temporal_ar",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "bingham",
+      "noise": "temporal_ar",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "bingham",
+      "noise": "temporal_ar",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "bingham",
+      "noise": "temporal_ar",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "bingham",
+      "noise": "temporal_ar",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "bingham",
+      "noise": "temporal_ar",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "fene_p",
+      "noise": "column_outliers",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "fene_p",
+      "noise": "column_outliers",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "dmd_r8",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "dmd_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "fene_p",
+      "noise": "column_outliers",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "fene_p",
+      "noise": "column_outliers",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "fene_p",
+      "noise": "column_outliers",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 8,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "dmd_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "dmd_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "fene_p",
+      "noise": "column_outliers",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "fene_p",
+      "noise": "column_outliers",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "fene_p",
+      "noise": "column_outliers",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "dmd_r8",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "pod_r8",
+        "dmd_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "fene_p",
+      "noise": "column_outliers",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "fene_p",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "fene_p",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "fene_p",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "fene_p",
+      "noise": "gaussian_iid",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "fene_p",
+      "noise": "gaussian_iid",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "fene_p",
+      "noise": "gaussian_iid",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "fene_p",
+      "noise": "gaussian_iid",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "fene_p",
+      "noise": "gaussian_iid",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "fene_p",
+      "noise": "gaussian_iid",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "fene_p",
+      "noise": "sparse_impulsive",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 2,
+      "dominant_matrix_work_pareto": [
+        "pcp",
+        "pcp_tls_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pcp",
+        "pcp_tls_r8"
+      ]
+    },
+    {
+      "flow": "fene_p",
+      "noise": "sparse_impulsive",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "fene_p",
+      "noise": "sparse_impulsive",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "fene_p",
+      "noise": "sparse_impulsive",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 2,
+      "dominant_matrix_work_pareto": [
+        "pcp",
+        "pcp_tls_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pcp",
+        "pcp_tls_r8"
+      ]
+    },
+    {
+      "flow": "fene_p",
+      "noise": "sparse_impulsive",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "fene_p",
+      "noise": "sparse_impulsive",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "fene_p",
+      "noise": "sparse_impulsive",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 2,
+      "dominant_matrix_work_pareto": [
+        "pcp",
+        "pcp_tls_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pcp",
+        "pcp_tls_r8"
+      ]
+    },
+    {
+      "flow": "fene_p",
+      "noise": "sparse_impulsive",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "fene_p",
+      "noise": "sparse_impulsive",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "fene_p",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "fene_p",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 5,
+      "dominant_matrix_work_pareto": [
+        "dmd_r8",
+        "stable_rpca"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "dmd_r8",
+        "stable_rpca"
+      ]
+    },
+    {
+      "flow": "fene_p",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "fene_p",
+      "noise": "spatial_gaussian",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "fene_p",
+      "noise": "spatial_gaussian",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 7,
+      "dominant_matrix_work_pareto": [
+        "dmd_r8",
+        "stable_rpca",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "dmd_r8",
+        "stable_rpca",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "fene_p",
+      "noise": "spatial_gaussian",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "fene_p",
+      "noise": "spatial_gaussian",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "fene_p",
+      "noise": "spatial_gaussian",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 7,
+      "dominant_matrix_work_pareto": [
+        "stable_rpca",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "dmd_r8",
+        "stable_rpca",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "fene_p",
+      "noise": "spatial_gaussian",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "fene_p",
+      "noise": "temporal_ar",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "fene_p",
+      "noise": "temporal_ar",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "pod_r8",
+        "dmd_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "fene_p",
+      "noise": "temporal_ar",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "fene_p",
+      "noise": "temporal_ar",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "fene_p",
+      "noise": "temporal_ar",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "pod_r8",
+        "dmd_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "fene_p",
+      "noise": "temporal_ar",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "fene_p",
+      "noise": "temporal_ar",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "fene_p",
+      "noise": "temporal_ar",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "fene_p",
+      "noise": "temporal_ar",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "column_outliers",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "column_outliers",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 7,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "dmd_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "dmd_r8"
+      ]
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "column_outliers",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "column_outliers",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "column_outliers",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "dmd_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "dmd_r8"
+      ]
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "column_outliers",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "column_outliers",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "column_outliers",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "dmd_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "dmd_r8"
+      ]
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "column_outliers",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 7,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "gaussian_iid",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "gaussian_iid",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 7,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "pod_r8",
+        "dmd_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "gaussian_iid",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "gaussian_iid",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "gaussian_iid",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 7,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "pod_r8",
+        "dmd_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "gaussian_iid",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "sparse_impulsive",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "sparse_impulsive",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 8,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "pod_r8",
+        "dmd_r8"
+      ]
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "sparse_impulsive",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "sparse_impulsive",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "sparse_impulsive",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "sparse_impulsive",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "sparse_impulsive",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "sparse_impulsive",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 8,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "pod_r8",
+        "dmd_r8"
+      ]
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "sparse_impulsive",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 3,
+      "dominant_matrix_work_pareto": [
+        "dmd_r8",
+        "stable_rpca"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "dmd_r8",
+        "stable_rpca"
+      ]
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "spatial_gaussian",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "spatial_gaussian",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 4,
+      "dominant_matrix_work_pareto": [
+        "dmd_r8",
+        "stable_rpca",
+        "stable_tls_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "dmd_r8",
+        "stable_rpca",
+        "stable_tls_r8"
+      ]
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "spatial_gaussian",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "spatial_gaussian",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "spatial_gaussian",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 3,
+      "dominant_matrix_work_pareto": [
+        "dmd_r8",
+        "stable_rpca"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "dmd_r8",
+        "stable_rpca"
+      ]
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "spatial_gaussian",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "temporal_ar",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "temporal_ar",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "temporal_ar",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "temporal_ar",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "temporal_ar",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "temporal_ar",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "temporal_ar",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "temporal_ar",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "hb_thickening",
+      "noise": "temporal_ar",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "column_outliers",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "column_outliers",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 7,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "dmd_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "dmd_r8"
+      ]
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "column_outliers",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "column_outliers",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "column_outliers",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "dmd_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "identity",
+        "dmd_r8"
+      ]
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "column_outliers",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "column_outliers",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "column_outliers",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "dmd_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "pod_r8",
+        "dmd_r8"
+      ]
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "column_outliers",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 7,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "gaussian_iid",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "gaussian_iid",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 7,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "gaussian_iid",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "gaussian_iid",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "gaussian_iid",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 7,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "gaussian_iid",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "sparse_impulsive",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "sparse_impulsive",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "dmd_r8",
+        "identity",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "sparse_impulsive",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "sparse_impulsive",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "sparse_impulsive",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "sparse_impulsive",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "sparse_impulsive",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "sparse_impulsive",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "sparse_impulsive",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 3,
+      "dominant_matrix_work_pareto": [
+        "dmd_r8",
+        "stable_rpca"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "stable_rpca"
+      ]
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "spatial_gaussian",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "spatial_gaussian",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 4,
+      "dominant_matrix_work_pareto": [
+        "dmd_r8",
+        "stable_rpca",
+        "stable_tls_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "dmd_r8",
+        "stable_rpca",
+        "stable_tls_r8"
+      ]
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "spatial_gaussian",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "spatial_gaussian",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "spatial_gaussian",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 3,
+      "dominant_matrix_work_pareto": [
+        "dmd_r8",
+        "stable_rpca"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "dmd_r8",
+        "stable_rpca",
+        "stable_tls_r8"
+      ]
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "spatial_gaussian",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "temporal_ar",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "temporal_ar",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "temporal_ar",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "temporal_ar",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "temporal_ar",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "temporal_ar",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "temporal_ar",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "temporal_ar",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "pod_r8",
+        "dmd_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "hb_thinning",
+      "noise": "temporal_ar",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "column_outliers",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "column_outliers",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "identity"
+      ]
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "column_outliers",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "column_outliers",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 2,
+      "dominant_matrix_work_pareto": [
+        "pcp",
+        "pcp_tls_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pcp",
+        "pcp_tls_r8"
+      ]
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "column_outliers",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 7,
+      "dominant_matrix_work_pareto": [
+        "identity"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity"
+      ]
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "column_outliers",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "column_outliers",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "column_outliers",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity"
+      ]
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "column_outliers",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 7,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "identity"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "gaussian_iid",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "gaussian_iid",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 7,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "identity"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "identity"
+      ]
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "gaussian_iid",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "gaussian_iid",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "gaussian_iid",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 7,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "identity"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "identity"
+      ]
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "gaussian_iid",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "sparse_impulsive",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 2,
+      "dominant_matrix_work_pareto": [
+        "pcp"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pcp"
+      ]
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "sparse_impulsive",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "sparse_impulsive",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 2,
+      "dominant_matrix_work_pareto": [
+        "pcp"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pcp"
+      ]
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "sparse_impulsive",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 2,
+      "dominant_matrix_work_pareto": [
+        "pcp"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pcp",
+        "pcp_tls_r8"
+      ]
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "sparse_impulsive",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "sparse_impulsive",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 2,
+      "dominant_matrix_work_pareto": [
+        "pcp"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pcp",
+        "pcp_tls_r8"
+      ]
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "sparse_impulsive",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 2,
+      "dominant_matrix_work_pareto": [
+        "pcp"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pcp"
+      ]
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "sparse_impulsive",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "sparse_impulsive",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 2,
+      "dominant_matrix_work_pareto": [
+        "pcp"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pcp"
+      ]
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 6,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "stable_rpca",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "dmd_r8",
+        "stable_rpca",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 7,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "spatial_gaussian",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 6,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "stable_rpca",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "dmd_r8",
+        "stable_rpca",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "spatial_gaussian",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "spatial_gaussian",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "spatial_gaussian",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 6,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "stable_rpca",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "dmd_r8",
+        "stable_rpca",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "spatial_gaussian",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "pod_r8",
+        "dmd_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "spatial_gaussian",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "temporal_ar",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "temporal_ar",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity"
+      ]
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "temporal_ar",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "temporal_ar",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "temporal_ar",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity"
+      ]
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "temporal_ar",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "temporal_ar",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "temporal_ar",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity"
+      ]
+    },
+    {
+      "flow": "ns_multiscale",
+      "noise": "temporal_ar",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "column_outliers",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "column_outliers",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity"
+      ]
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "column_outliers",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "column_outliers",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "column_outliers",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 6,
+      "dominant_matrix_work_pareto": [
+        "identity"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity"
+      ]
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "column_outliers",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "column_outliers",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "column_outliers",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity"
+      ]
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "column_outliers",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "identity"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "identity"
+      ]
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "gaussian_iid",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "gaussian_iid",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "gaussian_iid",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "gaussian_iid",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "gaussian_iid",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 8,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "gaussian_iid",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "sparse_impulsive",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 2,
+      "dominant_matrix_work_pareto": [
+        "pcp"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pcp"
+      ]
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "sparse_impulsive",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "sparse_impulsive",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "sparse_impulsive",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 2,
+      "dominant_matrix_work_pareto": [
+        "pcp"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pcp",
+        "pcp_tls_r8"
+      ]
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "sparse_impulsive",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "sparse_impulsive",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "sparse_impulsive",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 2,
+      "dominant_matrix_work_pareto": [
+        "pcp"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pcp"
+      ]
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "sparse_impulsive",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "identity",
+        "dmd_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "sparse_impulsive",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 6,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "stable_rpca",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "dmd_r8",
+        "tls_r8",
+        "stable_rpca",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "spatial_gaussian",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "spatial_gaussian",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 6,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "tls_r8",
+        "dmd_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "spatial_gaussian",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "spatial_gaussian",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "spatial_gaussian",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 6,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "dmd_r8",
+        "tls_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "spatial_gaussian",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "temporal_ar",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "temporal_ar",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "pod_r8"
+      ]
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "temporal_ar",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "temporal_ar",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "temporal_ar",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "pod_r8"
+      ]
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "temporal_ar",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "temporal_ar",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "temporal_ar",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "pod_r8"
+      ]
+    },
+    {
+      "flow": "ns_vortices",
+      "noise": "temporal_ar",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "column_outliers",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "column_outliers",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 8,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "dmd_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "dmd_r8"
+      ]
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "column_outliers",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "column_outliers",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "column_outliers",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 8,
+      "dominant_matrix_work_pareto": [
+        "dmd_r8",
+        "identity"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "dmd_r8",
+        "identity",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "column_outliers",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "column_outliers",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "column_outliers",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "dmd_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "dmd_r8"
+      ]
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "column_outliers",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "dmd_r8",
+        "pod_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "gaussian_iid",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "gaussian_iid",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "gaussian_iid",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "gaussian_iid",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "gaussian_iid",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "gaussian_iid",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "pod_r8",
+        "dmd_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "gaussian_iid",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "sparse_impulsive",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 2,
+      "dominant_matrix_work_pareto": [
+        "pcp",
+        "pcp_tls_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pcp",
+        "pcp_tls_r8"
+      ]
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "sparse_impulsive",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "pod_r8",
+        "dmd_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "sparse_impulsive",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "sparse_impulsive",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 2,
+      "dominant_matrix_work_pareto": [
+        "pcp",
+        "pcp_tls_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pcp",
+        "pcp_tls_r8"
+      ]
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "sparse_impulsive",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "sparse_impulsive",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "sparse_impulsive",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 2,
+      "dominant_matrix_work_pareto": [
+        "pcp",
+        "pcp_tls_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pcp",
+        "pcp_tls_r8"
+      ]
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "sparse_impulsive",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "dmd_r8",
+        "pod_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "sparse_impulsive",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 5,
+      "dominant_matrix_work_pareto": [
+        "dmd_r8",
+        "stable_rpca"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "dmd_r8",
+        "stable_rpca"
+      ]
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "spatial_gaussian",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "spatial_gaussian",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "spatial_gaussian",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 7,
+      "dominant_matrix_work_pareto": [
+        "dmd_r8",
+        "stable_rpca",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "dmd_r8",
+        "stable_rpca",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "spatial_gaussian",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "spatial_gaussian",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "spatial_gaussian",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 7,
+      "dominant_matrix_work_pareto": [
+        "stable_rpca",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "dmd_r8",
+        "stable_rpca",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "spatial_gaussian",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "temporal_ar",
+      "seed": 101,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "temporal_ar",
+      "seed": 101,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "pod_r8",
+        "identity",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "temporal_ar",
+      "seed": 101,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "temporal_ar",
+      "seed": 307,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "temporal_ar",
+      "seed": 307,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "dmd_r8",
+        "pod_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "temporal_ar",
+      "seed": 307,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "temporal_ar",
+      "seed": 911,
+      "variant": "helmholtz",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "temporal_ar",
+      "seed": 911,
+      "variant": "helmholtz_k10",
+      "attempted": 10,
+      "operationally_accepted": 9,
+      "dominant_matrix_work_pareto": [
+        "identity",
+        "pod_r8",
+        "optimized_r8"
+      ],
+      "pipeline_CPU_and_RSS_pareto": [
+        "identity",
+        "dmd_r8",
+        "pod_r8",
+        "optimized_r8"
+      ]
+    },
+    {
+      "flow": "oldroyd_b",
+      "noise": "temporal_ar",
+      "seed": 911,
+      "variant": "raw",
+      "attempted": 10,
+      "operationally_accepted": 0,
+      "dominant_matrix_work_pareto": [],
+      "pipeline_CPU_and_RSS_pareto": []
+    }
+  ],
+  "scope": "Frontiers only within identical observed flow/noise/seed/variant; operational gates and convergence first. Dominant-work FLOP proxy excludes postprocess FFT, which is identical for methods within each block. CPU/RSS frontier is descriptive with n=1 per shared-host condition, not a hardware ranking or statistical superiority test."
+}

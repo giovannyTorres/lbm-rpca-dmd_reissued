@@ -1,0 +1,89 @@
+{
+  "valid": true,
+  "sources": {
+    "ns_vortices": {
+      "path": "results/research/highres_newtonian_2026-10-14/datasets/interacting_vortices_128_dt0.005.npz",
+      "sha256": "8ff4bbbb2acc863a35760a67d1935cd7221c8ac1f60fa05ad6f2181ea4625890",
+      "canonical_dataset_sha256": null,
+      "hash_validation": "archive_bytes_sha256",
+      "shape": [
+        41,
+        2,
+        128,
+        128
+      ]
+    },
+    "ns_multiscale": {
+      "path": "results/research/highres_newtonian_2026-10-14/datasets/decaying_turbulence_128_dt0.005.npz",
+      "sha256": "2b99c1d857d89a2dc7a3ef317ed869fa3d3b63f51c130dad50307a6792612158",
+      "canonical_dataset_sha256": null,
+      "hash_validation": "archive_bytes_sha256",
+      "shape": [
+        41,
+        2,
+        128,
+        128
+      ]
+    },
+    "oldroyd_b": {
+      "path": "results/research/highres_viscoelastic_2026-10-14/datasets/oldroyd_b_128.npz",
+      "sha256": "5918dbaae151efd56a2881046868f18ca052fa1605a279d03253ff85b1ec1065",
+      "canonical_dataset_sha256": null,
+      "hash_validation": "archive_bytes_sha256",
+      "shape": [
+        25,
+        2,
+        128,
+        128
+      ]
+    },
+    "fene_p": {
+      "path": "results/research/highres_viscoelastic_2026-10-14/datasets/fene_p_128.npz",
+      "sha256": "28146ac24585182adf54c7efda3731a58588773427f7e18aa45a99b0fcb1e9ae",
+      "canonical_dataset_sha256": null,
+      "hash_validation": "archive_bytes_sha256",
+      "shape": [
+        25,
+        2,
+        128,
+        128
+      ]
+    },
+    "hb_thinning": {
+      "path": "results/research/highres_viscoplastic_2026-10-14/datasets/hb_thinning_128.npz",
+      "sha256": "b41f4a0763a286526c379844a081b2c27fa5750c974bce334d8c0c27f354873f",
+      "canonical_dataset_sha256": "b39902f9d8cbf0ad405be6607c8b20c76e52b843532ae71b3a707a8364ecfc4b",
+      "hash_validation": "canonical_field_digest_and_solver_sources",
+      "shape": [
+        21,
+        2,
+        128,
+        128
+      ]
+    },
+    "bingham": {
+      "path": "results/research/highres_viscoplastic_2026-10-14/datasets/bingham_128.npz",
+      "sha256": "52b61b37762d5e3abfa0f9000dd0beb1f416fc0628900e8221670b7e4eabb52d",
+      "canonical_dataset_sha256": "6822aa4e4a518b0d080b349708af46179a4a542acbd55e97610ab6228127b8c0",
+      "hash_validation": "canonical_field_digest_and_solver_sources",
+      "shape": [
+        21,
+        2,
+        128,
+        128
+      ]
+    },
+    "hb_thickening": {
+      "path": "results/research/highres_viscoplastic_2026-10-14/datasets/hb_thickening_128.npz",
+      "sha256": "1d27b5a8a6d6f89c429d63868732b111bdb3846130f9ee79e5c237e4e76ed540",
+      "canonical_dataset_sha256": "3064b12eb889ca068daf48c54c4e418fd7c136c6ccdb8455ad5c6f871d0aa3cc",
+      "hash_validation": "canonical_field_digest_and_solver_sources",
+      "shape": [
+        21,
+        2,
+        128,
+        128
+      ]
+    }
+  }
+}

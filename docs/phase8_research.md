@@ -2,6 +2,9 @@
 
 La fase 8 incorpora un banco de investigación en `fluid_denoise.research` sin renombrar las fases 1–7. Añade Navier–Stokes periódico, solvers reológicos 2D, contaminación pareada, estimadores, restricciones físicas y recursos medidos. Se ejecutaron reconstrucción dentro de la ventana y pronóstico cronológico fuera de muestra. PIV real, estelas externas, alto Wi, caos de cilindro y DNS certificada requieren evidencia adicional.
 
+
+La lectura principal ahora se centra en [comparación de modelos y fidelidad](research/COMPARISON_RESULTS.md), con [protocolo pareado](research/COMPARISON_PROTOCOL.md) y [revisión independiente](research/COMPARISON_REVIEW.md). Se ejecutaron 1050 ajustes principales, 360 de sensibilidad y 84 controles sin ruido, más 18 referencias coincidentes y dos controles de muestreo denso. El [PDF](../results/research/document/extension.pdf) conserva cinco capítulos, con 123 páginas y 58 figuras; el material histórico y la evolución quedan en apéndices. Las cuatro tolerancias operativas y la convergencia se distinguen del cumplimiento de la ecuación física. La suite completa registra 218 pruebas y 34 subcasos.
+
 ## Componentes
 
 | Módulo | Responsabilidad |
@@ -103,9 +106,9 @@ La reconstrucción `extended_physics_2026-10-14` completó **2808 condiciones y 
 
 El pronóstico `forecasting_extended_2026-10-14` completó **60 escenarios**, con 5 flujos, 4 ruidos, 3 semillas y 29 opciones predeclaradas. Utiliza 60% entrenamiento, 20% validación y el resto test; limpieza y ajuste usan sólo entrenamiento, y la elección usa MSE de validación ruidosa. Con tolerancia absoluta `1e-10` en la diferencia de error L2 relativo futuro de velocidad, mejora persistencia cruda en 48/60 escenarios y persistencia filtrada en 43/60; los restantes empatan. La vorticidad futura conserva errores grandes en casos no lineales. Los artefactos crudos y el resumen consolidado conservan la regla de comparación y su procedencia.
 
-La verificación anterior registró **212 tests y 28 subtests sin omisiones**; con la ampliación de mallas la suite completa registra **214 tests y 32 subtests**. Las fases 1–7 también se ejecutaron completas, con **12 experimentos y 80 figuras**. Estas comprobaciones no certifican DNS ni todos los regímenes físicos.
+La verificación anterior registró **212 tests y 28 subtests sin omisiones**; con la ampliación comparativa la suite completa registra **218 tests y 34 subtests**. Las fases 1–7 también se ejecutaron completas, con **12 experimentos y 80 figuras**. Estas comprobaciones no certifican DNS ni todos los regímenes físicos.
 
-La ampliación de [mallas y evolución física](research/HIGHRES_RESULTS.md) incorpora referencias Navier–Stokes **512²**, Oldroyd-B/FENE-P **256²**, y HB/Bingham **128² en T=2** con control **256² limitado a T=0.1**. Incluye refinamiento espacial y temporal, espectros, esfuerzos, balance de energía y reconstrucción en 128²/256². El documento pasa a **76 páginas y 37 figuras**, con seis diagramas y cinco animaciones complementarias. La [revisión independiente](research/HIGHRES_REVIEW.md) documenta los errores de campo completo y los límites de cada horizonte; [RUNNING.md](research/RUNNING.md#campañas-de-mallas-ampliadas) indica comandos separados del pipeline previo.
+La ampliación de [mallas y evolución física](research/HIGHRES_RESULTS.md) incorpora referencias Navier–Stokes **512²**, Oldroyd-B/FENE-P **256²**, y HB/Bingham **128² en T=2** con control **256² limitado a T=0.1**. Incluye refinamiento espacial y temporal, espectros, esfuerzos, balance de energía y reconstrucción en 128²/256². La versión visual anterior añadió 28 figuras; el documento actual contiene **123 páginas y 58 figuras**, con seis diagramas y cinco animaciones complementarias. La [revisión independiente](research/HIGHRES_REVIEW.md) documenta los errores de campo completo y los límites de cada horizonte; [RUNNING.md](research/RUNNING.md#campañas-de-mallas-ampliadas) indica comandos separados del pipeline previo.
 
 - [Resultados integrados](research/EXTENDED_RESULTS.md), [pronóstico](research/FORECASTING.md), [restricciones físicas](research/PHYSICS_CONSTRAINTS.md) y [segunda revisión](research/SECOND_REVIEW.md).
 - [Viscoelasticidad 2D](research/VISCOELASTIC_2D.md) y [viscoplasticidad 2D](research/VISCOPLASTIC_2D.md).

@@ -1,0 +1,16 @@
+{
+  "complete": false,
+  "expected_fits": 1050,
+  "recorded_fits": 20,
+  "expected_evaluations": 3150,
+  "recorded_evaluations": 60,
+  "failed_fits": 0,
+  "nonconverged_fits": 0,
+  "quality_passes_by_variant": {
+    "raw": 0,
+    "helmholtz": 0,
+    "helmholtz_k10": 18
+  },
+  "elapsed_conditions_seconds": 90.5759559339931,
+  "scope": "In-window paired velocity reconstruction; fixed reference density gives trivial total mass; sampled-time PDE residual only Newtonian; no blind or forecast certification"
+}

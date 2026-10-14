@@ -13,6 +13,7 @@ results/research/extended_smoke/
 results/research/forecast_smoke/
 results/research/*/datasets/*.npz
 results/research/*/reconstructions/
+results/research/*/cache/
 results/research/*/predictions/*.npz
 results/research/solver_validation_2d/*.npz
 results/research/document/*
