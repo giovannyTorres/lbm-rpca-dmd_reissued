@@ -1,0 +1,9 @@
+{
+  "conditions": 60,
+  "expected_conditions": 60,
+  "complete": true,
+  "failed_conditions": 0,
+  "beats_raw_persistence_velocity": 51,
+  "evaluation": "chronological held-out forecasting",
+  "config_sha256": "b43404c06bf9d05f9f3926426021f718da3936b1862e308b55193cc3dce1fea5"
+}

@@ -1,0 +1,236 @@
+{
+  "campaign_id": "resolution_rank_campaign",
+  "rank": 4,
+  "repetitions": 3,
+  "seeds": [
+    7,
+    23,
+    61,
+    101,
+    211
+  ],
+  "save_reconstructions": false,
+  "fit_timeout_seconds": 90,
+  "algorithm_parameters": {
+    "max_iter": 600,
+    "tol": 1e-05,
+    "max_nfev": 100,
+    "n_starts": 2
+  },
+  "quality_thresholds": {
+    "velocity_relative_l2": 0.15,
+    "vorticity_relative_l2": 0.25,
+    "extra_divergence_normalized": 0.1,
+    "kinetic_energy_relative_l2": 0.15
+  },
+  "methods": [
+    {
+      "method": "identity",
+      "rank": 4
+    },
+    {
+      "method": "pod",
+      "rank": 2
+    },
+    {
+      "method": "pod",
+      "rank": 4
+    },
+    {
+      "method": "pod",
+      "rank": 8
+    },
+    {
+      "method": "pod",
+      "rank": 12
+    },
+    {
+      "method": "rpca",
+      "rank": 4
+    },
+    {
+      "method": "stable_rpca",
+      "rank": 4
+    },
+    {
+      "method": "outlier_pursuit",
+      "rank": 4
+    },
+    {
+      "method": "dmd",
+      "rank": 2
+    },
+    {
+      "method": "dmd",
+      "rank": 4
+    },
+    {
+      "method": "dmd",
+      "rank": 8
+    },
+    {
+      "method": "dmd",
+      "rank": 12
+    },
+    {
+      "method": "tls_dmd",
+      "rank": 2
+    },
+    {
+      "method": "tls_dmd",
+      "rank": 4
+    },
+    {
+      "method": "tls_dmd",
+      "rank": 8
+    },
+    {
+      "method": "tls_dmd",
+      "rank": 12
+    },
+    {
+      "method": "fb_dmd",
+      "rank": 2
+    },
+    {
+      "method": "fb_dmd",
+      "rank": 4
+    },
+    {
+      "method": "fb_dmd",
+      "rank": 8
+    },
+    {
+      "method": "fb_dmd",
+      "rank": 12
+    },
+    {
+      "method": "optimized_dmd",
+      "rank": 2
+    },
+    {
+      "method": "optimized_dmd",
+      "rank": 4
+    },
+    {
+      "method": "optimized_dmd",
+      "rank": 8
+    },
+    {
+      "method": "optimized_dmd",
+      "rank": 12
+    },
+    {
+      "method": "rpca_dmd",
+      "rank": 4
+    },
+    {
+      "method": "stable_rpca_dmd",
+      "rank": 4
+    }
+  ],
+  "noise_models": [
+    {
+      "kind": "gaussian",
+      "intensity": 0.2
+    },
+    {
+      "kind": "sparse_impulsive",
+      "intensity": 0.2
+    },
+    {
+      "kind": "mixed",
+      "intensity": 0.2
+    },
+    {
+      "kind": "spatial_correlated",
+      "intensity": 0.2
+    },
+    {
+      "kind": "temporal_correlated",
+      "intensity": 0.2
+    },
+    {
+      "kind": "column_outliers",
+      "intensity": 0.2
+    }
+  ],
+  "cases": [
+    {
+      "id": "interacting_vortices_32",
+      "solver": "spectral_ns",
+      "parameters": {
+        "case": "interacting_vortices",
+        "nx": 32,
+        "viscosity": 0.02,
+        "dt": 0.0025,
+        "n_steps": 1200,
+        "sample_every": 10
+      }
+    },
+    {
+      "id": "interacting_vortices_48",
+      "solver": "spectral_ns",
+      "parameters": {
+        "case": "interacting_vortices",
+        "nx": 48,
+        "viscosity": 0.02,
+        "dt": 0.0025,
+        "n_steps": 1200,
+        "sample_every": 10
+      }
+    },
+    {
+      "id": "interacting_vortices_64",
+      "solver": "spectral_ns",
+      "parameters": {
+        "case": "interacting_vortices",
+        "nx": 64,
+        "viscosity": 0.02,
+        "dt": 0.0025,
+        "n_steps": 1200,
+        "sample_every": 10
+      }
+    },
+    {
+      "id": "decaying_turbulence_32",
+      "solver": "spectral_ns",
+      "parameters": {
+        "case": "decaying_turbulence",
+        "nx": 32,
+        "viscosity": 0.02,
+        "dt": 0.0025,
+        "n_steps": 1200,
+        "sample_every": 10
+      }
+    },
+    {
+      "id": "decaying_turbulence_48",
+      "solver": "spectral_ns",
+      "parameters": {
+        "case": "decaying_turbulence",
+        "nx": 48,
+        "viscosity": 0.02,
+        "dt": 0.0025,
+        "n_steps": 1200,
+        "sample_every": 10
+      }
+    },
+    {
+      "id": "decaying_turbulence_64",
+      "solver": "spectral_ns",
+      "parameters": {
+        "case": "decaying_turbulence",
+        "nx": 64,
+        "viscosity": 0.02,
+        "dt": 0.0025,
+        "n_steps": 1200,
+        "sample_every": 10
+      }
+    }
+  ],
+  "channel_quality_thresholds": {
+    "wall_velocity_error_relative_rms": 0.02,
+    "wall_normal_velocity_relative_rms": 0.02
+  }
+}

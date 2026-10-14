@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-10-14T06:46:41.311021+00:00",
+  "all_checks_passed": true,
+  "scope": "independent adversarial review; not campaign results or DNS certification",
+  "source_commit": "29317ae5a81415be121e95298615bcd097d81427",
+  "source_sha256": {
+    "scripts/verify_adversarial_physics.py": "23da8f90b29dca45dfefa0044e64c4baf4c46dea79f60e9e338fbafd246c35bf",
+    "lbm_rpca/research_algorithms.py": "0991fb4773e87f88a9c3e6461339cb7f5b117f94bcc437b444f58c7152f14055",
+    "lbm_rpca/research_dns.py": "fe692ebdd587c6eaced3aee5456ca8e56b42f6226cf05d2597f39cf9fd57846f",
+    "lbm_rpca/research_metrics.py": "bed31a8a749bfe486639cf7981261b2ba17fcdb43c7434c1495fd006085cfbbf",
+    "lbm_rpca/research_rheology.py": "9cfc0c728a5b60ac3d997e779e212c90c30a152edd3549fc4dc8e6b5265fc625",
+    "lbm_rpca/research_runner.py": "9a90b48b8cb4857ad16a1b691740377bef3362ea9310390a19f3c693b22b8e74",
+    "configs/research/pilot.json": "1b5871b2c866e4fe080f87fe4747ef65151f0a6fc01587d734d4c0cff63b8541"
+  },
+  "numpy_version": "2.3.5",
+  "checks": {
+    "algorithms": {
+      "passed": true,
+      "outlier_pursuit_tall_clean": {
+        "shape": [
+          300,
+          20
+        ],
+        "default_lambda": 0.30304576336566325,
+        "default_relative_error": 1.4373722679686965e-15,
+        "default_gamma_upper_bound": 0.1,
+        "old_lambda": 0.05773502691896257,
+        "old_lambda_optimum": "zero low-rank component",
+        "old_lambda_lowrank_norm_ratio": 0.0,
+        "old_lambda_primal_residual": 2.2309682368601357e-16,
+        "old_lambda_dual_relative_residual": 1.2062504188536326e-15,
+        "norm_inequality": "lambda < 1/sqrt(snapshot_count) implies unique optimum L=0 because ||L||_* >= ||L||_F >= ||L||_2,1/sqrt(n)"
+      },
+      "fb_dmd": {
+        "negative_eigenvalue": -0.8,
+        "negative_eigenvalue_relative_error": 3.2435621450565736e-16,
+        "negative_eigenvalue_selected": [
+          -0.8
+        ],
+        "rotations": [
+          {
+            "theta_radians_per_sample": 0.6,
+            "relative_error": 8.241092532218119e-16,
+            "minimum_branch_margin": 1.7999999999999998
+          },
+          {
+            "theta_radians_per_sample": 2.1,
+            "relative_error": 2.7212487448233165e-15,
+            "minimum_branch_margin": 1.8000000000000003
+          }
+        ],
+        "ambiguous_theta": 1.5707963267948966,
+        "ambiguous_branch_rejected": true,
+        "ambiguous_branch_reason": "fbDMD square-root branch is ambiguous relative to forward dynamics"
+      },
+      "criteria": "relative reconstruction error and zero-optimum norm ratio < 1e-10; ambiguous root must fail"
+    },
+    "wall_adversaries": {
+      "passed": true,
+      "reference": "stationary Herschel-Bulkley channel; declared no-slip walls",
+      "parameters": {
+        "ny": 33,
+        "nx": 8,
+        "times": [
+          0,
+          0.05,
+          0.1
+        ]
+      },
+      "base_thresholds": {
+        "velocity_relative_l2": 0.15,
+        "vorticity_relative_l2": 0.25,
+        "extra_divergence_normalized": 0.1,
+        "kinetic_energy_relative_l2": 0.15
+      },
+      "additional_channel_thresholds": {
+        "wall_velocity_error_relative_rms": 0.02,
+        "wall_normal_velocity_relative_rms": 0.02
+      },
+      "artifacts": [
+        {
+          "artifact": "tangential_slip",
+          "constant_velocity_added": 0.005,
+          "component": 0,
+          "base_gates_pass": true,
+          "channel_wall_gates_pass": false,
+          "metrics": {
+            "velocity_relative_l2": 0.029555556918148283,
+            "vorticity_relative_l2": 1.0211740111612496e-16,
+            "extra_divergence_normalized": 0.0,
+            "kinetic_energy_relative_l2": 0.05555889793158361,
+            "wall_velocity_error_relative_rms": 0.02955555691814826,
+            "wall_normal_velocity_relative_rms": 0.0,
+            "extra_boundary_flux_rms": 0.0,
+            "wall_normal_velocity_max_abs": 0.0
+          }
+        },
+        {
+          "artifact": "equal_wall_penetration",
+          "constant_velocity_added": 0.005,
+          "component": 1,
+          "base_gates_pass": true,
+          "channel_wall_gates_pass": false,
+          "metrics": {
+            "velocity_relative_l2": 0.02955555691814826,
+            "vorticity_relative_l2": 0.0,
+            "extra_divergence_normalized": 0.0,
+            "kinetic_energy_relative_l2": 0.0008470603100526594,
+            "wall_velocity_error_relative_rms": 0.02955555691814826,
+            "wall_normal_velocity_relative_rms": 0.02955555691814826,
+            "extra_boundary_flux_rms": 0.0,
+            "wall_normal_velocity_max_abs": 0.005
+          }
+        }
+      ],
+      "interpretation": "Uniform wall-normal penetration can cancel net boundary flux; tangential slip does not change curl or divergence."
+    },
+    "finite_guards": {
+      "passed": true,
+      "runner_recursive_guard": {
+        "legitimate_none_accepted": true,
+        "probes": [
+          {
+            "probe": "scalar_nan",
+            "rejected": true,
+            "reason": "Nonfinite number at result.x"
+          },
+          {
+            "probe": "array_inf",
+            "rejected": true,
+            "reason": "Nonfinite array at result.nested[0]"
+          },
+          {
+            "probe": "numpy_scalar_nan",
+            "rejected": true,
+            "reason": "Nonfinite number at result"
+          }
+        ]
+      },
+      "rheology_overflow": {
+        "parameters": {
+          "ny": 5,
+          "nx": 3,
+          "steps": 2,
+          "initial": "steady",
+          "pressure_gradient": 1e+152,
+          "relaxation_time": 100000000.0
+        },
+        "rejected": true,
+        "reason": "overflow encountered in multiply"
+      },
+      "rheology_normal_control": {
+        "initial": "steady",
+        "eta_s": 0.3,
+        "eta_p": 0.7,
+        "relaxation_time": 0.6,
+        "normal_stress_max_absolute_error": 1.0547118733938987e-15,
+        "minimum_conformation_determinant": 1.0003515625000001
+      },
+      "criteria": "NaN/Inf and overflowing Oldroyd-B state explicitly rejected; normal finite reference remains accurate"
+    },
+    "dns_physical_identities": {
+      "passed": true,
+      "nx": 32,
+      "domain": [
+        6.283185307179586,
+        6.283185307179586
+      ],
+      "inviscid_invariants": {
+        "initial_vorticity": "sin(x)sin(y)+.35cos(2x)sin(3y)+.1sin(5x+2y)",
+        "dt": 0.001,
+        "duration": 0.4,
+        "relative_energy_drift": 1.9587841261244884e-15,
+        "relative_enstrophy_drift": 1.9434976361053067e-15
+      },
+      "viscous_dissipation_identities": {
+        "viscosity": 0.02,
+        "dt": 0.0001,
+        "energy_rate_measured": -0.005712416552214328,
+        "energy_rate_exact_identity": -0.005712416551660846,
+        "energy_identity": "dE/dt=-nu*mean(omega^2)",
+        "enstrophy_rate_measured": -0.02086166960388325,
+        "enstrophy_rate_exact_identity": -0.020861669590385087,
+        "enstrophy_identity": "dZ/dt=-nu*mean(omega_x^2+omega_y^2)"
+      },
+      "nonlinear_rhs": {
+        "initial_streamfunction": ".6sin(x)sin(y)+.03cos(2x)sin(3y)",
+        "expected_rhs": "-u*omega_x-v*omega_y+nu*laplacian(omega), evaluated by independent trigonometric formulas",
+        "numerical_rhs": "(-3omega(0)+4omega(dt)-omega(2dt))/(2dt)",
+        "viscosity": 0.02,
+        "rows": [
+          {
+            "dt": 0.001,
+            "relative_error": 7.756374207517494e-07,
+            "observed_stencil_order": null
+          },
+          {
+            "dt": 0.0005,
+            "relative_error": 1.939486275294358e-07,
+            "observed_stencil_order": 1.9997078414520666
+          },
+          {
+            "dt": 0.00025,
+            "relative_error": 4.849231211663407e-08,
+            "observed_stencil_order": 1.9998466184439427
+          }
+        ],
+        "expected_order": "2 from the derivative stencil; not the RK4 integration order"
+      },
+      "criteria": "inviscid drift <1e-10; energy identity error <1e-10; enstrophy identity error <1e-9; final RHS relative error <1e-7 and stencil order 1.9..2.1",
+      "dns_certified": false
+    }
+  }
+}

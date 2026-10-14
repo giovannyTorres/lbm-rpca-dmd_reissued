@@ -1,0 +1,241 @@
+{
+  "campaign_id": "extended_physics_2026-10-14",
+  "rank": 4,
+  "repetitions": 3,
+  "seeds": [
+    7,
+    23,
+    61
+  ],
+  "save_reconstructions": false,
+  "fit_timeout_seconds": 90,
+  "algorithm_parameters": {
+    "max_iter": 1200,
+    "tol": 1e-05,
+    "max_nfev": 200,
+    "n_starts": 2
+  },
+  "quality_thresholds": {
+    "velocity_relative_l2": 0.15,
+    "vorticity_relative_l2": 0.25,
+    "extra_divergence_normalized": 0.1,
+    "kinetic_energy_relative_l2": 0.15
+  },
+  "methods": [
+    {
+      "method": "identity"
+    },
+    {
+      "method": "pod"
+    },
+    {
+      "method": "rpca"
+    },
+    {
+      "method": "stable_rpca"
+    },
+    {
+      "method": "dmd"
+    },
+    {
+      "method": "tls_dmd"
+    },
+    {
+      "method": "optimized_dmd"
+    },
+    {
+      "method": "fb_dmd",
+      "label": "fb_dmd_fallback_tls",
+      "parameters": {
+        "fallback_method": "tls_dmd"
+      }
+    },
+    {
+      "method": "identity",
+      "label": "identity_helmholtz",
+      "postprocess": "helmholtz"
+    },
+    {
+      "method": "pod",
+      "label": "pod_helmholtz",
+      "postprocess": "helmholtz"
+    },
+    {
+      "method": "tls_dmd",
+      "label": "tls_dmd_helmholtz",
+      "postprocess": "helmholtz"
+    },
+    {
+      "method": "tls_dmd",
+      "label": "tls_dmd_helmholtz_dealias",
+      "postprocess": "helmholtz_dealias"
+    },
+    {
+      "method": "stable_rpca",
+      "label": "stable_rpca_helmholtz",
+      "postprocess": "helmholtz"
+    }
+  ],
+  "noise_models": [
+    {
+      "kind": "gaussian",
+      "intensity": 0.2
+    },
+    {
+      "kind": "sparse_impulsive",
+      "intensity": 0.2
+    },
+    {
+      "kind": "mixed",
+      "intensity": 0.2
+    },
+    {
+      "kind": "spatial_correlated",
+      "intensity": 0.2
+    },
+    {
+      "kind": "temporal_correlated",
+      "intensity": 0.2
+    },
+    {
+      "kind": "column_outliers",
+      "intensity": 0.2
+    },
+    {
+      "kind": "student_t",
+      "intensity": 0.2
+    },
+    {
+      "kind": "heteroscedastic",
+      "intensity": 0.2
+    },
+    {
+      "kind": "sensor_drift",
+      "intensity": 0.2
+    }
+  ],
+  "cases": [
+    {
+      "id": "taylor_green_ns",
+      "solver": "spectral_ns",
+      "parameters": {
+        "case": "taylor_green",
+        "nx": 24,
+        "viscosity": 0.05,
+        "dt": 0.01,
+        "n_steps": 150,
+        "sample_every": 5
+      }
+    },
+    {
+      "id": "interacting_vortices_ns",
+      "solver": "spectral_ns",
+      "parameters": {
+        "case": "interacting_vortices",
+        "nx": 48,
+        "viscosity": 0.02,
+        "dt": 0.01,
+        "n_steps": 150,
+        "sample_every": 5
+      }
+    },
+    {
+      "id": "decaying_turbulence_ns",
+      "solver": "spectral_ns",
+      "parameters": {
+        "case": "decaying_turbulence",
+        "nx": 64,
+        "viscosity": 0.02,
+        "dt": 0.01,
+        "n_steps": 150,
+        "sample_every": 5,
+        "seed": 19
+      }
+    },
+    {
+      "id": "oldroyd_b_2d",
+      "solver": "viscoelastic_periodic",
+      "parameters": {
+        "model": "oldroyd_b",
+        "case": "interacting_vortices",
+        "nx": 32,
+        "viscosity_s": 0.02,
+        "viscosity_p": 0.04,
+        "relaxation_time": 0.5,
+        "amplitude": 0.6,
+        "dt": 0.005,
+        "n_steps": 120,
+        "sample_every": 4
+      }
+    },
+    {
+      "id": "fene_p_2d",
+      "solver": "viscoelastic_periodic",
+      "parameters": {
+        "model": "fene_p",
+        "case": "interacting_vortices",
+        "nx": 32,
+        "viscosity_s": 0.02,
+        "viscosity_p": 0.04,
+        "relaxation_time": 0.5,
+        "amplitude": 0.6,
+        "dt": 0.005,
+        "n_steps": 120,
+        "sample_every": 4,
+        "extensibility_squared": 12.0
+      }
+    },
+    {
+      "id": "hb_thinning_2d",
+      "solver": "viscoplastic_periodic",
+      "parameters": {
+        "case": "interacting_vortices",
+        "nx": 32,
+        "consistency": 0.02,
+        "flow_index": 0.6,
+        "yield_stress": 0.02,
+        "regularization_m": 10.0,
+        "shear_epsilon": 0.001,
+        "dt": 0.005,
+        "n_steps": 400,
+        "sample_every": 10
+      }
+    },
+    {
+      "id": "bingham_2d",
+      "solver": "viscoplastic_periodic",
+      "parameters": {
+        "case": "interacting_vortices",
+        "nx": 32,
+        "consistency": 0.02,
+        "flow_index": 1.0,
+        "yield_stress": 0.02,
+        "regularization_m": 10.0,
+        "shear_epsilon": 0.001,
+        "dt": 0.005,
+        "n_steps": 400,
+        "sample_every": 10
+      }
+    },
+    {
+      "id": "hb_thickening_2d",
+      "solver": "viscoplastic_periodic",
+      "parameters": {
+        "case": "interacting_vortices",
+        "nx": 32,
+        "consistency": 0.02,
+        "flow_index": 1.4,
+        "yield_stress": 0.02,
+        "regularization_m": 10.0,
+        "shear_epsilon": 0.001,
+        "dt": 0.005,
+        "n_steps": 400,
+        "sample_every": 10
+      }
+    }
+  ],
+  "channel_quality_thresholds": {
+    "wall_velocity_error_relative_rms": 0.02,
+    "wall_normal_velocity_relative_rms": 0.02
+  }
+}

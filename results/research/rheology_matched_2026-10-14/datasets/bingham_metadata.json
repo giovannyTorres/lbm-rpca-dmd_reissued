@@ -1,0 +1,108 @@
+{
+  "metadata": {
+    "case": "interacting_vortices",
+    "solver": "2D incompressible generalized-Newtonian momentum Fourier projection RK4",
+    "constitutive_model": "Papanastasiou-regularized Bingham",
+    "consistency": 0.04638643750536782,
+    "flow_index": 1.0,
+    "yield_stress": 0.02,
+    "regularization_m": 10.0,
+    "shear_epsilon": 0.001,
+    "solvent_viscosity": 0.0,
+    "constant_density": 1.0,
+    "amplitude": 0.6,
+    "seed": 0,
+    "domain": [
+      6.283185307179586,
+      6.283185307179586
+    ],
+    "units": "nondimensional",
+    "dimensionless_scaling": {
+      "velocity": "U",
+      "length": "L",
+      "time": "L/U",
+      "density": "rho_ref",
+      "stress": "rho_ref*U^2",
+      "shear_rate": "U/L",
+      "apparent_viscosity": "rho_ref*U*L",
+      "consistency": "rho_ref*U^2/(U/L)^n",
+      "regularization_m": "L/U",
+      "shear_epsilon": "U/L"
+    },
+    "nominal_dt": 0.005,
+    "nominal_steps": 240,
+    "sample_every": 8,
+    "internal_steps": 240,
+    "rejected_steps": 0,
+    "internal_dt_min": 0.004999999999999893,
+    "internal_dt_max": 0.005,
+    "stability_limited_steps": 0,
+    "max_advective_cfl": 0.055072950729257164,
+    "cfl_limit": 0.35,
+    "max_diffusive_number": 0.2458104845645735,
+    "diffusion_cfl_limit": 0.4,
+    "diffusion_stability_limit": "dt*max(1,n)*max(eta_app)/rho*max_retained_k_squared <= diffusion_cfl",
+    "maximum_stage_viscosity": 0.2458104845645735,
+    "viscosity_cap": null,
+    "dealiasing": "strict two-thirds state cutoff; padded nonlinear/constitutive quadrature",
+    "quadrature_factor": 1.5,
+    "quadrature_shape": [
+      48,
+      48
+    ],
+    "constitutive_aliasing_limit": "nonpolynomial stress requires grid and quadrature refinement; 3/2 padding is not exact dealiasing",
+    "stress_components": [
+      "xx",
+      "xy",
+      "yy"
+    ],
+    "shear_rate_definition": "sqrt(2*D:D)",
+    "stress_invariant_definition": "sqrt(tau:tau/2)=eta_app*shear_rate",
+    "yield_estimate": {
+      "kind": "approximate shear threshold, not exact unyielded regions",
+      "shear_threshold": 0.001,
+      "approximate_yielded_definition": "shear_rate > shear_threshold",
+      "over_yield_stress_definition": "stress_invariant > yield_stress"
+    },
+    "energy_definition": "rho/2*mean(|u|^2)",
+    "dissipation_definition": "padded-grid mean(eta_app*shear_rate^2), nonnegative",
+    "energy_budget_definition": "E(t)-E(0)+RK4_stage_integral(dissipation)",
+    "physical_scope": "inelastic generalized-Newtonian periodic flow; no walls, cylinder, elasticity or chaos certification",
+    "dns_validation": "not certified; nonlinear grid, time, constitutive quadrature and regularization refinement required",
+    "initial_condition": "four periodized Gaussian vorticity cores; two positive, two negative",
+    "centers_fractional": [
+      [
+        0.3,
+        0.35,
+        1.0
+      ],
+      [
+        0.55,
+        0.45,
+        1.0
+      ],
+      [
+        0.35,
+        0.7,
+        -1.0
+      ],
+      [
+        0.7,
+        0.65,
+        -1.0
+      ]
+    ],
+    "core_width": 0.4084070449666731,
+    "initial_speed_rms": 0.6,
+    "removed_vorticity_mean": 6.938893903907228e-18
+  },
+  "dataset_sha256": "031a45e9e124c59a8f59e51efe7c42529ff7af6753b5f518fc40f1b73ccfc2f0",
+  "dx": 0.19634954084936207,
+  "dy": 0.19634954084936207,
+  "shape": [
+    31,
+    2,
+    32,
+    32
+  ]
+}

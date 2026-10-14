@@ -1,11 +1,14 @@
 {
   "source": {
-    "run_dir": "data/noisy/<experiment_id>",
-    "reference_run_dir": "data/clean/<experiment_id>"
+    "run_dir": "latest_valid_noisy",
+    "reference_run_dir": "source_clean"
   },
   "input": {
     "kind": "space_time_matrix",
-    "variables": ["ux", "uy"],
+    "variables": [
+      "ux",
+      "uy"
+    ],
     "mask_policy": "flatten_fluid",
     "normalization": {
       "mode": "none",
@@ -21,5 +24,6 @@
   "output": {
     "root": "data/processed/baselines",
     "overwrite": false
-  }
+  },
+  "path_base": "repository"
 }

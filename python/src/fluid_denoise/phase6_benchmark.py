@@ -865,6 +865,11 @@ def _validate_summary_rows_for_export(
     metrics_root: Path,
     ledger_path: Path,
 ) -> None:
+    if not summary_rows:
+        raise RuntimeError(
+            "FASE 6 finished without completed cases, so summary.csv would be empty. "
+            f"Review ledger failures in: {ledger_path}"
+        )
     experiments_root = metrics_root / "experiments"
     if not experiments_root.exists():
         raise FileNotFoundError(
@@ -875,11 +880,6 @@ def _validate_summary_rows_for_export(
         raise RuntimeError(
             "FASE 6 could not export summary because the experiments folder is empty: "
             f"{experiments_root}"
-        )
-    if not summary_rows:
-        raise RuntimeError(
-            "FASE 6 finished without completed cases, so summary.csv would be empty. "
-            f"Review ledger failures in: {ledger_path}"
         )
 
     for row in summary_rows:
@@ -916,7 +916,8 @@ def run_benchmark(
     config_path: Path | str | None = None,
 ) -> BenchmarkRunSummary:
     _validate_benchmark_config(config_payload)
-    config_base_dir = REPO_ROOT if config_path is None else Path(config_path).resolve().parent
+    config_base_dir = (REPO_ROOT if config_path is None or config_payload.get("path_base") == "repository"
+                       else Path(config_path).resolve().parent)
     benchmark_config = config_payload["benchmark"]
     solver_section = config_payload["solver"]
     execution = dict(config_payload.get("execution", {}))
@@ -938,6 +939,8 @@ def run_benchmark(
     else:
         export_formats = [str(raw_export_formats).strip().lower()]
     summary_parquet_path = tables_root / "summary.parquet" if "parquet" in export_formats else None
+    if summary_parquet_path is not None:
+        _ensure_parquet_supported()
 
     metrics_root.mkdir(parents=True, exist_ok=True)
     tables_root.mkdir(parents=True, exist_ok=True)

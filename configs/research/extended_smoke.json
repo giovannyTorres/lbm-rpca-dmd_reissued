@@ -1,0 +1,102 @@
+{
+  "campaign_id": "extended_smoke",
+  "rank": 4,
+  "repetitions": 1,
+  "seeds": [
+    7
+  ],
+  "save_reconstructions": false,
+  "fit_timeout_seconds": 90,
+  "algorithm_parameters": {
+    "max_iter": 1200,
+    "tol": 1e-05,
+    "max_nfev": 200,
+    "n_starts": 2
+  },
+  "quality_thresholds": {
+    "velocity_relative_l2": 0.15,
+    "vorticity_relative_l2": 0.25,
+    "extra_divergence_normalized": 0.1,
+    "kinetic_energy_relative_l2": 0.15
+  },
+  "methods": [
+    {
+      "method": "tls_dmd",
+      "label": "tls_dmd_helmholtz",
+      "postprocess": "helmholtz"
+    }
+  ],
+  "noise_models": [
+    {
+      "kind": "gaussian",
+      "intensity": 0.2
+    }
+  ],
+  "cases": [
+    {
+      "id": "taylor_green_ns",
+      "solver": "spectral_ns",
+      "parameters": {
+        "case": "taylor_green",
+        "nx": 24,
+        "viscosity": 0.05,
+        "dt": 0.01,
+        "n_steps": 150,
+        "sample_every": 5
+      }
+    },
+    {
+      "id": "oldroyd_b_2d",
+      "solver": "viscoelastic_periodic",
+      "parameters": {
+        "model": "oldroyd_b",
+        "case": "interacting_vortices",
+        "nx": 32,
+        "viscosity_s": 0.02,
+        "viscosity_p": 0.04,
+        "relaxation_time": 0.5,
+        "amplitude": 0.6,
+        "dt": 0.005,
+        "n_steps": 120,
+        "sample_every": 4
+      }
+    },
+    {
+      "id": "fene_p_2d",
+      "solver": "viscoelastic_periodic",
+      "parameters": {
+        "model": "fene_p",
+        "case": "interacting_vortices",
+        "nx": 32,
+        "viscosity_s": 0.02,
+        "viscosity_p": 0.04,
+        "relaxation_time": 0.5,
+        "amplitude": 0.6,
+        "dt": 0.005,
+        "n_steps": 120,
+        "sample_every": 4,
+        "extensibility_squared": 12.0
+      }
+    },
+    {
+      "id": "hb_thinning_2d",
+      "solver": "viscoplastic_periodic",
+      "parameters": {
+        "case": "interacting_vortices",
+        "nx": 32,
+        "consistency": 0.02,
+        "flow_index": 0.6,
+        "yield_stress": 0.02,
+        "regularization_m": 10.0,
+        "shear_epsilon": 0.001,
+        "dt": 0.005,
+        "n_steps": 400,
+        "sample_every": 10
+      }
+    }
+  ],
+  "channel_quality_thresholds": {
+    "wall_velocity_error_relative_rms": 0.02,
+    "wall_normal_velocity_relative_rms": 0.02
+  }
+}

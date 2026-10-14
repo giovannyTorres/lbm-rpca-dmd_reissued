@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "trigger": "run_local_pipeline.py --mode full",
+  "benchmark": {
+    "benchmark_id": "phase6_example",
+    "completed": 12,
+    "failed": 0,
+    "ledger_path": "/workspace/thesis-reissued-reference/results/metrics/phase6_example/ledger.jsonl",
+    "metrics_root": "/workspace/thesis-reissued-reference/results/metrics/phase6_example",
+    "num_cases": 12,
+    "skipped": 0,
+    "summary_csv_path": "/workspace/thesis-reissued-reference/results/tables/phase6_example/summary.csv",
+    "summary_parquet_path": null
+  },
+  "visual_results": {
+    "benchmark_id": "phase6_example",
+    "catalog_csv_path": "/workspace/thesis-reissued-reference/results/visuals/phase6_example/catalog.csv",
+    "catalog_json_path": "/workspace/thesis-reissued-reference/results/visuals/phase6_example/catalog.json",
+    "catalog_markdown_path": "/workspace/thesis-reissued-reference/results/visuals/phase6_example/catalog.md",
+    "num_figures": 80,
+    "num_selected_experiments": 4,
+    "num_tables": 12,
+    "output_root": "/workspace/thesis-reissued-reference/results/visuals/phase6_example"
+  },
+  "fixes": [
+    "repository-relative checked-in configs",
+    "no-completed failure before missing output folder",
+    "Parquet dependency checked before computation"
+  ]
+}

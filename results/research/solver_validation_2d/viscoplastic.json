@@ -1,0 +1,598 @@
+{
+  "solver": "viscoplastic_periodic_2d",
+  "duration": 0.08,
+  "nx": 24,
+  "nominal_dt": 0.004,
+  "newtonian_limits": [
+    {
+      "case": "taylor_green",
+      "relative_velocity_error": 3.2399656874521186e-15,
+      "initial_energy": 0.0899999999999999,
+      "final_energy": 0.08928287233533465,
+      "minimum_dissipation_rate": 0.008928287233533462,
+      "max_energy_increase": 0.0,
+      "relative_energy_budget_residual": 7.911061851902572e-15,
+      "max_divergence_rms": 7.023699563696648e-16,
+      "nonrescaling_relative_change": 1.9655468496752886e-15,
+      "final_shear_rate_range": [
+        4.29290224039931e-16,
+        1.1952095872127868
+      ],
+      "final_viscosity_range": [
+        0.025,
+        0.025
+      ],
+      "approximate_yielded_fraction": 0.8402777777777778,
+      "snapshots": 5,
+      "velocity_shape": [
+        5,
+        2,
+        24,
+        24
+      ],
+      "all_dataset_fields_finite": true,
+      "internal_steps": 20,
+      "actual_dt_max": 0.004,
+      "nominal_dt_capped": false
+    },
+    {
+      "case": "periodic_shear",
+      "relative_velocity_error": 2.1940857506671062e-15,
+      "initial_energy": 0.09,
+      "final_energy": 0.0896407190409586,
+      "minimum_dissipation_rate": 0.004482035952047931,
+      "max_energy_increase": 0.0,
+      "relative_energy_budget_residual": 6.9497359256320834e-15,
+      "max_divergence_rms": 0.0,
+      "nonrescaling_relative_change": 1.2532533561975411e-15,
+      "final_shear_rate_range": [
+        2.479498088329516e-15,
+        0.5988011992003993
+      ],
+      "final_viscosity_range": [
+        0.025,
+        0.025
+      ],
+      "approximate_yielded_fraction": 0.9166666666666666,
+      "snapshots": 5,
+      "velocity_shape": [
+        5,
+        2,
+        24,
+        24
+      ],
+      "all_dataset_fields_finite": true,
+      "internal_steps": 20,
+      "actual_dt_max": 0.004,
+      "nominal_dt_capped": false
+    }
+  ],
+  "nonlinear_flow_indices": [
+    {
+      "flow_index": 0.6,
+      "yield_stress": 0.015,
+      "initial_energy": 0.17999999999999983,
+      "final_energy": 0.17713770109308694,
+      "minimum_dissipation_rate": 0.03546968972633412,
+      "max_energy_increase": 0.0,
+      "relative_energy_budget_residual": 1.0097536233081674e-14,
+      "max_divergence_rms": 1.0122280579942593e-15,
+      "nonrescaling_relative_change": 0.015421698219223262,
+      "final_shear_rate_range": [
+        0.013403426436967587,
+        2.281145330820522
+      ],
+      "final_viscosity_range": [
+        0.024551054303536695,
+        0.2539333141028394
+      ],
+      "approximate_yielded_fraction": 1.0,
+      "snapshots": 5,
+      "velocity_shape": [
+        5,
+        2,
+        24,
+        24
+      ],
+      "all_dataset_fields_finite": true,
+      "internal_steps": 20,
+      "actual_dt_max": 0.004,
+      "nominal_dt_capped": false
+    },
+    {
+      "flow_index": 1.0,
+      "yield_stress": 0.015,
+      "initial_energy": 0.17999999999999983,
+      "final_energy": 0.17692334410037033,
+      "minimum_dissipation_rate": 0.03809146629543525,
+      "max_energy_increase": 0.0,
+      "relative_energy_budget_residual": 4.818676322157802e-16,
+      "max_divergence_rms": 1.014852213926253e-15,
+      "nonrescaling_relative_change": 0.015098190966557736,
+      "final_shear_rate_range": [
+        0.02056167052752482,
+        2.2765368533114034
+      ],
+      "final_viscosity_range": [
+        0.03158895540980505,
+        0.13565001765112306
+      ],
+      "approximate_yielded_fraction": 1.0,
+      "snapshots": 5,
+      "velocity_shape": [
+        5,
+        2,
+        24,
+        24
+      ],
+      "all_dataset_fields_finite": true,
+      "internal_steps": 20,
+      "actual_dt_max": 0.004,
+      "nominal_dt_capped": false
+    },
+    {
+      "flow_index": 1.4,
+      "yield_stress": 0.015,
+      "initial_energy": 0.17999999999999983,
+      "final_energy": 0.17660719001739172,
+      "minimum_dissipation_rate": 0.041915007979373406,
+      "max_energy_increase": 0.0,
+      "relative_energy_budget_residual": 3.163461005496597e-15,
+      "max_divergence_rms": 1.1335007862633637e-15,
+      "nonrescaling_relative_change": 0.015010983278202675,
+      "final_shear_rate_range": [
+        0.029491847161581212,
+        2.2689376012335805
+      ],
+      "final_viscosity_range": [
+        0.03929859576360815,
+        0.11300283517140612
+      ],
+      "approximate_yielded_fraction": 1.0,
+      "snapshots": 5,
+      "velocity_shape": [
+        5,
+        2,
+        24,
+        24
+      ],
+      "all_dataset_fields_finite": true,
+      "internal_steps": 20,
+      "actual_dt_max": 0.004,
+      "nominal_dt_capped": false
+    }
+  ],
+  "grid_refinement": {
+    "fixed_regularization_m": 8.0,
+    "reference_nx": 64,
+    "rows": [
+      {
+        "nx": 16,
+        "initial_relative_error": 6.260202675537111e-16,
+        "final_relative_error": 0.00013583396757972562,
+        "initial_energy": 0.18000000000000013,
+        "final_energy": 0.17713803489333949,
+        "minimum_dissipation_rate": 0.035470933004139976,
+        "max_energy_increase": 0.0,
+        "relative_energy_budget_residual": 1.3453744291464561e-14,
+        "max_divergence_rms": 5.09415625510777e-16,
+        "nonrescaling_relative_change": 0.015364572514819241,
+        "final_shear_rate_range": [
+          0.04802736936255926,
+          2.2545547086739943
+        ],
+        "final_viscosity_range": [
+          0.024713112497947325,
+          0.18383519918443714
+        ],
+        "approximate_yielded_fraction": 1.0,
+        "snapshots": 5,
+        "velocity_shape": [
+          5,
+          2,
+          16,
+          16
+        ],
+        "all_dataset_fields_finite": true,
+        "internal_steps": 20,
+        "actual_dt_max": 0.004,
+        "nominal_dt_capped": false
+      },
+      {
+        "nx": 32,
+        "initial_relative_error": 1.468057388176154e-15,
+        "final_relative_error": 0.00012117490059441625,
+        "initial_energy": 0.17999999999999997,
+        "final_energy": 0.1771383299835643,
+        "minimum_dissipation_rate": 0.03545504067637252,
+        "max_energy_increase": 0.0,
+        "relative_energy_budget_residual": 8.809022184536671e-14,
+        "max_divergence_rms": 1.1810401784693114e-15,
+        "nonrescaling_relative_change": 0.015490265519791172,
+        "final_shear_rate_range": [
+          0.01906972519913522,
+          2.294994125998707
+        ],
+        "final_viscosity_range": [
+          0.02446790783193726,
+          0.23307134769986307
+        ],
+        "approximate_yielded_fraction": 1.0,
+        "snapshots": 5,
+        "velocity_shape": [
+          5,
+          2,
+          32,
+          32
+        ],
+        "all_dataset_fields_finite": true,
+        "internal_steps": 20,
+        "actual_dt_max": 0.004,
+        "nominal_dt_capped": false
+      },
+      {
+        "nx": 48,
+        "initial_relative_error": 2.429197225485052e-15,
+        "final_relative_error": 8.013669370979099e-05,
+        "initial_energy": 0.17999999999999966,
+        "final_energy": 0.17713868254104922,
+        "minimum_dissipation_rate": 0.03544816929421167,
+        "max_energy_increase": 0.0,
+        "relative_energy_budget_residual": 2.4066878891017164e-14,
+        "max_divergence_rms": 2.291372213841119e-15,
+        "nonrescaling_relative_change": 0.015514932755553393,
+        "final_shear_rate_range": [
+          0.008404496861126052,
+          2.3006303913295314
+        ],
+        "final_viscosity_range": [
+          0.024434310152254363,
+          0.28467676768979905
+        ],
+        "approximate_yielded_fraction": 1.0,
+        "snapshots": 5,
+        "velocity_shape": [
+          5,
+          2,
+          48,
+          48
+        ],
+        "all_dataset_fields_finite": true,
+        "internal_steps": 39,
+        "actual_dt_max": 0.0032691804827335476,
+        "nominal_dt_capped": true
+      }
+    ],
+    "reference_kind": "finer same-solver numerical solution, restricted to retained modes"
+  },
+  "time_refinement": {
+    "fixed_nx": 24,
+    "reference_dt": 0.001,
+    "rows": [
+      {
+        "requested_dt": 0.004,
+        "relative_final_error": 1.0892162137310523e-12,
+        "initial_energy": 0.17999999999999983,
+        "final_energy": 0.1771377010930869,
+        "minimum_dissipation_rate": 0.035469689726334123,
+        "max_energy_increase": 0.0,
+        "relative_energy_budget_residual": 9.943338590772624e-15,
+        "max_divergence_rms": 1.0321473195574925e-15,
+        "nonrescaling_relative_change": 0.015421698219223276,
+        "final_shear_rate_range": [
+          0.013403426436968728,
+          2.2811453308205243
+        ],
+        "final_viscosity_range": [
+          0.024551054303536678,
+          0.25393331410283415
+        ],
+        "approximate_yielded_fraction": 1.0,
+        "snapshots": 2,
+        "velocity_shape": [
+          2,
+          2,
+          24,
+          24
+        ],
+        "all_dataset_fields_finite": true,
+        "internal_steps": 20,
+        "actual_dt_max": 0.004,
+        "nominal_dt_capped": false
+      },
+      {
+        "requested_dt": 0.002,
+        "relative_final_error": 6.487880675967261e-14,
+        "initial_energy": 0.17999999999999983,
+        "final_energy": 0.17713770109308397,
+        "minimum_dissipation_rate": 0.03546968972633518,
+        "max_energy_increase": 0.0,
+        "relative_energy_budget_residual": 2.011074563052559e-14,
+        "max_divergence_rms": 1.0122280579942593e-15,
+        "nonrescaling_relative_change": 0.015421698219201661,
+        "final_shear_rate_range": [
+          0.013403426431196424,
+          2.2811453308182177
+        ],
+        "final_viscosity_range": [
+          0.024551054303550597,
+          0.2539333141294225
+        ],
+        "approximate_yielded_fraction": 1.0,
+        "snapshots": 2,
+        "velocity_shape": [
+          2,
+          2,
+          24,
+          24
+        ],
+        "all_dataset_fields_finite": true,
+        "internal_steps": 40,
+        "actual_dt_max": 0.002,
+        "nominal_dt_capped": false,
+        "observed_order": 4.0693992669453305
+      }
+    ]
+  },
+  "regularization_refinement": {
+    "fixed_nx": 24,
+    "reference_m": 32.0,
+    "rows": [
+      {
+        "regularization_m": 4.0,
+        "relative_final_error_to_larger_m": 0.0010945743143982235,
+        "initial_energy": 0.17999999999999983,
+        "final_energy": 0.17717838907326314,
+        "minimum_dissipation_rate": 0.034970584333109046,
+        "max_energy_increase": 0.0,
+        "relative_energy_budget_residual": 3.534499082302748e-15,
+        "max_divergence_rms": 1.0953098578984515e-15,
+        "nonrescaling_relative_change": 0.015244539676025329,
+        "final_shear_rate_range": [
+          0.014790214298391658,
+          2.280804577797265
+        ],
+        "final_viscosity_range": [
+          0.02455239342035969,
+          0.19301750811032778
+        ],
+        "approximate_yielded_fraction": 1.0,
+        "snapshots": 5,
+        "velocity_shape": [
+          5,
+          2,
+          24,
+          24
+        ],
+        "all_dataset_fields_finite": true,
+        "internal_steps": 20,
+        "actual_dt_max": 0.004,
+        "nominal_dt_capped": false
+      },
+      {
+        "regularization_m": 8.0,
+        "relative_final_error_to_larger_m": 0.00042413976740781874,
+        "initial_energy": 0.17999999999999983,
+        "final_energy": 0.17713770109308694,
+        "minimum_dissipation_rate": 0.03546968972633412,
+        "max_energy_increase": 0.0,
+        "relative_energy_budget_residual": 1.0097536233081674e-14,
+        "max_divergence_rms": 1.0122280579942593e-15,
+        "nonrescaling_relative_change": 0.015421698219223262,
+        "final_shear_rate_range": [
+          0.013403426436967587,
+          2.281145330820522
+        ],
+        "final_viscosity_range": [
+          0.024551054303536695,
+          0.2539333141028394
+        ],
+        "approximate_yielded_fraction": 1.0,
+        "snapshots": 5,
+        "velocity_shape": [
+          5,
+          2,
+          24,
+          24
+        ],
+        "all_dataset_fields_finite": true,
+        "internal_steps": 20,
+        "actual_dt_max": 0.004,
+        "nominal_dt_capped": false
+      },
+      {
+        "regularization_m": 16.0,
+        "relative_final_error_to_larger_m": 0.00010894407201987244,
+        "initial_energy": 0.17999999999999983,
+        "final_energy": 0.1771288334535973,
+        "minimum_dissipation_rate": 0.03557981681753068,
+        "max_energy_increase": 0.0,
+        "relative_energy_budget_residual": 1.328749995835014e-14,
+        "max_divergence_rms": 1.0312403269270477e-15,
+        "nonrescaling_relative_change": 0.015492338820181842,
+        "final_shear_rate_range": [
+          0.013023161196240722,
+          2.2815287609222747
+        ],
+        "final_viscosity_range": [
+          0.024548740861017382,
+          0.35840188004963325
+        ],
+        "approximate_yielded_fraction": 1.0,
+        "snapshots": 5,
+        "velocity_shape": [
+          5,
+          2,
+          24,
+          24
+        ],
+        "all_dataset_fields_finite": true,
+        "internal_steps": 20,
+        "actual_dt_max": 0.004,
+        "nominal_dt_capped": false
+      }
+    ],
+    "interpretation": "different finite-viscosity constitutive models, not spatial convergence or an exact ideal-yield solution"
+  },
+  "power_law_epsilon_sensitivity": {
+    "fixed_nx": 24,
+    "fixed_regularization_m": 8.0,
+    "reference_epsilon": 1e-05,
+    "rows": [
+      {
+        "shear_epsilon": 0.01,
+        "relative_final_error_to_smaller_epsilon": 1.3380447716086707e-06,
+        "zero_shear_apparent_viscosity": 0.2777393361200483,
+        "initial_energy": 0.17999999999999983,
+        "final_energy": 0.177137748276537,
+        "minimum_dissipation_rate": 0.035469110573614904,
+        "max_energy_increase": 0.0,
+        "relative_energy_budget_residual": 1.0167407039752963e-14,
+        "max_divergence_rms": 1.0196162508371637e-15,
+        "nonrescaling_relative_change": 0.015421457826635699,
+        "final_shear_rate_range": [
+          0.013427075343112436,
+          2.2811454538113125
+        ],
+        "final_viscosity_range": [
+          0.024550985164975583,
+          0.2421367219295766
+        ],
+        "approximate_yielded_fraction": 1.0,
+        "snapshots": 5,
+        "velocity_shape": [
+          5,
+          2,
+          24,
+          24
+        ],
+        "all_dataset_fields_finite": true,
+        "internal_steps": 20,
+        "actual_dt_max": 0.004,
+        "nominal_dt_capped": false
+      },
+      {
+        "shear_epsilon": 0.001,
+        "relative_final_error_to_smaller_epsilon": 1.4687589985073085e-08,
+        "zero_shear_apparent_viscosity": 0.5162232981152785,
+        "initial_energy": 0.17999999999999983,
+        "final_energy": 0.17713770109308694,
+        "minimum_dissipation_rate": 0.03546968972633412,
+        "max_energy_increase": 0.0,
+        "relative_energy_budget_residual": 1.0097536233081674e-14,
+        "max_divergence_rms": 1.0122280579942593e-15,
+        "nonrescaling_relative_change": 0.015421698219223262,
+        "final_shear_rate_range": [
+          0.013403426436967587,
+          2.281145330820522
+        ],
+        "final_viscosity_range": [
+          0.024551054303536695,
+          0.2539333141028394
+        ],
+        "approximate_yielded_fraction": 1.0,
+        "snapshots": 5,
+        "velocity_shape": [
+          5,
+          2,
+          24,
+          24
+        ],
+        "all_dataset_fields_finite": true,
+        "internal_steps": 20,
+        "actual_dt_max": 0.004,
+        "nominal_dt_capped": false
+      },
+      {
+        "shear_epsilon": 0.0001,
+        "relative_final_error_to_smaller_epsilon": 1.4559205267874694e-10,
+        "zero_shear_apparent_viscosity": 1.1152679263837433,
+        "initial_energy": 0.17999999999999983,
+        "final_energy": 0.17713770062055878,
+        "minimum_dissipation_rate": 0.03546969552759157,
+        "max_energy_increase": 0.0,
+        "relative_energy_budget_residual": 9.507248383617344e-15,
+        "max_divergence_rms": 1.0122280579942593e-15,
+        "nonrescaling_relative_change": 0.015421700695834581,
+        "final_shear_rate_range": [
+          0.013403139792381736,
+          2.2811453294747825
+        ],
+        "final_viscosity_range": [
+          0.024551054995629276,
+          0.2540887505408184
+        ],
+        "approximate_yielded_fraction": 1.0,
+        "snapshots": 5,
+        "velocity_shape": [
+          5,
+          2,
+          24,
+          24
+        ],
+        "all_dataset_fields_finite": true,
+        "internal_steps": 20,
+        "actual_dt_max": 0.004,
+        "nominal_dt_capped": false
+      }
+    ],
+    "interpretation": "power-law low-shear smoothing at fixed Papanastasiou m; neither grid nor m convergence"
+  },
+  "pure_yield_regularized": {
+    "consistency": 0.0,
+    "flow_index": 1.0,
+    "yield_stress": 0.015,
+    "initial_energy": 0.09,
+    "final_energy": 0.08956602657438945,
+    "minimum_dissipation_rate": 0.005407107911579527,
+    "max_energy_increase": 0.0,
+    "relative_energy_budget_residual": 5.619178926176262e-15,
+    "max_divergence_rms": 0.0,
+    "nonrescaling_relative_change": 0.0022778441406910484,
+    "final_shear_rate_range": [
+      1.6653345369377348e-15,
+      0.6014270599673113
+    ],
+    "final_viscosity_range": [
+      0.02473775473615042,
+      0.11999999999999919
+    ],
+    "approximate_yielded_fraction": 0.9166666666666666,
+    "snapshots": 5,
+    "velocity_shape": [
+      5,
+      2,
+      24,
+      24
+    ],
+    "all_dataset_fields_finite": true,
+    "internal_steps": 20,
+    "actual_dt_max": 0.004,
+    "nominal_dt_capped": false,
+    "interpretation": "positive low-shear viscosity permits deformation; no exact unyielded classification"
+  },
+  "constitutive_quadrature_refinement": {
+    "fixed_nx": 24,
+    "reference_factor": 3.0,
+    "rows": [
+      {
+        "quadrature_factor": 1.5,
+        "relative_final_error_to_3x_quadrature": 5.162473467951674e-05
+      },
+      {
+        "quadrature_factor": 2.0,
+        "relative_final_error_to_3x_quadrature": 2.5394406183271145e-05
+      }
+    ]
+  },
+  "yield_estimates": "regularized flow has no exact unyielded regions; reported classifier is a shear threshold",
+  "dns_certified": false,
+  "limitations": "finite same-solver references; no cylinder wake, elasticity, ideal-yield or chaos claim",
+  "execution_seconds": 8.306345425000018,
+  "status": "executed",
+  "provenance": {
+    "generator": "fluid_denoise.research.viscoplastic_dns.validation_report",
+    "shear_epsilon_predeclared": 0.001,
+    "viscosity_cap": null
+  }
+}

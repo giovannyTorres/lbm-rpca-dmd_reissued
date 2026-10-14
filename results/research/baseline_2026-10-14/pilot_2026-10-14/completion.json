@@ -1,0 +1,10 @@
+{
+  "conditions": 1584,
+  "expected_conditions": 1584,
+  "complete": true,
+  "fits": 4752,
+  "failed_fits": 129,
+  "not_converged_conditions": 60,
+  "quality_pass_conditions": 128,
+  "config_sha256": "da4df8a51ad4bc12b6c48977cf3fa4bf3f3557e31900d2b4874b47a0cbdea403"
+}

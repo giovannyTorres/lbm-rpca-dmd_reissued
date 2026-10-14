@@ -6,8 +6,13 @@
   },
   "output": {
     "root": "results/visuals",
-    "exploratory_formats": ["png"],
-    "final_formats": ["png", "pdf"]
+    "exploratory_formats": [
+      "png"
+    ],
+    "final_formats": [
+      "png",
+      "pdf"
+    ]
   },
   "selection": {
     "max_comparison_cases": 4,
@@ -45,5 +50,6 @@
       "mean_vorticity_rmse",
       "mean_reconstruction_time_sec"
     ]
-  }
+  },
+  "path_base": "repository"
 }

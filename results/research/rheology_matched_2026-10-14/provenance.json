@@ -1,0 +1,39 @@
+{
+  "common": {
+    "nx": 32,
+    "case": "interacting_vortices",
+    "amplitude": 0.6,
+    "dt": 0.005,
+    "n_steps": 240,
+    "sample_every": 8
+  },
+  "density": 1.0,
+  "nominal_viscosity": 0.06,
+  "reference_shear_rate": 1.4691225516174953,
+  "material_parameters": {
+    "HB n=0.6": {
+      "flow_index": 0.6,
+      "consistency": 0.05410211836697171,
+      "yield_stress": 0.02,
+      "regularization_m": 10.0,
+      "shear_epsilon": 0.001
+    },
+    "Bingham": {
+      "flow_index": 1.0,
+      "consistency": 0.04638643750536782,
+      "yield_stress": 0.02,
+      "regularization_m": 10.0,
+      "shear_epsilon": 0.001
+    },
+    "HB n=1.4": {
+      "flow_index": 1.4,
+      "consistency": 0.039771115242558906,
+      "yield_stress": 0.02,
+      "regularization_m": 10.0,
+      "shear_epsilon": 0.001
+    }
+  },
+  "comparison_scope": "same initial velocity, grid, density, domain and times; HB viscosity matched at declared shear, FENE nominal zero-shear material constants; distinct constitutive physics",
+  "limitations": "periodic vortices, no cylinder wake, no chaos claim; differences are constitutive changes, not reconstruction errors",
+  "script_sha256": "e885570fdbfe5b9c33e76c098be167a788921e99de75ad697c28817b3f3ecdad"
+}

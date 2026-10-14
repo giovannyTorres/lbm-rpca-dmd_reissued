@@ -2,6 +2,8 @@
 
 Guía operativa para correr el proyecto localmente, de punta a punta, sin asumir conocimiento previo.
 
+La ampliación de investigación incorpora solvers no newtonianos 2D, nueve tipos de ruido, métricas físicas y de recursos, y pronóstico cronológico. Consulta el [documento científico de 28 páginas](results/research/document/extension.pdf), los [resultados ejecutados](docs/research/EXTENDED_RESULTS.md) y la [guía de fase 8](docs/phase8_research.md).
+
 ## 1) Propósito del proyecto
 
 Este repositorio implementa un pipeline modular para experimentos de reconstrucción de flujo 2D:
@@ -13,13 +15,14 @@ Este repositorio implementa un pipeline modular para experimentos de reconstrucc
 5. **FASE 5**: ejecución de baselines de reconstrucción.
 6. **FASE 6**: benchmark reproducible con métricas/tablas.
 7. **FASE 7**: figuras y tablas finales para análisis.
+8. **FASE 8**: solvers reológicos 2D, reconstrucción con fidelidad física/costo y pronóstico cronológico.
 
 ## 2) Estructura del repositorio
 
 ```text
 .
 ├── cpp/lbm_core/                      # Solver LBM (CMake + C++17, binario: lbm_sim)
-├── python/src/fluid_denoise/          # Implementación de fases 1–7
+├── python/src/fluid_denoise/          # Fases 1–7 y paquete research de FASE 8
 ├── python/scripts/                    # Scripts CLI listos para ejecutar
 ├── configs/                           # Configuraciones JSON de ejemplo/smoke
 ├── tests/                             # Tests unitarios e integración ligera
@@ -30,7 +33,8 @@ Este repositorio implementa un pipeline modular para experimentos de reconstrucc
 ├── results/
 │   ├── metrics/                       # Ledger y resultados por experimento de benchmark
 │   ├── tables/                        # summary.csv / summary.parquet
-│   └── visuals/                       # Figuras y catálogos de FASE 7
+│   ├── visuals/                       # Figuras y catálogos de FASE 7
+│   └── research/                      # Campañas, baseline, procedencia y documento de FASE 8
 └── README.md
 ```
 
@@ -51,10 +55,9 @@ cmake --version
 
 ## 4) Instalación paso a paso
 
-Desde la raíz del repo (`/workspace/lbm-rpca-dmd_reissued`):
+Desde la raíz de tu clon del repositorio:
 
 ```bash
-cd /workspace/lbm-rpca-dmd_reissued
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
@@ -65,13 +68,15 @@ Dependencias reales en `requirements.txt`:
 
 - `numpy>=1.24`
 - `matplotlib>=3.7`
+- `scipy>=1.10`
+- `pandas>=2.0`
+- `pyarrow>=12.0`
 
 ## 5) Creación del entorno virtual
 
 Si ya clonaste el repo y solo quieres recrear entorno:
 
 ```bash
-cd /workspace/lbm-rpca-dmd_reissued
 python3 -m venv .venv
 source .venv/bin/activate
 ```
@@ -91,7 +96,7 @@ python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
 
-Opcional para exportar Parquet en FASE 6 (`summary.parquet`):
+Para exportar Parquet en FASE 6 (`summary.parquet`) se utilizan pandas y pyarrow, incluidos en los requisitos:
 
 ```bash
 python -m pip install pandas pyarrow
@@ -106,7 +111,6 @@ Scripts como `python/scripts/run_phase1_example.py`, `python/scripts/generate_cl
 ### Opción B (manual): compilar tú mismo
 
 ```bash
-cd /workspace/lbm-rpca-dmd_reissued
 cmake -S cpp/lbm_core -B cpp/lbm_core/build_manual
 cmake --build cpp/lbm_core/build_manual --config Release --parallel
 ```
@@ -124,7 +128,6 @@ En generadores multi-config también puede quedar en:
 Esta es la corrida mínima recomendada para validar instalación completa:
 
 ```bash
-cd /workspace/lbm-rpca-dmd_reissued
 source .venv/bin/activate
 python python/scripts/run_test_pipeline.py
 ```
@@ -144,7 +147,6 @@ Salida clave esperada:
 Modo ligero = benchmark smoke + visuales smoke:
 
 ```bash
-cd /workspace/lbm-rpca-dmd_reissued
 source .venv/bin/activate
 python python/scripts/run_local_pipeline.py --mode light
 ```
@@ -166,7 +168,6 @@ Salidas esperadas:
 Modo completo = benchmark ejemplo + visuales ejemplo:
 
 ```bash
-cd /workspace/lbm-rpca-dmd_reissued
 source .venv/bin/activate
 python python/scripts/run_local_pipeline.py --mode full
 ```
@@ -316,7 +317,38 @@ python -m unittest discover -s tests -p 'test_*.py'
 ## 14) Notas de limitaciones
 
 - El pipeline de benchmark (FASE 6) es **secuencial**; no hay paralelismo interno.
-- Exportación a Parquet es opcional y depende de instalar `pandas` + `pyarrow`.
+- Exportación a Parquet es opcional; sus dependencias pandas y pyarrow están incluidas en los requisitos.
 - `configs/baseline_phase5_example.json` no es ejecutable tal cual por los placeholders `<experiment_id>`.
 - `benchmark_phase6_example.json` y `--mode full` pueden tardar mucho más que smoke/light.
 - En este repo no hay empaquetado Python formal (`pyproject.toml`); se ejecuta por scripts directos en `python/scripts/`.
+
+
+## 15) FASE 8: investigación integrada
+
+Con el entorno preparado, ejecutar reconstrucción y pronóstico:
+
+```bash
+python -m pip install pytest
+python -m unittest discover -s tests
+PYTHONPATH=python/src python -m pytest tests/test_research*.py
+python python/scripts/run_phase8_pipeline.py --mode smoke
+python python/scripts/run_phase8_pipeline.py --mode full --reuse-completed
+```
+
+`smoke` usa `extended_smoke.json` y `forecast_smoke.json`; `full` usa `extended_physics.json` y `forecasting_campaign.json`. La reutilización exige finalización y hashes coincidentes de configuración y fuentes. La fase 8 conserva la numeración de las anteriores; un mismo identificador de campaña sustituye sus artefactos si se vuelve a ejecutar.
+
+La campaña completa de reconstrucción tiene **2808 condiciones y 8424 ajustes**: 8 casos, 9 ruidos, 13 métodos/variantes, 3 semillas y 3 repeticiones de recursos. Hubo 0 ajustes fallidos, 6 condiciones no convergidas y 430 aceptadas; 150/216 grupos tienen algún estimador admisible y 66 ninguno. Ruido temporal y deriva de sensor no alcanzan los umbrales.
+
+El pronóstico completó **60 escenarios** con 29 opciones, limpieza/ajuste sólo sobre entrenamiento y selección mediante validación ruidosa. Con tolerancia absoluta `1e-10` en la diferencia de error L2 relativo futuro de velocidad, mejora persistencia cruda en 48/60 escenarios y persistencia filtrada en 43/60; los restantes empatan. La vorticidad futura en flujos no lineales sigue presentando errores grandes. Se conserva la evidencia cruda junto con la comparación consolidada.
+
+Oldroyd-B/FENE-P 2D evolucionan conformación y realimentan momento; HB/Bingham 2D resuelven esfuerzo variable regularizado. Son casos periódicos con parámetros y verificaciones declarados; no certifican DNS universal, alto Wi, estelas de cilindro ni caos. PIV real, 3D, GPU/online, EVP externo y otros métodos avanzados siguen como trabajo posterior.
+
+La validación consolidada registró **212 tests y 28 subtests sin omisiones**, y la ejecución completa de fases 1–7 produjo **12 experimentos y 80 figuras**. El baseline previo queda preservado en `results/research/baseline_2026-10-14/` con sus hashes, configuración y entorno; no se atribuye a la campaña nueva.
+
+- [Guía de fase 8](docs/phase8_research.md), [comandos detallados](docs/research/RUNNING.md) y [protocolo científico](docs/research/RESEARCH_PROTOCOL.md).
+- [Resultados integrados](docs/research/EXTENDED_RESULTS.md), [pronóstico](docs/research/FORECASTING.md) y [segunda revisión](docs/research/SECOND_REVIEW.md).
+- [Oldroyd-B/FENE-P 2D](docs/research/VISCOELASTIC_2D.md), [HB/Bingham 2D](docs/research/VISCOPLASTIC_2D.md) y [restricciones físicas](docs/research/PHYSICS_CONSTRAINTS.md).
+- [Resumen consolidado y tolerancia de comparación](results/research/extended_summary.json).
+- [Tabla de reconstrucción](results/research/extended_physics_2026-10-14/summary.csv) y [tabla de pronóstico](results/research/forecasting_extended_2026-10-14/summary.csv).
+- [GIF reológico](results/research/rheology_matched_2026-10-14/vortices_rheology.gif), [campos reológicos PDF](results/research/rheology_matched_2026-10-14/final_vorticity.pdf) y [pronóstico PDF](results/research/forecasting_extended_2026-10-14/figures/holdout_comparison.pdf).
+- [Documento científico PDF](results/research/document/extension.pdf) y [fuente LaTeX](docs/research/extension.tex).

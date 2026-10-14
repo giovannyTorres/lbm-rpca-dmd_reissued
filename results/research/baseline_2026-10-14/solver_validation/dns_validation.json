@@ -1,0 +1,991 @@
+{
+  "schema_version": 1,
+  "matched_pilot_parameters": {
+    "viscosity": 0.02,
+    "amplitude": 1.0,
+    "seed": 19,
+    "duration": 1.5,
+    "domain": [
+      6.283185307179586,
+      6.283185307179586
+    ]
+  },
+  "dns_certified": false,
+  "analytical_validation": {
+    "temporal": [
+      {
+        "dt": 0.2,
+        "relative_velocity_error": 1.4595505330010567e-07,
+        "relative_energy_error": 2.9191012794977445e-07,
+        "actual_dt_max": 0.2,
+        "nominal_dt_capped": false,
+        "observed_order": null
+      },
+      {
+        "dt": 0.1,
+        "relative_velocity_error": 8.822711162463285e-09,
+        "relative_energy_error": 1.7645422567469603e-08,
+        "actual_dt_max": 0.1,
+        "nominal_dt_capped": false,
+        "observed_order": 4.048158296073363
+      },
+      {
+        "dt": 0.05,
+        "relative_velocity_error": 5.422989498747828e-10,
+        "relative_energy_error": 1.0845978841056895e-09,
+        "actual_dt_max": 0.05,
+        "nominal_dt_capped": false,
+        "observed_order": 4.024061773044194
+      }
+    ],
+    "spatial_representation": [
+      {
+        "nx": 8,
+        "relative_velocity_error": 5.422989618483081e-10,
+        "max_divergence_rms": 2.7490711305692316e-17
+      },
+      {
+        "nx": 12,
+        "relative_velocity_error": 5.422985846348286e-10,
+        "max_divergence_rms": 4.722074923845823e-17
+      },
+      {
+        "nx": 16,
+        "relative_velocity_error": 5.422989498747828e-10,
+        "max_divergence_rms": 5.546803106717655e-17
+      }
+    ],
+    "scope": "exact Taylor-Green velocity and energy; single-mode spatial representation only",
+    "dns_certified": false
+  },
+  "cases": {
+    "decaying_turbulence": {
+      "spatial_studies": [
+        {
+          "case": "decaying_turbulence",
+          "grid_refinement": [
+            {
+              "nx": 24,
+              "initial_relative_error": 8.988545683158347e-06,
+              "final_relative_error": 0.09722970413718172,
+              "initial_kinetic_energy": 0.5,
+              "final_kinetic_energy": 0.23969501884276725,
+              "final_high_mode_energy_fraction": 0.002745160417036834,
+              "max_divergence_rms": 1.4837633855469581e-15,
+              "internal_dt_max": 0.01,
+              "stability_limited_steps": 0
+            },
+            {
+              "nx": 32,
+              "initial_relative_error": 7.814381122305962e-16,
+              "final_relative_error": 0.029018790929822038,
+              "initial_kinetic_energy": 0.5,
+              "final_kinetic_energy": 0.24070452628707928,
+              "final_high_mode_energy_fraction": 0.00016678633480482046,
+              "max_divergence_rms": 1.7277811328498115e-15,
+              "internal_dt_max": 0.01,
+              "stability_limited_steps": 0
+            },
+            {
+              "nx": 48,
+              "initial_relative_error": 1.3355843383620687e-15,
+              "final_relative_error": 0.0038441235846161555,
+              "initial_kinetic_energy": 0.5,
+              "final_kinetic_energy": 0.24089963395963743,
+              "final_high_mode_energy_fraction": 2.2591406952687314e-06,
+              "max_divergence_rms": 3.082433894382793e-15,
+              "internal_dt_max": 0.01,
+              "stability_limited_steps": 0
+            }
+          ],
+          "reference_nx": 64,
+          "reference_diagnostics": {
+            "initial_kinetic_energy": 0.49999999999999994,
+            "final_kinetic_energy": 0.24091185440838303,
+            "final_high_mode_energy_fraction": 2.4877402884514106e-08,
+            "max_divergence_rms": 3.8818312996769e-15,
+            "internal_dt_max": 0.01,
+            "stability_limited_steps": 0
+          },
+          "duration": 1.5,
+          "dt": 0.01,
+          "dns_certified": false,
+          "reference_kind": "finer same-solver numerical solution, spectrally restricted to tested modes",
+          "limitation": "repeat with finer reference and smaller timestep; no automatic DNS certification"
+        },
+        {
+          "case": "decaying_turbulence",
+          "grid_refinement": [
+            {
+              "nx": 24,
+              "initial_relative_error": 8.988545683158347e-06,
+              "final_relative_error": 0.09722970236422802,
+              "initial_kinetic_energy": 0.5,
+              "final_kinetic_energy": 0.23969501864429096,
+              "final_high_mode_energy_fraction": 0.0027451603502259754,
+              "max_divergence_rms": 1.4837633855469581e-15,
+              "internal_dt_max": 0.005,
+              "stability_limited_steps": 0
+            },
+            {
+              "nx": 32,
+              "initial_relative_error": 7.814381122305962e-16,
+              "final_relative_error": 0.02901879007826508,
+              "initial_kinetic_energy": 0.5,
+              "final_kinetic_energy": 0.24070452606743836,
+              "final_high_mode_energy_fraction": 0.0001667863329265774,
+              "max_divergence_rms": 1.7277811328498115e-15,
+              "internal_dt_max": 0.005,
+              "stability_limited_steps": 0
+            },
+            {
+              "nx": 48,
+              "initial_relative_error": 1.3355843383620687e-15,
+              "final_relative_error": 0.0038441232197556404,
+              "initial_kinetic_energy": 0.5,
+              "final_kinetic_energy": 0.24089963372546747,
+              "final_high_mode_energy_fraction": 2.259141104954369e-06,
+              "max_divergence_rms": 3.082433894382793e-15,
+              "internal_dt_max": 0.005,
+              "stability_limited_steps": 0
+            }
+          ],
+          "reference_nx": 64,
+          "reference_diagnostics": {
+            "initial_kinetic_energy": 0.49999999999999994,
+            "final_kinetic_energy": 0.2409118541735028,
+            "final_high_mode_energy_fraction": 2.4877401277637293e-08,
+            "max_divergence_rms": 3.8818312996769e-15,
+            "internal_dt_max": 0.005,
+            "stability_limited_steps": 0
+          },
+          "duration": 1.5,
+          "dt": 0.005,
+          "dns_certified": false,
+          "reference_kind": "finer same-solver numerical solution, spectrally restricted to tested modes",
+          "limitation": "repeat with finer reference and smaller timestep; no automatic DNS certification"
+        }
+      ],
+      "extended_spatial_study": {
+        "case": "decaying_turbulence",
+        "grid_refinement": [
+          {
+            "nx": 24,
+            "initial_relative_error": 8.988545683169093e-06,
+            "final_relative_error": 0.09721084900860132,
+            "initial_kinetic_energy": 0.5,
+            "final_kinetic_energy": 0.23969501864429096,
+            "final_high_mode_energy_fraction": 0.0027451603502259754,
+            "max_divergence_rms": 1.4837633855469581e-15,
+            "internal_dt_max": 0.005,
+            "stability_limited_steps": 0,
+            "unresolved_reference_energy_fraction": 0.0016237586683240934,
+            "final_full_field_relative_error": 0.10515875330387542
+          },
+          {
+            "nx": 32,
+            "initial_relative_error": 9.54907048813409e-16,
+            "final_relative_error": 0.029066088899643953,
+            "initial_kinetic_energy": 0.5,
+            "final_kinetic_energy": 0.24070452606743836,
+            "final_high_mode_energy_fraction": 0.0001667863329265774,
+            "max_divergence_rms": 1.7277811328498115e-15,
+            "internal_dt_max": 0.005,
+            "stability_limited_steps": 0,
+            "unresolved_reference_energy_fraction": 0.00013515125655672033,
+            "final_full_field_relative_error": 0.03130294873691265
+          },
+          {
+            "nx": 48,
+            "initial_relative_error": 1.2906485356136169e-15,
+            "final_relative_error": 0.003923681056653811,
+            "initial_kinetic_energy": 0.5,
+            "final_kinetic_energy": 0.24089963372546747,
+            "final_high_mode_energy_fraction": 2.259141104954369e-06,
+            "max_divergence_rms": 3.082433894382793e-15,
+            "internal_dt_max": 0.005,
+            "stability_limited_steps": 0,
+            "unresolved_reference_energy_fraction": 4.632728180298251e-06,
+            "final_full_field_relative_error": 0.00447525752248147
+          },
+          {
+            "nx": 64,
+            "initial_relative_error": 6.183160681816309e-16,
+            "final_relative_error": 0.0003485081599255186,
+            "initial_kinetic_energy": 0.49999999999999994,
+            "final_kinetic_energy": 0.2409118541735028,
+            "final_high_mode_energy_fraction": 2.4877401277637293e-08,
+            "max_divergence_rms": 3.8818312996769e-15,
+            "internal_dt_max": 0.005,
+            "stability_limited_steps": 0,
+            "unresolved_reference_energy_fraction": 7.284744685254196e-08,
+            "final_full_field_relative_error": 0.00044080083432238666
+          },
+          {
+            "nx": 96,
+            "initial_relative_error": 9.768772646082433e-16,
+            "final_relative_error": 4.8014269703625205e-06,
+            "initial_kinetic_energy": 0.5,
+            "final_kinetic_energy": 0.2409120769332508,
+            "final_high_mode_energy_fraction": 9.638004054269593e-12,
+            "max_divergence_rms": 5.679243469063283e-15,
+            "internal_dt_max": 0.005,
+            "stability_limited_steps": 0,
+            "unresolved_reference_energy_fraction": 5.4502624635688335e-11,
+            "final_full_field_relative_error": 8.806606928105538e-06
+          }
+        ],
+        "reference_nx": 128,
+        "reference_diagnostics": {
+          "initial_kinetic_energy": 0.5,
+          "final_kinetic_energy": 0.24091207790138497,
+          "final_high_mode_energy_fraction": 5.914014660369021e-16,
+          "max_divergence_rms": 8.477487161696766e-15,
+          "internal_dt_max": 0.005,
+          "stability_limited_steps": 0
+        },
+        "duration": 1.5,
+        "dt": 0.005,
+        "dns_certified": false,
+        "reference_kind": "finer same-solver numerical solution, spectrally restricted to tested modes",
+        "limitation": "repeat with finer reference and smaller timestep; no automatic DNS certification",
+        "full_field_error_definition": "L2 relative error after Fourier prolongation to reference128; includes unresolved reference modes. Computed by Parseval and verified by direct prolongation at nx48."
+      },
+      "temporal_studies": [
+        {
+          "case": "decaying_turbulence",
+          "nx": 24,
+          "duration": 1.5,
+          "reference_dt": 0.00125,
+          "temporal_refinement": [
+            {
+              "dt": 0.01,
+              "actual_dt_max": 0.01,
+              "nominal_dt_capped": false,
+              "relative_final_error": 7.89873434858157e-09,
+              "observed_order": null
+            },
+            {
+              "dt": 0.005,
+              "actual_dt_max": 0.005,
+              "nominal_dt_capped": false,
+              "relative_final_error": 4.903340344204471e-10,
+              "observed_order": 4.009784693324493
+            },
+            {
+              "dt": 0.0025,
+              "actual_dt_max": 0.0025,
+              "nominal_dt_capped": false,
+              "relative_final_error": 2.880015649799093e-11,
+              "observed_order": 4.089616347244683
+            }
+          ],
+          "reference_kind": "same-grid same-solver numerical solution with finer timestep",
+          "dns_certified": false,
+          "limitation": "finer timestep reference is numerical; fixed-grid study does not certify spatial resolution"
+        },
+        {
+          "case": "decaying_turbulence",
+          "nx": 32,
+          "duration": 1.5,
+          "reference_dt": 0.00125,
+          "temporal_refinement": [
+            {
+              "dt": 0.01,
+              "actual_dt_max": 0.01,
+              "nominal_dt_capped": false,
+              "relative_final_error": 1.3221181524384942e-08,
+              "observed_order": null
+            },
+            {
+              "dt": 0.005,
+              "actual_dt_max": 0.005,
+              "nominal_dt_capped": false,
+              "relative_final_error": 8.179198561381455e-10,
+              "observed_order": 4.014747812651207
+            },
+            {
+              "dt": 0.0025,
+              "actual_dt_max": 0.0025,
+              "nominal_dt_capped": false,
+              "relative_final_error": 4.79596898692415e-11,
+              "observed_order": 4.092065252920802
+            }
+          ],
+          "reference_kind": "same-grid same-solver numerical solution with finer timestep",
+          "dns_certified": false,
+          "limitation": "finer timestep reference is numerical; fixed-grid study does not certify spatial resolution"
+        },
+        {
+          "case": "decaying_turbulence",
+          "nx": 48,
+          "duration": 1.5,
+          "reference_dt": 0.00125,
+          "temporal_refinement": [
+            {
+              "dt": 0.01,
+              "actual_dt_max": 0.01,
+              "nominal_dt_capped": false,
+              "relative_final_error": 8.51213316954354e-09,
+              "observed_order": null
+            },
+            {
+              "dt": 0.005,
+              "actual_dt_max": 0.005,
+              "nominal_dt_capped": false,
+              "relative_final_error": 5.255122518094654e-10,
+              "observed_order": 4.017724416777858
+            },
+            {
+              "dt": 0.0025,
+              "actual_dt_max": 0.0025,
+              "nominal_dt_capped": false,
+              "relative_final_error": 3.07831737085282e-11,
+              "observed_order": 4.093510515031564
+            }
+          ],
+          "reference_kind": "same-grid same-solver numerical solution with finer timestep",
+          "dns_certified": false,
+          "limitation": "finer timestep reference is numerical; fixed-grid study does not certify spatial resolution"
+        },
+        {
+          "case": "decaying_turbulence",
+          "nx": 64,
+          "duration": 1.5,
+          "reference_dt": 0.00125,
+          "temporal_refinement": [
+            {
+              "dt": 0.01,
+              "actual_dt_max": 0.01,
+              "nominal_dt_capped": false,
+              "relative_final_error": 7.513193748974227e-09,
+              "observed_order": null
+            },
+            {
+              "dt": 0.005,
+              "actual_dt_max": 0.005,
+              "nominal_dt_capped": false,
+              "relative_final_error": 4.6373362207651787e-10,
+              "observed_order": 4.018058071392995
+            },
+            {
+              "dt": 0.0025,
+              "actual_dt_max": 0.0025,
+              "nominal_dt_capped": false,
+              "relative_final_error": 2.716161640814959e-11,
+              "observed_order": 4.093655087102749
+            }
+          ],
+          "reference_kind": "same-grid same-solver numerical solution with finer timestep",
+          "dns_certified": false,
+          "limitation": "finer timestep reference is numerical; fixed-grid study does not certify spatial resolution"
+        }
+      ],
+      "candidate48_full_field_vorticity_relative_error": 0.016928720139520157,
+      "candidate64_full_field_vorticity_relative_error": 0.0024799976085035196,
+      "selected_grid_trajectory_validation": {
+        "nx": 64,
+        "reference_nx": 128,
+        "dt": 0.01,
+        "reference_nominal_dt": 0.005,
+        "times": [
+          0.0,
+          0.05,
+          0.1,
+          0.15,
+          0.2,
+          0.25,
+          0.3,
+          0.35000000000000003,
+          0.4,
+          0.45,
+          0.5,
+          0.55,
+          0.6,
+          0.65,
+          0.7000000000000001,
+          0.75,
+          0.8,
+          0.85,
+          0.9,
+          0.9500000000000001,
+          1.0,
+          1.05,
+          1.1,
+          1.1500000000000001,
+          1.2,
+          1.25,
+          1.3,
+          1.35,
+          1.4000000000000001,
+          1.45,
+          1.5
+        ],
+        "full_field_velocity_relative_errors": [
+          6.401430434433233e-16,
+          1.8120548110429052e-07,
+          3.6770944546655527e-06,
+          1.9144131421158205e-05,
+          5.369074550575172e-05,
+          0.00010880701472086633,
+          0.0001843328497499783,
+          0.00028018212601334263,
+          0.0003929595164648231,
+          0.0005118162545593914,
+          0.0006207026132386839,
+          0.0007071102044541576,
+          0.0007680548704968384,
+          0.0008077861768586203,
+          0.0008314760437621074,
+          0.0008418536765518973,
+          0.000840144818356228,
+          0.0008278565012807339,
+          0.0008070658793908669,
+          0.0007797704002590591,
+          0.0007475211053117265,
+          0.0007116225687638429,
+          0.0006734911484319356,
+          0.0006347966753500147,
+          0.0005973018296634858,
+          0.0005625174191304578,
+          0.0005313789499873637,
+          0.0005041232418214338,
+          0.0004804059026775663,
+          0.00045955238393018507,
+          0.00044080089839411684
+        ],
+        "full_field_vorticity_relative_errors": [
+          3.566937094662173e-15,
+          1.0960028507109096e-06,
+          2.2446985829495312e-05,
+          0.00011753547457794463,
+          0.0003315300521090888,
+          0.0006758506871228471,
+          0.0011509997687750345,
+          0.0017555066349359122,
+          0.0024650899366417383,
+          0.0032096509309746217,
+          0.0038882159587574953,
+          0.004421278826729838,
+          0.004787926987619881,
+          0.005014482678533689,
+          0.005136696005319082,
+          0.0051766148961621145,
+          0.005145627376004175,
+          0.005054835475272648,
+          0.004917271490264082,
+          0.0047440226265269125,
+          0.00454208888185272,
+          0.004316368806252729,
+          0.0040730370176877235,
+          0.0038212852211421604,
+          0.003572462676082025,
+          0.0033374102600711836,
+          0.0031236319890212833,
+          0.00293384169641613,
+          0.002766395710337221,
+          0.002616912719758782,
+          0.0024799978432169523
+        ],
+        "maximum_velocity_error": 0.0008418536765518973,
+        "maximum_vorticity_error": 0.0051766148961621145,
+        "maximum_velocity_error_time": 0.75,
+        "maximum_vorticity_error_time": 0.75,
+        "within_proposed_one_percent_u_and_vorticity_tolerance": true,
+        "dns_certified": false
+      }
+    },
+    "interacting_vortices": {
+      "spatial_studies": [
+        {
+          "case": "interacting_vortices",
+          "grid_refinement": [
+            {
+              "nx": 24,
+              "initial_relative_error": 5.167982238642609e-07,
+              "final_relative_error": 0.01203515658672914,
+              "initial_kinetic_energy": 0.5,
+              "final_kinetic_energy": 0.433893563029022,
+              "final_high_mode_energy_fraction": 7.638037736601807e-05,
+              "max_divergence_rms": 1.192935994482932e-15,
+              "internal_dt_max": 0.01,
+              "stability_limited_steps": 0
+            },
+            {
+              "nx": 32,
+              "initial_relative_error": 1.7250911940252303e-11,
+              "final_relative_error": 0.0028044007452508193,
+              "initial_kinetic_energy": 0.4999999999999998,
+              "final_kinetic_energy": 0.43391796630618346,
+              "final_high_mode_energy_fraction": 2.0614733009418937e-06,
+              "max_divergence_rms": 1.5118841006583102e-15,
+              "internal_dt_max": 0.01,
+              "stability_limited_steps": 0
+            },
+            {
+              "nx": 48,
+              "initial_relative_error": 5.013640648606426e-16,
+              "final_relative_error": 0.000337395968072195,
+              "initial_kinetic_energy": 0.4999999999999999,
+              "final_kinetic_energy": 0.43392108526291484,
+              "final_high_mode_energy_fraction": 5.195113081703202e-08,
+              "max_divergence_rms": 2.8289817277577033e-15,
+              "internal_dt_max": 0.01,
+              "stability_limited_steps": 0
+            }
+          ],
+          "reference_nx": 64,
+          "reference_diagnostics": {
+            "initial_kinetic_energy": 0.5000000000000001,
+            "final_kinetic_energy": 0.43392120546463125,
+            "final_high_mode_energy_fraction": 2.1259536258925782e-10,
+            "max_divergence_rms": 3.5222491159702218e-15,
+            "internal_dt_max": 0.01,
+            "stability_limited_steps": 45
+          },
+          "duration": 1.5,
+          "dt": 0.01,
+          "dns_certified": false,
+          "reference_kind": "finer same-solver numerical solution, spectrally restricted to tested modes",
+          "limitation": "repeat with finer reference and smaller timestep; no automatic DNS certification"
+        },
+        {
+          "case": "interacting_vortices",
+          "grid_refinement": [
+            {
+              "nx": 24,
+              "initial_relative_error": 5.167982238642609e-07,
+              "final_relative_error": 0.012035156750575891,
+              "initial_kinetic_energy": 0.5,
+              "final_kinetic_energy": 0.43389356273329815,
+              "final_high_mode_energy_fraction": 7.63803022294617e-05,
+              "max_divergence_rms": 1.192935994482932e-15,
+              "internal_dt_max": 0.005,
+              "stability_limited_steps": 0
+            },
+            {
+              "nx": 32,
+              "initial_relative_error": 1.7250911940252303e-11,
+              "final_relative_error": 0.0028043995385936484,
+              "initial_kinetic_energy": 0.4999999999999998,
+              "final_kinetic_energy": 0.43391796600834814,
+              "final_high_mode_energy_fraction": 2.061470603975957e-06,
+              "max_divergence_rms": 1.5118841006583102e-15,
+              "internal_dt_max": 0.005,
+              "stability_limited_steps": 0
+            },
+            {
+              "nx": 48,
+              "initial_relative_error": 5.013640648606426e-16,
+              "final_relative_error": 0.0003373953122241997,
+              "initial_kinetic_energy": 0.4999999999999999,
+              "final_kinetic_energy": 0.43392108496521004,
+              "final_high_mode_energy_fraction": 5.1950745944700605e-08,
+              "max_divergence_rms": 2.8289817277577033e-15,
+              "internal_dt_max": 0.005,
+              "stability_limited_steps": 0
+            }
+          ],
+          "reference_nx": 64,
+          "reference_diagnostics": {
+            "initial_kinetic_energy": 0.5000000000000001,
+            "final_kinetic_energy": 0.43392120516896404,
+            "final_high_mode_energy_fraction": 2.1258967450039187e-10,
+            "max_divergence_rms": 3.5222491159702218e-15,
+            "internal_dt_max": 0.005,
+            "stability_limited_steps": 0
+          },
+          "duration": 1.5,
+          "dt": 0.005,
+          "dns_certified": false,
+          "reference_kind": "finer same-solver numerical solution, spectrally restricted to tested modes",
+          "limitation": "repeat with finer reference and smaller timestep; no automatic DNS certification"
+        }
+      ],
+      "extended_spatial_study": {
+        "case": "interacting_vortices",
+        "grid_refinement": [
+          {
+            "nx": 24,
+            "initial_relative_error": 5.167982241606868e-07,
+            "final_relative_error": 0.01203514925312844,
+            "initial_kinetic_energy": 0.5,
+            "final_kinetic_energy": 0.43389356273329815,
+            "final_high_mode_energy_fraction": 7.63803022294617e-05,
+            "max_divergence_rms": 1.192935994482932e-15,
+            "internal_dt_max": 0.005,
+            "stability_limited_steps": 0,
+            "unresolved_reference_energy_fraction": 6.784905965762089e-05,
+            "final_full_field_relative_error": 0.014583691220607773
+          },
+          {
+            "nx": 32,
+            "initial_relative_error": 1.7251229526120148e-11,
+            "final_relative_error": 0.002804469855907277,
+            "initial_kinetic_energy": 0.4999999999999998,
+            "final_kinetic_energy": 0.43391796600834814,
+            "final_high_mode_energy_fraction": 2.061470603975957e-06,
+            "max_divergence_rms": 1.5118841006583102e-15,
+            "internal_dt_max": 0.005,
+            "stability_limited_steps": 0,
+            "unresolved_reference_energy_fraction": 4.440646150127847e-06,
+            "final_full_field_relative_error": 0.0035079427584998046
+          },
+          {
+            "nx": 48,
+            "initial_relative_error": 7.277888974376741e-16,
+            "final_relative_error": 0.0003382728591428253,
+            "initial_kinetic_energy": 0.4999999999999999,
+            "final_kinetic_energy": 0.43392108496521004,
+            "final_high_mode_energy_fraction": 5.1950745944700605e-08,
+            "max_divergence_rms": 2.8289817277577033e-15,
+            "internal_dt_max": 0.005,
+            "stability_limited_steps": 0,
+            "unresolved_reference_energy_fraction": 1.2857842979219214e-07,
+            "final_full_field_relative_error": 0.0004929573432983969
+          },
+          {
+            "nx": 64,
+            "initial_relative_error": 3.9403181757464886e-16,
+            "final_relative_error": 2.724797896676818e-05,
+            "initial_kinetic_energy": 0.5000000000000001,
+            "final_kinetic_energy": 0.43392120516896404,
+            "final_high_mode_energy_fraction": 2.1258967450039187e-10,
+            "max_divergence_rms": 3.5222491159702218e-15,
+            "internal_dt_max": 0.005,
+            "stability_limited_steps": 0,
+            "unresolved_reference_energy_fraction": 1.4503730438875095e-09,
+            "final_full_field_relative_error": 4.682761365459613e-05
+          },
+          {
+            "nx": 96,
+            "initial_relative_error": 7.528780181089524e-16,
+            "final_relative_error": 3.0468241527079884e-07,
+            "initial_kinetic_energy": 0.5,
+            "final_kinetic_energy": 0.43392120683031304,
+            "final_high_mode_energy_fraction": 1.044059676143558e-14,
+            "max_divergence_rms": 5.706204415856761e-15,
+            "internal_dt_max": 0.005,
+            "stability_limited_steps": 0,
+            "unresolved_reference_energy_fraction": 3.362865541589599e-13,
+            "final_full_field_relative_error": 6.550709338187554e-07
+          }
+        ],
+        "reference_nx": 128,
+        "reference_diagnostics": {
+          "initial_kinetic_energy": 0.49999999999999983,
+          "final_kinetic_energy": 0.43392120683069046,
+          "final_high_mode_energy_fraction": 2.0649998374089655e-20,
+          "max_divergence_rms": 7.476774872574004e-15,
+          "internal_dt_max": 0.005,
+          "stability_limited_steps": 91
+        },
+        "duration": 1.5,
+        "dt": 0.005,
+        "dns_certified": false,
+        "reference_kind": "finer same-solver numerical solution, spectrally restricted to tested modes",
+        "limitation": "repeat with finer reference and smaller timestep; no automatic DNS certification",
+        "full_field_error_definition": "L2 relative error after Fourier prolongation to reference128; includes unresolved reference modes. Computed by Parseval and verified by direct prolongation at nx48."
+      },
+      "temporal_studies": [
+        {
+          "case": "interacting_vortices",
+          "nx": 24,
+          "duration": 1.5,
+          "reference_dt": 0.00125,
+          "temporal_refinement": [
+            {
+              "dt": 0.01,
+              "actual_dt_max": 0.01,
+              "nominal_dt_capped": false,
+              "relative_final_error": 3.106164212680335e-08,
+              "observed_order": null
+            },
+            {
+              "dt": 0.005,
+              "actual_dt_max": 0.005,
+              "nominal_dt_capped": false,
+              "relative_final_error": 1.93007494405702e-09,
+              "observed_order": 4.008405329301478
+            },
+            {
+              "dt": 0.0025,
+              "actual_dt_max": 0.0025,
+              "nominal_dt_capped": false,
+              "relative_final_error": 1.1341353563347056e-10,
+              "observed_order": 4.088992130005148
+            }
+          ],
+          "reference_kind": "same-grid same-solver numerical solution with finer timestep",
+          "dns_certified": false,
+          "limitation": "finer timestep reference is numerical; fixed-grid study does not certify spatial resolution"
+        },
+        {
+          "case": "interacting_vortices",
+          "nx": 32,
+          "duration": 1.5,
+          "reference_dt": 0.00125,
+          "temporal_refinement": [
+            {
+              "dt": 0.01,
+              "actual_dt_max": 0.01,
+              "nominal_dt_capped": false,
+              "relative_final_error": 3.278304868202547e-08,
+              "observed_order": null
+            },
+            {
+              "dt": 0.005,
+              "actual_dt_max": 0.005,
+              "nominal_dt_capped": false,
+              "relative_final_error": 2.0353854320499294e-09,
+              "observed_order": 4.009576102754247
+            },
+            {
+              "dt": 0.0025,
+              "actual_dt_max": 0.0025,
+              "nominal_dt_capped": false,
+              "relative_final_error": 1.1955333836033964e-10,
+              "observed_order": 4.089575696248082
+            }
+          ],
+          "reference_kind": "same-grid same-solver numerical solution with finer timestep",
+          "dns_certified": false,
+          "limitation": "finer timestep reference is numerical; fixed-grid study does not certify spatial resolution"
+        },
+        {
+          "case": "interacting_vortices",
+          "nx": 48,
+          "duration": 1.5,
+          "reference_dt": 0.00125,
+          "temporal_refinement": [
+            {
+              "dt": 0.01,
+              "actual_dt_max": 0.01,
+              "nominal_dt_capped": false,
+              "relative_final_error": 2.7763106294980193e-08,
+              "observed_order": null
+            },
+            {
+              "dt": 0.005,
+              "actual_dt_max": 0.005,
+              "nominal_dt_capped": false,
+              "relative_final_error": 1.7234872648220252e-09,
+              "observed_order": 4.009766450405372
+            },
+            {
+              "dt": 0.0025,
+              "actual_dt_max": 0.0025,
+              "nominal_dt_capped": false,
+              "relative_final_error": 1.0122761508445828e-10,
+              "observed_order": 4.0896558196260715
+            }
+          ],
+          "reference_kind": "same-grid same-solver numerical solution with finer timestep",
+          "dns_certified": false,
+          "limitation": "finer timestep reference is numerical; fixed-grid study does not certify spatial resolution"
+        },
+        {
+          "case": "interacting_vortices",
+          "nx": 64,
+          "duration": 1.5,
+          "reference_dt": 0.00125,
+          "temporal_refinement": [
+            {
+              "dt": 0.01,
+              "actual_dt_max": 0.01,
+              "nominal_dt_capped": true,
+              "relative_final_error": 2.7190324080998788e-08,
+              "observed_order": null
+            },
+            {
+              "dt": 0.005,
+              "actual_dt_max": 0.005,
+              "nominal_dt_capped": false,
+              "relative_final_error": 1.713685177774804e-09,
+              "observed_order": null
+            },
+            {
+              "dt": 0.0025,
+              "actual_dt_max": 0.0025,
+              "nominal_dt_capped": false,
+              "relative_final_error": 1.0065327729099822e-10,
+              "observed_order": 4.089636042764769
+            }
+          ],
+          "reference_kind": "same-grid same-solver numerical solution with finer timestep",
+          "dns_certified": false,
+          "limitation": "finer timestep reference is numerical; fixed-grid study does not certify spatial resolution"
+        }
+      ],
+      "candidate48_full_field_vorticity_relative_error": 0.005660300622589083,
+      "candidate64_full_field_vorticity_relative_error": 0.0007503140619340193,
+      "selected_grid_trajectory_validation": {
+        "nx": 48,
+        "reference_nx": 128,
+        "dt": 0.01,
+        "reference_nominal_dt": 0.005,
+        "times": [
+          0.0,
+          0.05,
+          0.1,
+          0.15,
+          0.2,
+          0.25,
+          0.3,
+          0.35000000000000003,
+          0.4,
+          0.45,
+          0.5,
+          0.55,
+          0.6,
+          0.65,
+          0.7000000000000001,
+          0.75,
+          0.8,
+          0.85,
+          0.9,
+          0.9500000000000001,
+          1.0,
+          1.05,
+          1.1,
+          1.1500000000000001,
+          1.2,
+          1.25,
+          1.3,
+          1.35,
+          1.4000000000000001,
+          1.45,
+          1.5
+        ],
+        "full_field_velocity_relative_errors": [
+          5.468583862861286e-11,
+          5.738498662526903e-08,
+          3.6385233698189676e-07,
+          1.268106567245666e-06,
+          3.2966158724381243e-06,
+          7.139592612841857e-06,
+          1.3581309371515869e-05,
+          2.338178233004834e-05,
+          3.7145044965801235e-05,
+          5.522202273236045e-05,
+          7.768286326713668e-05,
+          0.00010435982217512839,
+          0.00013492864817211026,
+          0.0001689809775902782,
+          0.00020604619705764054,
+          0.00024554419939148975,
+          0.000286685834874031,
+          0.00032837931407882307,
+          0.00036922832706490395,
+          0.0004076853499413309,
+          0.0004423327645985752,
+          0.00047215086074006647,
+          0.0004965994894441604,
+          0.0005154590433171037,
+          0.0005285773638858894,
+          0.0005357628563916391,
+          0.0005369303723485729,
+          0.0005323592990896391,
+          0.0005228061014942713,
+          0.000509333776550372,
+          0.0004929579138297719
+        ],
+        "full_field_vorticity_relative_errors": [
+          5.427847393853109e-10,
+          5.78649447995871e-07,
+          3.7069217843644167e-06,
+          1.3018089461834057e-05,
+          3.405830741194855e-05,
+          7.419189238641629e-05,
+          0.0001419946019825286,
+          0.0002461923700292505,
+          0.00039441740133680265,
+          0.0005921448168142892,
+          0.0008420769254172306,
+          0.0011440318343852686,
+          0.0014952218890748811,
+          0.001890723547567607,
+          0.0023238957808085887,
+          0.002786485067952872,
+          0.0032682539319630497,
+          0.0037563160193042817,
+          0.004234882438922085,
+          0.004686343585373483,
+          0.005093948194729449,
+          0.005444943624506452,
+          0.00573212751262075,
+          0.005952607900687416,
+          0.006104894367001551,
+          0.006187113185761353,
+          0.006198183921000241,
+          0.006140874412224544,
+          0.006023662014945516,
+          0.005859231688867147,
+          0.005660306975320738
+        ],
+        "maximum_velocity_error": 0.0005369303723485729,
+        "maximum_vorticity_error": 0.006198183921000241,
+        "maximum_velocity_error_time": 1.3,
+        "maximum_vorticity_error_time": 1.3,
+        "within_proposed_one_percent_u_and_vorticity_tolerance": true,
+        "dns_certified": false
+      }
+    }
+  },
+  "convergence_interpretation": {
+    "relative_velocity_tolerance_for_proposed_pilot": 0.01,
+    "relative_vorticity_tolerance_for_proposed_pilot": 0.01,
+    "candidate_grids": {
+      "decaying_turbulence": 64,
+      "interacting_vortices": 48
+    },
+    "dns_certified": false,
+    "criterion_scope": "Full-field L2 velocity and vorticity at 31 saved times from0to1.5, nu.02, seed19, only these cases. Not universal DNS certification."
+  },
+  "independent_nonlinear_invariant_audit": {
+    "initial_vorticity": "sin(x)sin(y)+0.35cos(2x)sin(3y)+0.1sin(5x+2y)",
+    "nx": 32,
+    "inviscid": {
+      "dt": 0.001,
+      "duration": 0.4,
+      "relative_energy_drift": 1.9587841261244884e-15,
+      "relative_enstrophy_drift": 2.332197163326368e-15
+    },
+    "viscous": {
+      "viscosity": 0.02,
+      "dt": 0.0001,
+      "central_time": 0.0001,
+      "energy_rate": -0.005712416552214328,
+      "energy_rate_exact_rhs": -0.005712416551660849,
+      "energy_balance_relative_defect": 9.689054229785879e-11,
+      "enstrophy_rate": -0.02086166960388325,
+      "enstrophy_rate_exact_rhs": -0.020861669590385087,
+      "enstrophy_balance_relative_defect": 6.470316703967378e-10
+    }
+  },
+  "independent_advection_sign_audit": {
+    "nx": 32,
+    "viscosity": 0.02,
+    "initial_streamfunction": ".6sin(x)sin(y)+.03cos(2x)sin(3y)",
+    "derivative_stencil": "(-3 omega0 +4 omega1 -omega2)/(2dt)",
+    "comparison": "independent analytical -u omega_x -v omega_y +nu laplacian(omega) at t=0",
+    "expected_stencil_order": 2,
+    "rows": [
+      {
+        "dt": 0.001,
+        "relative_rhs_error": 7.756373064277213e-07,
+        "observed_stencil_order": null
+      },
+      {
+        "dt": 0.0005,
+        "relative_rhs_error": 1.9394846142720627e-07,
+        "observed_stencil_order": 1.9997088643669323
+      },
+      {
+        "dt": 0.00025,
+        "relative_rhs_error": 4.8492419789392375e-08,
+        "observed_stencil_order": 1.9998421795157177
+      }
+    ]
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "metadata": {
+    "case": "interacting_vortices",
+    "solver": "2D incompressible Navier-Stokes vorticity Fourier RK4",
+    "viscosity": 0.06,
+    "amplitude": 0.6,
+    "seed": 0,
+    "domain": [
+      6.283185307179586,
+      6.283185307179586
+    ],
+    "units": "nondimensional",
+    "nominal_dt": 0.005,
+    "nominal_steps": 240,
+    "sample_every": 8,
+    "internal_steps": 240,
+    "internal_dt_min": 0.004999999999999893,
+    "internal_dt_max": 0.005,
+    "stability_limited_steps": 0,
+    "max_advective_cfl": 0.054947178442426824,
+    "cfl_limit": 0.35,
+    "diffusion_stability_limit": "nu * internal_dt * max_retained_k_squared <= 2",
+    "dealiasing": "strict two-thirds component-wise Fourier cutoff",
+    "kinetic_energy": [
+      0.17999999999999997,
+      0.17776194904988046,
+      0.17558721244830922,
+      0.1734725027769363,
+      0.17141481148225593,
+      0.16941137282120525,
+      0.16745963384695428,
+      0.16555722927100902,
+      0.1637019602876985,
+      0.16189177663713553,
+      0.16012476132888442,
+      0.15839911756210154,
+      0.15671315746690048,
+      0.15506529236198627,
+      0.15345402427952926,
+      0.1518779385530279,
+      0.15033569729997906,
+      0.14882603366039232,
+      0.14734774667597336,
+      0.14589969671426878,
+      0.14448080135806296,
+      0.14309003169352,
+      0.14172640894149852,
+      0.14038900138554114,
+      0.13907692155759765,
+      0.1377893236488314,
+      0.1365254011181072,
+      0.13528438447513166,
+      0.13406553921886089,
+      0.13286816391482467,
+      0.13169158839753176
+    ],
+    "dns_validation": "not certified; nonlinear grid and time refinement required",
+    "initial_condition": "four periodized Gaussian vorticity cores; two positive, two negative",
+    "centers_fractional": [
+      [
+        0.3,
+        0.35,
+        1.0
+      ],
+      [
+        0.55,
+        0.45,
+        1.0
+      ],
+      [
+        0.35,
+        0.7,
+        -1.0
+      ],
+      [
+        0.7,
+        0.65,
+        -1.0
+      ]
+    ],
+    "core_width": 0.4084070449666731,
+    "initial_speed_rms": 0.6,
+    "removed_vorticity_mean": 6.938893903907228e-18
+  },
+  "dataset_sha256": "85b47a4f6bec83d90ff572c8c36c685b253000fe082880a8793d338038cbaf2f",
+  "dx": 0.19634954084936207,
+  "dy": 0.19634954084936207,
+  "shape": [
+    31,
+    2,
+    32,
+    32
+  ]
+}

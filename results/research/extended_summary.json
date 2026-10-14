@@ -1,0 +1,31 @@
+{
+  "reconstruction": {
+    "conditions": 2808,
+    "expected_conditions": 2808,
+    "complete": true,
+    "fits": 8424,
+    "failed_fits": 0,
+    "not_converged_conditions": 6,
+    "quality_pass_conditions": 430,
+    "config_sha256": "26114046d9fe25c2b57054869ec3198809fee42c43d4ebed627fa95af3e95edd"
+  },
+  "forecasting": {
+    "conditions": 60,
+    "expected_conditions": 60,
+    "complete": true,
+    "failed_conditions": 0,
+    "beats_raw_persistence_velocity": 51,
+    "evaluation": "chronological held-out forecasting",
+    "config_sha256": "b43404c06bf9d05f9f3926426021f718da3936b1862e308b55193cc3dce1fea5"
+  },
+  "future_beats_filtered_persistence": 43,
+  "future_beats_raw_persistence_with_tolerance": 48,
+  "future_ties_raw_persistence_with_tolerance": 12,
+  "future_ties_filtered_persistence_with_tolerance": 17,
+  "comparison_absolute_tolerance_relative_velocity_error": 1e-10,
+  "fb_primary_failure_conditions_resolved_with_declared_tls_fallback": 23,
+  "matched_gaussian_newtonian_acceptance_raw": 0,
+  "matched_gaussian_newtonian_acceptance_projected": 12,
+  "taylor_green_gaussian_raw_tls_velocity_error": 0.0370893730902495,
+  "taylor_green_gaussian_projected_tls_velocity_error": 0.0168383962978907
+}

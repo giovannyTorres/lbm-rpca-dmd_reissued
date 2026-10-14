@@ -1,0 +1,307 @@
+{
+  "schema_version": 1,
+  "campaign_id": "forecasting_extended_2026-10-14",
+  "evaluation": "chronological_out_of_sample_forecasting",
+  "split": {
+    "train_fraction": 0.6,
+    "validation_fraction": 0.2,
+    "test_fraction_remainder": true
+  },
+  "seeds": [
+    7,
+    23,
+    61
+  ],
+  "noise_models": [
+    {
+      "kind": "gaussian",
+      "intensity": 0.2
+    },
+    {
+      "kind": "mixed",
+      "intensity": 0.2,
+      "fraction": 0.05,
+      "dense_fraction": 0.5
+    },
+    {
+      "kind": "temporal_correlated",
+      "intensity": 0.2,
+      "correlation": 0.8
+    },
+    {
+      "kind": "column_outliers",
+      "intensity": 0.2,
+      "fraction": 0.1
+    }
+  ],
+  "noise_policy": "Scale matched on training fluid-entry RMS only; causal forward temporal innovations and value-independent column support. No future RMS matching.",
+  "algorithm_parameters": {
+    "ridge": 1e-06,
+    "max_nfev": 100,
+    "n_starts": 2,
+    "seed": 0
+  },
+  "preprocessing_parameters": {
+    "max_iter": 600,
+    "tol": 1e-05
+  },
+  "candidates": [
+    {
+      "id": "pod_ar_r2",
+      "method": "pod_ar",
+      "rank": 2
+    },
+    {
+      "id": "pod_ar_r4",
+      "method": "pod_ar",
+      "rank": 4
+    },
+    {
+      "id": "pod_ar_r8",
+      "method": "pod_ar",
+      "rank": 8
+    },
+    {
+      "id": "dmd_r2",
+      "method": "dmd",
+      "rank": 2
+    },
+    {
+      "id": "dmd_r4",
+      "method": "dmd",
+      "rank": 4
+    },
+    {
+      "id": "dmd_r8",
+      "method": "dmd",
+      "rank": 8
+    },
+    {
+      "id": "tls_dmd_r2",
+      "method": "tls_dmd",
+      "rank": 2
+    },
+    {
+      "id": "tls_dmd_r4",
+      "method": "tls_dmd",
+      "rank": 4
+    },
+    {
+      "id": "tls_dmd_r8",
+      "method": "tls_dmd",
+      "rank": 8
+    },
+    {
+      "id": "optimized_dmd_r2",
+      "method": "optimized_dmd",
+      "rank": 2
+    },
+    {
+      "id": "optimized_dmd_r4",
+      "method": "optimized_dmd",
+      "rank": 4
+    },
+    {
+      "id": "optimized_dmd_r8",
+      "method": "optimized_dmd",
+      "rank": 8
+    },
+    {
+      "id": "rpca_dmd_r2",
+      "method": "dmd",
+      "rank": 2,
+      "preprocessing": "rpca"
+    },
+    {
+      "id": "rpca_dmd_r4",
+      "method": "dmd",
+      "rank": 4,
+      "preprocessing": "rpca"
+    },
+    {
+      "id": "rpca_dmd_r8",
+      "method": "dmd",
+      "rank": 8,
+      "preprocessing": "rpca"
+    },
+    {
+      "id": "stable_rpca_dmd_r2",
+      "method": "dmd",
+      "rank": 2,
+      "preprocessing": "stable_rpca"
+    },
+    {
+      "id": "stable_rpca_dmd_r4",
+      "method": "dmd",
+      "rank": 4,
+      "preprocessing": "stable_rpca"
+    },
+    {
+      "id": "stable_rpca_dmd_r8",
+      "method": "dmd",
+      "rank": 8,
+      "preprocessing": "stable_rpca"
+    },
+    {
+      "id": "stable_rpca_optimized_dmd_r2",
+      "method": "optimized_dmd",
+      "rank": 2,
+      "preprocessing": "stable_rpca"
+    },
+    {
+      "id": "stable_rpca_optimized_dmd_r4",
+      "method": "optimized_dmd",
+      "rank": 4,
+      "preprocessing": "stable_rpca"
+    },
+    {
+      "id": "stable_rpca_optimized_dmd_r8",
+      "method": "optimized_dmd",
+      "rank": 8,
+      "preprocessing": "stable_rpca"
+    },
+    {
+      "id": "dmd_r4_helmholtz",
+      "method": "dmd",
+      "rank": 4,
+      "postprocess": "helmholtz"
+    },
+    {
+      "id": "dmd_r4_helmholtz_dealias",
+      "method": "dmd",
+      "rank": 4,
+      "postprocess": "helmholtz_dealias"
+    },
+    {
+      "id": "dmd_r8_helmholtz",
+      "method": "dmd",
+      "rank": 8,
+      "postprocess": "helmholtz"
+    },
+    {
+      "id": "dmd_r8_helmholtz_dealias",
+      "method": "dmd",
+      "rank": 8,
+      "postprocess": "helmholtz_dealias"
+    },
+    {
+      "id": "optimized_dmd_r2_helmholtz",
+      "method": "optimized_dmd",
+      "rank": 2,
+      "postprocess": "helmholtz"
+    },
+    {
+      "id": "optimized_dmd_r2_helmholtz_dealias",
+      "method": "optimized_dmd",
+      "rank": 2,
+      "postprocess": "helmholtz_dealias"
+    },
+    {
+      "id": "persistence_helmholtz_dealias",
+      "method": "persistence",
+      "rank": 1,
+      "postprocess": "helmholtz_dealias"
+    }
+  ],
+  "require_convergence": true,
+  "selection_criterion": "minimum noisy validation observed MSE, tie broken by declaration order; independent zero-mean validation noise is needed for an unbiased clean-risk interpretation",
+  "refit_after_selection": false,
+  "fit_timeout_seconds": 180,
+  "cases": [
+    {
+      "id": "forecast_interacting_vortices_ns",
+      "solver": "spectral_ns",
+      "parameters": {
+        "case": "interacting_vortices",
+        "nx": 48,
+        "viscosity": 0.02,
+        "dt": 0.005,
+        "n_steps": 300,
+        "sample_every": 5
+      }
+    },
+    {
+      "id": "forecast_oldroyd_b_periodic",
+      "solver": "viscoelastic_periodic",
+      "parameters": {
+        "model": "oldroyd_b",
+        "case": "taylor_green",
+        "nx": 24,
+        "amplitude": 0.5,
+        "viscosity_s": 0.01,
+        "viscosity_p": 0.01,
+        "relaxation_time": 0.2,
+        "dt": 0.004,
+        "n_steps": 250,
+        "sample_every": 5,
+        "stress_diffusivity": 0.0,
+        "rk_order": 4
+      }
+    },
+    {
+      "id": "forecast_fene_p_periodic",
+      "solver": "viscoelastic_periodic",
+      "parameters": {
+        "model": "fene_p",
+        "case": "taylor_green",
+        "nx": 24,
+        "amplitude": 0.5,
+        "viscosity_s": 0.01,
+        "viscosity_p": 0.01,
+        "relaxation_time": 0.2,
+        "extensibility_squared": 50.0,
+        "dt": 0.004,
+        "n_steps": 250,
+        "sample_every": 5,
+        "stress_diffusivity": 0.0,
+        "rk_order": 4
+      }
+    },
+    {
+      "id": "forecast_oldroyd_b_interacting",
+      "solver": "viscoelastic_periodic",
+      "parameters": {
+        "model": "oldroyd_b",
+        "case": "interacting_vortices",
+        "nx": 32,
+        "amplitude": 0.6,
+        "viscosity_s": 0.02,
+        "viscosity_p": 0.04,
+        "relaxation_time": 0.5,
+        "dt": 0.005,
+        "n_steps": 240,
+        "sample_every": 4,
+        "stress_diffusivity": 0.0,
+        "rk_order": 4
+      }
+    },
+    {
+      "id": "forecast_fene_p_interacting",
+      "solver": "viscoelastic_periodic",
+      "parameters": {
+        "model": "fene_p",
+        "case": "interacting_vortices",
+        "nx": 32,
+        "amplitude": 0.6,
+        "viscosity_s": 0.02,
+        "viscosity_p": 0.04,
+        "relaxation_time": 0.5,
+        "dt": 0.005,
+        "n_steps": 240,
+        "sample_every": 4,
+        "stress_diffusivity": 0.0,
+        "rk_order": 4,
+        "extensibility_squared": 12.0
+      }
+    }
+  ],
+  "reported_metrics": [
+    "velocity_relative_l2",
+    "vorticity_relative_l2",
+    "extra_divergence_normalized",
+    "kinetic_energy_relative_l2",
+    "enstrophy_relative_l2"
+  ],
+  "uncertainty_policy": "mean/std/min/max across three noise seeds within matched case/noise groups, conditional on each deterministic flow; no confidence interval or broad generalization claim",
+  "postprocessing_policy": "Geometry-only priors applied to validation and test predictions before scoring; periodic no-solid domains only; models are fitted once and shared across declared output variants. A dealiased persistence candidate separates filtering gains from dynamics."
+}
