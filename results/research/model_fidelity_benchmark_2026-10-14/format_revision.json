@@ -1,0 +1,14 @@
+{
+  "scope": "Visual-only nominal-category dotplot; no connecting lines; five noise types have distinct markers/colors and small vertical offsets. No fit or numerical comparison changed.",
+  "paired_prior_contributions_sha256_before": "531c1dc143ebd71ff54a31c707c5cdaa3aabce1bd0dd5c74a1fbf9a1a1a41051",
+  "paired_prior_contributions_sha256_after": "531c1dc143ebd71ff54a31c707c5cdaa3aabce1bd0dd5c74a1fbf9a1a1a41051",
+  "analysis_driver_sha256": "4adb36acfa8a56131c010b5a7aba6e40732c7d680849a36e2f97a3f65a94e39e",
+  "rerendered_figures": [
+    "prior_contributions",
+    "model_vs_identity",
+    "model_raw_overview",
+    "model_filtered_overview",
+    "cost_fidelity"
+  ],
+  "axis_label_clarity": "Overview and cost axes explicitly say Error relativo de vorticidad [%]."
+}

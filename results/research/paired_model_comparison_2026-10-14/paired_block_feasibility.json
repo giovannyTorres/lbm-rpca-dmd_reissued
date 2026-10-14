@@ -1,0 +1,2162 @@
+[
+  {
+    "case": "taylor_green_ns",
+    "noise": "gaussian",
+    "seed": 7,
+    "admissible_methods": 3,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "taylor_green_ns",
+    "noise": "gaussian",
+    "seed": 23,
+    "admissible_methods": 3,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "taylor_green_ns",
+    "noise": "gaussian",
+    "seed": 61,
+    "admissible_methods": 3,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "taylor_green_ns",
+    "noise": "sparse_impulsive",
+    "seed": 7,
+    "admissible_methods": 4,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "taylor_green_ns",
+    "noise": "sparse_impulsive",
+    "seed": 23,
+    "admissible_methods": 4,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "taylor_green_ns",
+    "noise": "sparse_impulsive",
+    "seed": 61,
+    "admissible_methods": 4,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "taylor_green_ns",
+    "noise": "mixed",
+    "seed": 7,
+    "admissible_methods": 3,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "taylor_green_ns",
+    "noise": "mixed",
+    "seed": 23,
+    "admissible_methods": 3,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "taylor_green_ns",
+    "noise": "mixed",
+    "seed": 61,
+    "admissible_methods": 3,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "taylor_green_ns",
+    "noise": "spatial_correlated",
+    "seed": 7,
+    "admissible_methods": 8,
+    "no_admissible_method": false,
+    "feasible_methods": "stable_rpca;dmd;tls_dmd;optimized_dmd;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "dmd;tls_dmd;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "dmd;tls_dmd;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "taylor_green_ns",
+    "noise": "spatial_correlated",
+    "seed": 23,
+    "admissible_methods": 9,
+    "no_admissible_method": false,
+    "feasible_methods": "stable_rpca;dmd;tls_dmd;optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "dmd;tls_dmd;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "dmd;tls_dmd;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "taylor_green_ns",
+    "noise": "spatial_correlated",
+    "seed": 61,
+    "admissible_methods": 9,
+    "no_admissible_method": false,
+    "feasible_methods": "stable_rpca;dmd;tls_dmd;optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "dmd;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "dmd;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "taylor_green_ns",
+    "noise": "temporal_correlated",
+    "seed": 7,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "taylor_green_ns",
+    "noise": "temporal_correlated",
+    "seed": 23,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "taylor_green_ns",
+    "noise": "temporal_correlated",
+    "seed": 61,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "taylor_green_ns",
+    "noise": "column_outliers",
+    "seed": 7,
+    "admissible_methods": 3,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "taylor_green_ns",
+    "noise": "column_outliers",
+    "seed": 23,
+    "admissible_methods": 3,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "taylor_green_ns",
+    "noise": "column_outliers",
+    "seed": 61,
+    "admissible_methods": 3,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "taylor_green_ns",
+    "noise": "student_t",
+    "seed": 7,
+    "admissible_methods": 3,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "taylor_green_ns",
+    "noise": "student_t",
+    "seed": 23,
+    "admissible_methods": 3,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "taylor_green_ns",
+    "noise": "student_t",
+    "seed": 61,
+    "admissible_methods": 3,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "taylor_green_ns",
+    "noise": "heteroscedastic",
+    "seed": 7,
+    "admissible_methods": 3,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "taylor_green_ns",
+    "noise": "heteroscedastic",
+    "seed": 23,
+    "admissible_methods": 3,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "taylor_green_ns",
+    "noise": "heteroscedastic",
+    "seed": 61,
+    "admissible_methods": 3,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "taylor_green_ns",
+    "noise": "sensor_drift",
+    "seed": 7,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "taylor_green_ns",
+    "noise": "sensor_drift",
+    "seed": 23,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "taylor_green_ns",
+    "noise": "sensor_drift",
+    "seed": 61,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "interacting_vortices_ns",
+    "noise": "gaussian",
+    "seed": 7,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "interacting_vortices_ns",
+    "noise": "gaussian",
+    "seed": 23,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "interacting_vortices_ns",
+    "noise": "gaussian",
+    "seed": 61,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "interacting_vortices_ns",
+    "noise": "sparse_impulsive",
+    "seed": 7,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "interacting_vortices_ns",
+    "noise": "sparse_impulsive",
+    "seed": 23,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "interacting_vortices_ns",
+    "noise": "sparse_impulsive",
+    "seed": 61,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "interacting_vortices_ns",
+    "noise": "mixed",
+    "seed": 7,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "interacting_vortices_ns",
+    "noise": "mixed",
+    "seed": 23,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "interacting_vortices_ns",
+    "noise": "mixed",
+    "seed": 61,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "interacting_vortices_ns",
+    "noise": "spatial_correlated",
+    "seed": 7,
+    "admissible_methods": 4,
+    "no_admissible_method": false,
+    "feasible_methods": "pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_4d_methods": "pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "interacting_vortices_ns",
+    "noise": "spatial_correlated",
+    "seed": 23,
+    "admissible_methods": 4,
+    "no_admissible_method": false,
+    "feasible_methods": "pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "pod_helmholtz;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "interacting_vortices_ns",
+    "noise": "spatial_correlated",
+    "seed": 61,
+    "admissible_methods": 4,
+    "no_admissible_method": false,
+    "feasible_methods": "pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "pod_helmholtz;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "interacting_vortices_ns",
+    "noise": "temporal_correlated",
+    "seed": 7,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "interacting_vortices_ns",
+    "noise": "temporal_correlated",
+    "seed": 23,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "interacting_vortices_ns",
+    "noise": "temporal_correlated",
+    "seed": 61,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "interacting_vortices_ns",
+    "noise": "column_outliers",
+    "seed": 7,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "interacting_vortices_ns",
+    "noise": "column_outliers",
+    "seed": 23,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "interacting_vortices_ns",
+    "noise": "column_outliers",
+    "seed": 61,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "interacting_vortices_ns",
+    "noise": "student_t",
+    "seed": 7,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "interacting_vortices_ns",
+    "noise": "student_t",
+    "seed": 23,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "interacting_vortices_ns",
+    "noise": "student_t",
+    "seed": 61,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "interacting_vortices_ns",
+    "noise": "heteroscedastic",
+    "seed": 7,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "interacting_vortices_ns",
+    "noise": "heteroscedastic",
+    "seed": 23,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "interacting_vortices_ns",
+    "noise": "heteroscedastic",
+    "seed": 61,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "interacting_vortices_ns",
+    "noise": "sensor_drift",
+    "seed": 7,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "interacting_vortices_ns",
+    "noise": "sensor_drift",
+    "seed": 23,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "interacting_vortices_ns",
+    "noise": "sensor_drift",
+    "seed": 61,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "decaying_turbulence_ns",
+    "noise": "gaussian",
+    "seed": 7,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "decaying_turbulence_ns",
+    "noise": "gaussian",
+    "seed": 23,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "decaying_turbulence_ns",
+    "noise": "gaussian",
+    "seed": 61,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "decaying_turbulence_ns",
+    "noise": "sparse_impulsive",
+    "seed": 7,
+    "admissible_methods": 3,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "decaying_turbulence_ns",
+    "noise": "sparse_impulsive",
+    "seed": 23,
+    "admissible_methods": 3,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "decaying_turbulence_ns",
+    "noise": "sparse_impulsive",
+    "seed": 61,
+    "admissible_methods": 3,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "decaying_turbulence_ns",
+    "noise": "mixed",
+    "seed": 7,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "decaying_turbulence_ns",
+    "noise": "mixed",
+    "seed": 23,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "decaying_turbulence_ns",
+    "noise": "mixed",
+    "seed": 61,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "decaying_turbulence_ns",
+    "noise": "spatial_correlated",
+    "seed": 7,
+    "admissible_methods": 10,
+    "no_admissible_method": false,
+    "feasible_methods": "pod;stable_rpca;dmd;tls_dmd;optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "pod;dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "pod;dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "decaying_turbulence_ns",
+    "noise": "spatial_correlated",
+    "seed": 23,
+    "admissible_methods": 10,
+    "no_admissible_method": false,
+    "feasible_methods": "pod;stable_rpca;dmd;tls_dmd;optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "pod;dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "pod;dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "decaying_turbulence_ns",
+    "noise": "spatial_correlated",
+    "seed": 61,
+    "admissible_methods": 10,
+    "no_admissible_method": false,
+    "feasible_methods": "pod;stable_rpca;dmd;tls_dmd;optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "pod;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "pod;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "decaying_turbulence_ns",
+    "noise": "temporal_correlated",
+    "seed": 7,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "decaying_turbulence_ns",
+    "noise": "temporal_correlated",
+    "seed": 23,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "decaying_turbulence_ns",
+    "noise": "temporal_correlated",
+    "seed": 61,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "decaying_turbulence_ns",
+    "noise": "column_outliers",
+    "seed": 7,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca",
+    "feasible_pareto_3d_methods": "rpca",
+    "feasible_pareto_4d_methods": "rpca"
+  },
+  {
+    "case": "decaying_turbulence_ns",
+    "noise": "column_outliers",
+    "seed": 23,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca",
+    "feasible_pareto_3d_methods": "rpca",
+    "feasible_pareto_4d_methods": "rpca"
+  },
+  {
+    "case": "decaying_turbulence_ns",
+    "noise": "column_outliers",
+    "seed": 61,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "decaying_turbulence_ns",
+    "noise": "student_t",
+    "seed": 7,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "decaying_turbulence_ns",
+    "noise": "student_t",
+    "seed": 23,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "decaying_turbulence_ns",
+    "noise": "student_t",
+    "seed": 61,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "decaying_turbulence_ns",
+    "noise": "heteroscedastic",
+    "seed": 7,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "decaying_turbulence_ns",
+    "noise": "heteroscedastic",
+    "seed": 23,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "decaying_turbulence_ns",
+    "noise": "heteroscedastic",
+    "seed": 61,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "decaying_turbulence_ns",
+    "noise": "sensor_drift",
+    "seed": 7,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "decaying_turbulence_ns",
+    "noise": "sensor_drift",
+    "seed": 23,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "decaying_turbulence_ns",
+    "noise": "sensor_drift",
+    "seed": 61,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "oldroyd_b_2d",
+    "noise": "gaussian",
+    "seed": 7,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "oldroyd_b_2d",
+    "noise": "gaussian",
+    "seed": 23,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "oldroyd_b_2d",
+    "noise": "gaussian",
+    "seed": 61,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "oldroyd_b_2d",
+    "noise": "sparse_impulsive",
+    "seed": 7,
+    "admissible_methods": 3,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "oldroyd_b_2d",
+    "noise": "sparse_impulsive",
+    "seed": 23,
+    "admissible_methods": 3,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "oldroyd_b_2d",
+    "noise": "sparse_impulsive",
+    "seed": 61,
+    "admissible_methods": 3,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "oldroyd_b_2d",
+    "noise": "mixed",
+    "seed": 7,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "oldroyd_b_2d",
+    "noise": "mixed",
+    "seed": 23,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "oldroyd_b_2d",
+    "noise": "mixed",
+    "seed": 61,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "oldroyd_b_2d",
+    "noise": "spatial_correlated",
+    "seed": 7,
+    "admissible_methods": 8,
+    "no_admissible_method": false,
+    "feasible_methods": "stable_rpca;dmd;tls_dmd;optimized_dmd;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "dmd;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "stable_rpca;dmd;tls_dmd;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "oldroyd_b_2d",
+    "noise": "spatial_correlated",
+    "seed": 23,
+    "admissible_methods": 8,
+    "no_admissible_method": false,
+    "feasible_methods": "stable_rpca;dmd;tls_dmd;optimized_dmd;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "dmd;tls_dmd;optimized_dmd;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "stable_rpca;dmd;tls_dmd;optimized_dmd;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "oldroyd_b_2d",
+    "noise": "spatial_correlated",
+    "seed": 61,
+    "admissible_methods": 9,
+    "no_admissible_method": false,
+    "feasible_methods": "stable_rpca;dmd;tls_dmd;optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "dmd;tls_dmd;fb_dmd_fallback_tls;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "stable_rpca;dmd;tls_dmd;fb_dmd_fallback_tls;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "oldroyd_b_2d",
+    "noise": "temporal_correlated",
+    "seed": 7,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "oldroyd_b_2d",
+    "noise": "temporal_correlated",
+    "seed": 23,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "oldroyd_b_2d",
+    "noise": "temporal_correlated",
+    "seed": 61,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "oldroyd_b_2d",
+    "noise": "column_outliers",
+    "seed": 7,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;fb_dmd_fallback_tls",
+    "feasible_pareto_3d_methods": "rpca;fb_dmd_fallback_tls",
+    "feasible_pareto_4d_methods": "rpca;fb_dmd_fallback_tls"
+  },
+  {
+    "case": "oldroyd_b_2d",
+    "noise": "column_outliers",
+    "seed": 23,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca",
+    "feasible_pareto_3d_methods": "rpca",
+    "feasible_pareto_4d_methods": "rpca"
+  },
+  {
+    "case": "oldroyd_b_2d",
+    "noise": "column_outliers",
+    "seed": 61,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca",
+    "feasible_pareto_3d_methods": "rpca",
+    "feasible_pareto_4d_methods": "rpca"
+  },
+  {
+    "case": "oldroyd_b_2d",
+    "noise": "student_t",
+    "seed": 7,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "oldroyd_b_2d",
+    "noise": "student_t",
+    "seed": 23,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "oldroyd_b_2d",
+    "noise": "student_t",
+    "seed": 61,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "oldroyd_b_2d",
+    "noise": "heteroscedastic",
+    "seed": 7,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "oldroyd_b_2d",
+    "noise": "heteroscedastic",
+    "seed": 23,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "oldroyd_b_2d",
+    "noise": "heteroscedastic",
+    "seed": 61,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "oldroyd_b_2d",
+    "noise": "sensor_drift",
+    "seed": 7,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "oldroyd_b_2d",
+    "noise": "sensor_drift",
+    "seed": 23,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "oldroyd_b_2d",
+    "noise": "sensor_drift",
+    "seed": 61,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "fene_p_2d",
+    "noise": "gaussian",
+    "seed": 7,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "fene_p_2d",
+    "noise": "gaussian",
+    "seed": 23,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "fene_p_2d",
+    "noise": "gaussian",
+    "seed": 61,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "fene_p_2d",
+    "noise": "sparse_impulsive",
+    "seed": 7,
+    "admissible_methods": 3,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "fene_p_2d",
+    "noise": "sparse_impulsive",
+    "seed": 23,
+    "admissible_methods": 3,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "fene_p_2d",
+    "noise": "sparse_impulsive",
+    "seed": 61,
+    "admissible_methods": 3,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "fene_p_2d",
+    "noise": "mixed",
+    "seed": 7,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "fene_p_2d",
+    "noise": "mixed",
+    "seed": 23,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "fene_p_2d",
+    "noise": "mixed",
+    "seed": 61,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "fene_p_2d",
+    "noise": "spatial_correlated",
+    "seed": 7,
+    "admissible_methods": 8,
+    "no_admissible_method": false,
+    "feasible_methods": "stable_rpca;dmd;tls_dmd;optimized_dmd;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "dmd;tls_dmd;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "stable_rpca;dmd;tls_dmd;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "fene_p_2d",
+    "noise": "spatial_correlated",
+    "seed": 23,
+    "admissible_methods": 8,
+    "no_admissible_method": false,
+    "feasible_methods": "stable_rpca;dmd;tls_dmd;optimized_dmd;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "dmd;tls_dmd;optimized_dmd;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "stable_rpca;dmd;tls_dmd;optimized_dmd;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "fene_p_2d",
+    "noise": "spatial_correlated",
+    "seed": 61,
+    "admissible_methods": 9,
+    "no_admissible_method": false,
+    "feasible_methods": "stable_rpca;dmd;tls_dmd;optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd;fb_dmd_fallback_tls;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "stable_rpca;dmd;tls_dmd;fb_dmd_fallback_tls;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "fene_p_2d",
+    "noise": "temporal_correlated",
+    "seed": 7,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "fene_p_2d",
+    "noise": "temporal_correlated",
+    "seed": 23,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "fene_p_2d",
+    "noise": "temporal_correlated",
+    "seed": 61,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "fene_p_2d",
+    "noise": "column_outliers",
+    "seed": 7,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;fb_dmd_fallback_tls",
+    "feasible_pareto_3d_methods": "rpca;fb_dmd_fallback_tls",
+    "feasible_pareto_4d_methods": "rpca;fb_dmd_fallback_tls"
+  },
+  {
+    "case": "fene_p_2d",
+    "noise": "column_outliers",
+    "seed": 23,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca",
+    "feasible_pareto_3d_methods": "rpca",
+    "feasible_pareto_4d_methods": "rpca"
+  },
+  {
+    "case": "fene_p_2d",
+    "noise": "column_outliers",
+    "seed": 61,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca",
+    "feasible_pareto_3d_methods": "rpca",
+    "feasible_pareto_4d_methods": "rpca"
+  },
+  {
+    "case": "fene_p_2d",
+    "noise": "student_t",
+    "seed": 7,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "fene_p_2d",
+    "noise": "student_t",
+    "seed": 23,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "fene_p_2d",
+    "noise": "student_t",
+    "seed": 61,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "fene_p_2d",
+    "noise": "heteroscedastic",
+    "seed": 7,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "fene_p_2d",
+    "noise": "heteroscedastic",
+    "seed": 23,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "fene_p_2d",
+    "noise": "heteroscedastic",
+    "seed": 61,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias;stable_rpca_helmholtz"
+  },
+  {
+    "case": "fene_p_2d",
+    "noise": "sensor_drift",
+    "seed": 7,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "fene_p_2d",
+    "noise": "sensor_drift",
+    "seed": 23,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "fene_p_2d",
+    "noise": "sensor_drift",
+    "seed": 61,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "hb_thinning_2d",
+    "noise": "gaussian",
+    "seed": 7,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thinning_2d",
+    "noise": "gaussian",
+    "seed": 23,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thinning_2d",
+    "noise": "gaussian",
+    "seed": 61,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thinning_2d",
+    "noise": "sparse_impulsive",
+    "seed": 7,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thinning_2d",
+    "noise": "sparse_impulsive",
+    "seed": 23,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thinning_2d",
+    "noise": "sparse_impulsive",
+    "seed": 61,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thinning_2d",
+    "noise": "mixed",
+    "seed": 7,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thinning_2d",
+    "noise": "mixed",
+    "seed": 23,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thinning_2d",
+    "noise": "mixed",
+    "seed": 61,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thinning_2d",
+    "noise": "spatial_correlated",
+    "seed": 7,
+    "admissible_methods": 10,
+    "no_admissible_method": false,
+    "feasible_methods": "pod;stable_rpca;dmd;tls_dmd;optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "pod;optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "pod;tls_dmd;optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thinning_2d",
+    "noise": "spatial_correlated",
+    "seed": 23,
+    "admissible_methods": 9,
+    "no_admissible_method": false,
+    "feasible_methods": "pod;stable_rpca;dmd;optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "pod;optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "pod;optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thinning_2d",
+    "noise": "spatial_correlated",
+    "seed": 61,
+    "admissible_methods": 10,
+    "no_admissible_method": false,
+    "feasible_methods": "pod;stable_rpca;dmd;tls_dmd;optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "pod;dmd;tls_dmd;optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "pod;dmd;tls_dmd;optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thinning_2d",
+    "noise": "temporal_correlated",
+    "seed": 7,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "hb_thinning_2d",
+    "noise": "temporal_correlated",
+    "seed": 23,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "hb_thinning_2d",
+    "noise": "temporal_correlated",
+    "seed": 61,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "hb_thinning_2d",
+    "noise": "column_outliers",
+    "seed": 7,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thinning_2d",
+    "noise": "column_outliers",
+    "seed": 23,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thinning_2d",
+    "noise": "column_outliers",
+    "seed": 61,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thinning_2d",
+    "noise": "student_t",
+    "seed": 7,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thinning_2d",
+    "noise": "student_t",
+    "seed": 23,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thinning_2d",
+    "noise": "student_t",
+    "seed": 61,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thinning_2d",
+    "noise": "heteroscedastic",
+    "seed": 7,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thinning_2d",
+    "noise": "heteroscedastic",
+    "seed": 23,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thinning_2d",
+    "noise": "heteroscedastic",
+    "seed": 61,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thinning_2d",
+    "noise": "sensor_drift",
+    "seed": 7,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "hb_thinning_2d",
+    "noise": "sensor_drift",
+    "seed": 23,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "hb_thinning_2d",
+    "noise": "sensor_drift",
+    "seed": 61,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "bingham_2d",
+    "noise": "gaussian",
+    "seed": 7,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "bingham_2d",
+    "noise": "gaussian",
+    "seed": 23,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "bingham_2d",
+    "noise": "gaussian",
+    "seed": 61,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "bingham_2d",
+    "noise": "sparse_impulsive",
+    "seed": 7,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "bingham_2d",
+    "noise": "sparse_impulsive",
+    "seed": 23,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "bingham_2d",
+    "noise": "sparse_impulsive",
+    "seed": 61,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "bingham_2d",
+    "noise": "mixed",
+    "seed": 7,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "bingham_2d",
+    "noise": "mixed",
+    "seed": 23,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "bingham_2d",
+    "noise": "mixed",
+    "seed": 61,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "bingham_2d",
+    "noise": "spatial_correlated",
+    "seed": 7,
+    "admissible_methods": 10,
+    "no_admissible_method": false,
+    "feasible_methods": "pod;stable_rpca;dmd;tls_dmd;optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "pod;optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "pod;tls_dmd;optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "bingham_2d",
+    "noise": "spatial_correlated",
+    "seed": 23,
+    "admissible_methods": 9,
+    "no_admissible_method": false,
+    "feasible_methods": "pod;stable_rpca;dmd;optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "pod;optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "pod;optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "bingham_2d",
+    "noise": "spatial_correlated",
+    "seed": 61,
+    "admissible_methods": 10,
+    "no_admissible_method": false,
+    "feasible_methods": "pod;stable_rpca;dmd;tls_dmd;optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "pod;dmd;tls_dmd;optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "pod;dmd;tls_dmd;optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "bingham_2d",
+    "noise": "temporal_correlated",
+    "seed": 7,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "bingham_2d",
+    "noise": "temporal_correlated",
+    "seed": 23,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "bingham_2d",
+    "noise": "temporal_correlated",
+    "seed": 61,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "bingham_2d",
+    "noise": "column_outliers",
+    "seed": 7,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "bingham_2d",
+    "noise": "column_outliers",
+    "seed": 23,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "bingham_2d",
+    "noise": "column_outliers",
+    "seed": 61,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "bingham_2d",
+    "noise": "student_t",
+    "seed": 7,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "bingham_2d",
+    "noise": "student_t",
+    "seed": 23,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "bingham_2d",
+    "noise": "student_t",
+    "seed": 61,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "bingham_2d",
+    "noise": "heteroscedastic",
+    "seed": 7,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "bingham_2d",
+    "noise": "heteroscedastic",
+    "seed": 23,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "bingham_2d",
+    "noise": "heteroscedastic",
+    "seed": 61,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "bingham_2d",
+    "noise": "sensor_drift",
+    "seed": 7,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "bingham_2d",
+    "noise": "sensor_drift",
+    "seed": 23,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "bingham_2d",
+    "noise": "sensor_drift",
+    "seed": 61,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "hb_thickening_2d",
+    "noise": "gaussian",
+    "seed": 7,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thickening_2d",
+    "noise": "gaussian",
+    "seed": 23,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thickening_2d",
+    "noise": "gaussian",
+    "seed": 61,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thickening_2d",
+    "noise": "sparse_impulsive",
+    "seed": 7,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thickening_2d",
+    "noise": "sparse_impulsive",
+    "seed": 23,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thickening_2d",
+    "noise": "sparse_impulsive",
+    "seed": 61,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thickening_2d",
+    "noise": "mixed",
+    "seed": 7,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thickening_2d",
+    "noise": "mixed",
+    "seed": 23,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thickening_2d",
+    "noise": "mixed",
+    "seed": 61,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thickening_2d",
+    "noise": "spatial_correlated",
+    "seed": 7,
+    "admissible_methods": 9,
+    "no_admissible_method": false,
+    "feasible_methods": "stable_rpca;dmd;tls_dmd;optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "dmd;optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "stable_rpca;dmd;tls_dmd;optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thickening_2d",
+    "noise": "spatial_correlated",
+    "seed": 23,
+    "admissible_methods": 8,
+    "no_admissible_method": false,
+    "feasible_methods": "stable_rpca;dmd;optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "stable_rpca;dmd;optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thickening_2d",
+    "noise": "spatial_correlated",
+    "seed": 61,
+    "admissible_methods": 9,
+    "no_admissible_method": false,
+    "feasible_methods": "stable_rpca;dmd;tls_dmd;optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias;stable_rpca_helmholtz",
+    "feasible_pareto_3d_methods": "dmd;tls_dmd;optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "stable_rpca;dmd;tls_dmd;optimized_dmd;fb_dmd_fallback_tls;pod_helmholtz;tls_dmd_helmholtz;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thickening_2d",
+    "noise": "temporal_correlated",
+    "seed": 7,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "hb_thickening_2d",
+    "noise": "temporal_correlated",
+    "seed": 23,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "hb_thickening_2d",
+    "noise": "temporal_correlated",
+    "seed": 61,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "hb_thickening_2d",
+    "noise": "column_outliers",
+    "seed": 7,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thickening_2d",
+    "noise": "column_outliers",
+    "seed": 23,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thickening_2d",
+    "noise": "column_outliers",
+    "seed": 61,
+    "admissible_methods": 2,
+    "no_admissible_method": false,
+    "feasible_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "rpca;tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "rpca;tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thickening_2d",
+    "noise": "student_t",
+    "seed": 7,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thickening_2d",
+    "noise": "student_t",
+    "seed": 23,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thickening_2d",
+    "noise": "student_t",
+    "seed": 61,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thickening_2d",
+    "noise": "heteroscedastic",
+    "seed": 7,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thickening_2d",
+    "noise": "heteroscedastic",
+    "seed": 23,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thickening_2d",
+    "noise": "heteroscedastic",
+    "seed": 61,
+    "admissible_methods": 1,
+    "no_admissible_method": false,
+    "feasible_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_3d_methods": "tls_dmd_helmholtz_dealias",
+    "feasible_pareto_4d_methods": "tls_dmd_helmholtz_dealias"
+  },
+  {
+    "case": "hb_thickening_2d",
+    "noise": "sensor_drift",
+    "seed": 7,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "hb_thickening_2d",
+    "noise": "sensor_drift",
+    "seed": 23,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  },
+  {
+    "case": "hb_thickening_2d",
+    "noise": "sensor_drift",
+    "seed": 61,
+    "admissible_methods": 0,
+    "no_admissible_method": true,
+    "feasible_methods": "",
+    "feasible_pareto_3d_methods": "",
+    "feasible_pareto_4d_methods": ""
+  }
+]

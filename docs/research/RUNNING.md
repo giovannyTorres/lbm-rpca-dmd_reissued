@@ -15,7 +15,42 @@ python -m unittest discover -s tests
 PYTHONPATH=python/src python -m pytest tests/test_research*.py
 ```
 
-Las dependencias incluyen NumPy, SciPy, pandas y matplotlib; pyarrow habilita Parquet. CMake y un compilador C++17 permiten ejecutar el solver de fases 1–7. La suite completa, incluida la ampliación de mallas, registra 214 tests y 32 subtests sin omisiones (`PYTHONPATH=python/src python -m pytest tests`). La verificación previa de fases 1–7 produjo 12 experimentos y 80 figuras.
+Las dependencias incluyen NumPy, SciPy, pandas y matplotlib; pyarrow habilita Parquet. CMake y un compilador C++17 permiten ejecutar el solver de fases 1–7. La suite completa, incluida la ampliación de mallas, registra 218 tests y 34 subtests sin omisiones (`PYTHONPATH=python/src python -m pytest tests`). La verificación previa de fases 1–7 produjo 12 experimentos y 80 figuras.
+
+## Comparación de modelos y fidelidad: lectura y reproducción
+
+Los resultados principales están en [COMPARISON_RESULTS.md](COMPARISON_RESULTS.md), con [protocolo](COMPARISON_PROTOCOL.md), [revisión independiente](COMPARISON_REVIEW.md) y [documento PDF](../../results/research/document/extension.pdf). Distinguen la calidad de las simulaciones, el error de los estimadores, la contribución del filtrado y el costo condicionado a los criterios operativos.
+
+El banco nuevo contiene 1050 ajustes en siete campos 128², cinco contaminaciones y tres semillas nuevas; cada ajuste produce tres evaluaciones sin reajuste (crudo, Helmholtz y Helmholtz+banda). La sensibilidad añade 360 ajustes y 1080 evaluaciones; los controles sin contaminación 84 y 252. Hay 24 contratos duplicados entre el banco principal y la sensibilidad, que no constituyen evidencia independiente adicional.
+
+Para ejecutar estos bancos sin reintegrar todo el refinamiento 512²/256², usar la [rama de entradas completas 128²](https://github.com/giovannyTorres/lbm-rpca-dmd_reissued/tree/data/model-comparison-fidelity-2026-10-14), cuyos siete archivos conservan todos los tiempos 41/25/21. El [manifiesto](../../results/research/model_comparison_inputs_2026-10-14/manifest.json) conserva los hashes y los tipos de digest. Desde esa rama, instalar las dependencias y ejecutar:
+
+```bash
+python python/scripts/run_model_fidelity_benchmark.py --workers 2
+python results/research/model_fidelity_benchmark_2026-10-14/analyze_model_comparison.py
+python python/scripts/run_rank_noise_sensitivity.py --resume
+python results/research/rank_noise_sensitivity_2026-10-14/analysis.py --require-main-overlap
+python python/scripts/run_clean_model_controls.py
+python python/scripts/analyze_prior_error_budget.py
+```
+
+La ejecución completa puede requerir aproximadamente una hora o más, según el equipo y las tareas concurrentes. Dos procesos de ajuste y un hilo BLAS por hijo limitan el paralelismo. El primer script reutiliza registros cuyos contratos numéricos, fuentes e inputs coinciden; el segundo analiza el ledger sin repetir ajustes. La sensibilidad usa su caché local, excluida de Git, y puede recomputar ajustes cuando el contrato de lectura verificado cambia. Los controles limpios describen sesgo con los parámetros del experimento y con ruido conocido cero; no generan realizaciones estocásticas nuevas.
+
+Para volver a calcular la fidelidad del banco original con las mismas condiciones físicas y los controles de muestreo, usar `analyze_reference_fidelity.py`. Las referencias 128/256 y las historias densas requieren integraciones propias y no están todas en la rama de entradas del benchmark:
+
+```bash
+python python/scripts/analyze_reference_fidelity.py --vp128-budget-seconds 2700
+```
+
+Para regenerar únicamente documentos desde resultados ya completos:
+
+```bash
+python python/scripts/analyze_paired_model_comparison.py
+python python/scripts/build_comparison_chapter.py
+latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=results/research/document docs/research/extension.tex
+```
+
+La compilación directa funciona desde la rama principal sin los NPZ: los `.tex` generados y las figuras ya están incluidos. Los comandos que vuelven a analizar campos o generar observaciones sí requieren historias completas. Las muestras de tres o cinco estados permiten inspeccionar figuras, y no sustituyen los tiempos completos usados en el error global y en su máximo.
 
 ## Pipeline integrado
 

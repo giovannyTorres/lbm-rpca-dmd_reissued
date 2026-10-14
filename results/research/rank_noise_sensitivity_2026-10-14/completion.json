@@ -1,0 +1,16 @@
+{
+  "complete": true,
+  "expected_fits": 360,
+  "fits": 360,
+  "evaluations": 1080,
+  "failed_fits": 0,
+  "nonconverged_fits": 0,
+  "accepted_evaluations": 336,
+  "accepted_by_postprocessing": {
+    "raw": 0,
+    "helmholtz": 12,
+    "helmholtz_k10": 324
+  },
+  "overlap_model_benchmark_fits": 24,
+  "interpretation": "360 distinct noisy/rank/method fits; three postprocess evaluations per fit. Overlap with main model benchmark is not independent evidence."
+}

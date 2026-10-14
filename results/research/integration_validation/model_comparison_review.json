@@ -1,0 +1,1946 @@
+{
+  "audit_scope": "independent historical and new paired ledger arithmetic, observation archives and source hashes",
+  "historical_campaign": {
+    "campaign": "extended_physics_2026-10-14",
+    "ledger_sha256": "5f7635bc13bfbd9d632892ba502f11604f140886202578c31827bf0adf69b615",
+    "conditions": 2808,
+    "resource_fits": 8424,
+    "independent_noise_seeds_per_case_noise_candidate": 3,
+    "resource_repetitions_are_independent_noise_realizations": false,
+    "method_counts": {
+      "dmd": {
+        "conditions": 216,
+        "resource_fits": 648,
+        "quality_accepted": 21,
+        "failed_conditions": 0,
+        "not_converged_conditions": 0,
+        "fallback_conditions": 0
+      },
+      "fb_dmd_fallback_tls": {
+        "conditions": 216,
+        "resource_fits": 648,
+        "quality_accepted": 18,
+        "failed_conditions": 0,
+        "not_converged_conditions": 0,
+        "fallback_conditions": 23
+      },
+      "identity": {
+        "conditions": 216,
+        "resource_fits": 648,
+        "quality_accepted": 0,
+        "failed_conditions": 0,
+        "not_converged_conditions": 0,
+        "fallback_conditions": 0
+      },
+      "identity_helmholtz": {
+        "conditions": 216,
+        "resource_fits": 648,
+        "quality_accepted": 0,
+        "failed_conditions": 0,
+        "not_converged_conditions": 0,
+        "fallback_conditions": 0
+      },
+      "optimized_dmd": {
+        "conditions": 216,
+        "resource_fits": 648,
+        "quality_accepted": 21,
+        "failed_conditions": 0,
+        "not_converged_conditions": 6,
+        "fallback_conditions": 0
+      },
+      "pod": {
+        "conditions": 216,
+        "resource_fits": 648,
+        "quality_accepted": 9,
+        "failed_conditions": 0,
+        "not_converged_conditions": 0,
+        "fallback_conditions": 0
+      },
+      "pod_helmholtz": {
+        "conditions": 216,
+        "resource_fits": 648,
+        "quality_accepted": 24,
+        "failed_conditions": 0,
+        "not_converged_conditions": 0,
+        "fallback_conditions": 0
+      },
+      "rpca": {
+        "conditions": 216,
+        "resource_fits": 648,
+        "quality_accepted": 42,
+        "failed_conditions": 0,
+        "not_converged_conditions": 0,
+        "fallback_conditions": 0
+      },
+      "stable_rpca": {
+        "conditions": 216,
+        "resource_fits": 648,
+        "quality_accepted": 21,
+        "failed_conditions": 0,
+        "not_converged_conditions": 0,
+        "fallback_conditions": 0
+      },
+      "stable_rpca_helmholtz": {
+        "conditions": 216,
+        "resource_fits": 648,
+        "quality_accepted": 72,
+        "failed_conditions": 0,
+        "not_converged_conditions": 0,
+        "fallback_conditions": 0
+      },
+      "tls_dmd": {
+        "conditions": 216,
+        "resource_fits": 648,
+        "quality_accepted": 18,
+        "failed_conditions": 0,
+        "not_converged_conditions": 0,
+        "fallback_conditions": 0
+      },
+      "tls_dmd_helmholtz": {
+        "conditions": 216,
+        "resource_fits": 648,
+        "quality_accepted": 42,
+        "failed_conditions": 0,
+        "not_converged_conditions": 0,
+        "fallback_conditions": 0
+      },
+      "tls_dmd_helmholtz_dealias": {
+        "conditions": 216,
+        "resource_fits": 648,
+        "quality_accepted": 142,
+        "failed_conditions": 0,
+        "not_converged_conditions": 0,
+        "fallback_conditions": 0
+      }
+    },
+    "nonconverged_condition_ids": [
+      "taylor_green_ns__mixed__s23__optimized_dmd__r4",
+      "taylor_green_ns__student_t__s61__optimized_dmd__r4",
+      "oldroyd_b_2d__sparse_impulsive__s7__optimized_dmd__r4",
+      "oldroyd_b_2d__column_outliers__s7__optimized_dmd__r4",
+      "fene_p_2d__sparse_impulsive__s7__optimized_dmd__r4",
+      "fene_p_2d__mixed__s23__optimized_dmd__r4"
+    ],
+    "fallback_condition_ids": [
+      "taylor_green_ns__gaussian__s7__fb_dmd_fallback_tls__r4",
+      "taylor_green_ns__gaussian__s61__fb_dmd_fallback_tls__r4",
+      "taylor_green_ns__sparse_impulsive__s23__fb_dmd_fallback_tls__r4",
+      "taylor_green_ns__mixed__s23__fb_dmd_fallback_tls__r4",
+      "taylor_green_ns__mixed__s61__fb_dmd_fallback_tls__r4",
+      "taylor_green_ns__spatial_correlated__s23__fb_dmd_fallback_tls__r4",
+      "taylor_green_ns__spatial_correlated__s61__fb_dmd_fallback_tls__r4",
+      "taylor_green_ns__column_outliers__s7__fb_dmd_fallback_tls__r4",
+      "taylor_green_ns__column_outliers__s23__fb_dmd_fallback_tls__r4",
+      "taylor_green_ns__column_outliers__s61__fb_dmd_fallback_tls__r4",
+      "taylor_green_ns__student_t__s23__fb_dmd_fallback_tls__r4",
+      "taylor_green_ns__student_t__s61__fb_dmd_fallback_tls__r4",
+      "taylor_green_ns__heteroscedastic__s7__fb_dmd_fallback_tls__r4",
+      "taylor_green_ns__heteroscedastic__s23__fb_dmd_fallback_tls__r4",
+      "taylor_green_ns__heteroscedastic__s61__fb_dmd_fallback_tls__r4",
+      "oldroyd_b_2d__gaussian__s7__fb_dmd_fallback_tls__r4",
+      "oldroyd_b_2d__mixed__s23__fb_dmd_fallback_tls__r4",
+      "oldroyd_b_2d__column_outliers__s61__fb_dmd_fallback_tls__r4",
+      "oldroyd_b_2d__student_t__s7__fb_dmd_fallback_tls__r4",
+      "fene_p_2d__gaussian__s7__fb_dmd_fallback_tls__r4",
+      "fene_p_2d__mixed__s23__fb_dmd_fallback_tls__r4",
+      "fene_p_2d__column_outliers__s61__fb_dmd_fallback_tls__r4",
+      "fene_p_2d__student_t__s7__fb_dmd_fallback_tls__r4"
+    ],
+    "scientific_sources_unchanged": {
+      "python/src/fluid_denoise/research/__init__.py": true,
+      "python/src/fluid_denoise/research/algorithms.py": true,
+      "python/src/fluid_denoise/research/bridge.py": true,
+      "python/src/fluid_denoise/research/cost.py": true,
+      "python/src/fluid_denoise/research/dns.py": true,
+      "python/src/fluid_denoise/research/forecast_runner.py": true,
+      "python/src/fluid_denoise/research/forecasting.py": true,
+      "python/src/fluid_denoise/research/legacy_simulation.py": true,
+      "python/src/fluid_denoise/research/metrics.py": true,
+      "python/src/fluid_denoise/research/noise.py": true,
+      "python/src/fluid_denoise/research/physics.py": true,
+      "python/src/fluid_denoise/research/rheology.py": true,
+      "python/src/fluid_denoise/research/runner.py": true,
+      "python/src/fluid_denoise/research/viscoelastic_dns.py": true,
+      "python/src/fluid_denoise/research/viscoplastic_dns.py": true
+    },
+    "conditions_all_expected_and_unique": true,
+    "summary_quality_recomputed_from_metrics_and_convergence": true,
+    "all_conditions_retained_in_denominators": true
+  },
+  "verifier_sha256": "bbaf93b5133caa13d248438329c2eb50d4cd413fb714f0af5145edfc5309ce82",
+  "passed": true,
+  "paired_reanalysis": {
+    "campaign": "paired_model_comparison_2026-10-14",
+    "admissible_conditions": 430,
+    "paired_blocks_without_admissible_method": 66,
+    "velocity_gate_pass_but_vorticity_gate_fail": 1469,
+    "admissible_newtonian_pde_conditions": 150,
+    "admissible_newtonian_pde_conditions_extra_residual_gt_one": 147,
+    "tolerance_sensitivity_counts_independently_verified": [
+      {
+        "method": "identity",
+        "vorticity_maximum": 0.05,
+        "admissible": 0
+      },
+      {
+        "method": "identity",
+        "vorticity_maximum": 0.1,
+        "admissible": 0
+      },
+      {
+        "method": "identity",
+        "vorticity_maximum": 0.25,
+        "admissible": 0
+      },
+      {
+        "method": "identity",
+        "vorticity_maximum": 0.5,
+        "admissible": 0
+      },
+      {
+        "method": "pod",
+        "vorticity_maximum": 0.05,
+        "admissible": 0
+      },
+      {
+        "method": "pod",
+        "vorticity_maximum": 0.1,
+        "admissible": 0
+      },
+      {
+        "method": "pod",
+        "vorticity_maximum": 0.25,
+        "admissible": 9
+      },
+      {
+        "method": "pod",
+        "vorticity_maximum": 0.5,
+        "admissible": 9
+      },
+      {
+        "method": "rpca",
+        "vorticity_maximum": 0.05,
+        "admissible": 9
+      },
+      {
+        "method": "rpca",
+        "vorticity_maximum": 0.1,
+        "admissible": 23
+      },
+      {
+        "method": "rpca",
+        "vorticity_maximum": 0.25,
+        "admissible": 42
+      },
+      {
+        "method": "rpca",
+        "vorticity_maximum": 0.5,
+        "admissible": 42
+      },
+      {
+        "method": "stable_rpca",
+        "vorticity_maximum": 0.05,
+        "admissible": 0
+      },
+      {
+        "method": "stable_rpca",
+        "vorticity_maximum": 0.1,
+        "admissible": 3
+      },
+      {
+        "method": "stable_rpca",
+        "vorticity_maximum": 0.25,
+        "admissible": 21
+      },
+      {
+        "method": "stable_rpca",
+        "vorticity_maximum": 0.5,
+        "admissible": 21
+      },
+      {
+        "method": "dmd",
+        "vorticity_maximum": 0.05,
+        "admissible": 0
+      },
+      {
+        "method": "dmd",
+        "vorticity_maximum": 0.1,
+        "admissible": 5
+      },
+      {
+        "method": "dmd",
+        "vorticity_maximum": 0.25,
+        "admissible": 21
+      },
+      {
+        "method": "dmd",
+        "vorticity_maximum": 0.5,
+        "admissible": 21
+      },
+      {
+        "method": "tls_dmd",
+        "vorticity_maximum": 0.05,
+        "admissible": 1
+      },
+      {
+        "method": "tls_dmd",
+        "vorticity_maximum": 0.1,
+        "admissible": 9
+      },
+      {
+        "method": "tls_dmd",
+        "vorticity_maximum": 0.25,
+        "admissible": 18
+      },
+      {
+        "method": "tls_dmd",
+        "vorticity_maximum": 0.5,
+        "admissible": 18
+      },
+      {
+        "method": "optimized_dmd",
+        "vorticity_maximum": 0.05,
+        "admissible": 0
+      },
+      {
+        "method": "optimized_dmd",
+        "vorticity_maximum": 0.1,
+        "admissible": 9
+      },
+      {
+        "method": "optimized_dmd",
+        "vorticity_maximum": 0.25,
+        "admissible": 21
+      },
+      {
+        "method": "optimized_dmd",
+        "vorticity_maximum": 0.5,
+        "admissible": 21
+      },
+      {
+        "method": "fb_dmd_fallback_tls",
+        "vorticity_maximum": 0.05,
+        "admissible": 1
+      },
+      {
+        "method": "fb_dmd_fallback_tls",
+        "vorticity_maximum": 0.1,
+        "admissible": 6
+      },
+      {
+        "method": "fb_dmd_fallback_tls",
+        "vorticity_maximum": 0.25,
+        "admissible": 18
+      },
+      {
+        "method": "fb_dmd_fallback_tls",
+        "vorticity_maximum": 0.5,
+        "admissible": 18
+      },
+      {
+        "method": "identity_helmholtz",
+        "vorticity_maximum": 0.05,
+        "admissible": 0
+      },
+      {
+        "method": "identity_helmholtz",
+        "vorticity_maximum": 0.1,
+        "admissible": 0
+      },
+      {
+        "method": "identity_helmholtz",
+        "vorticity_maximum": 0.25,
+        "admissible": 0
+      },
+      {
+        "method": "identity_helmholtz",
+        "vorticity_maximum": 0.5,
+        "admissible": 24
+      },
+      {
+        "method": "pod_helmholtz",
+        "vorticity_maximum": 0.05,
+        "admissible": 0
+      },
+      {
+        "method": "pod_helmholtz",
+        "vorticity_maximum": 0.1,
+        "admissible": 0
+      },
+      {
+        "method": "pod_helmholtz",
+        "vorticity_maximum": 0.25,
+        "admissible": 24
+      },
+      {
+        "method": "pod_helmholtz",
+        "vorticity_maximum": 0.5,
+        "admissible": 129
+      },
+      {
+        "method": "tls_dmd_helmholtz",
+        "vorticity_maximum": 0.05,
+        "admissible": 1
+      },
+      {
+        "method": "tls_dmd_helmholtz",
+        "vorticity_maximum": 0.1,
+        "admissible": 9
+      },
+      {
+        "method": "tls_dmd_helmholtz",
+        "vorticity_maximum": 0.25,
+        "admissible": 42
+      },
+      {
+        "method": "tls_dmd_helmholtz",
+        "vorticity_maximum": 0.5,
+        "admissible": 142
+      },
+      {
+        "method": "tls_dmd_helmholtz_dealias",
+        "vorticity_maximum": 0.05,
+        "admissible": 1
+      },
+      {
+        "method": "tls_dmd_helmholtz_dealias",
+        "vorticity_maximum": 0.1,
+        "admissible": 26
+      },
+      {
+        "method": "tls_dmd_helmholtz_dealias",
+        "vorticity_maximum": 0.25,
+        "admissible": 142
+      },
+      {
+        "method": "tls_dmd_helmholtz_dealias",
+        "vorticity_maximum": 0.5,
+        "admissible": 186
+      },
+      {
+        "method": "stable_rpca_helmholtz",
+        "vorticity_maximum": 0.05,
+        "admissible": 0
+      },
+      {
+        "method": "stable_rpca_helmholtz",
+        "vorticity_maximum": 0.1,
+        "admissible": 3
+      },
+      {
+        "method": "stable_rpca_helmholtz",
+        "vorticity_maximum": 0.25,
+        "admissible": 72
+      },
+      {
+        "method": "stable_rpca_helmholtz",
+        "vorticity_maximum": 0.5,
+        "admissible": 144
+      }
+    ],
+    "all_five_ablations_independently_verified": true,
+    "method_eligibility_and_median_range_verified": true,
+    "pipeline_gains_are_against_raw_identity_not_prior_matched": true,
+    "missing_historical_control": "identity + Helmholtz + 2/3; new campaign supplies all three prior-matched identities"
+  },
+  "new_paired_campaign": {
+    "campaign": "model_fidelity_benchmark_2026-10-14",
+    "complete": true,
+    "expected_raw_fits": 1050,
+    "recorded_raw_fits": 1050,
+    "postprocessing_evaluation_rows": 3150,
+    "actual_successful_evaluations": 3150,
+    "matched_noise_blocks": 105,
+    "independent_noise_seeds_per_flow_noise_candidate": 3,
+    "repeated_postprocesses_are_independent_observations": false,
+    "quality_passes_by_variant": {
+      "raw": 6,
+      "helmholtz": 44,
+      "helmholtz_k10": 825
+    },
+    "failed_fit_ids": [],
+    "not_converged_fit_ids": [
+      "ns_vortices__column_outliers__s307__optimized_r8",
+      "oldroyd_b__column_outliers__s101__optimized_r8",
+      "hb_thinning__column_outliers__s101__optimized_r8",
+      "bingham__sparse_impulsive__s101__optimized_r8",
+      "bingham__column_outliers__s101__optimized_r8",
+      "hb_thickening__sparse_impulsive__s101__optimized_r8",
+      "hb_thickening__sparse_impulsive__s911__optimized_r8",
+      "hb_thickening__column_outliers__s101__optimized_r8"
+    ],
+    "method_counts": {
+      "pod_r8": {
+        "fits": 105,
+        "raw_accepted": 0,
+        "helmholtz_accepted": 3,
+        "helmholtz_k10_accepted": 90
+      },
+      "identity": {
+        "fits": 105,
+        "raw_accepted": 0,
+        "helmholtz_accepted": 0,
+        "helmholtz_k10_accepted": 87
+      },
+      "dmd_r8": {
+        "fits": 105,
+        "raw_accepted": 0,
+        "helmholtz_accepted": 3,
+        "helmholtz_k10_accepted": 105
+      },
+      "tls_r8": {
+        "fits": 105,
+        "raw_accepted": 0,
+        "helmholtz_accepted": 3,
+        "helmholtz_k10_accepted": 93
+      },
+      "stable_rpca": {
+        "fits": 105,
+        "raw_accepted": 0,
+        "helmholtz_accepted": 3,
+        "helmholtz_k10_accepted": 105
+      },
+      "pcp": {
+        "fits": 105,
+        "raw_accepted": 3,
+        "helmholtz_accepted": 13,
+        "helmholtz_k10_accepted": 80
+      },
+      "outlier_pursuit": {
+        "fits": 105,
+        "raw_accepted": 0,
+        "helmholtz_accepted": 0,
+        "helmholtz_k10_accepted": 0
+      },
+      "pcp_tls_r8": {
+        "fits": 105,
+        "raw_accepted": 3,
+        "helmholtz_accepted": 13,
+        "helmholtz_k10_accepted": 77
+      },
+      "stable_tls_r8": {
+        "fits": 105,
+        "raw_accepted": 0,
+        "helmholtz_accepted": 3,
+        "helmholtz_k10_accepted": 102
+      },
+      "optimized_r8": {
+        "fits": 105,
+        "raw_accepted": 0,
+        "helmholtz_accepted": 3,
+        "helmholtz_k10_accepted": 86,
+        "not_converged_fits": 8
+      }
+    },
+    "observation_hashes_identical_for_all_methods_in_each_block": true,
+    "stored_identity_raw_observations_independently_verified": [
+      "ns_vortices__gaussian_iid__s101__identity",
+      "ns_vortices__sparse_impulsive__s101__identity",
+      "ns_vortices__spatial_gaussian__s101__identity",
+      "ns_vortices__temporal_ar__s101__identity",
+      "ns_vortices__column_outliers__s101__identity",
+      "ns_multiscale__gaussian_iid__s101__identity",
+      "ns_multiscale__sparse_impulsive__s101__identity",
+      "ns_multiscale__spatial_gaussian__s101__identity",
+      "ns_multiscale__temporal_ar__s101__identity",
+      "ns_multiscale__column_outliers__s101__identity",
+      "oldroyd_b__gaussian_iid__s101__identity",
+      "oldroyd_b__sparse_impulsive__s101__identity",
+      "oldroyd_b__spatial_gaussian__s101__identity",
+      "oldroyd_b__temporal_ar__s101__identity",
+      "oldroyd_b__column_outliers__s101__identity",
+      "fene_p__gaussian_iid__s101__identity",
+      "fene_p__sparse_impulsive__s101__identity",
+      "fene_p__spatial_gaussian__s101__identity",
+      "fene_p__temporal_ar__s101__identity",
+      "fene_p__column_outliers__s101__identity",
+      "hb_thinning__gaussian_iid__s101__identity",
+      "hb_thinning__sparse_impulsive__s101__identity",
+      "hb_thinning__spatial_gaussian__s101__identity",
+      "hb_thinning__temporal_ar__s101__identity",
+      "hb_thinning__column_outliers__s101__identity",
+      "bingham__gaussian_iid__s101__identity",
+      "bingham__sparse_impulsive__s101__identity",
+      "bingham__spatial_gaussian__s101__identity",
+      "bingham__temporal_ar__s101__identity",
+      "bingham__column_outliers__s101__identity",
+      "hb_thickening__gaussian_iid__s101__identity",
+      "hb_thickening__sparse_impulsive__s101__identity",
+      "hb_thickening__spatial_gaussian__s101__identity",
+      "hb_thickening__temporal_ar__s101__identity",
+      "hb_thickening__column_outliers__s101__identity"
+    ],
+    "scientific_sources_unchanged": {
+      "python/src/fluid_denoise/research/legacy_simulation.py": true,
+      "python/src/fluid_denoise/research/viscoelastic_dns.py": true,
+      "python/src/fluid_denoise/research/forecasting.py": true,
+      "python/src/fluid_denoise/research/algorithms.py": true,
+      "python/src/fluid_denoise/research/noise.py": true,
+      "python/src/fluid_denoise/research/cost.py": true,
+      "python/src/fluid_denoise/research/__init__.py": true,
+      "python/src/fluid_denoise/research/dns.py": true,
+      "python/src/fluid_denoise/research/rheology.py": true,
+      "python/src/fluid_denoise/research/metrics.py": true,
+      "python/src/fluid_denoise/research/forecast_runner.py": true,
+      "python/src/fluid_denoise/research/physics.py": true,
+      "python/src/fluid_denoise/research/bridge.py": true,
+      "python/src/fluid_denoise/research/viscoplastic_dns.py": true,
+      "python/src/fluid_denoise/research/runner.py": true
+    },
+    "executing_driver_epochs_verified": {
+      "4076735b60a0c61b96aa16eab0ae41336a064410c869475c4b0ce3e076ebbf9a": {
+        "executing_source_available": true,
+        "current_driver": true
+      },
+      "870b42f310e479135a1e3c478ae7e09f9809d9d2dd327d2ffc2c3a5ff223ec29": {
+        "executing_source_available": true,
+        "archived_source_sha_verified": true,
+        "all_numerical_functions_ast_identical": [
+          "sha256",
+          "fingerprint",
+          "write_json",
+          "observation_noise",
+          "method_parameters",
+          "estimate_observation",
+          "postprocess_field",
+          "relative_l2",
+          "gradients",
+          "material_observables",
+          "frame_errors",
+          "worker",
+          "isolated",
+          "run_batch",
+          "summarize"
+        ],
+        "only_input_loader_and_provenance_main_changed": true
+      }
+    },
+    "executing_driver_epoch_fit_counts": {
+      "870b42f310e479135a1e3c478ae7e09f9809d9d2dd327d2ffc2c3a5ff223ec29": 107,
+      "4076735b60a0c61b96aa16eab0ae41336a064410c869475c4b0ce3e076ebbf9a": 943
+    },
+    "clean_input_hashes_verified": {
+      "ns_vortices": true,
+      "ns_multiscale": true,
+      "oldroyd_b": true,
+      "fene_p": true,
+      "hb_thinning": true,
+      "bingham": true,
+      "hb_thickening": true
+    },
+    "all_conditions_retained_in_denominators": true,
+    "ledger_sha256": "0cff8652526cf352bc14565cc0551181f0491a47bbac2f98407e7e526fc481f7",
+    "all_group_counts_medians_ranges_independently_verified": 1050
+  },
+  "complete": true,
+  "seven_source_preflight": {
+    "ns_vortices": {
+      "archive_sha256": "8ff4bbbb2acc863a35760a67d1935cd7221c8ac1f60fa05ad6f2181ea4625890",
+      "declared_hash_semantics": "SHA256 of compressed NPZ bytes",
+      "canonical_dataset_sha256": null,
+      "declared_hash_independently_verified": true,
+      "shape": [
+        41,
+        2,
+        128,
+        128
+      ],
+      "saved_times": 41
+    },
+    "ns_multiscale": {
+      "archive_sha256": "2b99c1d857d89a2dc7a3ef317ed869fa3d3b63f51c130dad50307a6792612158",
+      "declared_hash_semantics": "SHA256 of compressed NPZ bytes",
+      "canonical_dataset_sha256": null,
+      "declared_hash_independently_verified": true,
+      "shape": [
+        41,
+        2,
+        128,
+        128
+      ],
+      "saved_times": 41
+    },
+    "oldroyd_b": {
+      "archive_sha256": "5918dbaae151efd56a2881046868f18ca052fa1605a279d03253ff85b1ec1065",
+      "declared_hash_semantics": "SHA256 of compressed NPZ bytes",
+      "canonical_dataset_sha256": null,
+      "declared_hash_independently_verified": true,
+      "shape": [
+        25,
+        2,
+        128,
+        128
+      ],
+      "saved_times": 25
+    },
+    "fene_p": {
+      "archive_sha256": "28146ac24585182adf54c7efda3731a58588773427f7e18aa45a99b0fcb1e9ae",
+      "declared_hash_semantics": "SHA256 of compressed NPZ bytes",
+      "canonical_dataset_sha256": null,
+      "declared_hash_independently_verified": true,
+      "shape": [
+        25,
+        2,
+        128,
+        128
+      ],
+      "saved_times": 25
+    },
+    "hb_thinning": {
+      "archive_sha256": "b41f4a0763a286526c379844a081b2c27fa5750c974bce334d8c0c27f354873f",
+      "declared_hash_semantics": "Canonical array/metadata digest, not compressed NPZ bytes",
+      "canonical_dataset_sha256": "b39902f9d8cbf0ad405be6607c8b20c76e52b843532ae71b3a707a8364ecfc4b",
+      "declared_hash_independently_verified": true,
+      "shape": [
+        21,
+        2,
+        128,
+        128
+      ],
+      "saved_times": 21
+    },
+    "bingham": {
+      "archive_sha256": "52b61b37762d5e3abfa0f9000dd0beb1f416fc0628900e8221670b7e4eabb52d",
+      "declared_hash_semantics": "Canonical array/metadata digest, not compressed NPZ bytes",
+      "canonical_dataset_sha256": "6822aa4e4a518b0d080b349708af46179a4a542acbd55e97610ab6228127b8c0",
+      "declared_hash_independently_verified": true,
+      "shape": [
+        21,
+        2,
+        128,
+        128
+      ],
+      "saved_times": 21
+    },
+    "hb_thickening": {
+      "archive_sha256": "1d27b5a8a6d6f89c429d63868732b111bdb3846130f9ee79e5c237e4e76ed540",
+      "declared_hash_semantics": "Canonical array/metadata digest, not compressed NPZ bytes",
+      "canonical_dataset_sha256": "3064b12eb889ca068daf48c54c4e418fd7c136c6ccdb8455ad5c6f871d0aa3cc",
+      "declared_hash_independently_verified": true,
+      "shape": [
+        21,
+        2,
+        128,
+        128
+      ],
+      "saved_times": 21
+    }
+  },
+  "prior_error_budget": {
+    "complete": true,
+    "rows": 1890,
+    "clean_rows": 63,
+    "selected_cutoff_all_seven_velocity_and_vorticity_floors_verified": [
+      {
+        "flow": "ns_vortices",
+        "observable": "velocity",
+        "cutoff": 10.0,
+        "bias_relative_l2": 0.004609925873293008
+      },
+      {
+        "flow": "ns_vortices",
+        "observable": "vorticity",
+        "cutoff": 10.0,
+        "bias_relative_l2": 0.03541062944205546
+      },
+      {
+        "flow": "ns_multiscale",
+        "observable": "velocity",
+        "cutoff": 10.0,
+        "bias_relative_l2": 0.030679754864329258
+      },
+      {
+        "flow": "ns_multiscale",
+        "observable": "vorticity",
+        "cutoff": 10.0,
+        "bias_relative_l2": 0.10836598630484197
+      },
+      {
+        "flow": "oldroyd_b",
+        "observable": "velocity",
+        "cutoff": 10.0,
+        "bias_relative_l2": 0.0016710618177972457
+      },
+      {
+        "flow": "oldroyd_b",
+        "observable": "vorticity",
+        "cutoff": 10.0,
+        "bias_relative_l2": 0.014476481016167768
+      },
+      {
+        "flow": "fene_p",
+        "observable": "velocity",
+        "cutoff": 10.0,
+        "bias_relative_l2": 0.0013881647233195257
+      },
+      {
+        "flow": "fene_p",
+        "observable": "vorticity",
+        "cutoff": 10.0,
+        "bias_relative_l2": 0.01189601068436441
+      },
+      {
+        "flow": "hb_thinning",
+        "observable": "velocity",
+        "cutoff": 10.0,
+        "bias_relative_l2": 0.002555526084587229
+      },
+      {
+        "flow": "hb_thinning",
+        "observable": "vorticity",
+        "cutoff": 10.0,
+        "bias_relative_l2": 0.020123395119425506
+      },
+      {
+        "flow": "bingham",
+        "observable": "velocity",
+        "cutoff": 10.0,
+        "bias_relative_l2": 0.0013245705410491178
+      },
+      {
+        "flow": "bingham",
+        "observable": "vorticity",
+        "cutoff": 10.0,
+        "bias_relative_l2": 0.010718970570735502
+      },
+      {
+        "flow": "hb_thickening",
+        "observable": "velocity",
+        "cutoff": 10.0,
+        "bias_relative_l2": 0.0008294681025681732
+      },
+      {
+        "flow": "hb_thickening",
+        "observable": "vorticity",
+        "cutoff": 10.0,
+        "bias_relative_l2": 0.007561117827819682
+      }
+    ],
+    "three_independent_sample_blocks_both_observables_verified": [
+      {
+        "flow": "ns_multiscale",
+        "noise": "gaussian_iid",
+        "seed": 101,
+        "observable": "velocity",
+        "bias_relative_l2": 0.030679754864329258,
+        "retained_noise_relative_l2": 0.019887179903472264,
+        "identity_prior_error_relative_l2": 0.03656155471322855
+      },
+      {
+        "flow": "ns_multiscale",
+        "noise": "gaussian_iid",
+        "seed": 101,
+        "observable": "vorticity",
+        "bias_relative_l2": 0.10836598630484197,
+        "retained_noise_relative_l2": 0.042210391161437995,
+        "identity_prior_error_relative_l2": 0.11629662123132731
+      },
+      {
+        "flow": "oldroyd_b",
+        "noise": "spatial_gaussian",
+        "seed": 101,
+        "observable": "velocity",
+        "bias_relative_l2": 0.0016710618177972457,
+        "retained_noise_relative_l2": 0.11463252566666549,
+        "identity_prior_error_relative_l2": 0.11464470501648837
+      },
+      {
+        "flow": "oldroyd_b",
+        "noise": "spatial_gaussian",
+        "seed": 101,
+        "observable": "vorticity",
+        "bias_relative_l2": 0.014476481016167768,
+        "retained_noise_relative_l2": 0.517977631967181,
+        "identity_prior_error_relative_l2": 0.5181798874145349
+      },
+      {
+        "flow": "hb_thinning",
+        "noise": "sparse_impulsive",
+        "seed": 101,
+        "observable": "velocity",
+        "bias_relative_l2": 0.002555526084587229,
+        "retained_noise_relative_l2": 0.01966854109447426,
+        "identity_prior_error_relative_l2": 0.01983386554240065
+      },
+      {
+        "flow": "hb_thinning",
+        "noise": "sparse_impulsive",
+        "seed": 101,
+        "observable": "vorticity",
+        "bias_relative_l2": 0.020123395119425506,
+        "retained_noise_relative_l2": 0.0949290158022746,
+        "identity_prior_error_relative_l2": 0.097038492735208
+      }
+    ],
+    "primary_identity_prior_control_metrics_match_spectral_budget": [
+      "ns_vortices__gaussian_iid__s101__identity",
+      "ns_vortices__gaussian_iid__s307__identity",
+      "ns_vortices__gaussian_iid__s911__identity",
+      "ns_vortices__sparse_impulsive__s101__identity",
+      "ns_vortices__sparse_impulsive__s307__identity",
+      "ns_vortices__sparse_impulsive__s911__identity",
+      "ns_vortices__spatial_gaussian__s101__identity",
+      "ns_vortices__spatial_gaussian__s307__identity",
+      "ns_vortices__spatial_gaussian__s911__identity",
+      "ns_vortices__temporal_ar__s101__identity",
+      "ns_vortices__temporal_ar__s307__identity",
+      "ns_vortices__temporal_ar__s911__identity",
+      "ns_vortices__column_outliers__s101__identity",
+      "ns_vortices__column_outliers__s307__identity",
+      "ns_vortices__column_outliers__s911__identity",
+      "ns_multiscale__gaussian_iid__s101__identity",
+      "ns_multiscale__gaussian_iid__s307__identity",
+      "ns_multiscale__gaussian_iid__s911__identity",
+      "ns_multiscale__sparse_impulsive__s101__identity",
+      "ns_multiscale__sparse_impulsive__s307__identity",
+      "ns_multiscale__sparse_impulsive__s911__identity",
+      "ns_multiscale__spatial_gaussian__s101__identity",
+      "ns_multiscale__spatial_gaussian__s307__identity",
+      "ns_multiscale__spatial_gaussian__s911__identity",
+      "ns_multiscale__temporal_ar__s101__identity",
+      "ns_multiscale__temporal_ar__s307__identity",
+      "ns_multiscale__temporal_ar__s911__identity",
+      "ns_multiscale__column_outliers__s101__identity",
+      "ns_multiscale__column_outliers__s307__identity",
+      "ns_multiscale__column_outliers__s911__identity",
+      "oldroyd_b__gaussian_iid__s101__identity",
+      "oldroyd_b__gaussian_iid__s307__identity",
+      "oldroyd_b__gaussian_iid__s911__identity",
+      "oldroyd_b__sparse_impulsive__s101__identity",
+      "oldroyd_b__sparse_impulsive__s307__identity",
+      "oldroyd_b__sparse_impulsive__s911__identity",
+      "oldroyd_b__spatial_gaussian__s101__identity",
+      "oldroyd_b__spatial_gaussian__s307__identity",
+      "oldroyd_b__spatial_gaussian__s911__identity",
+      "oldroyd_b__temporal_ar__s101__identity",
+      "oldroyd_b__temporal_ar__s307__identity",
+      "oldroyd_b__temporal_ar__s911__identity",
+      "oldroyd_b__column_outliers__s101__identity",
+      "oldroyd_b__column_outliers__s307__identity",
+      "oldroyd_b__column_outliers__s911__identity",
+      "fene_p__gaussian_iid__s101__identity",
+      "fene_p__gaussian_iid__s307__identity",
+      "fene_p__gaussian_iid__s911__identity",
+      "fene_p__sparse_impulsive__s101__identity",
+      "fene_p__sparse_impulsive__s307__identity",
+      "fene_p__sparse_impulsive__s911__identity",
+      "fene_p__spatial_gaussian__s101__identity",
+      "fene_p__spatial_gaussian__s307__identity",
+      "fene_p__spatial_gaussian__s911__identity",
+      "fene_p__temporal_ar__s101__identity",
+      "fene_p__temporal_ar__s307__identity",
+      "fene_p__temporal_ar__s911__identity",
+      "fene_p__column_outliers__s101__identity",
+      "fene_p__column_outliers__s307__identity",
+      "fene_p__column_outliers__s911__identity",
+      "hb_thinning__gaussian_iid__s101__identity",
+      "hb_thinning__gaussian_iid__s307__identity",
+      "hb_thinning__gaussian_iid__s911__identity",
+      "hb_thinning__sparse_impulsive__s101__identity",
+      "hb_thinning__sparse_impulsive__s307__identity",
+      "hb_thinning__sparse_impulsive__s911__identity",
+      "hb_thinning__spatial_gaussian__s101__identity",
+      "hb_thinning__spatial_gaussian__s307__identity",
+      "hb_thinning__spatial_gaussian__s911__identity",
+      "hb_thinning__temporal_ar__s101__identity",
+      "hb_thinning__temporal_ar__s307__identity",
+      "hb_thinning__temporal_ar__s911__identity",
+      "hb_thinning__column_outliers__s101__identity",
+      "hb_thinning__column_outliers__s307__identity",
+      "hb_thinning__column_outliers__s911__identity",
+      "bingham__gaussian_iid__s101__identity",
+      "bingham__gaussian_iid__s307__identity",
+      "bingham__gaussian_iid__s911__identity",
+      "bingham__sparse_impulsive__s101__identity",
+      "bingham__sparse_impulsive__s307__identity",
+      "bingham__sparse_impulsive__s911__identity",
+      "bingham__spatial_gaussian__s101__identity",
+      "bingham__spatial_gaussian__s307__identity",
+      "bingham__spatial_gaussian__s911__identity",
+      "bingham__temporal_ar__s101__identity",
+      "bingham__temporal_ar__s307__identity",
+      "bingham__temporal_ar__s911__identity",
+      "bingham__column_outliers__s101__identity",
+      "bingham__column_outliers__s307__identity",
+      "bingham__column_outliers__s911__identity",
+      "hb_thickening__gaussian_iid__s101__identity",
+      "hb_thickening__gaussian_iid__s307__identity",
+      "hb_thickening__gaussian_iid__s911__identity",
+      "hb_thickening__sparse_impulsive__s101__identity",
+      "hb_thickening__sparse_impulsive__s307__identity",
+      "hb_thickening__sparse_impulsive__s911__identity",
+      "hb_thickening__spatial_gaussian__s101__identity",
+      "hb_thickening__spatial_gaussian__s307__identity",
+      "hb_thickening__spatial_gaussian__s911__identity",
+      "hb_thickening__temporal_ar__s101__identity",
+      "hb_thickening__temporal_ar__s307__identity",
+      "hb_thickening__temporal_ar__s911__identity",
+      "hb_thickening__column_outliers__s101__identity",
+      "hb_thickening__column_outliers__s307__identity",
+      "hb_thickening__column_outliers__s911__identity"
+    ],
+    "independent_real_space_recomputation_agrees_with_spectral_parseval": true,
+    "cutoff_is_diagnostic_not_clean_tuned": true
+  },
+  "rank_noise_sensitivity": {
+    "complete": true,
+    "fits": 360,
+    "evaluation_rows": 1080,
+    "paired_observation_blocks": 36,
+    "quality_acceptance_by_postprocessing": {
+      "raw": 0,
+      "helmholtz": 12,
+      "helmholtz_k10": 324
+    },
+    "failed_fits": 0,
+    "not_converged_fits": 0,
+    "clean_velocity_rank_bounds_independently_recomputed": [
+      {
+        "flow": "ns_multiscale",
+        "rank": 2,
+        "velocity_frobenius_lower_bound": 0.298932684825748
+      },
+      {
+        "flow": "ns_multiscale",
+        "rank": 4,
+        "velocity_frobenius_lower_bound": 0.08992948144286789
+      },
+      {
+        "flow": "ns_multiscale",
+        "rank": 8,
+        "velocity_frobenius_lower_bound": 0.01411066873137095
+      },
+      {
+        "flow": "ns_multiscale",
+        "rank": 12,
+        "velocity_frobenius_lower_bound": 0.003239167679180637
+      },
+      {
+        "flow": "ns_multiscale",
+        "rank": 16,
+        "velocity_frobenius_lower_bound": 0.0007647058261205141
+      },
+      {
+        "flow": "oldroyd_b",
+        "rank": 2,
+        "velocity_frobenius_lower_bound": 0.09282634547906234
+      },
+      {
+        "flow": "oldroyd_b",
+        "rank": 4,
+        "velocity_frobenius_lower_bound": 0.013118429617333439
+      },
+      {
+        "flow": "oldroyd_b",
+        "rank": 8,
+        "velocity_frobenius_lower_bound": 0.0008052144797604392
+      },
+      {
+        "flow": "oldroyd_b",
+        "rank": 12,
+        "velocity_frobenius_lower_bound": 0.00011688182590462114
+      },
+      {
+        "flow": "oldroyd_b",
+        "rank": 16,
+        "velocity_frobenius_lower_bound": 2.1640430830469173e-05
+      }
+    ],
+    "overlap_expected_not_independent": 24,
+    "overlap_verified_against_main_completed_so_far": [
+      [
+        "ns_multiscale",
+        "gaussian_iid",
+        101,
+        "pod_r8"
+      ],
+      [
+        "ns_multiscale",
+        "gaussian_iid",
+        101,
+        "tls_r8"
+      ],
+      [
+        "ns_multiscale",
+        "gaussian_iid",
+        307,
+        "pod_r8"
+      ],
+      [
+        "ns_multiscale",
+        "gaussian_iid",
+        307,
+        "tls_r8"
+      ],
+      [
+        "ns_multiscale",
+        "gaussian_iid",
+        911,
+        "pod_r8"
+      ],
+      [
+        "ns_multiscale",
+        "gaussian_iid",
+        911,
+        "tls_r8"
+      ],
+      [
+        "ns_multiscale",
+        "sparse_impulsive",
+        101,
+        "pod_r8"
+      ],
+      [
+        "ns_multiscale",
+        "sparse_impulsive",
+        101,
+        "tls_r8"
+      ],
+      [
+        "ns_multiscale",
+        "sparse_impulsive",
+        307,
+        "pod_r8"
+      ],
+      [
+        "ns_multiscale",
+        "sparse_impulsive",
+        307,
+        "tls_r8"
+      ],
+      [
+        "ns_multiscale",
+        "sparse_impulsive",
+        911,
+        "pod_r8"
+      ],
+      [
+        "ns_multiscale",
+        "sparse_impulsive",
+        911,
+        "tls_r8"
+      ],
+      [
+        "oldroyd_b",
+        "gaussian_iid",
+        101,
+        "pod_r8"
+      ],
+      [
+        "oldroyd_b",
+        "gaussian_iid",
+        101,
+        "tls_r8"
+      ],
+      [
+        "oldroyd_b",
+        "gaussian_iid",
+        307,
+        "pod_r8"
+      ],
+      [
+        "oldroyd_b",
+        "gaussian_iid",
+        307,
+        "tls_r8"
+      ],
+      [
+        "oldroyd_b",
+        "gaussian_iid",
+        911,
+        "pod_r8"
+      ],
+      [
+        "oldroyd_b",
+        "gaussian_iid",
+        911,
+        "tls_r8"
+      ],
+      [
+        "oldroyd_b",
+        "sparse_impulsive",
+        101,
+        "pod_r8"
+      ],
+      [
+        "oldroyd_b",
+        "sparse_impulsive",
+        101,
+        "tls_r8"
+      ],
+      [
+        "oldroyd_b",
+        "sparse_impulsive",
+        307,
+        "pod_r8"
+      ],
+      [
+        "oldroyd_b",
+        "sparse_impulsive",
+        307,
+        "tls_r8"
+      ],
+      [
+        "oldroyd_b",
+        "sparse_impulsive",
+        911,
+        "pod_r8"
+      ],
+      [
+        "oldroyd_b",
+        "sparse_impulsive",
+        911,
+        "tls_r8"
+      ]
+    ],
+    "all_overlap_verified": true,
+    "vorticity_oracle_is_descriptive_not_frobenius_rank_lower_bound": true,
+    "numerical_helper_contracts_ast_unchanged": true
+  },
+  "visual_reference_fidelity": {
+    "six_estimated_trajectories_both_observables_independently_recomputed": [
+      {
+        "grid": 128,
+        "noise": "gaussian_iid",
+        "method": "tls_r8_projected",
+        "observable": "velocity",
+        "coarse_reference_relative_error": 1.0503261070105525e-07,
+        "actual_vs_fine": 0.04513465807441381,
+        "lower_vs_fine": 0.045134553120300146,
+        "upper_vs_fine": 0.045134763185521544
+      },
+      {
+        "grid": 128,
+        "noise": "gaussian_iid",
+        "method": "tls_r8_projected",
+        "observable": "vorticity",
+        "coarse_reference_relative_error": 3.188907415779992e-06,
+        "actual_vs_fine": 0.9727546151791485,
+        "lower_vs_fine": 0.9727514261833641,
+        "upper_vs_fine": 0.9727578039981957
+      },
+      {
+        "grid": 128,
+        "noise": "gaussian_iid",
+        "method": "tls_r8_fixed_band",
+        "observable": "velocity",
+        "coarse_reference_relative_error": 1.0503261070105525e-07,
+        "actual_vs_fine": 0.01933447781806448,
+        "lower_vs_fine": 0.019334372981220455,
+        "upper_vs_fine": 0.01933458304644186
+      },
+      {
+        "grid": 128,
+        "noise": "gaussian_iid",
+        "method": "tls_r8_fixed_band",
+        "observable": "vorticity",
+        "coarse_reference_relative_error": 3.188907415779992e-06,
+        "actual_vs_fine": 0.08188795462343981,
+        "lower_vs_fine": 0.08188476676669351,
+        "upper_vs_fine": 0.08189114458152508
+      },
+      {
+        "grid": 128,
+        "noise": "gaussian_iid",
+        "method": "identity_fixed_band",
+        "observable": "velocity",
+        "coarse_reference_relative_error": 1.0503261070105525e-07,
+        "actual_vs_fine": 0.020198756966102314,
+        "lower_vs_fine": 0.020198651965261105,
+        "upper_vs_fine": 0.02019886203048251
+      },
+      {
+        "grid": 128,
+        "noise": "gaussian_iid",
+        "method": "identity_fixed_band",
+        "observable": "vorticity",
+        "coarse_reference_relative_error": 3.188907415779992e-06,
+        "actual_vs_fine": 0.1002751017580576,
+        "lower_vs_fine": 0.10027191313227546,
+        "upper_vs_fine": 0.10027829094710702
+      },
+      {
+        "grid": 256,
+        "noise": "spatial_fixed_length",
+        "method": "tls_r8_fixed_band",
+        "observable": "velocity",
+        "coarse_reference_relative_error": 2.482614765054018e-10,
+        "actual_vs_fine": 0.052908414757818885,
+        "lower_vs_fine": 0.05290841452869383,
+        "upper_vs_fine": 0.05290841502521678
+      },
+      {
+        "grid": 256,
+        "noise": "spatial_fixed_length",
+        "method": "tls_r8_fixed_band",
+        "observable": "vorticity",
+        "coarse_reference_relative_error": 1.557108414711142e-09,
+        "actual_vs_fine": 0.22284566613332413,
+        "lower_vs_fine": 0.22284566466875466,
+        "upper_vs_fine": 0.2228456677829715
+      },
+      {
+        "grid": 256,
+        "noise": "spatial_fixed_length",
+        "method": "identity_fixed_band",
+        "observable": "velocity",
+        "coarse_reference_relative_error": 2.482614765054018e-10,
+        "actual_vs_fine": 0.11218988923661752,
+        "lower_vs_fine": 0.11218988898717701,
+        "upper_vs_fine": 0.11218988948369997
+      },
+      {
+        "grid": 256,
+        "noise": "spatial_fixed_length",
+        "method": "identity_fixed_band",
+        "observable": "vorticity",
+        "coarse_reference_relative_error": 1.557108414711142e-09,
+        "actual_vs_fine": 0.48766748552409084,
+        "lower_vs_fine": 0.48766748396267245,
+        "upper_vs_fine": 0.48766748707688934
+      },
+      {
+        "grid": 256,
+        "noise": "gaussian_iid",
+        "method": "tls_r8_projected",
+        "observable": "velocity",
+        "coarse_reference_relative_error": 2.482614765054018e-10,
+        "actual_vs_fine": 0.04557244156439115,
+        "lower_vs_fine": 0.04557244133053961,
+        "upper_vs_fine": 0.045572441827062556
+      },
+      {
+        "grid": 256,
+        "noise": "gaussian_iid",
+        "method": "tls_r8_projected",
+        "observable": "vorticity",
+        "coarse_reference_relative_error": 1.557108414711142e-09,
+        "actual_vs_fine": 1.9959115264362248,
+        "lower_vs_fine": 1.9959115248873036,
+        "upper_vs_fine": 1.9959115280015205
+      }
+    ],
+    "real_fourier_prolongation_explicit_nyquist_split": true,
+    "residual_second_and_fourth_order_common_centers_independently_recomputed": [
+      {
+        "order": 2,
+        "output_spacing": 0.1,
+        "residual_rms": 0.04496887015056151,
+        "normalized_residual": 0.03892206583402268
+      },
+      {
+        "order": 4,
+        "output_spacing": 0.1,
+        "residual_rms": 0.008056835210623635,
+        "normalized_residual": 0.0069734611839663814
+      }
+    ],
+    "bounds_refer_to_numerical_fine_reference_not_exact_continuum": true
+  },
+  "matched_reference_fidelity": {
+    "complete": true,
+    "matched_integrations": 18,
+    "dense_integrations": 2,
+    "same_original_physical_parameters_horizon_and_cadence_verified": true,
+    "original_coarse_to_fine_all_saved_time_velocity_vorticity_stress_viscosity_recomputed": [
+      {
+        "case": "bingham_2d",
+        "observable": "velocity",
+        "grid": 32,
+        "reference_grid": 128,
+        "maximum_relative_l2": 0.003068267716017504
+      },
+      {
+        "case": "bingham_2d",
+        "observable": "vorticity",
+        "grid": 32,
+        "reference_grid": 128,
+        "maximum_relative_l2": 0.026301525598875143
+      },
+      {
+        "case": "bingham_2d",
+        "observable": "stress_frobenius",
+        "grid": 32,
+        "reference_grid": 128,
+        "maximum_relative_l2": 0.0410028437180056
+      },
+      {
+        "case": "bingham_2d",
+        "observable": "apparent_viscosity",
+        "grid": 32,
+        "reference_grid": 128,
+        "maximum_relative_l2": 0.13020216013742805
+      },
+      {
+        "case": "decaying_turbulence_ns",
+        "observable": "velocity",
+        "grid": 64,
+        "reference_grid": 256,
+        "maximum_relative_l2": 0.0008418538108572345
+      },
+      {
+        "case": "decaying_turbulence_ns",
+        "observable": "vorticity",
+        "grid": 64,
+        "reference_grid": 256,
+        "maximum_relative_l2": 0.005176614692300006
+      },
+      {
+        "case": "fene_p_2d",
+        "observable": "velocity",
+        "grid": 32,
+        "reference_grid": 256,
+        "maximum_relative_l2": 9.648365158466448e-05
+      },
+      {
+        "case": "fene_p_2d",
+        "observable": "vorticity",
+        "grid": 32,
+        "reference_grid": 256,
+        "maximum_relative_l2": 0.0007524960803128417
+      },
+      {
+        "case": "fene_p_2d",
+        "observable": "stress_frobenius",
+        "grid": 32,
+        "reference_grid": 256,
+        "maximum_relative_l2": 0.008598721701382223
+      },
+      {
+        "case": "hb_thickening_2d",
+        "observable": "velocity",
+        "grid": 32,
+        "reference_grid": 128,
+        "maximum_relative_l2": 0.0017197846268454879
+      },
+      {
+        "case": "hb_thickening_2d",
+        "observable": "vorticity",
+        "grid": 32,
+        "reference_grid": 128,
+        "maximum_relative_l2": 0.01634200194810206
+      },
+      {
+        "case": "hb_thickening_2d",
+        "observable": "stress_frobenius",
+        "grid": 32,
+        "reference_grid": 128,
+        "maximum_relative_l2": 0.02615183593453544
+      },
+      {
+        "case": "hb_thickening_2d",
+        "observable": "apparent_viscosity",
+        "grid": 32,
+        "reference_grid": 128,
+        "maximum_relative_l2": 0.12425818567718966
+      },
+      {
+        "case": "hb_thinning_2d",
+        "observable": "velocity",
+        "grid": 32,
+        "reference_grid": 128,
+        "maximum_relative_l2": 0.005367650723668058
+      },
+      {
+        "case": "hb_thinning_2d",
+        "observable": "vorticity",
+        "grid": 32,
+        "reference_grid": 128,
+        "maximum_relative_l2": 0.044238390364159635
+      },
+      {
+        "case": "hb_thinning_2d",
+        "observable": "stress_frobenius",
+        "grid": 32,
+        "reference_grid": 128,
+        "maximum_relative_l2": 0.0672307153886366
+      },
+      {
+        "case": "hb_thinning_2d",
+        "observable": "apparent_viscosity",
+        "grid": 32,
+        "reference_grid": 128,
+        "maximum_relative_l2": 0.16535409138246482
+      },
+      {
+        "case": "interacting_vortices_ns",
+        "observable": "velocity",
+        "grid": 48,
+        "reference_grid": 256,
+        "maximum_relative_l2": 0.0005369303547029919
+      },
+      {
+        "case": "interacting_vortices_ns",
+        "observable": "vorticity",
+        "grid": 48,
+        "reference_grid": 256,
+        "maximum_relative_l2": 0.006198183610628324
+      },
+      {
+        "case": "oldroyd_b_2d",
+        "observable": "velocity",
+        "grid": 32,
+        "reference_grid": 256,
+        "maximum_relative_l2": 0.00011577424578773269
+      },
+      {
+        "case": "oldroyd_b_2d",
+        "observable": "vorticity",
+        "grid": 32,
+        "reference_grid": 256,
+        "maximum_relative_l2": 0.0008920467168091487
+      },
+      {
+        "case": "oldroyd_b_2d",
+        "observable": "stress_frobenius",
+        "grid": 32,
+        "reference_grid": 256,
+        "maximum_relative_l2": 0.009491732347778427
+      }
+    ],
+    "pairwise_reference_rank_sufficient_inequalities_verified": 24,
+    "dense_archives_161_fields_with025_cadence_verified": true,
+    "dense_squared_residual_decomposition_checks": [
+      {
+        "case": "interacting_vortices",
+        "spacing": 0.025,
+        "order": 2,
+        "squared_residual_decomposition_verified": true
+      },
+      {
+        "case": "interacting_vortices",
+        "spacing": 0.025,
+        "order": 4,
+        "squared_residual_decomposition_verified": true
+      },
+      {
+        "case": "interacting_vortices",
+        "spacing": 0.05,
+        "order": 2,
+        "squared_residual_decomposition_verified": true
+      },
+      {
+        "case": "interacting_vortices",
+        "spacing": 0.05,
+        "order": 4,
+        "squared_residual_decomposition_verified": true
+      },
+      {
+        "case": "interacting_vortices",
+        "spacing": 0.1,
+        "order": 2,
+        "squared_residual_decomposition_verified": true
+      },
+      {
+        "case": "interacting_vortices",
+        "spacing": 0.1,
+        "order": 4,
+        "squared_residual_decomposition_verified": true
+      },
+      {
+        "case": "interacting_vortices",
+        "spacing": 0.2,
+        "order": 2,
+        "squared_residual_decomposition_verified": true
+      },
+      {
+        "case": "interacting_vortices",
+        "spacing": 0.2,
+        "order": 4,
+        "squared_residual_decomposition_verified": true
+      },
+      {
+        "case": "interacting_vortices",
+        "spacing": 0.4,
+        "order": 2,
+        "squared_residual_decomposition_verified": true
+      },
+      {
+        "case": "interacting_vortices",
+        "spacing": 0.4,
+        "order": 4,
+        "squared_residual_decomposition_verified": true
+      },
+      {
+        "case": "decaying_turbulence",
+        "spacing": 0.025,
+        "order": 2,
+        "squared_residual_decomposition_verified": true
+      },
+      {
+        "case": "decaying_turbulence",
+        "spacing": 0.025,
+        "order": 4,
+        "squared_residual_decomposition_verified": true
+      },
+      {
+        "case": "decaying_turbulence",
+        "spacing": 0.05,
+        "order": 2,
+        "squared_residual_decomposition_verified": true
+      },
+      {
+        "case": "decaying_turbulence",
+        "spacing": 0.05,
+        "order": 4,
+        "squared_residual_decomposition_verified": true
+      },
+      {
+        "case": "decaying_turbulence",
+        "spacing": 0.1,
+        "order": 2,
+        "squared_residual_decomposition_verified": true
+      },
+      {
+        "case": "decaying_turbulence",
+        "spacing": 0.1,
+        "order": 4,
+        "squared_residual_decomposition_verified": true
+      },
+      {
+        "case": "decaying_turbulence",
+        "spacing": 0.2,
+        "order": 2,
+        "squared_residual_decomposition_verified": true
+      },
+      {
+        "case": "decaying_turbulence",
+        "spacing": 0.2,
+        "order": 4,
+        "squared_residual_decomposition_verified": true
+      },
+      {
+        "case": "decaying_turbulence",
+        "spacing": 0.4,
+        "order": 2,
+        "squared_residual_decomposition_verified": true
+      },
+      {
+        "case": "decaying_turbulence",
+        "spacing": 0.4,
+        "order": 4,
+        "squared_residual_decomposition_verified": true
+      }
+    ],
+    "both_dense_fourth_order_residuals_independently_recomputed_from_arrays": [
+      {
+        "case": "interacting_vortices",
+        "order": 4,
+        "output_spacing": 0.025,
+        "residual_rms": 0.00012899017064422916,
+        "projected_temporal_residual_rms": 3.898533138352207e-05,
+        "spatial_projection_defect_rms": 0.000122957749083575
+      },
+      {
+        "case": "decaying_turbulence",
+        "order": 4,
+        "output_spacing": 0.025,
+        "residual_rms": 0.009790323190677411,
+        "projected_temporal_residual_rms": 9.665741137885079e-05,
+        "spatial_projection_defect_rms": 0.009789846041830197
+      }
+    ],
+    "finest_references_remain_same_solver_numerical_fields": true
+  },
+  "clean_model_controls": {
+    "complete": true,
+    "fits": 84,
+    "evaluations": 252,
+    "noise_realizations": 0,
+    "quality_acceptance_by_postprocessing": {
+      "raw": 77,
+      "helmholtz": 77,
+      "helmholtz_k10": 77
+    },
+    "clean_input_array_hashes_independently_verified": true,
+    "pod_rank8_frobenius_lower_bounds_independently_recomputed": [
+      {
+        "flow": "ns_vortices",
+        "clean_pod_rank8_velocity_lower_bound": 0.009692460630957519
+      },
+      {
+        "flow": "ns_multiscale",
+        "clean_pod_rank8_velocity_lower_bound": 0.01411066873137095
+      },
+      {
+        "flow": "oldroyd_b",
+        "clean_pod_rank8_velocity_lower_bound": 0.0008052144797604392
+      },
+      {
+        "flow": "fene_p",
+        "clean_pod_rank8_velocity_lower_bound": 0.0007171189814082082
+      },
+      {
+        "flow": "hb_thinning",
+        "clean_pod_rank8_velocity_lower_bound": 0.0005589842822442165
+      },
+      {
+        "flow": "bingham",
+        "clean_pod_rank8_velocity_lower_bound": 0.00034798144771701215
+      },
+      {
+        "flow": "hb_thickening",
+        "clean_pod_rank8_velocity_lower_bound": 0.0003009330121826988
+      }
+    ],
+    "zero_budget_equivalences_in_all_four_gate_metrics": [
+      {
+        "flow": "ns_vortices",
+        "postprocessing": "raw",
+        "zero_budget_method": "stable_rpca",
+        "equivalent_control": "identity"
+      },
+      {
+        "flow": "ns_vortices",
+        "postprocessing": "raw",
+        "zero_budget_method": "stable_tls_r8",
+        "equivalent_control": "tls_r8"
+      },
+      {
+        "flow": "ns_vortices",
+        "postprocessing": "helmholtz",
+        "zero_budget_method": "stable_rpca",
+        "equivalent_control": "identity"
+      },
+      {
+        "flow": "ns_vortices",
+        "postprocessing": "helmholtz",
+        "zero_budget_method": "stable_tls_r8",
+        "equivalent_control": "tls_r8"
+      },
+      {
+        "flow": "ns_vortices",
+        "postprocessing": "helmholtz_k10",
+        "zero_budget_method": "stable_rpca",
+        "equivalent_control": "identity"
+      },
+      {
+        "flow": "ns_vortices",
+        "postprocessing": "helmholtz_k10",
+        "zero_budget_method": "stable_tls_r8",
+        "equivalent_control": "tls_r8"
+      },
+      {
+        "flow": "ns_multiscale",
+        "postprocessing": "raw",
+        "zero_budget_method": "stable_rpca",
+        "equivalent_control": "identity"
+      },
+      {
+        "flow": "ns_multiscale",
+        "postprocessing": "raw",
+        "zero_budget_method": "stable_tls_r8",
+        "equivalent_control": "tls_r8"
+      },
+      {
+        "flow": "ns_multiscale",
+        "postprocessing": "helmholtz",
+        "zero_budget_method": "stable_rpca",
+        "equivalent_control": "identity"
+      },
+      {
+        "flow": "ns_multiscale",
+        "postprocessing": "helmholtz",
+        "zero_budget_method": "stable_tls_r8",
+        "equivalent_control": "tls_r8"
+      },
+      {
+        "flow": "ns_multiscale",
+        "postprocessing": "helmholtz_k10",
+        "zero_budget_method": "stable_rpca",
+        "equivalent_control": "identity"
+      },
+      {
+        "flow": "ns_multiscale",
+        "postprocessing": "helmholtz_k10",
+        "zero_budget_method": "stable_tls_r8",
+        "equivalent_control": "tls_r8"
+      },
+      {
+        "flow": "oldroyd_b",
+        "postprocessing": "raw",
+        "zero_budget_method": "stable_rpca",
+        "equivalent_control": "identity"
+      },
+      {
+        "flow": "oldroyd_b",
+        "postprocessing": "raw",
+        "zero_budget_method": "stable_tls_r8",
+        "equivalent_control": "tls_r8"
+      },
+      {
+        "flow": "oldroyd_b",
+        "postprocessing": "helmholtz",
+        "zero_budget_method": "stable_rpca",
+        "equivalent_control": "identity"
+      },
+      {
+        "flow": "oldroyd_b",
+        "postprocessing": "helmholtz",
+        "zero_budget_method": "stable_tls_r8",
+        "equivalent_control": "tls_r8"
+      },
+      {
+        "flow": "oldroyd_b",
+        "postprocessing": "helmholtz_k10",
+        "zero_budget_method": "stable_rpca",
+        "equivalent_control": "identity"
+      },
+      {
+        "flow": "oldroyd_b",
+        "postprocessing": "helmholtz_k10",
+        "zero_budget_method": "stable_tls_r8",
+        "equivalent_control": "tls_r8"
+      },
+      {
+        "flow": "fene_p",
+        "postprocessing": "raw",
+        "zero_budget_method": "stable_rpca",
+        "equivalent_control": "identity"
+      },
+      {
+        "flow": "fene_p",
+        "postprocessing": "raw",
+        "zero_budget_method": "stable_tls_r8",
+        "equivalent_control": "tls_r8"
+      },
+      {
+        "flow": "fene_p",
+        "postprocessing": "helmholtz",
+        "zero_budget_method": "stable_rpca",
+        "equivalent_control": "identity"
+      },
+      {
+        "flow": "fene_p",
+        "postprocessing": "helmholtz",
+        "zero_budget_method": "stable_tls_r8",
+        "equivalent_control": "tls_r8"
+      },
+      {
+        "flow": "fene_p",
+        "postprocessing": "helmholtz_k10",
+        "zero_budget_method": "stable_rpca",
+        "equivalent_control": "identity"
+      },
+      {
+        "flow": "fene_p",
+        "postprocessing": "helmholtz_k10",
+        "zero_budget_method": "stable_tls_r8",
+        "equivalent_control": "tls_r8"
+      },
+      {
+        "flow": "hb_thinning",
+        "postprocessing": "raw",
+        "zero_budget_method": "stable_rpca",
+        "equivalent_control": "identity"
+      },
+      {
+        "flow": "hb_thinning",
+        "postprocessing": "raw",
+        "zero_budget_method": "stable_tls_r8",
+        "equivalent_control": "tls_r8"
+      },
+      {
+        "flow": "hb_thinning",
+        "postprocessing": "helmholtz",
+        "zero_budget_method": "stable_rpca",
+        "equivalent_control": "identity"
+      },
+      {
+        "flow": "hb_thinning",
+        "postprocessing": "helmholtz",
+        "zero_budget_method": "stable_tls_r8",
+        "equivalent_control": "tls_r8"
+      },
+      {
+        "flow": "hb_thinning",
+        "postprocessing": "helmholtz_k10",
+        "zero_budget_method": "stable_rpca",
+        "equivalent_control": "identity"
+      },
+      {
+        "flow": "hb_thinning",
+        "postprocessing": "helmholtz_k10",
+        "zero_budget_method": "stable_tls_r8",
+        "equivalent_control": "tls_r8"
+      },
+      {
+        "flow": "bingham",
+        "postprocessing": "raw",
+        "zero_budget_method": "stable_rpca",
+        "equivalent_control": "identity"
+      },
+      {
+        "flow": "bingham",
+        "postprocessing": "raw",
+        "zero_budget_method": "stable_tls_r8",
+        "equivalent_control": "tls_r8"
+      },
+      {
+        "flow": "bingham",
+        "postprocessing": "helmholtz",
+        "zero_budget_method": "stable_rpca",
+        "equivalent_control": "identity"
+      },
+      {
+        "flow": "bingham",
+        "postprocessing": "helmholtz",
+        "zero_budget_method": "stable_tls_r8",
+        "equivalent_control": "tls_r8"
+      },
+      {
+        "flow": "bingham",
+        "postprocessing": "helmholtz_k10",
+        "zero_budget_method": "stable_rpca",
+        "equivalent_control": "identity"
+      },
+      {
+        "flow": "bingham",
+        "postprocessing": "helmholtz_k10",
+        "zero_budget_method": "stable_tls_r8",
+        "equivalent_control": "tls_r8"
+      },
+      {
+        "flow": "hb_thickening",
+        "postprocessing": "raw",
+        "zero_budget_method": "stable_rpca",
+        "equivalent_control": "identity"
+      },
+      {
+        "flow": "hb_thickening",
+        "postprocessing": "raw",
+        "zero_budget_method": "stable_tls_r8",
+        "equivalent_control": "tls_r8"
+      },
+      {
+        "flow": "hb_thickening",
+        "postprocessing": "helmholtz",
+        "zero_budget_method": "stable_rpca",
+        "equivalent_control": "identity"
+      },
+      {
+        "flow": "hb_thickening",
+        "postprocessing": "helmholtz",
+        "zero_budget_method": "stable_tls_r8",
+        "equivalent_control": "tls_r8"
+      },
+      {
+        "flow": "hb_thickening",
+        "postprocessing": "helmholtz_k10",
+        "zero_budget_method": "stable_rpca",
+        "equivalent_control": "identity"
+      },
+      {
+        "flow": "hb_thickening",
+        "postprocessing": "helmholtz_k10",
+        "zero_budget_method": "stable_tls_r8",
+        "equivalent_control": "tls_r8"
+      }
+    ],
+    "zero_budget_maximum_absolute_equivalence_difference": 3.509459263722602e-14,
+    "zero_budget_equivalence_absolute_tolerance": 1e-10,
+    "identity_viscoplastic_native_grid_constitutive_closure_errors_below_1e_10": true,
+    "viscoelastic_stress_and_total_dissipation_not_inferred": true,
+    "zero_budget_nonzero_sparse_entries_are_roundoff_not_injected_corruption": true
+  }
+}

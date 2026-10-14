@@ -1,0 +1,15 @@
+% Generated from completed comparison evidence.
+\section{Conclusiones de comparación y fidelidad}
+El banco de 1050 ajustes conserva diferencias entre estimadores antes y después de añadir restricciones. En 102 de 105 observaciones no existe solución admisible Raw; con H+B quedan 0 observaciones sin solución. El resultado se interpreta como cobertura de configuraciones fijas bajo los umbrales, no como selección automática de un modelo en una medición cuyo limpio no está disponible.
+
+El contraste Raw fijo PCP-TLS produce una mediana de diferencia de $e_\omega$ de -203.2 pp bajo contaminación impulsiva y -83.14 pp bajo gaussiano IID. El signo negativo favorece PCP; los diagnósticos finitos incluyen los estados de convergencia documentados y la aceptación se comprueba aparte. Esta comparación conserva la misma observación por par y no transforma una ventaja condicionada en superioridad universal.
+
+El criterio modifica la preferencia: con gaussiano IID, la diferencia de $e_u$ PCP-TLS es 2.981 pp, aun cuando PCP tiene menor $e_\omega$. Con ruido espacial correlacionado la diferencia de $e_\omega$ cambia a 16.91 pp. Un error menor que el de otro estimador puede seguir fuera de tolerancia; los conteos de cobertura mantienen esa distinción.
+
+Los contrastes pareados y el control identity con el mismo prior impiden atribuir toda limpieza espacial al modelo dinámico. Un error bajo en velocidad puede coexistir con vorticidad o cierres constitutivos degradados. En fluidos de memoria, el esfuerzo no se identifica mediante reconstrucción de velocidad sola; en viscoplasticidad se evalúa bajo la hipótesis explícita de ley material conocida.
+
+El filtro k\_c=10 impone un piso de 10.84~\% de error relativo de vorticidad en Multiescala NS contra su referencia completa. Por ortogonalidad espectral, una salida limitada a esa banda no puede alcanzar la tolerancia del 10~\%, incluso con observación perfecta. Aumentar aceptación con una puerta del 25~\% requiere reconocer esa pérdida de señal, además del ruido que se elimina.
+
+La suficiencia de simulación depende del observable, la malla y el intervalo. Las referencias finas del mismo solver aportan convergencia numérica, mientras las soluciones analíticas y controles temporales examinan causas diferentes. Los errores entre mallas no acreditan validación experimental, y el control viscoplástico corto conserva su horizonte.
+
+La sensibilidad a rango, intensidad y tolerancia explica límites de las configuraciones; no utiliza el limpio para escoger el mejor hiperparámetro desplegable. La contribución comprobable es una comparación trazable de observación, estimador, prior físico, referencia y recursos, con resultados negativos preservados.

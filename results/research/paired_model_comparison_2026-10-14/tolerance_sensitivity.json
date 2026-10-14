@@ -1,0 +1,418 @@
+[
+  {
+    "method": "identity",
+    "vorticity_maximum": 0.05,
+    "conditions": 216,
+    "admissible": 0,
+    "acceptance_fraction": 0.0,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "identity",
+    "vorticity_maximum": 0.1,
+    "conditions": 216,
+    "admissible": 0,
+    "acceptance_fraction": 0.0,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "identity",
+    "vorticity_maximum": 0.25,
+    "conditions": 216,
+    "admissible": 0,
+    "acceptance_fraction": 0.0,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "identity",
+    "vorticity_maximum": 0.5,
+    "conditions": 216,
+    "admissible": 0,
+    "acceptance_fraction": 0.0,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "pod",
+    "vorticity_maximum": 0.05,
+    "conditions": 216,
+    "admissible": 0,
+    "acceptance_fraction": 0.0,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "pod",
+    "vorticity_maximum": 0.1,
+    "conditions": 216,
+    "admissible": 0,
+    "acceptance_fraction": 0.0,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "pod",
+    "vorticity_maximum": 0.25,
+    "conditions": 216,
+    "admissible": 9,
+    "acceptance_fraction": 0.041666666666667,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "pod",
+    "vorticity_maximum": 0.5,
+    "conditions": 216,
+    "admissible": 9,
+    "acceptance_fraction": 0.041666666666667,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "rpca",
+    "vorticity_maximum": 0.05,
+    "conditions": 216,
+    "admissible": 9,
+    "acceptance_fraction": 0.041666666666667,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "rpca",
+    "vorticity_maximum": 0.1,
+    "conditions": 216,
+    "admissible": 23,
+    "acceptance_fraction": 0.106481481481481,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "rpca",
+    "vorticity_maximum": 0.25,
+    "conditions": 216,
+    "admissible": 42,
+    "acceptance_fraction": 0.194444444444444,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "rpca",
+    "vorticity_maximum": 0.5,
+    "conditions": 216,
+    "admissible": 42,
+    "acceptance_fraction": 0.194444444444444,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "stable_rpca",
+    "vorticity_maximum": 0.05,
+    "conditions": 216,
+    "admissible": 0,
+    "acceptance_fraction": 0.0,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "stable_rpca",
+    "vorticity_maximum": 0.1,
+    "conditions": 216,
+    "admissible": 3,
+    "acceptance_fraction": 0.013888888888889,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "stable_rpca",
+    "vorticity_maximum": 0.25,
+    "conditions": 216,
+    "admissible": 21,
+    "acceptance_fraction": 0.097222222222222,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "stable_rpca",
+    "vorticity_maximum": 0.5,
+    "conditions": 216,
+    "admissible": 21,
+    "acceptance_fraction": 0.097222222222222,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "dmd",
+    "vorticity_maximum": 0.05,
+    "conditions": 216,
+    "admissible": 0,
+    "acceptance_fraction": 0.0,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "dmd",
+    "vorticity_maximum": 0.1,
+    "conditions": 216,
+    "admissible": 5,
+    "acceptance_fraction": 0.023148148148148,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "dmd",
+    "vorticity_maximum": 0.25,
+    "conditions": 216,
+    "admissible": 21,
+    "acceptance_fraction": 0.097222222222222,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "dmd",
+    "vorticity_maximum": 0.5,
+    "conditions": 216,
+    "admissible": 21,
+    "acceptance_fraction": 0.097222222222222,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "tls_dmd",
+    "vorticity_maximum": 0.05,
+    "conditions": 216,
+    "admissible": 1,
+    "acceptance_fraction": 0.00462962962963,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "tls_dmd",
+    "vorticity_maximum": 0.1,
+    "conditions": 216,
+    "admissible": 9,
+    "acceptance_fraction": 0.041666666666667,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "tls_dmd",
+    "vorticity_maximum": 0.25,
+    "conditions": 216,
+    "admissible": 18,
+    "acceptance_fraction": 0.083333333333333,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "tls_dmd",
+    "vorticity_maximum": 0.5,
+    "conditions": 216,
+    "admissible": 18,
+    "acceptance_fraction": 0.083333333333333,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "optimized_dmd",
+    "vorticity_maximum": 0.05,
+    "conditions": 216,
+    "admissible": 0,
+    "acceptance_fraction": 0.0,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "optimized_dmd",
+    "vorticity_maximum": 0.1,
+    "conditions": 216,
+    "admissible": 9,
+    "acceptance_fraction": 0.041666666666667,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "optimized_dmd",
+    "vorticity_maximum": 0.25,
+    "conditions": 216,
+    "admissible": 21,
+    "acceptance_fraction": 0.097222222222222,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "optimized_dmd",
+    "vorticity_maximum": 0.5,
+    "conditions": 216,
+    "admissible": 21,
+    "acceptance_fraction": 0.097222222222222,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "fb_dmd_fallback_tls",
+    "vorticity_maximum": 0.05,
+    "conditions": 216,
+    "admissible": 1,
+    "acceptance_fraction": 0.00462962962963,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "fb_dmd_fallback_tls",
+    "vorticity_maximum": 0.1,
+    "conditions": 216,
+    "admissible": 6,
+    "acceptance_fraction": 0.027777777777778,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "fb_dmd_fallback_tls",
+    "vorticity_maximum": 0.25,
+    "conditions": 216,
+    "admissible": 18,
+    "acceptance_fraction": 0.083333333333333,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "fb_dmd_fallback_tls",
+    "vorticity_maximum": 0.5,
+    "conditions": 216,
+    "admissible": 18,
+    "acceptance_fraction": 0.083333333333333,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "identity_helmholtz",
+    "vorticity_maximum": 0.05,
+    "conditions": 216,
+    "admissible": 0,
+    "acceptance_fraction": 0.0,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "identity_helmholtz",
+    "vorticity_maximum": 0.1,
+    "conditions": 216,
+    "admissible": 0,
+    "acceptance_fraction": 0.0,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "identity_helmholtz",
+    "vorticity_maximum": 0.25,
+    "conditions": 216,
+    "admissible": 0,
+    "acceptance_fraction": 0.0,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "identity_helmholtz",
+    "vorticity_maximum": 0.5,
+    "conditions": 216,
+    "admissible": 24,
+    "acceptance_fraction": 0.111111111111111,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "pod_helmholtz",
+    "vorticity_maximum": 0.05,
+    "conditions": 216,
+    "admissible": 0,
+    "acceptance_fraction": 0.0,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "pod_helmholtz",
+    "vorticity_maximum": 0.1,
+    "conditions": 216,
+    "admissible": 0,
+    "acceptance_fraction": 0.0,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "pod_helmholtz",
+    "vorticity_maximum": 0.25,
+    "conditions": 216,
+    "admissible": 24,
+    "acceptance_fraction": 0.111111111111111,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "pod_helmholtz",
+    "vorticity_maximum": 0.5,
+    "conditions": 216,
+    "admissible": 129,
+    "acceptance_fraction": 0.597222222222222,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "tls_dmd_helmholtz",
+    "vorticity_maximum": 0.05,
+    "conditions": 216,
+    "admissible": 1,
+    "acceptance_fraction": 0.00462962962963,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "tls_dmd_helmholtz",
+    "vorticity_maximum": 0.1,
+    "conditions": 216,
+    "admissible": 9,
+    "acceptance_fraction": 0.041666666666667,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "tls_dmd_helmholtz",
+    "vorticity_maximum": 0.25,
+    "conditions": 216,
+    "admissible": 42,
+    "acceptance_fraction": 0.194444444444444,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "tls_dmd_helmholtz",
+    "vorticity_maximum": 0.5,
+    "conditions": 216,
+    "admissible": 142,
+    "acceptance_fraction": 0.657407407407408,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "tls_dmd_helmholtz_dealias",
+    "vorticity_maximum": 0.05,
+    "conditions": 216,
+    "admissible": 1,
+    "acceptance_fraction": 0.00462962962963,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "tls_dmd_helmholtz_dealias",
+    "vorticity_maximum": 0.1,
+    "conditions": 216,
+    "admissible": 26,
+    "acceptance_fraction": 0.12037037037037,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "tls_dmd_helmholtz_dealias",
+    "vorticity_maximum": 0.25,
+    "conditions": 216,
+    "admissible": 142,
+    "acceptance_fraction": 0.657407407407408,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "tls_dmd_helmholtz_dealias",
+    "vorticity_maximum": 0.5,
+    "conditions": 216,
+    "admissible": 186,
+    "acceptance_fraction": 0.861111111111111,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "stable_rpca_helmholtz",
+    "vorticity_maximum": 0.05,
+    "conditions": 216,
+    "admissible": 0,
+    "acceptance_fraction": 0.0,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "stable_rpca_helmholtz",
+    "vorticity_maximum": 0.1,
+    "conditions": 216,
+    "admissible": 3,
+    "acceptance_fraction": 0.013888888888889,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "stable_rpca_helmholtz",
+    "vorticity_maximum": 0.25,
+    "conditions": 216,
+    "admissible": 72,
+    "acceptance_fraction": 0.333333333333333,
+    "other_gates_nominal": true
+  },
+  {
+    "method": "stable_rpca_helmholtz",
+    "vorticity_maximum": 0.5,
+    "conditions": 216,
+    "admissible": 144,
+    "acceptance_fraction": 0.666666666666667,
+    "other_gates_nominal": true
+  }
+]

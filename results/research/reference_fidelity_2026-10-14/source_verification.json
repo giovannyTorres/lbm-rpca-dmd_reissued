@@ -1,0 +1,764 @@
+{
+  "scientific_sources_unchanged": true,
+  "scientific_source_sha256": {
+    "python/src/fluid_denoise/research/__init__.py": "6b7eac9ccb7922c79e38fe019e31ffab79d64c36e7f721c06a978a86a8ebb91d",
+    "python/src/fluid_denoise/research/algorithms.py": "0991fb4773e87f88a9c3e6461339cb7f5b117f94bcc437b444f58c7152f14055",
+    "python/src/fluid_denoise/research/bridge.py": "96878ceb57016d81dcea5f94cc193898958a5a2ad6338a529c3d66f1d86cc670",
+    "python/src/fluid_denoise/research/cost.py": "9fe43b76236c835050ccc11d91ee1bce8371ebf63f927041fc3d41b4b4cd5e77",
+    "python/src/fluid_denoise/research/dns.py": "fe692ebdd587c6eaced3aee5456ca8e56b42f6226cf05d2597f39cf9fd57846f",
+    "python/src/fluid_denoise/research/forecast_runner.py": "2502facdfdf8bee7b8a34d32ea0f70baf9d17731a1386521ac76675cfdc00860",
+    "python/src/fluid_denoise/research/forecasting.py": "6e7147354394efdfbdf52aa35712d5029a13d521572659cdb7b11317549658c1",
+    "python/src/fluid_denoise/research/legacy_simulation.py": "7edf263a6e9d8d179f861ed9d2b4521230e212ec95389072e9ae2c6193b1b226",
+    "python/src/fluid_denoise/research/metrics.py": "7b7d4fdbcddca962f3d5195440dd5047f9922201ceb15411a1d2e1434a48dc1d",
+    "python/src/fluid_denoise/research/noise.py": "e11ab3d8d011897239618025ea53489400ad5948abf3e38153cdd6c5e083e023",
+    "python/src/fluid_denoise/research/physics.py": "391584c9e73d460f83775694c0310dedf4d7c8996c80df1c166ee36150da223a",
+    "python/src/fluid_denoise/research/rheology.py": "23879f127717e127bbc027780afbabc704f498878ac9c36ddcb33404412fbe64",
+    "python/src/fluid_denoise/research/runner.py": "4c38efa9be15824930f41df41b7dad1c513e86080098736cad76cda07ff612ba",
+    "python/src/fluid_denoise/research/viscoelastic_dns.py": "477a17f4176ef963816516012de38c1d475a8800474c6dd026ba57e262d063ec",
+    "python/src/fluid_denoise/research/viscoplastic_dns.py": "fd7d028a4f0abafc0ced61a755c655d5c85daa0280fd498a7e2911a98b685aaf"
+  },
+  "assertions": [
+    {
+      "campaign": "extended_physics_2026-10-14",
+      "source": "python/src/fluid_denoise/research/__init__.py",
+      "sha256": "6b7eac9ccb7922c79e38fe019e31ffab79d64c36e7f721c06a978a86a8ebb91d",
+      "matches": true
+    },
+    {
+      "campaign": "extended_physics_2026-10-14",
+      "source": "python/src/fluid_denoise/research/algorithms.py",
+      "sha256": "0991fb4773e87f88a9c3e6461339cb7f5b117f94bcc437b444f58c7152f14055",
+      "matches": true
+    },
+    {
+      "campaign": "extended_physics_2026-10-14",
+      "source": "python/src/fluid_denoise/research/bridge.py",
+      "sha256": "96878ceb57016d81dcea5f94cc193898958a5a2ad6338a529c3d66f1d86cc670",
+      "matches": true
+    },
+    {
+      "campaign": "extended_physics_2026-10-14",
+      "source": "python/src/fluid_denoise/research/cost.py",
+      "sha256": "9fe43b76236c835050ccc11d91ee1bce8371ebf63f927041fc3d41b4b4cd5e77",
+      "matches": true
+    },
+    {
+      "campaign": "extended_physics_2026-10-14",
+      "source": "python/src/fluid_denoise/research/dns.py",
+      "sha256": "fe692ebdd587c6eaced3aee5456ca8e56b42f6226cf05d2597f39cf9fd57846f",
+      "matches": true
+    },
+    {
+      "campaign": "extended_physics_2026-10-14",
+      "source": "python/src/fluid_denoise/research/forecast_runner.py",
+      "sha256": "2502facdfdf8bee7b8a34d32ea0f70baf9d17731a1386521ac76675cfdc00860",
+      "matches": true
+    },
+    {
+      "campaign": "extended_physics_2026-10-14",
+      "source": "python/src/fluid_denoise/research/forecasting.py",
+      "sha256": "6e7147354394efdfbdf52aa35712d5029a13d521572659cdb7b11317549658c1",
+      "matches": true
+    },
+    {
+      "campaign": "extended_physics_2026-10-14",
+      "source": "python/src/fluid_denoise/research/legacy_simulation.py",
+      "sha256": "7edf263a6e9d8d179f861ed9d2b4521230e212ec95389072e9ae2c6193b1b226",
+      "matches": true
+    },
+    {
+      "campaign": "extended_physics_2026-10-14",
+      "source": "python/src/fluid_denoise/research/metrics.py",
+      "sha256": "7b7d4fdbcddca962f3d5195440dd5047f9922201ceb15411a1d2e1434a48dc1d",
+      "matches": true
+    },
+    {
+      "campaign": "extended_physics_2026-10-14",
+      "source": "python/src/fluid_denoise/research/noise.py",
+      "sha256": "e11ab3d8d011897239618025ea53489400ad5948abf3e38153cdd6c5e083e023",
+      "matches": true
+    },
+    {
+      "campaign": "extended_physics_2026-10-14",
+      "source": "python/src/fluid_denoise/research/physics.py",
+      "sha256": "391584c9e73d460f83775694c0310dedf4d7c8996c80df1c166ee36150da223a",
+      "matches": true
+    },
+    {
+      "campaign": "extended_physics_2026-10-14",
+      "source": "python/src/fluid_denoise/research/rheology.py",
+      "sha256": "23879f127717e127bbc027780afbabc704f498878ac9c36ddcb33404412fbe64",
+      "matches": true
+    },
+    {
+      "campaign": "extended_physics_2026-10-14",
+      "source": "python/src/fluid_denoise/research/runner.py",
+      "sha256": "4c38efa9be15824930f41df41b7dad1c513e86080098736cad76cda07ff612ba",
+      "matches": true
+    },
+    {
+      "campaign": "extended_physics_2026-10-14",
+      "source": "python/src/fluid_denoise/research/viscoelastic_dns.py",
+      "sha256": "477a17f4176ef963816516012de38c1d475a8800474c6dd026ba57e262d063ec",
+      "matches": true
+    },
+    {
+      "campaign": "extended_physics_2026-10-14",
+      "source": "python/src/fluid_denoise/research/viscoplastic_dns.py",
+      "sha256": "fd7d028a4f0abafc0ced61a755c655d5c85daa0280fd498a7e2911a98b685aaf",
+      "matches": true
+    },
+    {
+      "campaign": "highres_newtonian_2026-10-14",
+      "source": "python/src/fluid_denoise/research/dns.py",
+      "sha256": "fe692ebdd587c6eaced3aee5456ca8e56b42f6226cf05d2597f39cf9fd57846f",
+      "matches": true
+    },
+    {
+      "campaign": "highres_viscoelastic_2026-10-14",
+      "source": "python/src/fluid_denoise/research/__init__.py",
+      "sha256": "6b7eac9ccb7922c79e38fe019e31ffab79d64c36e7f721c06a978a86a8ebb91d",
+      "matches": true
+    },
+    {
+      "campaign": "highres_viscoelastic_2026-10-14",
+      "source": "python/src/fluid_denoise/research/algorithms.py",
+      "sha256": "0991fb4773e87f88a9c3e6461339cb7f5b117f94bcc437b444f58c7152f14055",
+      "matches": true
+    },
+    {
+      "campaign": "highres_viscoelastic_2026-10-14",
+      "source": "python/src/fluid_denoise/research/bridge.py",
+      "sha256": "96878ceb57016d81dcea5f94cc193898958a5a2ad6338a529c3d66f1d86cc670",
+      "matches": true
+    },
+    {
+      "campaign": "highres_viscoelastic_2026-10-14",
+      "source": "python/src/fluid_denoise/research/cost.py",
+      "sha256": "9fe43b76236c835050ccc11d91ee1bce8371ebf63f927041fc3d41b4b4cd5e77",
+      "matches": true
+    },
+    {
+      "campaign": "highres_viscoelastic_2026-10-14",
+      "source": "python/src/fluid_denoise/research/dns.py",
+      "sha256": "fe692ebdd587c6eaced3aee5456ca8e56b42f6226cf05d2597f39cf9fd57846f",
+      "matches": true
+    },
+    {
+      "campaign": "highres_viscoelastic_2026-10-14",
+      "source": "python/src/fluid_denoise/research/forecast_runner.py",
+      "sha256": "2502facdfdf8bee7b8a34d32ea0f70baf9d17731a1386521ac76675cfdc00860",
+      "matches": true
+    },
+    {
+      "campaign": "highres_viscoelastic_2026-10-14",
+      "source": "python/src/fluid_denoise/research/forecasting.py",
+      "sha256": "6e7147354394efdfbdf52aa35712d5029a13d521572659cdb7b11317549658c1",
+      "matches": true
+    },
+    {
+      "campaign": "highres_viscoelastic_2026-10-14",
+      "source": "python/src/fluid_denoise/research/legacy_simulation.py",
+      "sha256": "7edf263a6e9d8d179f861ed9d2b4521230e212ec95389072e9ae2c6193b1b226",
+      "matches": true
+    },
+    {
+      "campaign": "highres_viscoelastic_2026-10-14",
+      "source": "python/src/fluid_denoise/research/metrics.py",
+      "sha256": "7b7d4fdbcddca962f3d5195440dd5047f9922201ceb15411a1d2e1434a48dc1d",
+      "matches": true
+    },
+    {
+      "campaign": "highres_viscoelastic_2026-10-14",
+      "source": "python/src/fluid_denoise/research/noise.py",
+      "sha256": "e11ab3d8d011897239618025ea53489400ad5948abf3e38153cdd6c5e083e023",
+      "matches": true
+    },
+    {
+      "campaign": "highres_viscoelastic_2026-10-14",
+      "source": "python/src/fluid_denoise/research/physics.py",
+      "sha256": "391584c9e73d460f83775694c0310dedf4d7c8996c80df1c166ee36150da223a",
+      "matches": true
+    },
+    {
+      "campaign": "highres_viscoelastic_2026-10-14",
+      "source": "python/src/fluid_denoise/research/rheology.py",
+      "sha256": "23879f127717e127bbc027780afbabc704f498878ac9c36ddcb33404412fbe64",
+      "matches": true
+    },
+    {
+      "campaign": "highres_viscoelastic_2026-10-14",
+      "source": "python/src/fluid_denoise/research/runner.py",
+      "sha256": "4c38efa9be15824930f41df41b7dad1c513e86080098736cad76cda07ff612ba",
+      "matches": true
+    },
+    {
+      "campaign": "highres_viscoelastic_2026-10-14",
+      "source": "python/src/fluid_denoise/research/viscoelastic_dns.py",
+      "sha256": "477a17f4176ef963816516012de38c1d475a8800474c6dd026ba57e262d063ec",
+      "matches": true
+    },
+    {
+      "campaign": "highres_viscoelastic_2026-10-14",
+      "source": "python/src/fluid_denoise/research/viscoplastic_dns.py",
+      "sha256": "fd7d028a4f0abafc0ced61a755c655d5c85daa0280fd498a7e2911a98b685aaf",
+      "matches": true
+    },
+    {
+      "campaign": "highres_viscoplastic_2026-10-14",
+      "source": "python/src/fluid_denoise/research/viscoplastic_dns.py",
+      "sha256": "fd7d028a4f0abafc0ced61a755c655d5c85daa0280fd498a7e2911a98b685aaf",
+      "matches": true
+    },
+    {
+      "campaign": "highres_viscoplastic_2026-10-14",
+      "source": "python/src/fluid_denoise/research/dns.py",
+      "sha256": "fe692ebdd587c6eaced3aee5456ca8e56b42f6226cf05d2597f39cf9fd57846f",
+      "matches": true
+    },
+    {
+      "campaign": "highres_reconstruction_2026-10-14",
+      "source": "python/src/fluid_denoise/research/legacy_simulation.py",
+      "sha256": "7edf263a6e9d8d179f861ed9d2b4521230e212ec95389072e9ae2c6193b1b226",
+      "matches": true
+    },
+    {
+      "campaign": "highres_reconstruction_2026-10-14",
+      "source": "python/src/fluid_denoise/research/viscoelastic_dns.py",
+      "sha256": "477a17f4176ef963816516012de38c1d475a8800474c6dd026ba57e262d063ec",
+      "matches": true
+    },
+    {
+      "campaign": "highres_reconstruction_2026-10-14",
+      "source": "python/src/fluid_denoise/research/forecasting.py",
+      "sha256": "6e7147354394efdfbdf52aa35712d5029a13d521572659cdb7b11317549658c1",
+      "matches": true
+    },
+    {
+      "campaign": "highres_reconstruction_2026-10-14",
+      "source": "python/src/fluid_denoise/research/algorithms.py",
+      "sha256": "0991fb4773e87f88a9c3e6461339cb7f5b117f94bcc437b444f58c7152f14055",
+      "matches": true
+    },
+    {
+      "campaign": "highres_reconstruction_2026-10-14",
+      "source": "python/src/fluid_denoise/research/noise.py",
+      "sha256": "e11ab3d8d011897239618025ea53489400ad5948abf3e38153cdd6c5e083e023",
+      "matches": true
+    },
+    {
+      "campaign": "highres_reconstruction_2026-10-14",
+      "source": "python/src/fluid_denoise/research/cost.py",
+      "sha256": "9fe43b76236c835050ccc11d91ee1bce8371ebf63f927041fc3d41b4b4cd5e77",
+      "matches": true
+    },
+    {
+      "campaign": "highres_reconstruction_2026-10-14",
+      "source": "python/src/fluid_denoise/research/__init__.py",
+      "sha256": "6b7eac9ccb7922c79e38fe019e31ffab79d64c36e7f721c06a978a86a8ebb91d",
+      "matches": true
+    },
+    {
+      "campaign": "highres_reconstruction_2026-10-14",
+      "source": "python/src/fluid_denoise/research/dns.py",
+      "sha256": "fe692ebdd587c6eaced3aee5456ca8e56b42f6226cf05d2597f39cf9fd57846f",
+      "matches": true
+    },
+    {
+      "campaign": "highres_reconstruction_2026-10-14",
+      "source": "python/src/fluid_denoise/research/rheology.py",
+      "sha256": "23879f127717e127bbc027780afbabc704f498878ac9c36ddcb33404412fbe64",
+      "matches": true
+    },
+    {
+      "campaign": "highres_reconstruction_2026-10-14",
+      "source": "python/src/fluid_denoise/research/metrics.py",
+      "sha256": "7b7d4fdbcddca962f3d5195440dd5047f9922201ceb15411a1d2e1434a48dc1d",
+      "matches": true
+    },
+    {
+      "campaign": "highres_reconstruction_2026-10-14",
+      "source": "python/src/fluid_denoise/research/forecast_runner.py",
+      "sha256": "2502facdfdf8bee7b8a34d32ea0f70baf9d17731a1386521ac76675cfdc00860",
+      "matches": true
+    },
+    {
+      "campaign": "highres_reconstruction_2026-10-14",
+      "source": "python/src/fluid_denoise/research/physics.py",
+      "sha256": "391584c9e73d460f83775694c0310dedf4d7c8996c80df1c166ee36150da223a",
+      "matches": true
+    },
+    {
+      "campaign": "highres_reconstruction_2026-10-14",
+      "source": "python/src/fluid_denoise/research/bridge.py",
+      "sha256": "96878ceb57016d81dcea5f94cc193898958a5a2ad6338a529c3d66f1d86cc670",
+      "matches": true
+    },
+    {
+      "campaign": "highres_reconstruction_2026-10-14",
+      "source": "python/src/fluid_denoise/research/viscoplastic_dns.py",
+      "sha256": "fd7d028a4f0abafc0ced61a755c655d5c85daa0280fd498a7e2911a98b685aaf",
+      "matches": true
+    },
+    {
+      "campaign": "highres_reconstruction_2026-10-14",
+      "source": "python/src/fluid_denoise/research/runner.py",
+      "sha256": "4c38efa9be15824930f41df41b7dad1c513e86080098736cad76cda07ff612ba",
+      "matches": true
+    },
+    {
+      "campaign": "highres_fixed_bandwidth_2026-10-14",
+      "source": "python/src/fluid_denoise/research/legacy_simulation.py",
+      "sha256": "7edf263a6e9d8d179f861ed9d2b4521230e212ec95389072e9ae2c6193b1b226",
+      "matches": true
+    },
+    {
+      "campaign": "highres_fixed_bandwidth_2026-10-14",
+      "source": "python/src/fluid_denoise/research/viscoelastic_dns.py",
+      "sha256": "477a17f4176ef963816516012de38c1d475a8800474c6dd026ba57e262d063ec",
+      "matches": true
+    },
+    {
+      "campaign": "highres_fixed_bandwidth_2026-10-14",
+      "source": "python/src/fluid_denoise/research/forecasting.py",
+      "sha256": "6e7147354394efdfbdf52aa35712d5029a13d521572659cdb7b11317549658c1",
+      "matches": true
+    },
+    {
+      "campaign": "highres_fixed_bandwidth_2026-10-14",
+      "source": "python/src/fluid_denoise/research/algorithms.py",
+      "sha256": "0991fb4773e87f88a9c3e6461339cb7f5b117f94bcc437b444f58c7152f14055",
+      "matches": true
+    },
+    {
+      "campaign": "highres_fixed_bandwidth_2026-10-14",
+      "source": "python/src/fluid_denoise/research/noise.py",
+      "sha256": "e11ab3d8d011897239618025ea53489400ad5948abf3e38153cdd6c5e083e023",
+      "matches": true
+    },
+    {
+      "campaign": "highres_fixed_bandwidth_2026-10-14",
+      "source": "python/src/fluid_denoise/research/cost.py",
+      "sha256": "9fe43b76236c835050ccc11d91ee1bce8371ebf63f927041fc3d41b4b4cd5e77",
+      "matches": true
+    },
+    {
+      "campaign": "highres_fixed_bandwidth_2026-10-14",
+      "source": "python/src/fluid_denoise/research/__init__.py",
+      "sha256": "6b7eac9ccb7922c79e38fe019e31ffab79d64c36e7f721c06a978a86a8ebb91d",
+      "matches": true
+    },
+    {
+      "campaign": "highres_fixed_bandwidth_2026-10-14",
+      "source": "python/src/fluid_denoise/research/dns.py",
+      "sha256": "fe692ebdd587c6eaced3aee5456ca8e56b42f6226cf05d2597f39cf9fd57846f",
+      "matches": true
+    },
+    {
+      "campaign": "highres_fixed_bandwidth_2026-10-14",
+      "source": "python/src/fluid_denoise/research/rheology.py",
+      "sha256": "23879f127717e127bbc027780afbabc704f498878ac9c36ddcb33404412fbe64",
+      "matches": true
+    },
+    {
+      "campaign": "highres_fixed_bandwidth_2026-10-14",
+      "source": "python/src/fluid_denoise/research/metrics.py",
+      "sha256": "7b7d4fdbcddca962f3d5195440dd5047f9922201ceb15411a1d2e1434a48dc1d",
+      "matches": true
+    },
+    {
+      "campaign": "highres_fixed_bandwidth_2026-10-14",
+      "source": "python/src/fluid_denoise/research/forecast_runner.py",
+      "sha256": "2502facdfdf8bee7b8a34d32ea0f70baf9d17731a1386521ac76675cfdc00860",
+      "matches": true
+    },
+    {
+      "campaign": "highres_fixed_bandwidth_2026-10-14",
+      "source": "python/src/fluid_denoise/research/physics.py",
+      "sha256": "391584c9e73d460f83775694c0310dedf4d7c8996c80df1c166ee36150da223a",
+      "matches": true
+    },
+    {
+      "campaign": "highres_fixed_bandwidth_2026-10-14",
+      "source": "python/src/fluid_denoise/research/bridge.py",
+      "sha256": "96878ceb57016d81dcea5f94cc193898958a5a2ad6338a529c3d66f1d86cc670",
+      "matches": true
+    },
+    {
+      "campaign": "highres_fixed_bandwidth_2026-10-14",
+      "source": "python/src/fluid_denoise/research/viscoplastic_dns.py",
+      "sha256": "fd7d028a4f0abafc0ced61a755c655d5c85daa0280fd498a7e2911a98b685aaf",
+      "matches": true
+    },
+    {
+      "campaign": "highres_fixed_bandwidth_2026-10-14",
+      "source": "python/src/fluid_denoise/research/runner.py",
+      "sha256": "4c38efa9be15824930f41df41b7dad1c513e86080098736cad76cda07ff612ba",
+      "matches": true
+    }
+  ],
+  "archives": [
+    {
+      "archive": "results/research/highres_newtonian_2026-10-14/datasets/decaying_turbulence_128_dt0.00125.npz",
+      "sha256": "972ca72dbbf525006c7705b28341d3621d16ed4700941e84d92d33b6bc06cf4a",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_newtonian_2026-10-14/datasets/decaying_turbulence_128_dt0.0025.npz",
+      "sha256": "3f6a513292c12288b5d6e65a2db9b749ff38044aa670e8e8b666d7bd2763b656",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_newtonian_2026-10-14/datasets/decaying_turbulence_128_dt0.005.npz",
+      "sha256": "2b99c1d857d89a2dc7a3ef317ed869fa3d3b63f51c130dad50307a6792612158",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_newtonian_2026-10-14/datasets/decaying_turbulence_256_dt0.005.npz",
+      "sha256": "0b2df14868d6cfd5581b9a2c502ef3b7f915fc927d341af87b7e321231d84bf1",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_newtonian_2026-10-14/datasets/decaying_turbulence_512_dt0.005.npz",
+      "sha256": "d945e358e8cdc611fa33ae6a64b2c382d0c042834ca1fcab4438aaad6fc5a9b0",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_newtonian_2026-10-14/datasets/decaying_turbulence_64_dt0.005.npz",
+      "sha256": "f94de116832b2fd04f24407050a38b8e777660d47174a6bbb69c376ba144bde3",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_newtonian_2026-10-14/datasets/interacting_vortices_128_dt0.00125.npz",
+      "sha256": "e227866856da5f465f4747d614432a4679454da11003ee93fc10feffeca44065",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_newtonian_2026-10-14/datasets/interacting_vortices_128_dt0.0025.npz",
+      "sha256": "8a0b265a1c28b30b4baf2d79d54d8f9f4d65fd540f80dc998763df6c97241baa",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_newtonian_2026-10-14/datasets/interacting_vortices_128_dt0.005.npz",
+      "sha256": "8ff4bbbb2acc863a35760a67d1935cd7221c8ac1f60fa05ad6f2181ea4625890",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_newtonian_2026-10-14/datasets/interacting_vortices_256_dt0.005.npz",
+      "sha256": "d6f0c391439cc4339b78ba7a66e19992683714c015f4a617811bfcde79b3866c",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_newtonian_2026-10-14/datasets/interacting_vortices_512_dt0.005.npz",
+      "sha256": "42e360cca6d13f9fb9d8178c9b413854bc7b65d1055fb781512d62b517f3a7ee",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_newtonian_2026-10-14/datasets/interacting_vortices_64_dt0.005.npz",
+      "sha256": "86bf731543ae773a204d472eb2b50fe33de0bb5bd7906ddd1d07bbe9b03aa141",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_viscoelastic_2026-10-14/datasets/fene_p_128.npz",
+      "sha256": "28146ac24585182adf54c7efda3731a58588773427f7e18aa45a99b0fcb1e9ae",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_viscoelastic_2026-10-14/datasets/fene_p_128_dt_half.npz",
+      "sha256": "fa7d6769b3dde7bf54a0d921923d3f080935ebb32253419bacf7f180bc706b7a",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_viscoelastic_2026-10-14/datasets/fene_p_256.npz",
+      "sha256": "21093a51dac9099f2b44f9503ed77dbd5e064da3d7c53a83f4cf37aaeb8248b1",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_viscoelastic_2026-10-14/datasets/fene_p_64.npz",
+      "sha256": "7657da7da888be8dd7fcc3c8d976d98a76561034772c135e86fc39490386bb08",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_viscoelastic_2026-10-14/datasets/newtonian_256.npz",
+      "sha256": "d9bfb00e25b341e680955069ebd07da0b5bbf996addea8ef041c1ffcf67b2c7d",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_viscoelastic_2026-10-14/datasets/oldroyd_b_128.npz",
+      "sha256": "5918dbaae151efd56a2881046868f18ca052fa1605a279d03253ff85b1ec1065",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_viscoelastic_2026-10-14/datasets/oldroyd_b_128_dt_half.npz",
+      "sha256": "740f558e6caf8d56fbf924491c8b9aabe1625284d2bfed54b3d7262ee7792050",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_viscoelastic_2026-10-14/datasets/oldroyd_b_256.npz",
+      "sha256": "6560b7d3ba6121b81fd0166269c7ff4f15dda13569b4e2d5f35f845468f9654c",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_viscoelastic_2026-10-14/datasets/oldroyd_b_64.npz",
+      "sha256": "caaf7f7115848968ddf2336af52917907cde9847ca9727b6915f40d8cb14c07a",
+      "matches": true
+    },
+    {
+      "archive": "results/research/extended_physics_2026-10-14/datasets/taylor_green_ns_clean.npz",
+      "sha256": "b581330d7cb6ce2c0e33716dee43e294074b931875fc27ef1475d56b31a7a559",
+      "canonical_sha256": "9630d88294f7310c1f024698bd7ff3a11d4fceac14dd03487738941a509838fb",
+      "matches": true
+    },
+    {
+      "archive": "results/research/extended_physics_2026-10-14/datasets/interacting_vortices_ns_clean.npz",
+      "sha256": "c2bce414d0e26fda7850ec33aa67dcc1c6f1e7514f0e8e2fbf4c473e444d0d5c",
+      "canonical_sha256": "98030ac51bd8aeae1129d640696a478e2168dcb03100a154aa4d46e58ea1bef8",
+      "matches": true
+    },
+    {
+      "archive": "results/research/extended_physics_2026-10-14/datasets/decaying_turbulence_ns_clean.npz",
+      "sha256": "26942d2d74702f4077697cf8486d389d5432754b62c38f9c9c3e33828aad02a2",
+      "canonical_sha256": "08fe923a8ba5c6f44e28423aeaee2b0afc6792582ae1682e1f58ecb484535049",
+      "matches": true
+    },
+    {
+      "archive": "results/research/extended_physics_2026-10-14/datasets/oldroyd_b_2d_clean.npz",
+      "sha256": "90e2bbb00d318332fd5f7acf5ea7a58a6c8d61996c8f4afa64a593bae63ab3a2",
+      "canonical_sha256": "daa53275d1bd21fdc8ed40d29fe873e07ddefb2d2be292171c1391498c68bcd2",
+      "matches": true
+    },
+    {
+      "archive": "results/research/extended_physics_2026-10-14/datasets/fene_p_2d_clean.npz",
+      "sha256": "7eae77676b7b7f872b18b2fbbbc6f741eb1cab18b23af6d43a75ee3b3043c092",
+      "canonical_sha256": "923a7e9d88698590a972dd2c6329b4a87aaeb49f92d8efaab80a6ce6ed4b17e2",
+      "matches": true
+    },
+    {
+      "archive": "results/research/extended_physics_2026-10-14/datasets/hb_thinning_2d_clean.npz",
+      "sha256": "972a62c12a36b616d1e85fc7e63c497b4f8045aa054c9eab882e742e7d828ee4",
+      "canonical_sha256": "a28e5300105195433c6f6ba5141f05325ff82cad07dad7d35d670422f540c838",
+      "matches": true
+    },
+    {
+      "archive": "results/research/extended_physics_2026-10-14/datasets/bingham_2d_clean.npz",
+      "sha256": "a26b10cc6e7dd5b8241306604066807d2b3a400fe1985ed5e61ec19f6ed08a32",
+      "canonical_sha256": "99bfcdc4af0bcc1ef35efd8d0088d38d851ea6858f1c0b2957b38cefa0e871b2",
+      "matches": true
+    },
+    {
+      "archive": "results/research/extended_physics_2026-10-14/datasets/hb_thickening_2d_clean.npz",
+      "sha256": "46b86d525154d6688274c96f48add93394d0eda4db62e70bc3d62d218e2c0468",
+      "canonical_sha256": "66ef2c8f2d70198381216c17c0e2e5f69a8c7a740639d5ddf7dd1933a2606d92",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_viscoplastic_2026-10-14/datasets/bingham_128.npz",
+      "sha256": "52b61b37762d5e3abfa0f9000dd0beb1f416fc0628900e8221670b7e4eabb52d",
+      "canonical_sha256": "6822aa4e4a518b0d080b349708af46179a4a542acbd55e97610ab6228127b8c0",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_viscoplastic_2026-10-14/datasets/bingham_256_short.npz",
+      "sha256": "4668af005bd82b4a98adb3c06c46d7f08706aef9ca09da5b721017bd459b7c11",
+      "canonical_sha256": "6334c011f6471766d744f63c367ee336772574ecddaa84779549758aca53df41",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_viscoplastic_2026-10-14/datasets/bingham_64.npz",
+      "sha256": "4a9dc052356ad8b692003d54ea2eae988b43c03f2bb125c50bd9c4fdcb1d7318",
+      "canonical_sha256": "0ad6be497df190bb13e75aa45bb20824185ae5288eef1a280eb33ea09f2f0909",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_viscoplastic_2026-10-14/datasets/hb_thickening_128.npz",
+      "sha256": "1d27b5a8a6d6f89c429d63868732b111bdb3846130f9ee79e5c237e4e76ed540",
+      "canonical_sha256": "3064b12eb889ca068daf48c54c4e418fd7c136c6ccdb8455ad5c6f871d0aa3cc",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_viscoplastic_2026-10-14/datasets/hb_thickening_256_short.npz",
+      "sha256": "5b56a73230e8ba8406aa74b2df35c1a535d8aeb9fa2312fbd00f7ff65dcfe6a2",
+      "canonical_sha256": "384b398f5dfcb83c0e6a052991b9c25b76be9059809d9efb0a32a9617f6d8a76",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_viscoplastic_2026-10-14/datasets/hb_thickening_64.npz",
+      "sha256": "8be4955f8c902ed947102b0b05c383c4844082377049619d28885f002f71b7dc",
+      "canonical_sha256": "105ef6a573274abd5c9067ef467c1187a9a6ae822b844f23baac0f880cec500b",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_viscoplastic_2026-10-14/datasets/hb_thinning_128.npz",
+      "sha256": "b41f4a0763a286526c379844a081b2c27fa5750c974bce334d8c0c27f354873f",
+      "canonical_sha256": "b39902f9d8cbf0ad405be6607c8b20c76e52b843532ae71b3a707a8364ecfc4b",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_viscoplastic_2026-10-14/datasets/hb_thinning_128_dt0p0001.npz",
+      "sha256": "5882ff8cb68fe44527f0cf7d0c3afc42b3c213b87e5fc31c65180dd52cab33e6",
+      "canonical_sha256": "2f4dece8c6b715ea1aa138260568dea179ed4c6cad9cce624de552db274ac87c",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_viscoplastic_2026-10-14/datasets/hb_thinning_128_dt0p0002.npz",
+      "sha256": "c5d2d8031d1a8ed6b940159fe293a9abeffacc39d0561dd2bf683bf4148b49c0",
+      "canonical_sha256": "13ed467e1431c8ceb6473b39f99ac9076228e941306cdca37af89d9a651420e4",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_viscoplastic_2026-10-14/datasets/hb_thinning_128_dt0p0004.npz",
+      "sha256": "acec3ee9bf47d6d87605dd9d3c9d24959ce07618662430ed439015786e66f20d",
+      "canonical_sha256": "d179379ee2e2a45319f6b321f6e558b0d50fc9c66c3a8f7dea865369e9d2d469",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_viscoplastic_2026-10-14/datasets/hb_thinning_256_short.npz",
+      "sha256": "34c0096f0bb0b531357168ea7350c2688c79d3e42ef53f2eb4fd220b6900a5c7",
+      "canonical_sha256": "edf331d21704ea3940545ae8becb803c21822ffb7ef00e58adc17dbb0e6302e4",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_viscoplastic_2026-10-14/datasets/hb_thinning_64.npz",
+      "sha256": "31a6f28498b972caa96e9435c2ad1f44d954a43aab3d6b222a408e78054d3a57",
+      "canonical_sha256": "8a1f3c8616aebc1c5a9af3b5d8e286f8d3513f9332ddd79ebc8e2edfcad46aac",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_viscoplastic_2026-10-14/datasets/hb_thinning_64_quadrature_factor_2p0.npz",
+      "sha256": "d0fb9b0028a00f90c736d77913f346116dd5b2c870da0c557d14864f2b486f1a",
+      "canonical_sha256": "74188f76063c5e3f4b6528f7ad486ff0feb2203d94c934b9d65216034caa9612",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_viscoplastic_2026-10-14/datasets/hb_thinning_64_regularization_m_20p0.npz",
+      "sha256": "3f0b9576325e14721e2f55461e46d3a58fb2a493b0ce18d3ac2d7a643cdf2f53",
+      "canonical_sha256": "e36808eafd3994b995573f00c059346ad6df00e3ca70b221e1e1b7fa5f29b1d5",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_viscoplastic_2026-10-14/datasets/hb_thinning_64_regularization_m_5p0.npz",
+      "sha256": "bb3fe4ee2d5a99c4721489b5aeac4d7ec8da7fa4aa1c506512a8cdd574b3931f",
+      "canonical_sha256": "d6ae039395014119a02bfc12ab7d3f3a15c76b4ba067655479bd69577f398dba",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_viscoplastic_2026-10-14/datasets/hb_thinning_64_shear_epsilon_0p0005.npz",
+      "sha256": "ec4a3d778e5c2a99bf289dc8c5db1a4782ba0646b313d82eb75b3446b60fc0aa",
+      "canonical_sha256": "6951233f45561b299ab2fed2da8993cbdb88d0f017f3a3796fabd49be7307418",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_viscoplastic_2026-10-14/datasets/hb_thinning_64_shear_epsilon_0p002.npz",
+      "sha256": "16d8288b902d1735a1d5dca32b930a667bdbce8c2d557e124c45b1f7468300b7",
+      "canonical_sha256": "90a4382067f3fa9d2fa29b73f9d1fa81d9f6a8ccc40ee89c316061518c1b490c",
+      "matches": true
+    },
+    {
+      "archive": "results/research/highres_viscoplastic_2026-10-14/datasets/hb_thinning_64_short_control.npz",
+      "sha256": "d228ee7483a9d8e01892f6c2f9f598ca236322aa46da76eae72d5b6d8cbfb6f8",
+      "canonical_sha256": "7b292a3a899e50339c836b6602b2711be7d6cfeb1729f55280eba7ca4789d21f",
+      "matches": true
+    },
+    {
+      "archive": "results/research/reference_fidelity_2026-10-14/datasets/matched_bingham_2d_128_dt0.005.npz",
+      "sha256": "492068d94cabcda192713f7cbc025ceb9e49482af82e0adf78127ce21beb248c",
+      "matches": true
+    },
+    {
+      "archive": "results/research/reference_fidelity_2026-10-14/datasets/matched_bingham_2d_64_dt0.005.npz",
+      "sha256": "5bf0e374fc08cc86eb7697d764bf7b9743bdeec0f9ded0db028350b0bc5a1cac",
+      "matches": true
+    },
+    {
+      "archive": "results/research/reference_fidelity_2026-10-14/datasets/matched_decaying_turbulence_ns_128_dt0.0025.npz",
+      "sha256": "a234e1f29923118eb9a8ff0d200e3fc426006cb813c8efe416951e5d3e160fce",
+      "matches": true
+    },
+    {
+      "archive": "results/research/reference_fidelity_2026-10-14/datasets/matched_decaying_turbulence_ns_128_dt0.01.npz",
+      "sha256": "c53b2ae95162cab3f15a24ac7054eb0dc0d54e1820965c8e150d80b7f89a79ac",
+      "matches": true
+    },
+    {
+      "archive": "results/research/reference_fidelity_2026-10-14/datasets/matched_decaying_turbulence_ns_256_dt0.0025.npz",
+      "sha256": "71d8b745620de6e94ed63bc4fc9be1f4457a1d24e9495a7ca8644d97256c1af6",
+      "matches": true
+    },
+    {
+      "archive": "results/research/reference_fidelity_2026-10-14/datasets/matched_fene_p_2d_128_dt0.005.npz",
+      "sha256": "58f347f5c1761fcc6054ae3c783f55649c0f257133245968f664eb61db67230a",
+      "matches": true
+    },
+    {
+      "archive": "results/research/reference_fidelity_2026-10-14/datasets/matched_fene_p_2d_256_dt0.005.npz",
+      "sha256": "dba6e11f4d0dfc52c599e54febad52ede96624866bc9abeaef595f00c3de24fe",
+      "matches": true
+    },
+    {
+      "archive": "results/research/reference_fidelity_2026-10-14/datasets/matched_fene_p_2d_64_dt0.005.npz",
+      "sha256": "0ebb573cdb0548b84fc626d0c25a9115802f94fdae7c0715e490d81422fa4822",
+      "matches": true
+    },
+    {
+      "archive": "results/research/reference_fidelity_2026-10-14/datasets/matched_hb_thickening_2d_128_dt0.005.npz",
+      "sha256": "8c93edb6faea4e0730f6ce38f815a4b8bcded0e0a0cbccd0d588291e7a5f2635",
+      "matches": true
+    },
+    {
+      "archive": "results/research/reference_fidelity_2026-10-14/datasets/matched_hb_thickening_2d_64_dt0.005.npz",
+      "sha256": "5651b3fcbe1caafbf2ee9fe842201c7f75bf9c5d5bdef76177865dc7a39c0282",
+      "matches": true
+    },
+    {
+      "archive": "results/research/reference_fidelity_2026-10-14/datasets/matched_hb_thinning_2d_128_dt0.005.npz",
+      "sha256": "5530b36c647ef00ed601a4e5f6c9388374da71c60ac4aa282b2865ca2ef98afc",
+      "matches": true
+    },
+    {
+      "archive": "results/research/reference_fidelity_2026-10-14/datasets/matched_hb_thinning_2d_64_dt0.005.npz",
+      "sha256": "20f04a3c34c1fe51bcc28e17dee01d5cfde08ebab73ce8c51f5ec84b4317d905",
+      "matches": true
+    },
+    {
+      "archive": "results/research/reference_fidelity_2026-10-14/datasets/matched_interacting_vortices_ns_128_dt0.0025.npz",
+      "sha256": "f417fb382e09e1527ff440cca02c1d6bb5ead70a4882991a2fac2c5e89038535",
+      "matches": true
+    },
+    {
+      "archive": "results/research/reference_fidelity_2026-10-14/datasets/matched_interacting_vortices_ns_128_dt0.01.npz",
+      "sha256": "c9ba0ef0abf04ef0ee80df1291392b265ea569e418359504469032e2bfefe987",
+      "matches": true
+    },
+    {
+      "archive": "results/research/reference_fidelity_2026-10-14/datasets/matched_interacting_vortices_ns_256_dt0.0025.npz",
+      "sha256": "525d04fbc59192d2917857eea7096fbb0f08e104d725983b48aa1ab753e1c1b8",
+      "matches": true
+    },
+    {
+      "archive": "results/research/reference_fidelity_2026-10-14/datasets/matched_oldroyd_b_2d_128_dt0.005.npz",
+      "sha256": "0598a1e9aef0e2bca96138c342d6aa03e1b48a2eb0858d4d9407a35977f583bf",
+      "matches": true
+    },
+    {
+      "archive": "results/research/reference_fidelity_2026-10-14/datasets/matched_oldroyd_b_2d_256_dt0.005.npz",
+      "sha256": "6cbdacfe0e21be8d5cacdfe25e4331b931b7150001a94eff704c1632cfe1fa1b",
+      "matches": true
+    },
+    {
+      "archive": "results/research/reference_fidelity_2026-10-14/datasets/matched_oldroyd_b_2d_64_dt0.005.npz",
+      "sha256": "a2dd9d9c98edbd0fd620d3f6a7cb30078296df033ddec1fe889d2a862f42c680",
+      "matches": true
+    },
+    {
+      "archive": "results/research/reference_fidelity_2026-10-14/datasets/dense_interacting_vortices_128_dt0.00125.npz",
+      "sha256": "8c72a6678d573e803fa335ec40eff6aafa80a74974016cdcfedb2709414fd428",
+      "matches": true
+    },
+    {
+      "archive": "results/research/reference_fidelity_2026-10-14/datasets/dense_decaying_turbulence_128_dt0.00125.npz",
+      "sha256": "29a232c83802b08d676aef67d76f51cd418d3e4f10eca696afd615e504f2eb72",
+      "matches": true
+    }
+  ],
+  "qualification": "historical driver/rendering hashes can differ after figure changes; these checks compare frozen scientific solver modules and saved numerical arrays"
+}

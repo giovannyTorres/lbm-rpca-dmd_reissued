@@ -1,14 +1,23 @@
 # lbm-rpca-dmd_reissued
 
-Guía operativa para correr el proyecto localmente, de punta a punta, sin asumir conocimiento previo.
+Investigación reproducible sobre **comparación de modelos de reconstrucción y fidelidad de las simulaciones de referencia**. Conserva las fases originales LBM–RPCA–DMD y los cinco capítulos de la tesis.
 
-La ampliación de investigación incorpora solvers no newtonianos 2D, nueve tipos de ruido, métricas físicas y de recursos, y pronóstico cronológico. Consulta el [documento científico de 76 páginas](results/research/document/extension.pdf), los [resultados ejecutados](docs/research/EXTENDED_RESULTS.md) y la [guía de fase 8](docs/phase8_research.md).
+La lectura principal está en el [documento científico de 123 páginas y 58 figuras](results/research/document/extension.pdf) y en [COMPARISON_RESULTS.md](docs/research/COMPARISON_RESULTS.md). El texto presenta primero la credibilidad de las referencias, la comparación pareada de diez estimadores, la contribución de los filtros y el costo condicionado a calidad; el catálogo de evolución y la evidencia histórica quedan en los apéndices.
 
-La nueva campaña de [mallas ampliadas y evolución física](docs/research/HIGHRES_RESULTS.md) integra Navier–Stokes hasta **512²** y Oldroyd-B/FENE-P hasta **256²**. HB/Bingham evoluciona hasta **128² durante T=2**, con referencias **256² solamente hasta T=0.1**. El documento conserva cinco capítulos e incluye **37 figuras**, seis diagramas explicativos y enlaces a **cinco animaciones**. Los mapas provienen de campos calculados; las mallas finas y los controles temporales permiten evaluar su resolución.
+## Qué se compara y qué muestran los controles
 
-Se ejecutaron 45 integraciones/controles de simulación y 84 condiciones de reconstrucción adicionales. La primera comparación acepta 0/60 condiciones; el seguimiento exploratorio de ancho físico fijo acepta 18/24 y conserva su control de filtrado sin DMD. La [revisión independiente](docs/research/HIGHRES_REVIEW.md) y la [guía de reproducción](docs/research/RUNNING.md#campañas-de-mallas-ampliadas) explican alcances, fuentes y comandos. La suite completa registra **214 pruebas y 32 subcasos**.
+- **1050 ajustes / 3150 evaluaciones:** siete campos 128², cinco contaminaciones, tres semillas nuevas y diez estimadores. Cada estimación se evalúa cruda, con Helmholtz H y con H más banda física k≤10, sin reajustar. La identidad recibe exactamente el mismo tratamiento.
+- **Sensibilidad:** 360 ajustes / 1080 evaluaciones para rango 2/4/8/12/16 e intensidades 5/20/40%; **controles sin ruido:** 84 ajustes / 252 evaluaciones. Hay 24 contratos compartidos con la comparación principal, declarados sin sumarlos como evidencia independiente.
+- **Fidelidad de las referencias:** 18 integraciones refinadas con los parámetros y tiempos del banco original, más dos controles densos de 161 estados. Se separan errores de velocidad, vorticidad, esfuerzo y viscosidad, y residuos de muestreo, proyección y balance.
+- **Resultado operativo:** 6/1050 salidas crudas, 44/1050 con H y 825/1050 con H+k10 cumplen las cuatro tolerancias y convergencia. Con exactamente el mismo prior, identidad cumple 87/105 y DMD y RPCA estable 105/105; el filtro explica gran parte de la mejora y el incremento del modelo se evalúa frente a ese control. Se mantienen ocho no convergencias de DMD optimizada y todos los resultados negativos.
 
-Para inspeccionar campos sin regenerar todas las historias, descarga la [rama de muestras visuales](https://github.com/giovannyTorres/lbm-rpca-dmd_reissued/tree/data/high-resolution-visuals-2026-10-14/results/research/highres_visual_samples_2026-10-14): ocho NPZ con cinco estados exactos por trayectoria, [metadatos y hashes](results/research/highres_visual_samples_2026-10-14/manifest.json). Estas selecciones permiten reproducir imágenes, pero los máximos sobre todos los tiempos requieren las historias completas.
+El corte elimina también estructura física: impone un piso de **10.8366% de error de vorticidad** en la referencia NS multiescala. Un error pequeño de velocidad no demuestra por sí solo una reconstrucción dinámica o una constitutiva bien resuelta. Los umbrales son criterios operativos para este banco, y las diferencias entre sus siete trayectorias no se atribuyen exclusivamente al material.
+
+Consulta el [protocolo](docs/research/COMPARISON_PROTOCOL.md), la [revisión independiente](docs/research/COMPARISON_REVIEW.md) y los [comandos de reproducción](docs/research/RUNNING.md#comparación-de-modelos-y-fidelidad-lectura-y-reproducción). La suite completa pasa **218 pruebas y 34 subcasos**. Los módulos científicos originales conservan sus hashes.
+
+La [rama de datos completos para comparar modelos](https://github.com/giovannyTorres/lbm-rpca-dmd_reissued/tree/data/model-comparison-fidelity-2026-10-14) añade los siete NPZ de entrada 128² con todos sus tiempos, más 40 muestras de reconstrucciones que permiten reproducir las láminas de campos. Su [manifiesto](results/research/model_comparison_inputs_2026-10-14/manifest.json) distingue historias completas, selecciones de tres estados y hashes de archivo/canónicos. El resto del banco de refinamiento se regenera con sus scripts.
+
+La [ampliación visual anterior](docs/research/HIGHRES_RESULTS.md) conserva Navier–Stokes hasta 512², Oldroyd-B/FENE-P hasta 256² y HB/Bingham hasta 128² durante T=2, con controles 256² solamente hasta T=0.1. Sus cinco animaciones, seis diagramas y comparaciones de campo completo permanecen disponibles.
 
 ## 1) Propósito del proyecto
 

@@ -1,0 +1,84 @@
+{
+  "campaign": "clean_model_controls_2026-10-14",
+  "helper_driver_sha256": "4076735b60a0c61b96aa16eab0ae41336a064410c869475c4b0ce3e076ebbf9a",
+  "base_config_path": "configs/research/model_fidelity_benchmark.json",
+  "base_config_sha256": "7f7bddfc763f615b3b2302c025ac026b0e7d5371fb2b8abec5cad7bf6dbf8d21",
+  "estimator_configuration": {
+    "campaign": "model_fidelity_benchmark_2026-10-14",
+    "grid": 128,
+    "intensity_relative_rms": 0.2,
+    "seeds": [
+      101,
+      307,
+      911
+    ],
+    "noise_models": [
+      "gaussian_iid",
+      "sparse_impulsive",
+      "spatial_gaussian",
+      "temporal_ar",
+      "column_outliers"
+    ],
+    "sparse_probability": 0.01,
+    "spatial_kernel_sigma": 0.1,
+    "temporal_correlation_time": 0.3,
+    "rank": 8,
+    "max_iter": 600,
+    "tol": 1e-05,
+    "optimized_max_nfev": 150,
+    "optimized_starts": 2,
+    "outlier_column_fraction_upper_bound": 0.1,
+    "timeout_seconds": 180,
+    "physical_cutoff": 10.0,
+    "postprocessing": [
+      "raw",
+      "helmholtz",
+      "helmholtz_k10"
+    ],
+    "quality_thresholds": {
+      "velocity_relative_l2": 0.15,
+      "vorticity_relative_l2": 0.25,
+      "extra_divergence_normalized": 0.1,
+      "kinetic_energy_relative_l2": 0.15
+    },
+    "design": "Exploratory paired reconstruction on existing clean simulated trajectories, with new noise seeds101/307/911. Fixed hyperparameters are recorded before this campaign, but the flow families and H+k10 prior were inspected in earlier campaigns; this is not independent blind held-out confirmation. Clean velocity is used only for injection amplitude and evaluation. Every estimator receives observed velocity and times only; postprocessing receives geometry only. Equal20%RMS does not make noise distributions equally difficult.",
+    "scope": "Seven 128x128 velocity trajectories, five noises, three seeds and ten methods: 1050 raw fits and 3150 evaluations of those fits. H and H+k10 never refit an estimator. Non-Newtonian stresses and conformation are not reconstructed by these velocity-only estimators.",
+    "cost_scope": "One single-BLAS-thread isolated child per fit; fit and postprocess CPU/wall/RSS profiles are separate from evaluation. Absolute child RSS includes runtime and inherited observations/reference. Timing is descriptive on a shared host; no repeated-cost uncertainty is claimed. Postprocess RSS is the accumulated child lifetime peak and may inherit prior fit/evaluation peaks; it is not incremental projection memory.",
+    "column_fraction_upper_bound": 0.1
+  },
+  "seed": 101,
+  "workers": 1,
+  "flows": [
+    "ns_vortices",
+    "ns_multiscale",
+    "oldroyd_b",
+    "fene_p",
+    "hb_thinning",
+    "bingham",
+    "hb_thickening"
+  ],
+  "methods": [
+    "identity",
+    "pod_r8",
+    "dmd_r8",
+    "tls_r8",
+    "pcp",
+    "stable_rpca",
+    "outlier_pursuit",
+    "pcp_tls_r8",
+    "stable_tls_r8",
+    "optimized_r8"
+  ],
+  "known_zero_noise_methods": [
+    "stable_rpca",
+    "stable_tls_r8"
+  ],
+  "observation": "Exact copy of computed clean velocity; no additive noise, no RMS normalization",
+  "contracts": {
+    "inherited_20pct_regularization": "All primary estimator hyperparameters retained exactly, including stable noise_intensity=.20; inherited regularized contract for the 20% experiment applied without noise, not known-noise zero.",
+    "known_zero_noise": "Only stable_rpca and stable_tls_r8 repeat with noise_intensity=0 explicitly supplied; known-zero-noise control, not a selected hyperparameter."
+  },
+  "design": "Exploratory mechanism diagnosis designed after inspecting Outlier Pursuit bias on the first noisy primary flow. Not preregistered and not a new held-out validation campaign. All seven existing 128x128 trajectories retained. One deterministic estimate per flow/method/contract; three geometry-only postprocess evaluations do not refit. Optimized DMD seed101 fixed.",
+  "scope": "84 fresh-child fits, 252 raw/H/H+k10 evaluations. No new simulations. Clean SVD rank8 Frobenius lower bound is a diagnostic, not rank selection, and gives no vorticity optimum.",
+  "cost_scope": "One fresh child per fit, one worker, single BLAS thread. Absolute RSS includes runtime and inherited reference/observation; postprocess lifetime RSS is not incremental. No cost repeat or population interval."
+}

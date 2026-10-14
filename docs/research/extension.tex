@@ -6,14 +6,16 @@
 \usepackage[a4paper,margin=2.5cm]{geometry}
 \usepackage{amsmath,amssymb,mathtools}
 \usepackage{booktabs,longtable,array}
+\usepackage{tabularx}
 \usepackage{graphicx}
+\usepackage[font=small,labelfont=bf,labelsep=period]{caption}
 \usepackage{pdflscape}
 \usepackage{microtype}
 \usepackage[round,authoryear]{natbib}
 \usepackage{url}
 \usepackage[hidelinks,unicode,hypertexnames=false]{hyperref}
-\hypersetup{pdftitle={Ampliación reproducible LBM--RPCA--DMD},
-  pdfsubject={Contaminación, reconstrucción física, costo y referencias reológicas}}
+\hypersetup{pdftitle={Comparación de modelos y fidelidad física LBM--RPCA--DMD},
+  pdfsubject={Comparaciones pareadas, calidad de referencias, ablación física y costo condicionado}}
 \setlength{\parskip}{0.4em}
 \setlength{\parindent}{1.1em}
 \setlength{\emergencystretch}{3em}
@@ -21,6 +23,10 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\code}[1]{\texttt{\detokenize{#1}}}
+\newcommand{\uref}{\boldsymbol u_{\mathrm{ref}}}
+\newcommand{\uhat}{\widehat{\boldsymbol u}}
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{2}
 \DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\RMS}{RMS}
 \DeclareMathOperator{\diag}{diag}
@@ -31,12 +37,12 @@
 \begin{titlepage}
 \centering
 \vspace*{3cm}
-{\Huge\bfseries Ampliación reproducible\par}
+{\Huge\bfseries Comparación de modelos\par}
 \vspace{0.4cm}
-{\Huge\bfseries LBM--RPCA--DMD\par}
+{\Huge\bfseries y fidelidad física\par}
 \vspace{1.2cm}
-{\Large Reconstrucción física, ruido, costo computacional\par}
-{\Large y referencias de fluidos no newtonianos\par}
+{\Large Ampliación reproducible de LBM--RPCA--DMD\par}
+{\Large Contaminación, referencias numéricas y costo a tolerancia\par}
 \vspace{1.8cm}
 {\large Documento complementario de investigación\par}
 \vspace{0.8cm}
@@ -49,35 +55,37 @@
 \vspace{0.8cm}
 \end{titlepage}
 
-\chapter*{Alcance documental}
-Este documento organiza el trabajo de fase 8 en cinco capítulos:
-Introducción, Marco teórico, Desarrollo experimental, Resultados y discusión,
-y Conclusiones y líneas de trabajo futuro. Amplía la investigación con código,
-configuraciones y evidencia identificable. Las fases 1--7 mantienen su
-numeración y sus contratos. El baseline \code{baseline_2026-10-14}
-conserva los artefactos de una ejecución identificada; las nuevas campañas
-requieren configuración, hashes y entorno propios.
+\chapter*{Resumen académico y guía de lectura}
+\addcontentsline{toc}{chapter}{Resumen académico y guía de lectura}
+\input{docs/research/executive_generated.tex}
 
-La metodología distingue el piloto preservado de la ampliación ejecutada en
-\path{lbm-rpca-dmd_reissued}. Las configuraciones activas son
-\path{configs/research/extended_physics.json} y
-\path{configs/research/forecasting_campaign.json}: 2808 condiciones y 8424
-ajustes de reconstrucción, además de 60 escenarios de pronóstico cronológico.
-Se añadieron solvers bidimensionales acoplados de Oldroyd-B/FENE-P y
-Herschel--Bulkley/Bingham regularizado, junto con una comparación de seis
-fluidos bajo condiciones iniciales comunes. El capítulo de resultados incorpora un archivo generado a partir de
-los artefactos de ejecución. Una hipótesis, una configuración de campaña o
-un manifiesto de un solver externo no constituyen un resultado numérico.
-Los casos de canal no representan una estela viscoelástica alrededor de un
-cilindro; el uso de una formulación de Navier--Stokes tampoco certifica
-automáticamente que una malla resuelva todas las escalas relevantes.
+\chapter*{Notación y organización de la evidencia}
+\addcontentsline{toc}{chapter}{Notación y organización de la evidencia}
+La investigación conserva cinco capítulos numerados: Introducción, Marco
+teórico, Desarrollo experimental, Resultados y discusión, y Conclusiones.
+La pregunta principal es comparar estimadores de campos contaminados cuando
+se exige fidelidad física. Las ilustraciones de evolución y los registros
+históricos se conservan en los apéndices; su función es apoyar el análisis.
 
-La ampliación de resolución añade 45 integraciones y verificaciones físicas,
-con mallas hasta $512^2$ en Navier--Stokes y $256^2$ en los modelos reológicos.
-Incluye 84 reconstrucciones adicionales, seis diagramas explicativos y 28
-figuras nuevas de evolución, constitutiva, espectros, errores y balances.
-La suficiencia se examina por observable e intervalo: una velocidad bien
-resuelta puede coexistir con esfuerzos o viscosidad todavía sensibles a malla.
+\begin{table}[htbp]\centering\small
+\caption*{Notación uniforme y dos significados que deben distinguirse.}
+\begin{tabularx}{\textwidth}{@{}p{3.1cm}X@{}}\toprule
+Símbolo o término & Significado en la comparación\\\midrule
+$\uref$, $\uhat$ & Velocidad de referencia limpia numérica y velocidad reconstruida.\\
+$M$, $\widehat M$ & Matrices observada y estimada: dos componentes espaciales por columna temporal.\\
+$e_u$, $e_\omega$ & Error relativo de velocidad y de vorticidad; se indica si es global o máximo por instantánea.\\
+$e_E$, $d_{\mathrm{extra}}$ & Error de la serie de energía cinética y divergencia adicional normalizada.\\
+Modelo de reconstrucción & POD, RPCA o variante DMD: estima velocidad desde la observación.\\
+Modelo constitutivo & Newtoniano, Oldroyd-B, FENE-P o HB/Bingham: determina la referencia física simulada.\\
+Raw, H, H+B & Estimación directa, proyección de Helmholtz y proyección más banda física fija.\\
+Referencia fina & Solución numérica independiente de mayor resolución; no es una solución exacta conocida.\\
+\bottomrule\end{tabularx}\end{table}
+
+Los errores adimensionales se expresan en porcentaje en figuras y tablas;
+los CSV conservan fracciones. Un porcentaje pequeño en velocidad no garantiza
+un porcentaje pequeño en sus derivadas. La masa de densidad constante y la
+divergencia impuesta por proyección se presentan como controles, sin atribuirles
+capacidad de recuperar esfuerzos desconocidos.
 
 \tableofcontents
 \listoffigures
@@ -498,8 +506,10 @@ geometría y elimina la componente longitudinal:
    -\boldsymbol k\frac{\boldsymbol k\cdot
     \widehat{\boldsymbol u}_{\boldsymbol k}}{|\boldsymbol k|^2}.
 \end{equation}
-La media se conserva; un corte 2/3 adicional es un prior de banda física
-declarado antes de observar el test. No utiliza velocidad limpia ni se aplica
+La media se conserva; un corte 2/3 adicional es un prior de banda asociado
+a la malla y declarado antes de observar el test. Su número de onda físico
+crece al refinar; B utiliza en cambio el corte físico fijo $k_c=10$.
+La operación no utiliza velocidad limpia ni se aplica
 a canales o máscaras con obstáculos. En mallas pares, las primeras derivadas
 usan el operador real compatible, con Nyquist nulo; el Laplaciano difusivo
 conserva los números de onda completos. Confundir ambos operadores
@@ -528,6 +538,94 @@ hay obstáculo, excluye un halo de una celda y usa diferencias locales.
 El mismo operador se aplica a referencia y reconstrucción. Si un
 denominador es cero con error no nulo, se informa métrica indefinida,
 sin introducir un pequeño número que oculte esa situación.
+
+La norma global de una ventana apila espacio, componentes y tiempos. Se
+distingue de $\max_j e_u(t_j)$, que calcula primero una norma relativa por
+instantánea. El error global pondera más los estados con mayor energía; el
+máximo detecta deterioro localizado en el tiempo. Ninguno describe por sí
+solo tiempos no guardados. Del mismo modo, $e_E$ compara la serie de energía,
+no es la energía del error de velocidad ni un residuo de la ecuación de energía.
+
+\section{Presupuesto de error y calidad de la referencia}
+Sea $\boldsymbol u_c$ la solución de la malla de evaluación y
+$\boldsymbol u_f$ la referencia de mayor resolución. Un operador de
+transferencia física $T$ lleva la primera a la malla fina. La reconstrucción
+se evalúa primero contra $\boldsymbol u_c$, porque esa solución generó la
+observación. Para cualquier observable lineal $q$ de ambos campos, por ejemplo
+velocidad o vorticidad con operadores compatibles, se define
+\begin{equation}
+ a_q=\frac{\norm{q(T\uhat)-q(T\boldsymbol u_c)}}{\norm{q(\boldsymbol u_f)}},
+ \qquad b_q=\frac{\norm{q(T\boldsymbol u_c)-q(\boldsymbol u_f)}}
+ {\norm{q(\boldsymbol u_f)}}.
+\end{equation}
+La desigualdad triangular produce el intervalo verificable
+\begin{equation}
+ |a_q-b_q|\leq
+ \frac{\norm{q(T\uhat)-q(\boldsymbol u_f)}}{\norm{q(\boldsymbol u_f)}}
+ \leq a_q+b_q.
+ \label{eq:error-budget}
+\end{equation}
+Si la prolongación conserva el error relativo y los operadores de derivación
+son compatibles, el error normalizado con la solución gruesa se convierte
+al denominador fino mediante la razón de normas de las referencias ya
+representadas en ese espacio. En el caso general se recalcula $a_q$
+directamente sobre la malla fina: una transferencia no isométrica o un
+tratamiento incompatible de Nyquist impiden abreviar esa conversión.
+No se suman porcentajes con denominadores distintos. La cota no
+afirma independencia, y puede ser amplia por cancelación entre errores.
+Energía y esfuerzos constitutivos no lineales requieren evaluar sus propias
+diferencias; no heredan automáticamente la misma cota de velocidad.
+
+$b_q$ describe una discrepancia entre dos soluciones numéricas del mismo
+solver, no el error frente a una solución física exacta desconocida. Un
+control temporal a malla fija y una solución analítica añaden evidencia
+distinta. La cercanía entre dos mallas tampoco excluye un sesgo común del
+modelo, la geometría o la implementación. La fidelidad experimental requiere
+datos y condiciones compatibles, además de verificación numérica.
+
+\section{Identificar el aporte del estimador y del prior espacial}
+Para una misma entrada y un mismo observable $q$, la comparación pareada
+utiliza
+\begin{equation}
+ \Delta e_q=e_q(\text{modelo A})-e_q(\text{modelo B}).
+\end{equation}
+Un valor negativo favorece A. La mediana de estas diferencias no coincide
+necesariamente con la diferencia de dos medianas. Se informan ambos conceptos
+con su denominador y se mantienen los empates y fallos. Las tres semillas
+del mismo campo son pocas realizaciones de observación; su mínimo y máximo
+son rangos descriptivos, no intervalos de confianza poblacionales.
+
+Una proyección solenoidal periódica elimina la parte longitudinal de la
+velocidad. Con operadores de Fourier compatibles, esa parte es irrotacional:
+H puede reducir divergencia y error de velocidad conservando vorticidad.
+Por ello, una divergencia próxima a redondeo después de H informa que la
+restricción se impuso, no que se recuperó la rotación limpia. Las convenciones
+de Nyquist y el corte B deben permanecer explícitos.
+
+El filtro B elimina modos de número de onda alto. Su beneficio puede venir
+de suprimir ruido, y su perjuicio de suprimir filamentos físicos. Se examina
+el error del campo limpio filtrado sólo como diagnóstico del sesgo introducido.
+La misma operación aplicada a identity es el control necesario para no
+atribuir ese beneficio espacial exclusivamente a DMD o RPCA.
+
+Si $B$ es el proyector ortogonal sobre la banda espacial retenida y
+$\widehat\omega=B\widehat\omega$, Parseval separa el error en
+\begin{equation}
+ e_\omega^2=
+ \frac{\norm{\widehat\omega-B\omega_{\mathrm{ref}}}^2}
+      {\norm{\omega_{\mathrm{ref}}}^2}
+ +\frac{\norm{(I-B)\omega_{\mathrm{ref}}}^2}
+       {\norm{\omega_{\mathrm{ref}}}^2}.
+ \label{eq:band-bias}
+\end{equation}
+El segundo término es un piso de error para cualquier estimación limitada
+a esa banda, medido contra la referencia completa. Para identity H+B, el
+primer término es el ruido de vorticidad retenido; para un estimador modal
+también contiene error de reconstrucción dentro de banda. La separación
+depende de la ortogonalidad espectral, no de una hipótesis de independencia
+entre errores aleatorios. Se aplica al dominio periódico y operadores
+compatibles utilizados aquí, sin extrapolarse automáticamente a máscaras
+irregulares o paredes.
 
 La medida normalizada de divergencia adicional del piloto es
 \begin{equation}
@@ -569,6 +667,305 @@ esfuerzos y condiciones de contorno compatibles; no se deducen
 automáticamente de estos diagnósticos de velocidad.
 
 \chapter{Desarrollo experimental}
+\section{Diseño centrado en comparación y fidelidad}
+La unidad de comparación es una misma observación: caso, ruido y semilla.
+Los estimadores comparten matriz, muestreo y geometría. Una semilla distinta
+cambia la contaminación del mismo flujo y constituye una réplica de calidad;
+un proceso nuevo para repetir costo no añade una realización física ni una
+muestra independiente. Los análisis de todas las instantáneas describen la
+misma trayectoria, no un conjunto de ensayos independientes.
+
+Se separan tres conjuntos de evidencia. El reanálisis pareado de la campaña
+amplia conserva sus 2808 condiciones y 8424 ajustes originales, con mallas
+pequeñas y nueve ruidos. El banco principal de mayor resolución compara siete
+referencias en $128^2$, cinco contaminaciones y tres semillas nuevas, con diez
+estimadores. Su configuración precede la ejecución completa. El estudio de
+sensibilidad cruza rango e intensidad en dos referencias; no sustituye la
+validación principal ni selecciona un método utilizando el limpio.
+
+El objetivo no es identificar una única clasificación global. Primero se
+comprueba qué magnitudes de cada referencia están suficientemente controladas;
+luego se compara el error de reconstrucción, y finalmente el costo de alcanzar
+las tolerancias. Una condición sin estimador físicamente admisible debe
+permanecer sin solución en el resumen, aunque alguno minimice $e_u$.
+
+\section{Comparación directa y ablación de conocimiento físico}
+Cada ajuste produce una sola matriz estimada. Se evalúan tres salidas de esa
+misma estimación: Raw, H y H+B. H es la proyección de Helmholtz y B un corte
+isótropo de número de onda físico $k_c=10$ en el dominio de lado $2\pi$.
+El costo base se comparte; cada salida registra además su posprocesamiento.
+Contar esas salidas como tres entrenamientos independientes inflaría el banco.
+
+El control identity utiliza directamente la observación y sus mismas
+transformaciones H/H+B. Permite preguntar si el modelo añade fidelidad por
+encima de proyectar o filtrar la medición. La diferencia Raw$\to$H describe
+el efecto de imponer solenoidalidad. La diferencia H$\to$H+B describe el
+prior espacial. La comparación modelo H+B frente a identity H+B examina el
+aporte del estimador una vez igualados esos supuestos físicos.
+
+El corte $k_c=10$ surgió en un seguimiento posterior al fallo de la campaña
+anterior de 60 reconstrucciones. Se fija antes del nuevo banco y se comprueba
+con semillas distintas, sin buscar otro corte con referencia limpia. Las
+referencias físicas siguen perteneciendo a las mismas familias del banco:
+la nueva contaminación no equivale a validación experimental ni transferencia
+a un régimen completamente independiente. El truncamiento introduce sesgo
+cuando elimina modos limpios; ese piso se mide como diagnóstico después del
+ajuste y no se utiliza para seleccionar un estimador.
+
+\section{Cuatro preguntas que organizan los resultados}
+\begin{enumerate}
+\item \textbf{¿Es defendible la referencia?} Se examinan verificación analítica,
+refinamiento espacial/temporal y observables constitutivos en el intervalo
+realmente calculado. No se infiere resolución de esfuerzo a partir de velocidad.
+\item \textbf{¿Qué estimador preserva el campo observado?} Se comparan errores
+pareados de velocidad y vorticidad, convergencia y admisibilidad antes de
+introducir posprocesamiento físico.
+\item \textbf{¿Cuánto procede del prior espacial?} Se comparan Raw, H y H+B,
+con identity sometido al mismo tratamiento y con el piso de truncamiento limpio.
+\item \textbf{¿Qué costo paga una solución utilizable?} Se consideran CPU,
+memoria, operaciones e iteraciones junto con aceptación; un tiempo pequeño
+sin fidelidad no constituye una solución barata de la tarea física.
+\end{enumerate}
+
+\section{Separar reconstrucción, simulación y pronóstico}
+La referencia de mayor malla y la malla de evaluación no siempre tienen
+idéntico horizonte. Los viscoplásticos de $256^2$ sólo aportan un control
+hasta $t=.1$; la trayectoria de $128^2$ hasta $t=2$ conserva esa limitación.
+Oldroyd-B/FENE-P cuentan con comparación frente a $256^2$ hasta $2.4$,
+y los casos newtonianos frente a $512^2$ hasta $4$.
+
+El banco principal estima velocidad. En viscoelasticidad no identifica la
+conformación ni la memoria de esfuerzo: esas magnitudes juzgan la referencia
+limpia. En los modelos viscoplásticos inelásticos sí se deriva el esfuerzo
+instantáneo a partir del gradiente reconstruido y de la ley conocida; es un
+diagnóstico constitutivo condicionado a parámetros correctos, no una
+identificación de material. Si condición inicial, parámetros comparables,
+dominio y tiempos están emparejados, una diferencia entre fluidos permite
+examinar el efecto constitutivo simulado. En el banco principal, viscosidades
+e intervalos difieren entre familias: son contrastes multifactoriales de
+referencia y no identifican por sí solos una causa material. Una
+diferencia entre $\uhat$ y $\uref$ del mismo fluido es error de reconstrucción.
+Los parámetros de familias diferentes no siempre están emparejados, por lo
+que los contrastes se estratifican por referencia e intervalo.
+
+La reconstrucción ajusta toda la ventana observada. El pronóstico cronológico
+con bloques separados responde a otra pregunta; conserva sus controles de
+persistencia y se documenta después, como evidencia complementaria.
+
+\section{Costo computacional y Pareto}
+El vector de costo registra tiempo wall, CPU, RSS pico absoluta del
+proceso, memoria visible a \code{tracemalloc}, dimensiones de entrada,
+llamadas SVD/mínimos cuadrados/eigensolver e iteraciones. Cada repetición
+usa un proceso nuevo para evitar atribuir al ajuste un máximo RSS
+histórico de otra corrida. La RSS incluye intérprete, dependencias y
+entrada; no se presenta como memoria adicional exclusiva del algoritmo.
+El pico de \code{tracemalloc} no mide toda la memoria nativa y su
+instrumentación añade sobrecarga.
+
+El reanálisis histórico reporta mediana e intervalo intercuartílico de tres
+mediciones por condición, suficientes para una variabilidad inicial y sin
+caracterizar exhaustivamente el hardware. El banco principal nuevo utiliza
+una medición por ajuste en proceso aislado, con un hilo BLAS, sobre un host
+compartido. Sus tres semillas replican calidad, no repiten costo de una misma
+entrada. Se registran ajuste y cada variante de posprocesamiento por separado;
+la RSS del posprocesamiento puede heredar máximos de etapas y evaluaciones
+previas del hijo, por lo que no es memoria incremental de la proyección.
+Se conservan arquitectura, versiones y hilos numéricos. No se mide energía
+en joules porque no hay un contador físico de energía en esta campaña.
+
+Como proxy de trabajo dominante, una SVD delgada de una matriz $m\times n$
+con $k=\min(m,n)$ se contabiliza mediante
+\begin{equation}
+ \widehat W_{\mathrm{SVD}}=4mnk+\frac83k^3,
+ \qquad \widehat W_{\mathrm{producto}}=2mnp.
+\end{equation}
+Los coeficientes y exclusiones están documentados por el código. Se
+omiten trabajo elemento a elemento, normas, factores de aritmética
+compleja y sobrecarga del optimizador, entre otros componentes; el proxy
+no es FLOPs medidos, instrucciones de hardware ni energía. Además se
+informa el conteo de llamadas reales, cuya mezcla puede variar por método.
+La relación entre cómputo y tráfico de memoria motiva esta separación
+\citep{williams2009roofline}.
+
+Una configuración domina otra si no empeora ninguna coordenada elegida
+de costo/error y mejora al menos una. La frontera Pareto se interpreta
+en grupos equivalentes de caso, ruido y semilla. No se mezclan mallas o
+cargas distintas en una clasificación global. El runner informa dos pertenencias: Pareto exploratoria entre configuraciones convergentes y Pareto físicamente admisible entre las que además superan todos los criterios. La primera puede incluir configuraciones que incumplen la aceptación física; ambas se mantienen diferenciadas en los artefactos.
+Los perfiles de desempeño de \citet{dolan2002profiles} son una extensión
+para comparar conjuntos de problemas sin reducirlos a un promedio que
+oculte fallos.
+
+\section{Criterios de aceptación física predeclarados}
+El piloto y la ampliación de reconstrucción exigen
+\begin{equation}
+ e_u\leq0.15,\quad e_\omega\leq0.25,\quad
+ d_{\mathrm{extra}}\leq0.10,\quad e_E\leq0.15.
+\end{equation}
+En canales exige adicionalmente error de velocidad de pared normalizado
+menor o igual a $0.02$ y velocidad normal de pared normalizada menor o
+igual a $0.02$. Deben converger todas las repeticiones. Una métrica
+ausente o indefinida no supera el criterio.
+
+Estos umbrales son decisiones explícitas de una campaña piloto, no
+estándares universales publicados para cualquier aplicación. Se informa
+también enstrofía y balance de materia, aunque no integren todos ellos el
+criterio de aceptación del piloto. Un ensayo posterior debe ajustar sus
+umbrales al uso físico y declararlos antes de interpretar el test.
+
+La expresión \emph{admisible} se refiere a esas cuatro puertas y a
+convergencia. No incorpora automáticamente un criterio sobre el residuo de
+Navier--Stokes, la disipación o el esfuerzo derivado. Estos observables se
+informan por separado: una configuración admisible puede tener errores
+importantes en una magnitud física adicional. En particular, imponer
+divergencia mediante H no verifica la evolución de vorticidad.
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=\textwidth]{docs/research/figures/diagram_research_pipeline.pdf}
+\caption{Flujo de trabajo de simulación, observación, estimación y evaluación. La referencia limpia sustenta la comparación física; la elección predictiva utiliza validación ruidosa. La frontera de recursos se interpreta junto con tolerancias y convergencia.}
+\label{fig:research-pipeline}\end{figure}
+
+\section{Verificación y trazabilidad}
+Se verifica el solver frente a soluciones exactas, límites constitutivos,
+residuos y refinamiento; las comprobaciones y sus configuraciones forman
+parte de los artefactos. Un residuo algebraico pequeño en Euler implícito
+no equivale a error de discretización pequeño. Taylor--Green de un modo
+no sustituye refinamiento no lineal; una máscara de cilindro no sustituye
+una geometría convergida de esfuerzos y fronteras.
+
+Los hashes de fuentes y configuración acompañan los artefactos del baseline y corresponden a aquella ejecución; no verifican automáticamente el código integrado de fase 8. Cada campaña nueva registra su propia procedencia. La matriz observada y los parámetros quedan identificados por caso,
+distribución, semilla y método. El runner registra fallos, convergencia,
+configuración y recursos por réplica; produce tablas crudas y resúmenes
+derivados. No se eligen hiperparámetros con el campo limpio. Las cifras
+de resultados deben enlazar estos artefactos y distinguir reconstrucción
+in-sample de cualquier análisis futuro fuera de muestra.
+
+\chapter{Resultados y discusión}
+\label{chap:results}
+El contenido numérico de este capítulo se genera a partir de campañas
+completas y sus archivos de validación. Las comparaciones se restringen a los
+casos, intensidad, configuraciones y resoluciones efectivamente
+registrados. Los conteos previstos del capítulo anterior no sustituyen
+los conteos observados; los fallos y las condiciones que no satisfacen
+los criterios permanecen visibles.
+
+\input{docs/research/comparison_generated.tex}
+
+\section{Límites comunes de interpretación}
+Una ventaja de un método bajo una distribución no acredita superioridad
+en todas las demás. Los promedios históricos sobre casos analíticos
+estacionarios, campos no lineales y un LBM no validado reflejan la mezcla
+de aquel banco. El banco principal periódico se analiza por caso y ruido;
+sus conteos se mantienen separados de los pilotos.
+Tres semillas aportan una exploración inicial, sin representar toda la
+variabilidad posible de la medición.
+
+El error de vorticidad depende de la derivación y resolución; los
+residuos adicionales aíslan alteraciones de reconstrucción respecto al
+campo limpio, pero heredan sus limitaciones. Copiar la densidad permite
+diagnosticar velocidad con una hipótesis de densidad conocida, no
+recuperar densidad corrupta. El balance neto de flujo no sustituye las
+comprobaciones locales de continuidad y pared.
+
+La campaña de reconstrucción ajusta el intervalo observado y la campaña
+cronológica evalúa un futuro separado. No se ejecutaron entrenamiento
+profundo, online, GPU ni estelas externas de cilindro Oldroyd-B/FENE-P/EVP.
+Los nuevos campos periódicos tienen memoria constitutiva o esfuerzo variable,
+pero no reproducen por sí solos una calle de vórtices ni demuestran caos.
+Los residuos constitutivos y de cuadratura no se sustituyen por cero.
+
+\chapter{Conclusiones y líneas de trabajo futuro}
+\input{docs/research/comparison_conclusions_generated.tex}
+
+\section{Qué resultado permite recomendar un modelo}
+La recomendación es condicional a ruido, caso, resolución, intervalo y
+conocimiento disponible. Una ventaja de reconstrucción se sostiene mejor
+cuando el contraste está emparejado, el control físico usa las mismas
+operaciones y la referencia tiene un error inferior al efecto analizado.
+La mayor precisión de una ley constitutiva no puede inferirse de que un
+estimador reconstruya fácilmente su velocidad.
+
+No se equiparan convergencia algebraica, aceptación física, fidelidad de la
+simulación ni generalización. La interpretación conserva el resultado
+negativo de 0/60 en el primer banco de mayor malla y distingue su seguimiento
+exploratorio de 18/24. El banco nuevo contrasta configuraciones fijas con
+semillas adicionales; los datos limpios evalúan, sin escoger al ganador para
+una medición cuyo campo verdadero es desconocido.
+
+\section{Pronóstico y generalización fuera del ajuste}
+La campaña cronológica ejecutada utiliza entrenamiento, validación y prueba
+sin snapshots futuros durante la limpieza. Su selección ruidosa mejora la
+persistencia en parte del banco, pero conserva errores altos de vorticidad en
+flujos no lineales. El siguiente paso es evaluar horizontes más largos,
+transferencia a condiciones no usadas en ajuste y cobertura de incertidumbre
+cuando el método la entregue. El costo debe incluir entrenamiento y reajustes;
+su amortización requiere declarar cuántas predicciones se producen.
+
+Se amplían niveles de intensidad, rangos y correlaciones mediante la
+configuración de resolución/rango. El ruido heteroscedástico, las colas pesadas y la deriva de sensor ya se
+incluyeron en la ampliación. La deriva y la correlación temporal no alcanzan
+las tolerancias de reconstrucción en este banco, y requieren modelos de
+sesgo/memoria más específicos. Los datos faltantes y las perturbaciones de
+forzado siguen pendientes de diseños separados. Los datos faltantes se representan con máscara y no se
+convierten automáticamente en ceros observados. La selección de
+hiperparámetros utiliza validación separada y presupuesto comparable.
+
+\section{Wakes no newtonianos y campaña HPC pendiente}
+La extensión física avanza por etapas: benchmark newtoniano con
+geometría/fronteras reproducidas, HB/Bingham regularizado en wake,
+Oldroyd-B/FENE-P con tensor de conformación y, finalmente,
+Saramito--Herschel--Bulkley EVP. Los parámetros Re, Wi, Bn, $\beta$,
+extensibilidad y regularización se declaran junto con sus escalas.
+
+El manifiesto externo toma $Re=100$ como línea de comparación con
+antecedentes, sin sustituir la verificación del solver. Antes de analizar
+modos se exige refinamiento espacial/temporal, sensibilidad a dominio y
+fronteras, resolución de capas de esfuerzo y checks constitutivos.
+Log-conformation aporta estabilización, pero no elimina esas
+necesidades. La campaña de \citet{corrochano2026evp} ilustra la escala
+de cómputo de wakes EVP; citarla o preparar un manifiesto no significa
+haber reproducido sus simulaciones.
+
+La integración de RheoTool o Basilisk fija versión/commit,
+configuración, dependencias, licencia y pruebas del solver. Los
+manifiestos mantienen estado pendiente hasta producir y verificar
+campos. Una viscosidad espacial variable no reemplaza la ecuación de
+memoria de esfuerzos ni la constitutiva EVP. Clasificar un campo como
+caótico requiere evidencia dinámica; la apariencia de una imagen no
+es una prueba.
+
+\section{Escala 3D, GPU, online y validación PIV}
+Los campos 3D, los modelos incrementales y la aceleración GPU se
+abordan después de verificar precisión y conservación. La SVD
+truncada/aleatoria, las pasadas sobre datos y el movimiento de memoria
+se comparan explícitamente. Un objetivo de reconstrucción sub-segundo requiere medición propia; no se deriva automáticamente de utilizar una GPU.
+
+La validación con PIV real requiere calibración de incertidumbre,
+máscaras de observación y datos que permitan evaluar sin una
+referencia limpia perfecta. Las comparaciones con autoencoders u otros
+modelos aprendidos separan realizaciones, regímenes y conjuntos de
+entrenamiento/test, contabilizan costo de entrenamiento y reportan
+degradación física además de error visual. La integración de uso se
+apoya en esquemas de datos y scripts reproducibles, una vez validadas
+las etapas científicas.
+
+\clearpage
+\section*{Apéndices y evidencia complementaria}
+\addcontentsline{toc}{part}{Apéndices y evidencia complementaria}
+\markboth{Apéndices}{Apéndices}
+\setcounter{section}{0}
+\renewcommand{\thesection}{A.\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\setcounter{figure}{0}
+\renewcommand{\thefigure}{A.\arabic{figure}}
+\setcounter{table}{0}
+\renewcommand{\thetable}{A.\arabic{table}}
+
+\section{Configuraciones históricas y evolución del diseño}
+Los detalles siguientes preservan campañas anteriores. Su ubicación en un
+apéndice no cambia sus cifras, fallos ni procedencia. Las mallas pequeñas
+sirven como piloto de metodología y como antecedentes del banco principal;
+no respaldan por sí solas la fidelidad de una nueva referencia.
+
 \section{Piloto preservado y procedencia física}
 Esta sección describe el baseline anterior, conservado con su procedencia en
 \path{results/research/baseline_2026-10-14/}; sus cifras no se atribuyen a una
@@ -826,215 +1223,28 @@ antes de evaluar; esta limpieza utiliza el intervalo observado y no es una
 campaña de pronóstico. El costo tiene una sola réplica sobre un host ocupado
 por las simulaciones: no se presenta como una clasificación precisa de tiempos.
 
-\section{Costo computacional y Pareto}
-El vector de costo registra tiempo wall, CPU, RSS pico absoluta del
-proceso, memoria visible a \code{tracemalloc}, dimensiones de entrada,
-llamadas SVD/mínimos cuadrados/eigensolver e iteraciones. Cada repetición
-usa un proceso nuevo para evitar atribuir al ajuste un máximo RSS
-histórico de otra corrida. La RSS incluye intérprete, dependencias y
-entrada; no se presenta como memoria adicional exclusiva del algoritmo.
-El pico de \code{tracemalloc} no mide toda la memoria nativa y su
-instrumentación añade sobrecarga.
 
-Se reportan mediana e intervalo intercuartílico. Tres réplicas permiten
-observar variabilidad inicial, sin establecer una caracterización
-exhaustiva de hardware. Se conservan arquitectura, versiones y hilos
-numéricos. No se mide energía en joules porque no hay un contador físico
-de energía en esta campaña.
-
-Como proxy de trabajo dominante, una SVD delgada de una matriz $m\times n$
-con $k=\min(m,n)$ se contabiliza mediante
-\begin{equation}
- \widehat W_{\mathrm{SVD}}=4mnk+\frac83k^3,
- \qquad \widehat W_{\mathrm{producto}}=2mnp.
-\end{equation}
-Los coeficientes y exclusiones están documentados por el código. Se
-omiten trabajo elemento a elemento, normas, factores de aritmética
-compleja y sobrecarga del optimizador, entre otros componentes; el proxy
-no es FLOPs medidos, instrucciones de hardware ni energía. Además se
-informa el conteo de llamadas reales, cuya mezcla puede variar por método.
-La relación entre cómputo y tráfico de memoria motiva esta separación
-\citep{williams2009roofline}.
-
-Una configuración domina otra si no empeora ninguna coordenada elegida
-de costo/error y mejora al menos una. La frontera Pareto se interpreta
-en grupos equivalentes de caso, ruido y semilla. No se mezclan mallas o
-cargas distintas en una clasificación global. El runner informa dos pertenencias: Pareto exploratoria entre configuraciones convergentes y Pareto físicamente admisible entre las que además superan todos los criterios. La primera puede incluir configuraciones que incumplen la aceptación física; ambas se mantienen diferenciadas en los artefactos.
-Los perfiles de desempeño de \citet{dolan2002profiles} son una extensión
-para comparar conjuntos de problemas sin reducirlos a un promedio que
-oculte fallos.
-
-\section{Criterios de aceptación física predeclarados}
-El piloto y la ampliación de reconstrucción exigen
-\begin{equation}
- e_u\leq0.15,\quad e_\omega\leq0.25,\quad
- d_{\mathrm{extra}}\leq0.10,\quad e_E\leq0.15.
-\end{equation}
-En canales exige adicionalmente error de velocidad de pared normalizado
-menor o igual a $0.02$ y velocidad normal de pared normalizada menor o
-igual a $0.02$. Deben converger todas las repeticiones. Una métrica
-ausente o indefinida no supera el criterio.
-
-Estos umbrales son decisiones explícitas de una campaña piloto, no
-estándares universales publicados para cualquier aplicación. Se informa
-también enstrofía y balance de materia, aunque no integren todos ellos el
-criterio de aceptación del piloto. Un ensayo posterior debe ajustar sus
-umbrales al uso físico y declararlos antes de interpretar el test.
-
-\begin{figure}[htbp]\centering
-\includegraphics[width=\textwidth]{docs/research/figures/diagram_research_pipeline.pdf}
-\caption{Flujo de trabajo de simulación, observación, estimación y evaluación. La referencia limpia sustenta la comparación física; la elección predictiva utiliza validación ruidosa. La frontera de recursos se interpreta junto con tolerancias y convergencia.}
-\label{fig:research-pipeline}\end{figure}
-
-\section{Verificación y trazabilidad}
-Se verifica el solver frente a soluciones exactas, límites constitutivos,
-residuos y refinamiento; las comprobaciones y sus configuraciones forman
-parte de los artefactos. Un residuo algebraico pequeño en Euler implícito
-no equivale a error de discretización pequeño. Taylor--Green de un modo
-no sustituye refinamiento no lineal; una máscara de cilindro no sustituye
-una geometría convergida de esfuerzos y fronteras.
-
-Los hashes de fuentes y configuración acompañan los artefactos del baseline y corresponden a aquella ejecución; no verifican automáticamente el código integrado de fase 8. Cada campaña nueva registra su propia procedencia. La matriz observada y los parámetros quedan identificados por caso,
-distribución, semilla y método. El runner registra fallos, convergencia,
-configuración y recursos por réplica; produce tablas crudas y resúmenes
-derivados. No se eligen hiperparámetros con el campo limpio. Las cifras
-de resultados deben enlazar estos artefactos y distinguir reconstrucción
-in-sample de cualquier análisis futuro fuera de muestra.
-
-\chapter{Resultados y discusión}
-\label{chap:results}
-El contenido numérico de este capítulo se genera a partir de la campaña
-y de sus archivos de validación. Las comparaciones se restringen a los
-casos, intensidad, configuraciones y resoluciones efectivamente
-registrados. Los conteos previstos del capítulo anterior no sustituyen
-los conteos observados; los fallos y las condiciones que no satisfacen
-los criterios permanecen visibles.
-
+\clearpage
+\section{Registro amplio y selección retrospectiva descriptiva}
+La tabla de 72 grupos de la campaña anterior informa el menor error de
+velocidad observado en cada grupo y conserva la aceptación física. Esa
+selección es retrospectiva contra referencia limpia: describe el banco y
+no constituye una regla desplegable para elegir modelo en datos reales.
+El capítulo principal compara opciones fijas y contrastes pareados.
 \input{docs/research/results_generated.tex}
+
+\clearpage
+\section{Pronóstico cronológico y control reológico complementarios}
 \input{docs/research/extended_generated.tex}
+
+\clearpage
+\section{Catálogo visual y controles de mayor resolución}
+Las imágenes de evolución, mapas constitutivos, espectros y balances
+permiten inspeccionar cómo se generaron las referencias. Las comparaciones
+sintéticas originales y el seguimiento de banda fija se conservan completos.
+Las figuras del capítulo principal sintetizan lo necesario para comparar
+modelos y juzgar fidelidad; aquí se documenta la evolución detallada.
 \input{docs/research/highres_generated.tex}
-
-\section{Límites comunes de interpretación}
-Una ventaja de un método bajo una distribución no acredita superioridad
-en todas las demás. El promedio sobre casos analíticos estacionarios,
-campos no lineales y un LBM no validado puede reflejar su mezcla; por eso
-las comparaciones físicas se leen primero por caso y contaminación.
-Tres semillas aportan una exploración inicial, sin representar toda la
-variabilidad posible de la medición.
-
-El error de vorticidad depende de la derivación y resolución; los
-residuos adicionales aíslan alteraciones de reconstrucción respecto al
-campo limpio, pero heredan sus limitaciones. Copiar la densidad permite
-diagnosticar velocidad con una hipótesis de densidad conocida, no
-recuperar densidad corrupta. El balance neto de flujo no sustituye las
-comprobaciones locales de continuidad y pared.
-
-La campaña de reconstrucción ajusta el intervalo observado y la campaña
-cronológica evalúa un futuro separado. No se ejecutaron entrenamiento
-profundo, online, GPU ni estelas externas de cilindro Oldroyd-B/FENE-P/EVP.
-Los nuevos campos periódicos tienen memoria constitutiva o esfuerzo variable,
-pero no reproducen por sí solos una calle de vórtices ni demuestran caos.
-Los residuos constitutivos y de cuadratura no se sustituyen por cero.
-
-\chapter{Conclusiones y líneas de trabajo futuro}
-\section{Conclusiones metodológicas y alcance}
-La campaña de mayor resolución muestra que la suficiencia depende de la
-magnitud que se quiere observar. Frente a $512^2$, el caso multiescala en
-$64^2$ tiene un error máximo de velocidad de $0.2007\%$, pero $1.312\%$ en
-vorticidad; en $128^2$ esta última diferencia baja a $0.03032\%$. Las
-imágenes y los espectros acompañan esa comparación, sin sustituirla.
-
-En Oldroyd-B, frente a $256^2$, la velocidad de $128^2$ difiere apenas
-$0.0008872\%$ mientras que conformación y esfuerzo difieren $4.383\%$.
-FENE-P alcanza $0.1165\%$ en esfuerzo bajo los mismos parámetros nominales.
-La cola tensorial de Oldroyd-B en $256^2$ todavía exige una referencia
-superior antes de afirmar resolución constitutiva completa. En HB adelgazante,
-la viscosidad aparente conserva $5.023\%$ de diferencia $128^2\to256^2$ en
-la prueba corta; esa referencia no valida todo el horizonte largo.
-
-Las 60 reconstrucciones de mayor malla incumplen los umbrales físicos pese
-a reducir error de velocidad. El seguimiento exploratorio de banda física
-fija alcanza 18 aceptaciones de 24, conservando un control de filtrado directo.
-En gaussiano IID sobre $256^2$, ese control supera a TLS-DMD en vorticidad:
-la mejora corresponde al conjunto de supuestos y operaciones, y no prueba
-una ventaja universal del modelo dinámico. Una validación independiente
-de ese nuevo prior permanece pendiente.
-
-La ampliación establece una comparación verificable entre estructura de
-contaminación, estimador, referencia física y recursos. El juicio de éxito
-separa convergencia del algoritmo, fidelidad de reconstrucción,
-conservación observada y costo. Un único tiempo o error escalar no
-resuelve todas estas preguntas.
-
-Las conclusiones numéricas se limitan a los artefactos del
-capítulo~\ref{chap:results}. No se infiere la superioridad universal de
-RPCA ni la inutilidad general de DMD a partir del estudio impulsivo
-o del piloto. La SVD, los modelos dispersos y los ajustes
-dinámicos tienen hipótesis y objetivos diferentes; sus fallos y
-tradeoffs deben permanecer documentados.
-
-El marco académico combina LBM--RPCA--DMD con pruebas de reconstrucción y física. No se reclama primera aplicación de DMD a
-fluidos viscoelásticos o EVP. Las referencias de canal y los nuevos flujos periódicos bidimensionales
-amplían las constitutivas observadas. Los estudios de refinamiento respaldan
-regímenes concretos; no certifican una estela externa de cilindro, alto
-Weissenberg ni una transición turbulenta tridimensional.
-
-\section{Pronóstico y generalización fuera del ajuste}
-La campaña cronológica ejecutada utiliza entrenamiento, validación y prueba
-sin snapshots futuros durante la limpieza. Su selección ruidosa mejora la
-persistencia en parte del banco, pero conserva errores altos de vorticidad en
-flujos no lineales. El siguiente paso es evaluar horizontes más largos,
-transferencia a condiciones no usadas en ajuste y cobertura de incertidumbre
-cuando el método la entregue. El costo debe incluir entrenamiento y reajustes;
-su amortización requiere declarar cuántas predicciones se producen.
-
-Se amplían niveles de intensidad, rangos y correlaciones mediante la
-configuración de resolución/rango. El ruido heteroscedástico, las colas pesadas y la deriva de sensor ya se
-incluyeron en la ampliación. La deriva y la correlación temporal no alcanzan
-las tolerancias de reconstrucción en este banco, y requieren modelos de
-sesgo/memoria más específicos. Los datos faltantes y las perturbaciones de
-forzado siguen pendientes de diseños separados. Los datos faltantes se representan con máscara y no se
-convierten automáticamente en ceros observados. La selección de
-hiperparámetros utiliza validación separada y presupuesto comparable.
-
-\section{Wakes no newtonianos y campaña HPC pendiente}
-La extensión física avanza por etapas: benchmark newtoniano con
-geometría/fronteras reproducidas, HB/Bingham regularizado en wake,
-Oldroyd-B/FENE-P con tensor de conformación y, finalmente,
-Saramito--Herschel--Bulkley EVP. Los parámetros Re, Wi, Bn, $\beta$,
-extensibilidad y regularización se declaran junto con sus escalas.
-
-El manifiesto externo toma $Re=100$ como línea de comparación con
-antecedentes, sin sustituir la verificación del solver. Antes de analizar
-modos se exige refinamiento espacial/temporal, sensibilidad a dominio y
-fronteras, resolución de capas de esfuerzo y checks constitutivos.
-Log-conformation aporta estabilización, pero no elimina esas
-necesidades. La campaña de \citet{corrochano2026evp} ilustra la escala
-de cómputo de wakes EVP; citarla o preparar un manifiesto no significa
-haber reproducido sus simulaciones.
-
-La integración de RheoTool o Basilisk fija versión/commit,
-configuración, dependencias, licencia y pruebas del solver. Los
-manifiestos mantienen estado pendiente hasta producir y verificar
-campos. Una viscosidad espacial variable no reemplaza la ecuación de
-memoria de esfuerzos ni la constitutiva EVP. Clasificar un campo como
-caótico requiere evidencia dinámica; la apariencia de una imagen no
-es una prueba.
-
-\section{Escala 3D, GPU, online y validación PIV}
-Los campos 3D, los modelos incrementales y la aceleración GPU se
-abordan después de verificar precisión y conservación. La SVD
-truncada/aleatoria, las pasadas sobre datos y el movimiento de memoria
-se comparan explícitamente. Un objetivo de reconstrucción sub-segundo requiere medición propia; no se deriva automáticamente de utilizar una GPU.
-
-La validación con PIV real requiere calibración de incertidumbre,
-máscaras de observación y datos que permitan evaluar sin una
-referencia limpia perfecta. Las comparaciones con autoencoders u otros
-modelos aprendidos separan realizaciones, regímenes y conjuntos de
-entrenamiento/test, contabilizan costo de entrenamiento y reportan
-degradación física además de error visual. La integración de uso se
-apoya en esquemas de datos y scripts reproducibles, una vez validadas
-las etapas científicas.
 
 \backmatter
 \bibliographystyle{plainnat}

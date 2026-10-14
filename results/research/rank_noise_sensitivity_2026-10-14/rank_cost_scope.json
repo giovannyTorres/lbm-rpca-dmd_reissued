@@ -1,0 +1,13 @@
+{
+  "rows": 360,
+  "one_row_per_actual_fit": true,
+  "measured_fit_cpu_seconds_sum": 65.405344573,
+  "measured_postprocess_cpu_seconds_sum": 101.401239946,
+  "cpu_totals_scope": "Sum of measured model/postprocess calls, excluding evaluation, noise generation, oracle diagnostics, plotting, process startup and I/O. This is not total campaign CPU or electricity.",
+  "separate_from_1080_postprocessing_evaluations": true,
+  "measurement": "One fresh single-BLAS-thread child per condition. Fit CPU, wall, absolute lifetime RSS and Python-traced allocations; evaluation excluded.",
+  "arithmetic_proxy": "Diagnostics count algorithm work with documented omitted operations. It is a dominant-arithmetic proxy, not a measured exact FLOP census.",
+  "postprocessing": "Each fit has three separately measured postprocessing stages in ledger; peak RSS of a later stage includes the historical child-process peak and must not be treated as incremental postprocessing memory.",
+  "postprocessing_fft_diagnostic": "The inherited fft_calls=2 describes the Helmholtz projection substage only. H+k10 then adds another FFT and inverse FFT: four transform calls in the combined pipeline, not two. Postprocess CPU/wall profiles measure the full combined function.",
+  "uncertainty": "Three seeds are different observed matrices, not repeated-cost measurements of the same matrix. Shared-host wall timings are descriptive; no precise speed ranking or confidence interval is claimed."
+}

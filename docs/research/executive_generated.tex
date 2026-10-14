@@ -1,0 +1,19 @@
+% Generated; evidence-dependent academic executive summary.
+La ampliación compara modelos de reconstrucción mediante fidelidad física, después de examinar la calidad numérica de las referencias. La pregunta exige una misma observación, errores de velocidad y vorticidad, convergencia y costo a la tolerancia. El documento conserva cinco capítulos y desplaza el catálogo de evolución a los apéndices.
+
+El banco principal incluye 1050 ajustes sobre siete referencias 128$^2$, cinco ruidos y tres semillas nuevas; sus 3150 evaluaciones Raw/H/H+B comparten esos ajustes. El reanálisis previo conserva 2808 condiciones y 8424 mediciones de costo. Los controles físicos alcanzan 512$^2$ en Navier–Stokes, 256$^2$ en viscoelasticidad y 256$^2$ en un intervalo viscoplástico corto.
+
+\begin{enumerate}
+\item \textbf{Fidelidad de simulación.} La resolución se juzga por observable y horizonte. Oldroyd-B puede tener velocidad casi invariable entre mallas y esfuerzo aún sensible; el refinamiento corto HB no valida automáticamente su evolución larga.
+\item \textbf{Comparación del modelo.} Raw compara estimadores sin conocimiento físico añadido. Las diferencias se estratifican por contaminación y referencia, y los fallos permanecen en los denominadores.
+\item \textbf{Aporte de restricciones.} H impone solenoidalidad; H+B limita banda física. Identity recibe las mismas transformaciones para distinguir qué mejora procede del estimador y qué mejora procede del prior.
+\item \textbf{Costo útil.} CPU, RSS y trabajo dominante complementan el tiempo. La frontera de recursos sólo tiene sentido una vez exigida fidelidad; una observación sin método admisible conserva ese resultado negativo.
+\end{enumerate}
+
+La cobertura del banco, cuando basta alguna de las diez opciones fijas, es 3/105 con Raw, 16/105 con H y 105/105 con H+B. Se registran 0 fallos y 8 ajustes no convergentes. Estos conteos describen el banco y las cuatro puertas predeclaradas, no probabilidades poblacionales.
+
+El prior tiene un costo físico medible: en Multiescala NS elimina 10.84~\% de vorticidad limpia en norma relativa. Cualquier reconstrucción limitada a esa banda conserva al menos ese error frente a la referencia completa, incluso sin ruido. Aceptar una salida con puerta del 25~\% no equivale a fidelidad del 10~\%.
+
+\textbf{Guía de lectura.} El capítulo 2 define supuestos y observables; el 3 fija unidades de comparación y controles; el 4 responde las cuatro preguntas anteriores y examina sensibilidad. Los apéndices permiten inspeccionar evoluciones, resolución y resultados históricos completos sin diluir la comparación central.
+
+El error de reconstrucción se evalúa contra la solución que generó la observación. Las diferencias contra una malla fina acotan qué interpretación física puede darse a ese error, pero no convierten una solución numérica en verdad experimental. El campo limpio no selecciona hiperparámetros; las sensibilidades y los pisos de sesgo se interpretan después del ajuste.

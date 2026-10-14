@@ -1,0 +1,25 @@
+{
+  "analysis_script_sha256": "993a4076ddbe5d38eae349856ea3f4ed6aab61bde25fecd748f85d1fdd04bedc",
+  "fixed_driver_sha256": "4bb4cea63235c1efeeebce7f8b898a906f306046a66206b89f74682a48f58e05",
+  "source_hashes_unchanged": true,
+  "input_hashes_unchanged": true,
+  "unique_condition_fingerprints": 360,
+  "regenerated_observation_hashes_match": true,
+  "unique_observations": 36,
+  "rms_injection_verified": true,
+  "helmholtz_discrete_curl_preservation_verified": true,
+  "ledger_sha256": "048f0d84bf2bb5f50d60a4d9a0a31d4b4aa9d2cc222d554622001ffa24cb0754",
+  "oracle_sha256": "1ec0ea6b2311c564300d8660f74f7f598b2451cc9631a8b4cd162e2b6ec73bcc",
+  "fits": 360,
+  "evaluations": 1080,
+  "aggregates": 360,
+  "main_overlap_verified": 24,
+  "figure_paths": [
+    "results/research/rank_noise_sensitivity_2026-10-14/figures/acceptance_rank_noise.pdf",
+    "results/research/rank_noise_sensitivity_2026-10-14/figures/clean_oracle_floor.pdf",
+    "results/research/rank_noise_sensitivity_2026-10-14/figures/rank_postprocessing.pdf",
+    "results/research/rank_noise_sensitivity_2026-10-14/figures/rank_velocity.pdf",
+    "results/research/rank_noise_sensitivity_2026-10-14/figures/rank_vorticity.pdf"
+  ],
+  "presentation_changes_only": "Frozen experiment renderer reused; spelling and minimum–maximum wording corrected in titles."
+}

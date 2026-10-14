@@ -1,1 +1,9 @@
 results/research/**/*.csv text eol=lf
+
+# Preserve exact generated evidence bytes: provenance records raw CSV SHA-256.
+results/research/paired_model_comparison_2026-10-14/**/*.csv -text whitespace=cr-at-eol
+results/research/model_fidelity_benchmark_2026-10-14/**/*.csv -text whitespace=cr-at-eol
+results/research/rank_noise_sensitivity_2026-10-14/**/*.csv -text whitespace=cr-at-eol
+results/research/clean_model_controls_2026-10-14/**/*.csv -text whitespace=cr-at-eol
+results/research/reference_fidelity_2026-10-14/**/*.csv -text whitespace=cr-at-eol
+results/research/prior_spectral_budget_2026-10-14/**/*.csv -text whitespace=cr-at-eol

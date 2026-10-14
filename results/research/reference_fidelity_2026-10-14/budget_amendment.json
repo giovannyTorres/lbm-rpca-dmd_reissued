@@ -1,0 +1,14 @@
+{
+  "case_id": "hb_thinning_2d",
+  "grid": 128,
+  "horizon": 2.0,
+  "initial_budget_seconds": 1200,
+  "amended_budget_seconds": 2700,
+  "pilot_grid": 64,
+  "pilot_wall_seconds": 111.0,
+  "predicted_wall_seconds": 1776.0,
+  "reason": "Complete the same-physics original-benchmark refinement rather than shorten the physical horizon; amendment based on measured compute cost, before observing the128 fidelity result.",
+  "material_parameters_unchanged": true,
+  "amendment_changes_solvers": false,
+  "timing_is_descriptive_on_shared_host": true
+}

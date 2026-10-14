@@ -1,0 +1,147 @@
+{
+  "complete": true,
+  "cache_key": {
+    "case_id": "hb_thinning_2d",
+    "solver": "viscoplastic_periodic",
+    "parameters": {
+      "case": "interacting_vortices",
+      "nx": 64,
+      "consistency": 0.02,
+      "flow_index": 0.6,
+      "yield_stress": 0.02,
+      "regularization_m": 10.0,
+      "shear_epsilon": 0.001,
+      "dt": 0.005,
+      "n_steps": 400,
+      "sample_every": 10
+    },
+    "old_manifest_sha256": "6566b67fff2513190f2e4b4065b3d0af6220b75f396c73b86cdfe2d50735a602",
+    "old_archive_sha256": "972a62c12a36b616d1e85fc7e63c497b4f8045aa054c9eab882e742e7d828ee4",
+    "scientific_source_sha256": {
+      "python/src/fluid_denoise/research/__init__.py": "6b7eac9ccb7922c79e38fe019e31ffab79d64c36e7f721c06a978a86a8ebb91d",
+      "python/src/fluid_denoise/research/algorithms.py": "0991fb4773e87f88a9c3e6461339cb7f5b117f94bcc437b444f58c7152f14055",
+      "python/src/fluid_denoise/research/bridge.py": "96878ceb57016d81dcea5f94cc193898958a5a2ad6338a529c3d66f1d86cc670",
+      "python/src/fluid_denoise/research/cost.py": "9fe43b76236c835050ccc11d91ee1bce8371ebf63f927041fc3d41b4b4cd5e77",
+      "python/src/fluid_denoise/research/dns.py": "fe692ebdd587c6eaced3aee5456ca8e56b42f6226cf05d2597f39cf9fd57846f",
+      "python/src/fluid_denoise/research/forecast_runner.py": "2502facdfdf8bee7b8a34d32ea0f70baf9d17731a1386521ac76675cfdc00860",
+      "python/src/fluid_denoise/research/forecasting.py": "6e7147354394efdfbdf52aa35712d5029a13d521572659cdb7b11317549658c1",
+      "python/src/fluid_denoise/research/legacy_simulation.py": "7edf263a6e9d8d179f861ed9d2b4521230e212ec95389072e9ae2c6193b1b226",
+      "python/src/fluid_denoise/research/metrics.py": "7b7d4fdbcddca962f3d5195440dd5047f9922201ceb15411a1d2e1434a48dc1d",
+      "python/src/fluid_denoise/research/noise.py": "e11ab3d8d011897239618025ea53489400ad5948abf3e38153cdd6c5e083e023",
+      "python/src/fluid_denoise/research/physics.py": "391584c9e73d460f83775694c0310dedf4d7c8996c80df1c166ee36150da223a",
+      "python/src/fluid_denoise/research/rheology.py": "23879f127717e127bbc027780afbabc704f498878ac9c36ddcb33404412fbe64",
+      "python/src/fluid_denoise/research/runner.py": "4c38efa9be15824930f41df41b7dad1c513e86080098736cad76cda07ff612ba",
+      "python/src/fluid_denoise/research/viscoelastic_dns.py": "477a17f4176ef963816516012de38c1d475a8800474c6dd026ba57e262d063ec",
+      "python/src/fluid_denoise/research/viscoplastic_dns.py": "fd7d028a4f0abafc0ced61a755c655d5c85daa0280fd498a7e2911a98b685aaf"
+    }
+  },
+  "metadata": {
+    "case": "interacting_vortices",
+    "solver": "2D incompressible generalized-Newtonian momentum Fourier projection RK4",
+    "constitutive_model": "Papanastasiou-regularized Herschel-Bulkley",
+    "consistency": 0.02,
+    "flow_index": 0.6,
+    "yield_stress": 0.02,
+    "regularization_m": 10.0,
+    "shear_epsilon": 0.001,
+    "solvent_viscosity": 0.0,
+    "constant_density": 1.0,
+    "amplitude": 1.0,
+    "seed": 0,
+    "domain": [
+      6.283185307179586,
+      6.283185307179586
+    ],
+    "units": "nondimensional",
+    "dimensionless_scaling": {
+      "velocity": "U",
+      "length": "L",
+      "time": "L/U",
+      "density": "rho_ref",
+      "stress": "rho_ref*U^2",
+      "shear_rate": "U/L",
+      "apparent_viscosity": "rho_ref*U*L",
+      "consistency": "rho_ref*U^2/(U/L)^n",
+      "regularization_m": "L/U",
+      "shear_epsilon": "U/L"
+    },
+    "nominal_dt": 0.005,
+    "nominal_steps": 400,
+    "sample_every": 10,
+    "internal_steps": 2415,
+    "rejected_steps": 1582,
+    "internal_dt_min": 0.00010454256151071206,
+    "internal_dt_max": 0.0014787912858994158,
+    "stability_limited_steps": 2374,
+    "max_advective_cfl": 0.05304191490948842,
+    "cfl_limit": 0.35,
+    "max_diffusive_number": 0.4000000000000001,
+    "diffusion_cfl_limit": 0.4,
+    "diffusion_stability_limit": "dt*max(1,n)*max(eta_app)/rho*max_retained_k_squared <= diffusion_cfl",
+    "maximum_stage_viscosity": 0.5164728634386292,
+    "viscosity_cap": null,
+    "dealiasing": "strict two-thirds state cutoff; padded nonlinear/constitutive quadrature",
+    "quadrature_factor": 1.5,
+    "quadrature_shape": [
+      96,
+      96
+    ],
+    "constitutive_aliasing_limit": "nonpolynomial stress requires grid and quadrature refinement; 3/2 padding is not exact dealiasing",
+    "stress_components": [
+      "xx",
+      "xy",
+      "yy"
+    ],
+    "shear_rate_definition": "sqrt(2*D:D)",
+    "stress_invariant_definition": "sqrt(tau:tau/2)=eta_app*shear_rate",
+    "yield_estimate": {
+      "kind": "approximate shear threshold, not exact unyielded regions",
+      "shear_threshold": 0.001,
+      "approximate_yielded_definition": "shear_rate > shear_threshold",
+      "over_yield_stress_definition": "stress_invariant > yield_stress"
+    },
+    "energy_definition": "rho/2*mean(|u|^2)",
+    "dissipation_definition": "padded-grid mean(eta_app*shear_rate^2), nonnegative",
+    "energy_budget_definition": "E(t)-E(0)+RK4_stage_integral(dissipation)",
+    "physical_scope": "inelastic generalized-Newtonian periodic flow; no walls, cylinder, elasticity or chaos certification",
+    "dns_validation": "not certified; nonlinear grid, time, constitutive quadrature and regularization refinement required",
+    "initial_condition": "four periodized Gaussian vorticity cores; two positive, two negative",
+    "centers_fractional": [
+      [
+        0.3,
+        0.35,
+        1.0
+      ],
+      [
+        0.55,
+        0.45,
+        1.0
+      ],
+      [
+        0.35,
+        0.7,
+        -1.0
+      ],
+      [
+        0.7,
+        0.65,
+        -1.0
+      ]
+    ],
+    "core_width": 0.4084070449666731,
+    "initial_speed_rms": 1.0,
+    "removed_vorticity_mean": 6.938893903907228e-18
+  },
+  "dx": 0.09817477042468103,
+  "dy": 0.09817477042468103,
+  "shape": [
+    41,
+    2,
+    64,
+    64
+  ],
+  "wall_seconds": 110.9996125079997,
+  "cpu_seconds": 83.794890267,
+  "archive_sha256": "20f04a3c34c1fe51bcc28e17dee01d5cfde08ebab73ce8c51f5ec84b4317d905",
+  "scope": "same physical parameters, initial condition and saved times as extended_physics; new independent fine-grid integration"
+}

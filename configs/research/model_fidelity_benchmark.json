@@ -1,0 +1,43 @@
+{
+  "campaign": "model_fidelity_benchmark_2026-10-14",
+  "grid": 128,
+  "intensity_relative_rms": 0.2,
+  "seeds": [
+    101,
+    307,
+    911
+  ],
+  "noise_models": [
+    "gaussian_iid",
+    "sparse_impulsive",
+    "spatial_gaussian",
+    "temporal_ar",
+    "column_outliers"
+  ],
+  "sparse_probability": 0.01,
+  "spatial_kernel_sigma": 0.1,
+  "temporal_correlation_time": 0.3,
+  "rank": 8,
+  "max_iter": 600,
+  "tol": 1e-05,
+  "optimized_max_nfev": 150,
+  "optimized_starts": 2,
+  "outlier_column_fraction_upper_bound": 0.1,
+  "timeout_seconds": 180,
+  "physical_cutoff": 10.0,
+  "postprocessing": [
+    "raw",
+    "helmholtz",
+    "helmholtz_k10"
+  ],
+  "quality_thresholds": {
+    "velocity_relative_l2": 0.15,
+    "vorticity_relative_l2": 0.25,
+    "extra_divergence_normalized": 0.1,
+    "kinetic_energy_relative_l2": 0.15
+  },
+  "design": "Exploratory paired reconstruction on existing clean simulated trajectories, with new noise seeds101/307/911. Fixed hyperparameters are recorded before this campaign, but the flow families and H+k10 prior were inspected in earlier campaigns; this is not independent blind held-out confirmation. Clean velocity is used only for injection amplitude and evaluation. Every estimator receives observed velocity and times only; postprocessing receives geometry only. Equal20%RMS does not make noise distributions equally difficult.",
+  "scope": "Seven 128x128 velocity trajectories, five noises, three seeds and ten methods: 1050 raw fits and 3150 evaluations of those fits. H and H+k10 never refit an estimator. Non-Newtonian stresses and conformation are not reconstructed by these velocity-only estimators.",
+  "cost_scope": "One single-BLAS-thread isolated child per fit; fit and postprocess CPU/wall/RSS profiles are separate from evaluation. Absolute child RSS includes runtime and inherited observations/reference. Timing is descriptive on a shared host; no repeated-cost uncertainty is claimed. Postprocess RSS is the accumulated child lifetime peak and may inherit prior fit/evaluation peaks; it is not incremental projection memory.",
+  "column_fraction_upper_bound": 0.1
+}

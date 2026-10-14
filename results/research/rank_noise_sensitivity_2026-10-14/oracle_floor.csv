@@ -1,0 +1,11 @@
+flow,rank,velocity_rank_frobenius_lower_bound,vorticity_clean_pod_diagnostic,clean_band_velocity_error,clean_band_vorticity_error,clean_pod_energy_fraction,oracle_reference_used,estimator_input,qualification
+ns_multiscale,2,0.2989326848257479,0.40316442242622597,0.030679754864329258,0.10836598630484197,0.9106392499428699,True,False,Velocity Frobenius rank lower bound; vorticity only diagnostic. No noisy rank selection.
+ns_multiscale,4,0.08992948144286793,0.1703935042640182,0.030679754864329258,0.10836598630484197,0.9919126883674169,True,False,Velocity Frobenius rank lower bound; vorticity only diagnostic. No noisy rank selection.
+ns_multiscale,8,0.01411066873137095,0.042103072856384066,0.030679754864329258,0.10836598630484197,0.9998008890279533,True,False,Velocity Frobenius rank lower bound; vorticity only diagnostic. No noisy rank selection.
+ns_multiscale,12,0.003239167679180637,0.012563291794051818,0.030679754864329258,0.10836598630484197,0.9999895077927459,True,False,Velocity Frobenius rank lower bound; vorticity only diagnostic. No noisy rank selection.
+ns_multiscale,16,0.0007647058261205143,0.0037720025703528765,0.030679754864329258,0.10836598630484197,0.9999994152249996,True,False,Velocity Frobenius rank lower bound; vorticity only diagnostic. No noisy rank selection.
+oldroyd_b,2,0.09282634547906227,0.19036573371039084,0.001671061817797245,0.01447648101616776,0.9913832695850019,True,False,Velocity Frobenius rank lower bound; vorticity only diagnostic. No noisy rank selection.
+oldroyd_b,4,0.013118429617333435,0.04089745366094918,0.001671061817797245,0.01447648101616776,0.999827906804375,True,False,Velocity Frobenius rank lower bound; vorticity only diagnostic. No noisy rank selection.
+oldroyd_b,8,0.0008052144797604393,0.005634221605212722,0.001671061817797245,0.01447648101616776,0.9999993516296417,True,False,Velocity Frobenius rank lower bound; vorticity only diagnostic. No noisy rank selection.
+oldroyd_b,12,0.00011688182590462111,0.0012061671721018035,0.001671061817797245,0.01447648101616776,0.9999999863386391,True,False,Velocity Frobenius rank lower bound; vorticity only diagnostic. No noisy rank selection.
+oldroyd_b,16,2.164043083046918e-05,0.00036893346284021163,0.001671061817797245,0.01447648101616776,0.9999999995316917,True,False,Velocity Frobenius rank lower bound; vorticity only diagnostic. No noisy rank selection.

@@ -1,0 +1,470 @@
+[
+  {
+    "method": "identity",
+    "gate": "velocity_relative_l2",
+    "conditions": 216,
+    "passed": 0,
+    "failed": 216,
+    "only_failed_gate": 24,
+    "velocity_pass_vorticity_fail": 0
+  },
+  {
+    "method": "identity",
+    "gate": "vorticity_relative_l2",
+    "conditions": 216,
+    "passed": 24,
+    "failed": 192,
+    "only_failed_gate": 0,
+    "velocity_pass_vorticity_fail": 0
+  },
+  {
+    "method": "identity",
+    "gate": "extra_divergence_normalized",
+    "conditions": 216,
+    "passed": 24,
+    "failed": 192,
+    "only_failed_gate": 0,
+    "velocity_pass_vorticity_fail": 0
+  },
+  {
+    "method": "identity",
+    "gate": "kinetic_energy_relative_l2",
+    "conditions": 216,
+    "passed": 198,
+    "failed": 18,
+    "only_failed_gate": 0,
+    "velocity_pass_vorticity_fail": 0
+  },
+  {
+    "method": "pod",
+    "gate": "velocity_relative_l2",
+    "conditions": 216,
+    "passed": 144,
+    "failed": 72,
+    "only_failed_gate": 24,
+    "velocity_pass_vorticity_fail": 120
+  },
+  {
+    "method": "pod",
+    "gate": "vorticity_relative_l2",
+    "conditions": 216,
+    "passed": 48,
+    "failed": 168,
+    "only_failed_gate": 0,
+    "velocity_pass_vorticity_fail": 120
+  },
+  {
+    "method": "pod",
+    "gate": "extra_divergence_normalized",
+    "conditions": 216,
+    "passed": 33,
+    "failed": 183,
+    "only_failed_gate": 15,
+    "velocity_pass_vorticity_fail": 120
+  },
+  {
+    "method": "pod",
+    "gate": "kinetic_energy_relative_l2",
+    "conditions": 216,
+    "passed": 204,
+    "failed": 12,
+    "only_failed_gate": 0,
+    "velocity_pass_vorticity_fail": 120
+  },
+  {
+    "method": "rpca",
+    "gate": "velocity_relative_l2",
+    "conditions": 216,
+    "passed": 177,
+    "failed": 39,
+    "only_failed_gate": 24,
+    "velocity_pass_vorticity_fail": 85
+  },
+  {
+    "method": "rpca",
+    "gate": "vorticity_relative_l2",
+    "conditions": 216,
+    "passed": 116,
+    "failed": 100,
+    "only_failed_gate": 0,
+    "velocity_pass_vorticity_fail": 85
+  },
+  {
+    "method": "rpca",
+    "gate": "extra_divergence_normalized",
+    "conditions": 216,
+    "passed": 66,
+    "failed": 150,
+    "only_failed_gate": 50,
+    "velocity_pass_vorticity_fail": 85
+  },
+  {
+    "method": "rpca",
+    "gate": "kinetic_energy_relative_l2",
+    "conditions": 216,
+    "passed": 195,
+    "failed": 21,
+    "only_failed_gate": 0,
+    "velocity_pass_vorticity_fail": 85
+  },
+  {
+    "method": "stable_rpca",
+    "gate": "velocity_relative_l2",
+    "conditions": 216,
+    "passed": 171,
+    "failed": 45,
+    "only_failed_gate": 24,
+    "velocity_pass_vorticity_fail": 99
+  },
+  {
+    "method": "stable_rpca",
+    "gate": "vorticity_relative_l2",
+    "conditions": 216,
+    "passed": 96,
+    "failed": 120,
+    "only_failed_gate": 0,
+    "velocity_pass_vorticity_fail": 99
+  },
+  {
+    "method": "stable_rpca",
+    "gate": "extra_divergence_normalized",
+    "conditions": 216,
+    "passed": 45,
+    "failed": 171,
+    "only_failed_gate": 51,
+    "velocity_pass_vorticity_fail": 99
+  },
+  {
+    "method": "stable_rpca",
+    "gate": "kinetic_energy_relative_l2",
+    "conditions": 216,
+    "passed": 216,
+    "failed": 0,
+    "only_failed_gate": 0,
+    "velocity_pass_vorticity_fail": 99
+  },
+  {
+    "method": "dmd",
+    "gate": "velocity_relative_l2",
+    "conditions": 216,
+    "passed": 169,
+    "failed": 47,
+    "only_failed_gate": 24,
+    "velocity_pass_vorticity_fail": 125
+  },
+  {
+    "method": "dmd",
+    "gate": "vorticity_relative_l2",
+    "conditions": 216,
+    "passed": 68,
+    "failed": 148,
+    "only_failed_gate": 0,
+    "velocity_pass_vorticity_fail": 125
+  },
+  {
+    "method": "dmd",
+    "gate": "extra_divergence_normalized",
+    "conditions": 216,
+    "passed": 45,
+    "failed": 171,
+    "only_failed_gate": 23,
+    "velocity_pass_vorticity_fail": 125
+  },
+  {
+    "method": "dmd",
+    "gate": "kinetic_energy_relative_l2",
+    "conditions": 216,
+    "passed": 216,
+    "failed": 0,
+    "only_failed_gate": 0,
+    "velocity_pass_vorticity_fail": 125
+  },
+  {
+    "method": "tls_dmd",
+    "gate": "velocity_relative_l2",
+    "conditions": 216,
+    "passed": 162,
+    "failed": 54,
+    "only_failed_gate": 24,
+    "velocity_pass_vorticity_fail": 120
+  },
+  {
+    "method": "tls_dmd",
+    "gate": "vorticity_relative_l2",
+    "conditions": 216,
+    "passed": 66,
+    "failed": 150,
+    "only_failed_gate": 0,
+    "velocity_pass_vorticity_fail": 120
+  },
+  {
+    "method": "tls_dmd",
+    "gate": "extra_divergence_normalized",
+    "conditions": 216,
+    "passed": 42,
+    "failed": 174,
+    "only_failed_gate": 24,
+    "velocity_pass_vorticity_fail": 120
+  },
+  {
+    "method": "tls_dmd",
+    "gate": "kinetic_energy_relative_l2",
+    "conditions": 216,
+    "passed": 214,
+    "failed": 2,
+    "only_failed_gate": 0,
+    "velocity_pass_vorticity_fail": 120
+  },
+  {
+    "method": "optimized_dmd",
+    "gate": "velocity_relative_l2",
+    "conditions": 216,
+    "passed": 166,
+    "failed": 50,
+    "only_failed_gate": 24,
+    "velocity_pass_vorticity_fail": 132
+  },
+  {
+    "method": "optimized_dmd",
+    "gate": "vorticity_relative_l2",
+    "conditions": 216,
+    "passed": 58,
+    "failed": 158,
+    "only_failed_gate": 0,
+    "velocity_pass_vorticity_fail": 132
+  },
+  {
+    "method": "optimized_dmd",
+    "gate": "extra_divergence_normalized",
+    "conditions": 216,
+    "passed": 45,
+    "failed": 171,
+    "only_failed_gate": 13,
+    "velocity_pass_vorticity_fail": 132
+  },
+  {
+    "method": "optimized_dmd",
+    "gate": "kinetic_energy_relative_l2",
+    "conditions": 216,
+    "passed": 216,
+    "failed": 0,
+    "only_failed_gate": 0,
+    "velocity_pass_vorticity_fail": 132
+  },
+  {
+    "method": "fb_dmd_fallback_tls",
+    "gate": "velocity_relative_l2",
+    "conditions": 216,
+    "passed": 160,
+    "failed": 56,
+    "only_failed_gate": 24,
+    "velocity_pass_vorticity_fail": 121
+  },
+  {
+    "method": "fb_dmd_fallback_tls",
+    "gate": "vorticity_relative_l2",
+    "conditions": 216,
+    "passed": 63,
+    "failed": 153,
+    "only_failed_gate": 0,
+    "velocity_pass_vorticity_fail": 121
+  },
+  {
+    "method": "fb_dmd_fallback_tls",
+    "gate": "extra_divergence_normalized",
+    "conditions": 216,
+    "passed": 52,
+    "failed": 164,
+    "only_failed_gate": 21,
+    "velocity_pass_vorticity_fail": 121
+  },
+  {
+    "method": "fb_dmd_fallback_tls",
+    "gate": "kinetic_energy_relative_l2",
+    "conditions": 216,
+    "passed": 203,
+    "failed": 13,
+    "only_failed_gate": 0,
+    "velocity_pass_vorticity_fail": 121
+  },
+  {
+    "method": "identity_helmholtz",
+    "gate": "velocity_relative_l2",
+    "conditions": 216,
+    "passed": 192,
+    "failed": 24,
+    "only_failed_gate": 24,
+    "velocity_pass_vorticity_fail": 192
+  },
+  {
+    "method": "identity_helmholtz",
+    "gate": "vorticity_relative_l2",
+    "conditions": 216,
+    "passed": 24,
+    "failed": 192,
+    "only_failed_gate": 192,
+    "velocity_pass_vorticity_fail": 192
+  },
+  {
+    "method": "identity_helmholtz",
+    "gate": "extra_divergence_normalized",
+    "conditions": 216,
+    "passed": 216,
+    "failed": 0,
+    "only_failed_gate": 0,
+    "velocity_pass_vorticity_fail": 192
+  },
+  {
+    "method": "identity_helmholtz",
+    "gate": "kinetic_energy_relative_l2",
+    "conditions": 216,
+    "passed": 216,
+    "failed": 0,
+    "only_failed_gate": 0,
+    "velocity_pass_vorticity_fail": 192
+  },
+  {
+    "method": "pod_helmholtz",
+    "gate": "velocity_relative_l2",
+    "conditions": 216,
+    "passed": 183,
+    "failed": 33,
+    "only_failed_gate": 24,
+    "velocity_pass_vorticity_fail": 159
+  },
+  {
+    "method": "pod_helmholtz",
+    "gate": "vorticity_relative_l2",
+    "conditions": 216,
+    "passed": 48,
+    "failed": 168,
+    "only_failed_gate": 159,
+    "velocity_pass_vorticity_fail": 159
+  },
+  {
+    "method": "pod_helmholtz",
+    "gate": "extra_divergence_normalized",
+    "conditions": 216,
+    "passed": 216,
+    "failed": 0,
+    "only_failed_gate": 0,
+    "velocity_pass_vorticity_fail": 159
+  },
+  {
+    "method": "pod_helmholtz",
+    "gate": "kinetic_energy_relative_l2",
+    "conditions": 216,
+    "passed": 216,
+    "failed": 0,
+    "only_failed_gate": 0,
+    "velocity_pass_vorticity_fail": 159
+  },
+  {
+    "method": "tls_dmd_helmholtz",
+    "gate": "velocity_relative_l2",
+    "conditions": 216,
+    "passed": 190,
+    "failed": 26,
+    "only_failed_gate": 24,
+    "velocity_pass_vorticity_fail": 148
+  },
+  {
+    "method": "tls_dmd_helmholtz",
+    "gate": "vorticity_relative_l2",
+    "conditions": 216,
+    "passed": 66,
+    "failed": 150,
+    "only_failed_gate": 148,
+    "velocity_pass_vorticity_fail": 148
+  },
+  {
+    "method": "tls_dmd_helmholtz",
+    "gate": "extra_divergence_normalized",
+    "conditions": 216,
+    "passed": 216,
+    "failed": 0,
+    "only_failed_gate": 0,
+    "velocity_pass_vorticity_fail": 148
+  },
+  {
+    "method": "tls_dmd_helmholtz",
+    "gate": "kinetic_energy_relative_l2",
+    "conditions": 216,
+    "passed": 214,
+    "failed": 2,
+    "only_failed_gate": 0,
+    "velocity_pass_vorticity_fail": 148
+  },
+  {
+    "method": "tls_dmd_helmholtz_dealias",
+    "gate": "velocity_relative_l2",
+    "conditions": 216,
+    "passed": 190,
+    "failed": 26,
+    "only_failed_gate": 24,
+    "velocity_pass_vorticity_fail": 48
+  },
+  {
+    "method": "tls_dmd_helmholtz_dealias",
+    "gate": "vorticity_relative_l2",
+    "conditions": 216,
+    "passed": 166,
+    "failed": 50,
+    "only_failed_gate": 48,
+    "velocity_pass_vorticity_fail": 48
+  },
+  {
+    "method": "tls_dmd_helmholtz_dealias",
+    "gate": "extra_divergence_normalized",
+    "conditions": 216,
+    "passed": 216,
+    "failed": 0,
+    "only_failed_gate": 0,
+    "velocity_pass_vorticity_fail": 48
+  },
+  {
+    "method": "tls_dmd_helmholtz_dealias",
+    "gate": "kinetic_energy_relative_l2",
+    "conditions": 216,
+    "passed": 214,
+    "failed": 2,
+    "only_failed_gate": 0,
+    "velocity_pass_vorticity_fail": 48
+  },
+  {
+    "method": "stable_rpca_helmholtz",
+    "gate": "velocity_relative_l2",
+    "conditions": 216,
+    "passed": 192,
+    "failed": 24,
+    "only_failed_gate": 24,
+    "velocity_pass_vorticity_fail": 120
+  },
+  {
+    "method": "stable_rpca_helmholtz",
+    "gate": "vorticity_relative_l2",
+    "conditions": 216,
+    "passed": 96,
+    "failed": 120,
+    "only_failed_gate": 120,
+    "velocity_pass_vorticity_fail": 120
+  },
+  {
+    "method": "stable_rpca_helmholtz",
+    "gate": "extra_divergence_normalized",
+    "conditions": 216,
+    "passed": 216,
+    "failed": 0,
+    "only_failed_gate": 0,
+    "velocity_pass_vorticity_fail": 120
+  },
+  {
+    "method": "stable_rpca_helmholtz",
+    "gate": "kinetic_energy_relative_l2",
+    "conditions": 216,
+    "passed": 216,
+    "failed": 0,
+    "only_failed_gate": 0,
+    "velocity_pass_vorticity_fail": 120
+  }
+]

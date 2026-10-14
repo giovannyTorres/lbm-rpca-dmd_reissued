@@ -1,0 +1,14 @@
+{
+  "python": "3.12.14",
+  "packages": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8",
+    "threadpoolctl": "3.6.0"
+  },
+  "cgroup_constraints": {
+    "cpu_max": "400000 100000",
+    "memory_max": "17179869184"
+  },
+  "scope": "Environment captured after the unchanged primary campaign and figure rendering in this session; complements per-run frozen numerical/BLAS metadata in provenance.json."
+}
