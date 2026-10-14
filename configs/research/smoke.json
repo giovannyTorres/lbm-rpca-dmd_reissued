@@ -1,0 +1,70 @@
+{
+  "campaign_id": "smoke",
+  "rank": 4,
+  "repetitions": 1,
+  "seeds": [
+    7
+  ],
+  "save_reconstructions": false,
+  "fit_timeout_seconds": 90,
+  "algorithm_parameters": {
+    "max_iter": 600,
+    "tol": 1e-05,
+    "max_nfev": 100,
+    "n_starts": 2
+  },
+  "quality_thresholds": {
+    "velocity_relative_l2": 0.15,
+    "vorticity_relative_l2": 0.25,
+    "extra_divergence_normalized": 0.1,
+    "kinetic_energy_relative_l2": 0.15
+  },
+  "methods": [
+    {
+      "method": "identity"
+    },
+    {
+      "method": "pod"
+    },
+    {
+      "method": "rpca"
+    },
+    {
+      "method": "stable_rpca"
+    },
+    {
+      "method": "tls_dmd"
+    },
+    {
+      "method": "optimized_dmd"
+    }
+  ],
+  "noise_models": [
+    {
+      "kind": "gaussian",
+      "intensity": 0.2
+    },
+    {
+      "kind": "sparse_impulsive",
+      "intensity": 0.2
+    }
+  ],
+  "cases": [
+    {
+      "id": "taylor_green_ns",
+      "solver": "spectral_ns",
+      "parameters": {
+        "case": "taylor_green",
+        "nx": 24,
+        "viscosity": 0.05,
+        "dt": 0.01,
+        "n_steps": 150,
+        "sample_every": 5
+      }
+    }
+  ],
+  "channel_quality_thresholds": {
+    "wall_velocity_error_relative_rms": 0.02,
+    "wall_normal_velocity_relative_rms": 0.02
+  }
+}
