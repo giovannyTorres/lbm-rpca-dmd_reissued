@@ -1,0 +1,305 @@
+{
+  "config": {
+    "campaign_id": "extended_physics_2026-10-14",
+    "rank": 4,
+    "repetitions": 3,
+    "seeds": [
+      7,
+      23,
+      61
+    ],
+    "save_reconstructions": false,
+    "fit_timeout_seconds": 90,
+    "algorithm_parameters": {
+      "max_iter": 1200,
+      "tol": 1e-05,
+      "max_nfev": 200,
+      "n_starts": 2
+    },
+    "quality_thresholds": {
+      "velocity_relative_l2": 0.15,
+      "vorticity_relative_l2": 0.25,
+      "extra_divergence_normalized": 0.1,
+      "kinetic_energy_relative_l2": 0.15
+    },
+    "methods": [
+      {
+        "method": "identity"
+      },
+      {
+        "method": "pod"
+      },
+      {
+        "method": "rpca"
+      },
+      {
+        "method": "stable_rpca"
+      },
+      {
+        "method": "dmd"
+      },
+      {
+        "method": "tls_dmd"
+      },
+      {
+        "method": "optimized_dmd"
+      },
+      {
+        "method": "fb_dmd",
+        "label": "fb_dmd_fallback_tls",
+        "parameters": {
+          "fallback_method": "tls_dmd"
+        }
+      },
+      {
+        "method": "identity",
+        "label": "identity_helmholtz",
+        "postprocess": "helmholtz"
+      },
+      {
+        "method": "pod",
+        "label": "pod_helmholtz",
+        "postprocess": "helmholtz"
+      },
+      {
+        "method": "tls_dmd",
+        "label": "tls_dmd_helmholtz",
+        "postprocess": "helmholtz"
+      },
+      {
+        "method": "tls_dmd",
+        "label": "tls_dmd_helmholtz_dealias",
+        "postprocess": "helmholtz_dealias"
+      },
+      {
+        "method": "stable_rpca",
+        "label": "stable_rpca_helmholtz",
+        "postprocess": "helmholtz"
+      }
+    ],
+    "noise_models": [
+      {
+        "kind": "gaussian",
+        "intensity": 0.2
+      },
+      {
+        "kind": "sparse_impulsive",
+        "intensity": 0.2
+      },
+      {
+        "kind": "mixed",
+        "intensity": 0.2
+      },
+      {
+        "kind": "spatial_correlated",
+        "intensity": 0.2
+      },
+      {
+        "kind": "temporal_correlated",
+        "intensity": 0.2
+      },
+      {
+        "kind": "column_outliers",
+        "intensity": 0.2
+      },
+      {
+        "kind": "student_t",
+        "intensity": 0.2
+      },
+      {
+        "kind": "heteroscedastic",
+        "intensity": 0.2
+      },
+      {
+        "kind": "sensor_drift",
+        "intensity": 0.2
+      }
+    ],
+    "cases": [
+      {
+        "id": "taylor_green_ns",
+        "solver": "spectral_ns",
+        "parameters": {
+          "case": "taylor_green",
+          "nx": 24,
+          "viscosity": 0.05,
+          "dt": 0.01,
+          "n_steps": 150,
+          "sample_every": 5
+        }
+      },
+      {
+        "id": "interacting_vortices_ns",
+        "solver": "spectral_ns",
+        "parameters": {
+          "case": "interacting_vortices",
+          "nx": 48,
+          "viscosity": 0.02,
+          "dt": 0.01,
+          "n_steps": 150,
+          "sample_every": 5
+        }
+      },
+      {
+        "id": "decaying_turbulence_ns",
+        "solver": "spectral_ns",
+        "parameters": {
+          "case": "decaying_turbulence",
+          "nx": 64,
+          "viscosity": 0.02,
+          "dt": 0.01,
+          "n_steps": 150,
+          "sample_every": 5,
+          "seed": 19
+        }
+      },
+      {
+        "id": "oldroyd_b_2d",
+        "solver": "viscoelastic_periodic",
+        "parameters": {
+          "model": "oldroyd_b",
+          "case": "interacting_vortices",
+          "nx": 32,
+          "viscosity_s": 0.02,
+          "viscosity_p": 0.04,
+          "relaxation_time": 0.5,
+          "amplitude": 0.6,
+          "dt": 0.005,
+          "n_steps": 120,
+          "sample_every": 4
+        }
+      },
+      {
+        "id": "fene_p_2d",
+        "solver": "viscoelastic_periodic",
+        "parameters": {
+          "model": "fene_p",
+          "case": "interacting_vortices",
+          "nx": 32,
+          "viscosity_s": 0.02,
+          "viscosity_p": 0.04,
+          "relaxation_time": 0.5,
+          "amplitude": 0.6,
+          "dt": 0.005,
+          "n_steps": 120,
+          "sample_every": 4,
+          "extensibility_squared": 12.0
+        }
+      },
+      {
+        "id": "hb_thinning_2d",
+        "solver": "viscoplastic_periodic",
+        "parameters": {
+          "case": "interacting_vortices",
+          "nx": 32,
+          "consistency": 0.02,
+          "flow_index": 0.6,
+          "yield_stress": 0.02,
+          "regularization_m": 10.0,
+          "shear_epsilon": 0.001,
+          "dt": 0.005,
+          "n_steps": 400,
+          "sample_every": 10
+        }
+      },
+      {
+        "id": "bingham_2d",
+        "solver": "viscoplastic_periodic",
+        "parameters": {
+          "case": "interacting_vortices",
+          "nx": 32,
+          "consistency": 0.02,
+          "flow_index": 1.0,
+          "yield_stress": 0.02,
+          "regularization_m": 10.0,
+          "shear_epsilon": 0.001,
+          "dt": 0.005,
+          "n_steps": 400,
+          "sample_every": 10
+        }
+      },
+      {
+        "id": "hb_thickening_2d",
+        "solver": "viscoplastic_periodic",
+        "parameters": {
+          "case": "interacting_vortices",
+          "nx": 32,
+          "consistency": 0.02,
+          "flow_index": 1.4,
+          "yield_stress": 0.02,
+          "regularization_m": 10.0,
+          "shear_epsilon": 0.001,
+          "dt": 0.005,
+          "n_steps": 400,
+          "sample_every": 10
+        }
+      }
+    ],
+    "channel_quality_thresholds": {
+      "wall_velocity_error_relative_rms": 0.02,
+      "wall_normal_velocity_relative_rms": 0.02
+    }
+  },
+  "config_sha256": "26114046d9fe25c2b57054869ec3198809fee42c43d4ebed627fa95af3e95edd",
+  "environment": {
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "machine": "x86_64",
+    "processor": "",
+    "cpu_count": 5,
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "numpy_configuration": "Build Dependencies:\n  blas:\n    detection method: pkgconfig\n    found: true\n    include directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/include\n    lib directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/lib\n    name: scipy-openblas\n    openblas configuration: OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY\n      Haswell MAX_THREADS=64\n    pc file directory: /project/.openblas\n    version: 0.3.30\n  lapack:\n    detection method: pkgconfig\n    found: true\n    include directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/include\n    lib directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/lib\n    name: scipy-openblas\n    openblas configuration: OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY\n      Haswell MAX_THREADS=64\n    pc file directory: /project/.openblas\n    version: 0.3.30\nCompilers:\n  c:\n    commands: cc\n    linker: ld.bfd\n    name: gcc\n    version: 14.2.1\n  c++:\n    commands: c++\n    linker: ld.bfd\n    name: gcc\n    version: 14.2.1\n  cython:\n    commands: cython\n    linker: cython\n    name: cython\n    version: 3.2.1\nMachine Information:\n  build:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: linux\n  host:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: linux\nPython Information:\n  path: /tmp/build-env-aw1mwcap/bin/python\n  version: '3.12'\nSIMD Extensions:\n  baseline:\n  - SSE\n  - SSE2\n  - SSE3\n  found:\n  - SSSE3\n  - SSE41\n  - POPCNT\n  - SSE42\n  - AVX\n  - F16C\n  - FMA3\n  - AVX2\n  - AVX512F\n  - AVX512CD\n  - AVX512_SKX\n  - AVX512_CLX\n  - AVX512_CNL\n  - AVX512_ICL\n  - AVX512_SPR\n  not found:\n  - AVX512_KNL\n  - AVX512_KNM\n\n",
+    "threadpools": [
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libscipy_openblas",
+        "filepath": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy.libs/libscipy_openblas64_-fdde5778.so",
+        "version": "0.3.30",
+        "threading_layer": "pthreads",
+        "architecture": "SkylakeX"
+      },
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libscipy_openblas",
+        "filepath": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+        "version": "0.3.30",
+        "threading_layer": "pthreads",
+        "architecture": "SkylakeX"
+      }
+    ],
+    "thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": null,
+      "NUMEXPR_NUM_THREADS": "1"
+    }
+  },
+  "evaluation": "in_sample_reconstruction",
+  "timing_scope": "reconstruct, vector reshape and declared physics postprocessing; excludes generation, I/O, physics evaluation and worker launch",
+  "rss_scope": "absolute per-fit child process peak; includes runtime and inherited dataset",
+  "physical_density_scope": "Velocity-only reconstructions; supplied clean density is retained, not estimated",
+  "source_commit": "75dc738ada4c505c682ddf796ed921a11b1011e6",
+  "source_files_sha256": {
+    "python/src/fluid_denoise/research/__init__.py": "6b7eac9ccb7922c79e38fe019e31ffab79d64c36e7f721c06a978a86a8ebb91d",
+    "python/src/fluid_denoise/research/algorithms.py": "0991fb4773e87f88a9c3e6461339cb7f5b117f94bcc437b444f58c7152f14055",
+    "python/src/fluid_denoise/research/bridge.py": "96878ceb57016d81dcea5f94cc193898958a5a2ad6338a529c3d66f1d86cc670",
+    "python/src/fluid_denoise/research/cost.py": "9fe43b76236c835050ccc11d91ee1bce8371ebf63f927041fc3d41b4b4cd5e77",
+    "python/src/fluid_denoise/research/dns.py": "fe692ebdd587c6eaced3aee5456ca8e56b42f6226cf05d2597f39cf9fd57846f",
+    "python/src/fluid_denoise/research/forecast_runner.py": "2502facdfdf8bee7b8a34d32ea0f70baf9d17731a1386521ac76675cfdc00860",
+    "python/src/fluid_denoise/research/forecasting.py": "6e7147354394efdfbdf52aa35712d5029a13d521572659cdb7b11317549658c1",
+    "python/src/fluid_denoise/research/legacy_simulation.py": "7edf263a6e9d8d179f861ed9d2b4521230e212ec95389072e9ae2c6193b1b226",
+    "python/src/fluid_denoise/research/metrics.py": "7b7d4fdbcddca962f3d5195440dd5047f9922201ceb15411a1d2e1434a48dc1d",
+    "python/src/fluid_denoise/research/noise.py": "e11ab3d8d011897239618025ea53489400ad5948abf3e38153cdd6c5e083e023",
+    "python/src/fluid_denoise/research/physics.py": "391584c9e73d460f83775694c0310dedf4d7c8996c80df1c166ee36150da223a",
+    "python/src/fluid_denoise/research/rheology.py": "23879f127717e127bbc027780afbabc704f498878ac9c36ddcb33404412fbe64",
+    "python/src/fluid_denoise/research/runner.py": "4c38efa9be15824930f41df41b7dad1c513e86080098736cad76cda07ff612ba",
+    "python/src/fluid_denoise/research/viscoelastic_dns.py": "477a17f4176ef963816516012de38c1d475a8800474c6dd026ba57e262d063ec",
+    "python/src/fluid_denoise/research/viscoplastic_dns.py": "fd7d028a4f0abafc0ced61a755c655d5c85daa0280fd498a7e2911a98b685aaf"
+  },
+  "scipy_version": "1.17.0"
+}

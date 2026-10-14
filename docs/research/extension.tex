@@ -1,0 +1,918 @@
+\documentclass[11pt,oneside,openany]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[provide=*,spanish]{babel}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{booktabs,longtable,array}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage[round,authoryear]{natbib}
+\usepackage{url}
+\usepackage[hidelinks,unicode,hypertexnames=false]{hyperref}
+\hypersetup{pdftitle={Ampliación reproducible LBM--RPCA--DMD},
+  pdfsubject={Contaminación, reconstrucción física, costo y referencias reológicas}}
+\setlength{\parskip}{0.4em}
+\setlength{\parindent}{1.1em}
+\setlength{\emergencystretch}{3em}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\code}[1]{\texttt{\detokenize{#1}}}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\RMS}{RMS}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\tr}{tr}
+
+\begin{document}
+\frontmatter
+\begin{titlepage}
+\centering
+\vspace*{3cm}
+{\Huge\bfseries Ampliación reproducible\par}
+\vspace{0.4cm}
+{\Huge\bfseries LBM--RPCA--DMD\par}
+\vspace{1.2cm}
+{\Large Reconstrucción física, ruido, costo computacional\par}
+{\Large y referencias de fluidos no newtonianos\par}
+\vspace{1.8cm}
+{\large Documento complementario de investigación\par}
+\vspace{0.8cm}
+{\large 14 de octubre de 2026\par}
+\vfill
+{\normalsize Hilo académico: campos de velocidad, descomposición robusta\par}
+{\normalsize y análisis modal de flujos numéricos.\par}
+\vspace{0.6cm}
+{\small Paquete de investigación: \code{fluid_denoise.research}\par}
+\vspace{0.8cm}
+\end{titlepage}
+
+\chapter*{Alcance documental}
+Este documento organiza el trabajo de fase 8 en cinco capítulos:
+Introducción, Marco teórico, Desarrollo experimental, Resultados y discusión,
+y Conclusiones y líneas de trabajo futuro. Amplía la investigación con código,
+configuraciones y evidencia identificable. Las fases 1--7 mantienen su
+numeración y sus contratos. El baseline \code{baseline_2026-10-14}
+conserva los artefactos de una ejecución identificada; las nuevas campañas
+requieren configuración, hashes y entorno propios.
+
+La metodología distingue el piloto preservado de la ampliación ejecutada en
+\path{lbm-rpca-dmd_reissued}. Las configuraciones activas son
+\path{configs/research/extended_physics.json} y
+\path{configs/research/forecasting_campaign.json}: 2808 condiciones y 8424
+ajustes de reconstrucción, además de 60 escenarios de pronóstico cronológico.
+Se añadieron solvers bidimensionales acoplados de Oldroyd-B/FENE-P y
+Herschel--Bulkley/Bingham regularizado, junto con una comparación de seis
+fluidos bajo condiciones iniciales comunes. El capítulo de resultados incorpora un archivo generado a partir de
+los artefactos de ejecución. Una hipótesis, una configuración de campaña o
+un manifiesto de un solver externo no constituyen un resultado numérico.
+Los casos de canal no representan una estela viscoelástica alrededor de un
+cilindro; el uso de una formulación de Navier--Stokes tampoco certifica
+automáticamente que una malla resuelva todas las escalas relevantes.
+
+\tableofcontents
+\mainmatter
+
+\chapter{Introducción}
+\section{Planteamiento}
+La comparación entre RPCA--IALM y DMD clásico en presencia de ruido
+impulsivo artificial sólo justifica conclusiones sobre esa contaminación y
+esas formulaciones. Un banco más amplio debe considerar
+el ruido mixto, la sensibilidad a hiperparámetros, la cadena RPCA seguida de
+DMD, la validación PIV, los campos tridimensionales, el procesamiento
+incremental, GPU, aprendizaje profundo e integración del flujo de trabajo.
+
+La presente ampliación aborda cinco necesidades relacionadas: evaluar
+recursos más allá del tiempo; medir conservación y vorticidad; considerar
+contaminación densa y correlacionada; comparar otros estimadores y variantes
+de DMD; y ampliar las referencias físicas con Navier--Stokes y modelos
+reológicos explícitos. Las líneas de gran escala permanecen identificadas
+como campañas posteriores cuando requieren datos, cómputo o validaciones
+que no se han ejecutado.
+
+\section{Pregunta e hipótesis}
+La pregunta central es: ¿cómo cambia la preferencia entre estimadores al
+variar el tipo de contaminación y la referencia física, si se exige preservar
+observables del flujo y se contabilizan los recursos necesarios?
+
+Se contrastan cuatro hipótesis, sin presuponer su aceptación:
+\begin{enumerate}
+\item La ventaja observada de PCP frente a corrupción impulsiva no se
+      mantiene necesariamente frente a ruido denso gaussiano o correlacionado.
+\item Un error pequeño en velocidad puede coexistir con un error apreciable
+      en vorticidad, continuidad, energía o condiciones de pared.
+\item El algoritmo con menor tiempo no necesariamente alcanza la calidad
+      física exigida; el costo debe interpretarse junto con la factibilidad.
+\item Cambiar constitutiva y dinámica modifica el rango efectivo y las
+      estructuras observadas, por lo que los resultados de un caso no se
+      extrapolan automáticamente a otro régimen.
+\end{enumerate}
+
+\section{Contribución y antecedentes que limitan la novedad}
+La contribución que puede comprobarse combina un banco con procedencia,
+contaminaciones de energía comparable, varios estimadores, diagnósticos
+físicos y recursos medidos mediante réplicas. Su aporte no depende de
+declarar una superioridad universal de RPCA.
+
+La aplicación de DMD a la estela de un fluido viscoelástico ya aparece en
+\citet{hamid2022wake}; DMD en fluidos elastoviscoplásticos aparece en
+\citet{raffi2024evp}. Asimismo, \citet{corrochano2026evp} estudian estructuras
+EVP mediante POD y HODMD. Por tanto, introducir estos fluidos o mencionar
+DMD en ellos no acredita por sí solo una nueva contribución. El eje
+distintivo propuesto es el mapa entre contaminación, algoritmo, fidelidad
+física y costo, con evaluación reproducible y límites explícitos.
+
+\section{Referencia limpia y prevención de selección por el resultado}
+La referencia limpia sirve para generar observaciones controladas y evaluar
+su reconstrucción. El estimador recibe únicamente la matriz observada, las
+coordenadas temporales y parámetros declarados. No consulta la matriz limpia
+para escoger rango, penalización o mejor inicialización.
+
+El piloto fija el presupuesto de rango para POD y DMD y declara los
+parámetros de regularización de los modelos convexos. No presupone que
+estos últimos produzcan el mismo rango. La intensidad conocida de inyección
+puede utilizarse para una estimación heurística de la escala de ruido en
+RPCA estable; se declara como información del experimento sintético y no
+como dato automáticamente disponible en una medición PIV real.
+
+La reconstrucción del intervalo observado y la predicción futura son tareas
+diferentes. El piloto preservado corresponde a la primera; la campaña nueva
+incluye ambas. El pronóstico divide el tiempo en bloques cronológicos de
+entrenamiento, validación y prueba. La limpieza y el ajuste no acceden a los
+snapshots futuros. La selección utiliza exclusivamente observaciones de
+validación ruidosas; el limpio futuro sólo evalúa el resultado seleccionado.
+
+\chapter{Marco teórico}
+\section{Representación de snapshots y SVD}
+Sea $M\in\R^{m\times n}$ la matriz observada, con un campo por columna y
+las dos componentes de velocidad apiladas sobre los nodos de fluido.
+Así, $m=2N_{\mathrm{fluido}}$ y $n$ es el número de snapshots. Las máscaras
+de sólidos se conservan y no se contaminan.
+
+La descomposición en valores singulares y su truncamiento son
+\begin{equation}
+ M=U\Sigma V^*,\qquad M_r=U_r\Sigma_rV_r^*.
+\end{equation}
+El piloto usa $r\leq4$, recortado por el rango numérico de la matriz
+observada. Este presupuesto no significa que el campo limpio tenga cuatro
+estructuras independientes. Taylor--Green sin traslación temporal y los
+canales HB estacionarios tienen matrices limpias de rango uno; por ello
+sirven para verificar referencias y limpieza espacial, pero no acreditan
+complejidad modal de un wake.
+
+La SVD constituye un baseline imprescindible frente a ruido denso. Los
+umbrales óptimos de \citet{gavish2014threshold} dependen de hipótesis de
+ruido blanco y del límite considerado; la constante $4/\sqrt3$ corresponde
+al caso cuadrado. No se utiliza como garantía para ruido correlacionado.
+En el piloto, POD usa rango predeclarado; no implementa selección mediante el umbral de Gavish--Donoho. Las alternativas aleatorias o truncadas también deben registrar tolerancia,
+pasadas y rango, pues su costo y precisión difieren \citep{halko2011randomness}.
+
+\section{PCP, RPCA estable y corrupción de columnas}
+PCP modela una matriz de bajo rango más una componente dispersa:
+\begin{equation}
+ \min_{L,S}\norm{L}_*+\lambda\norm{S}_1
+ \quad\text{sujeto a}\quad M=L+S.
+ \label{eq:pcp}
+\end{equation}
+La norma nuclear suma valores singulares. Las condiciones de recuperación
+de \citet{candes2011rpca} requieren identificabilidad, incluyendo restricciones
+de estructura de bajo rango y soporte de corrupción. No expresan una
+garantía universal para cualquier ruido. La implementación utiliza
+umbralización singular y umbralización suave dentro de un esquema IALM,
+registra su residuo y no equipara convergencia con error físico pequeño.
+
+El SPCP estudiado por \citet{zhou2010stable} permite un residuo denso acotado:
+\begin{equation}
+ \min_{L,S}\norm{L}_*+\lambda\norm{S}_1,
+ \qquad \norm{M-L-S}_F\leq\delta.
+\end{equation}
+El método local \code{stable_rpca} resuelve una formulación penalizada distinta:
+\begin{equation}
+ \min_{L,S}\frac12\norm{M-L-S}_F^2+
+      \alpha\norm{L}_*+\beta\norm{S}_1.
+ \label{eq:stable}
+\end{equation}
+Actualiza alternadamente $L$ por umbralización singular y $S$ por
+umbralización entrada a entrada. El residuo denso no se fuerza a cero.
+La formulación restringida y la penalizada están relacionadas por
+regularización, pero no se traslada automáticamente la garantía de la
+primera a cualquier elección de $\alpha$ y $\beta$ de la segunda.
+
+Cuando se proporciona la intensidad relativa conocida $\epsilon$, el código
+estima $\widehat\sigma=\epsilon\RMS(M)/\sqrt{1+\epsilon^2}$ y propone
+$\alpha=\widehat\sigma(\sqrt m+\sqrt n)$ y
+$\beta=\widehat\sigma\sqrt{2\log(mn)}$. Esta regla presupone una aproximación
+de independencia para relacionar energía observada y señal; se informa como
+heurística, especialmente fuera del ruido blanco.
+
+Outlier Pursuit reemplaza la penalización de entradas por una penalización
+de columnas \citep{xu2010outlier}:
+\begin{equation}
+ \min_{L,C}\norm{L}_*+\lambda\sum_{j=1}^n\norm{C_{:j}}_2,
+ \qquad M=L+C.
+\end{equation}
+Una columna corresponde a un snapshot completo. Su objetivo de
+recuperación es el subespacio y el soporte de columnas corruptas bajo sus
+hipótesis; los valores limpios ocultos en una columna enteramente corrupta
+no quedan identificados por esa observación. El piloto declara una cota
+heurística $\gamma=0.1$ para la fracción de columnas y la regla
+$\lambda=3/(7\sqrt{\gamma n})$; no verifica automáticamente todas las
+condiciones del teorema de recuperación.
+
+\section{DMD exacta y ajuste de amplitudes}
+A partir de snapshots consecutivos se forman
+\begin{equation}
+ X=[m_0,\ldots,m_{n-2}],\qquad
+ Y=[m_1,\ldots,m_{n-1}],\qquad Y\approx AX.
+\end{equation}
+Con $X=U_r\Sigma_rV_r^*$, la DMD reducida utiliza
+\begin{equation}
+ \widetilde A=U_r^*YV_r\Sigma_r^{-1},\quad
+ \widetilde AW=W\Lambda,\quad
+ \Phi=YV_r\Sigma_r^{-1}W.
+\end{equation}
+La evolución se representa mediante
+$\widehat m_k=\Phi\diag(\lambda_1^k,\ldots,\lambda_r^k)b$.
+Esta descripción conecta modos espaciales y tasas/frecuencias
+\citep{schmid2010dmd}. En el piloto, las amplitudes se ajustan globalmente
+en el intervalo observado. Que ese ajuste reduzca el residuo no prueba
+capacidad predictiva en tiempos posteriores.
+
+\section{TLS-DMD y forward--backward DMD}
+El ruido de observación afecta tanto $X$ como $Y$; la regresión que sólo
+considera errores en la segunda matriz puede inducir sesgo.
+\citet{dawson2016noise} analizan este problema y proponen correcciones.
+
+La variante TLS construye $Z=[X^T,Y^T]^T$, obtiene sus vectores singulares
+derechos dominantes $V_{Z,r}$ y proyecta ambas matrices sobre el mismo
+subespacio temporal:
+\begin{equation}
+ P=V_{Z,r}V_{Z,r}^*,\qquad X_c=XP,\qquad Y_c=YP.
+\end{equation}
+Después aplica DMD a $(X_c,Y_c)$. La selección de rango y el
+condicionamiento continúan siendo relevantes.
+
+La formulación forward--backward combina operadores en una base POD común.
+Si $A_f$ aproxima $X\to Y$ y $A_b$ aproxima $Y\to X$, se considera
+\begin{equation}
+ A_{fb}^2=A_fA_b^{-1}.
+\end{equation}
+La raíz matricial no es única. La implementación elige en cada dirección
+propia la rama más cercana a la dinámica directa, verifica el residuo de la
+raíz y falla explícitamente cuando la inversión, la base propia o la
+selección de rama son ambiguas o están mal condicionadas. No se ocultan
+esos casos mediante reemplazo de valores no finitos.
+
+\section{Optimized DMD y extensiones posteriores}
+En coordenadas POD observadas, con $Q=(U_r^*M)^T$, se construye
+$E(\omega)_{kj}=\exp(t_k\omega_j)$ y se resuelve
+\begin{equation}
+ \min_{\omega\in\C^r}\norm{Q-E(\omega)B(\omega)}_F^2,
+ \qquad B(\omega)=E(\omega)^\dagger Q.
+ \label{eq:optdmd}
+\end{equation}
+Es un ajuste exponencial con proyección variable
+\citep{askham2018optimized}. La implementación usa mínimos cuadrados no
+lineales con diferencias finitas, dos inicializaciones predeclaradas,
+límites de tasas/frecuencias y presupuesto de evaluaciones. Reporta
+convergencia y restricciones activas; no consulta el campo limpio para
+escoger la inicialización.
+
+La optimized DMD del piloto no es BOP-DMD. El bagging de
+\citet{sashidhar2022bagging}, las pérdidas robustas dentro de DMD
+\citep{askham2022robust}, las estructuras físicas de piDMD
+\citep{baddoo2023physics}, los retardos de HODMD
+\citep{leclainche2017hodmd}, Subspace DMD
+\citep{takeishi2017subspace} y ResDMD
+\citep{colbrook2023resdmd} constituyen extensiones diferenciadas.
+Su inclusión posterior requiere identificar la formulación, verificarla y
+contabilizar su costo. SPOD \citep{towne2018spod} aporta un análisis modal
+dependiente de frecuencia para procesos estacionarios; no es por sí sola
+un pronosticador de campos.
+
+\section{Navier--Stokes y formulación vorticidad--función de corriente}
+Para un fluido newtoniano incompresible de densidad constante,
+\begin{equation}
+ \nabla\cdot\boldsymbol u=0,\qquad
+ \partial_t\boldsymbol u+\boldsymbol u\cdot\nabla\boldsymbol u
+ =-\rho^{-1}\nabla p+\nu\Delta\boldsymbol u+\boldsymbol f.
+\end{equation}
+Los métodos de proyección separan el tratamiento de velocidad y presión
+\citep{chorin1968ns}; los enfoques espectrales son antecedentes de DNS
+\citep{orszag1972dns}. La implementación local se restringe al dominio
+bidimensional periódico y a $\boldsymbol f=0$.
+
+Se define $\omega=\partial_xv-\partial_yu$ y se usa
+\begin{equation}
+ u=\partial_y\psi,\quad v=-\partial_x\psi,\quad
+ -\Delta\psi=\omega,\quad
+ \partial_t\omega+u\partial_x\omega+v\partial_y\omega=\nu\Delta\omega.
+\end{equation}
+En Fourier, $\widehat\psi_{\boldsymbol k}
+=\widehat\omega_{\boldsymbol k}/|\boldsymbol k|^2$ para
+$\boldsymbol k\ne0$. La media de vorticidad se elimina para un campo
+periódico compatible y la velocidad media se fija en cero. El término
+no lineal utiliza dealiasing con corte estricto de dos tercios; la
+integración es RK4, con paso limitado por CFL y difusión. Se registran
+los subpasos efectivos.
+
+En el toro cuadrado de lado $2\pi$, una referencia exacta es
+\begin{align}
+ u&=A\sin x\cos y\,e^{-2\nu t},\qquad
+ v=-A\cos x\sin y\,e^{-2\nu t},\\
+ p&=\frac{\rho A^2}{4}(\cos2x+\cos2y)e^{-4\nu t}.
+\end{align}
+La referencia Taylor--Green 2D verifica signos, derivación y difusión.
+No equivale al desarrollo turbulento tridimensional del problema histórico
+\citep{taylorgreen1937} ni prueba por sí sola la resolución del término
+no lineal. Los vórtices interactuantes y la banda inicial de vorticidad se
+integran numéricamente; deben acompañarse de refinamiento espacial y
+temporal. La verificación con una solución exacta o manufacturada es un
+ejercicio matemático distinto de validación física experimental
+\citep{roache2002mms}.
+
+\section{Canal Herschel--Bulkley y plug}
+Se considera un canal $y\in[-H,H]$, no-slip en las paredes, gradiente de
+presión $G=-\partial_xp$ y velocidad plenamente desarrollada $(u(y),0)$.
+La constitutiva combina esfuerzo de cedencia $\tau_y$, consistencia $K$
+e índice $n$ \citep{herschel1926bulkley}:
+\begin{equation}
+ \tau_{xy}=-Gy,\qquad
+ \partial_yu=\operatorname{sgn}(\tau_{xy})
+ \left(\frac{\max(|\tau_{xy}|-\tau_y,0)}{K}\right)^{1/n}.
+\end{equation}
+En el plug se cumple la desigualdad $|\tau_{xy}|\leq\tau_y$ y
+$\partial_yu=0$; esto no implica esfuerzo nulo. Con $g=|G|$ y
+$gH>\tau_y$, el perfil exacto es
+\begin{equation}
+ u(y)=\frac{\operatorname{sgn}(G)n}{(n+1)gK^{1/n}}
+ \left[(gH-\tau_y)^{1+1/n}
+ -\max(g|y|-\tau_y,0)^{1+1/n}\right].
+\end{equation}
+Si $gH\leq\tau_y$, el canal permanece sin flujo. El semiancho del
+plug es $\min(H,\tau_y/g)$ para $g>0$. $K$ tiene unidades
+Pa\,s$^n$, no siempre unidades de viscosidad newtoniana. El caso $n=1$
+con $\tau_y>0$ representa Bingham; con $\tau_y=0$ recupera
+Poiseuille newtoniano. El piloto usa $n=0.6,1,1.4$.
+
+Estos campos se evalúan mediante la fórmula exacta. Son referencias
+analíticas estacionarias, no DNS integradas en el tiempo ni ejemplos de
+desprendimiento de vórtices. La regularización de
+\citet{papanastasiou1987yield} es una alternativa para geometrías donde se
+resuelven las ecuaciones numéricamente; no se necesita para evaluar este
+perfil y no produce una superficie de cedencia exacta sin análisis de
+su límite.
+
+\section{Oldroyd-B: referencia de canal unidimensional}
+La viscoelasticidad requiere memoria de esfuerzos y acoplamiento con el
+momento; cambiar sólo la viscosidad no introduce esa física
+\citep{oldroyd1950}. Para $\boldsymbol u=(u(y,t),0)$, esfuerzos inicialmente
+nulos y $\tau_{yy}=0$, el módulo resuelve
+\begin{align}
+ \rho\partial_tu&=\eta_s\partial_{yy}u+
+                     \partial_y\tau_{xy}+G(t),\\
+ \lambda\partial_t\tau_{xy}+\tau_{xy}&=\eta_p\partial_yu,\\
+ \lambda\partial_t\tau_{xx}+\tau_{xx}&=
+                  2\lambda(\partial_yu)\tau_{xy}.
+ \label{eq:oldroyd1d}
+\end{align}
+La velocidad se discretiza en nodos y los esfuerzos en caras; se aplica
+Euler implícito acoplado, de primer orden temporal y segundo espacial.
+La ecuación de esfuerzo cortante se elimina antes de resolver el sistema
+tridiagonal de velocidad. Los residuos del acoplamiento se miden en los
+pasos internos, no sólo diferenciando snapshots espaciados. Con
+$\lambda=0$ se recupera viscosidad newtoniana $\eta_s+\eta_p$.
+
+Para $G$ constante, el estado estacionario verifica
+$u=G(H^2-y^2)/(2(\eta_s+\eta_p))$,
+$\tau_{xy}=\eta_p\partial_yu$ y
+$\tau_{xx}=2\lambda\eta_p(\partial_yu)^2$.
+La solución de arranque, el límite newtoniano y el refinamiento aportan
+pruebas de esta reducción. No hay advección de esfuerzos alrededor de un
+obstáculo ni interacción con una estela 2D.
+
+La ampliación actual incorpora FENE-P y extensibilidad finita en un dominio
+periódico bidimensional \citep{bird1980fenep}. Las constitutivas EVP de
+\citet{saramito2007evp,saramito2009hb} siguen pendientes. Para wakes viscoelásticos se
+considera log-conformation \citep{fattal2004log,fattal2005time}, con
+positividad y resolución del tensor. La existencia de solvers como
+RheoTool \citep{pimenta2017rheotool,rheotoolCode} o Basilisk
+\citep{basiliskLogConformation} no implica que ya estén integrados o
+ejecutados en esta campaña.
+
+\section{Memoria viscoelástica bidimensional acoplada}
+La nueva implementación resuelve velocidad y conformación polimérica en el
+toro periódico, con densidad adimensional uno. La velocidad es planar y el
+tensor constitutivo es por defecto $C\in\R^{3\times3}$, incluyendo $C_{zz}$:
+\begin{align}
+ \partial_t\boldsymbol u+\boldsymbol u\cdot\nabla\boldsymbol u
+  &=-\nabla p+\nu_s\Delta\boldsymbol u+\nabla\cdot\tau_p,
+  &\nabla\cdot\boldsymbol u&=0,\\
+ \partial_tC+\boldsymbol u\cdot\nabla C
+  &=GC+CG^T-\frac{f(C)C-I}{\lambda}+\kappa\Delta C,
+  &G_{ij}&=\partial_j u_i,\\
+ \tau_p&=\frac{\nu_p}{\lambda}(f(C)C-I).
+\end{align}
+Oldroyd-B utiliza $f=1$; FENE-P utiliza
+$f=(L^2-3)/(L^2-\tr C)$, con $C\succ0$ y $\tr C<L^2$.
+Esta normalización hace que $C=I$ tenga esfuerzo cero. La extensión finita
+modifica también $C_{zz}$ aunque la velocidad sólo tenga dos componentes.
+
+Se integra con RK4, colocación de Fourier y proyección solenoidal. El paso
+interno está limitado por advección, difusión, relajación, estiramiento y una
+escala elástica. Cada etapa exige conformación finita, simétrica, positiva y
+traza admisible. Una violación rechaza el paso y reduce su tamaño; nunca se
+reparan silenciosamente autovalores o traza. La difusión de conformación
+$\kappa$ es una modificación explícita del modelo; vale cero en las campañas.
+El factor racional de FENE-P no queda exactamente desaliasado mediante corte
+2/3: se conserva su defecto de cuadratura/proyección en los diagnósticos.
+
+La energía polimérica de Oldroyd-B es
+\begin{equation}
+ E_p=\frac{\nu_p}{2\lambda}\langle\tr C-\log\det C-3\rangle.
+\end{equation}
+Se verifica el intercambio entre energía cinética y polimérica, relajación
+disipativa, cizalla homogénea analítica, límite newtoniano y refinamientos
+espaciales/temporales. Los residuos constitutivos derivados de instantáneas
+se distinguen de los residuos del integrador. Los detalles y datos están en
+\path{docs/research/VISCOELASTIC_2D.md} y
+\path{results/research/solver_validation_2d/viscoelastic.json}.
+
+\section{Momentum viscoplástico bidimensional regularizado}
+El segundo solver integra una constitutiva inelástica con esfuerzo completo
+variable; no reescala una trayectoria newtoniana. Para
+$D=(\nabla\boldsymbol u+\nabla\boldsymbol u^T)/2$ y
+$\dot\gamma=\sqrt{2D:D}$, resuelve
+\begin{align}
+ \partial_t\boldsymbol u+\boldsymbol u\cdot\nabla\boldsymbol u
+  &=-\rho^{-1}\nabla p+\rho^{-1}\nabla\cdot(2\eta_{app}D),\\
+ \eta_{app}&=\eta_s+K(\dot\gamma^2+\epsilon^2)^{(n-1)/2}
+  +\tau_y\frac{1-e^{-m\dot\gamma}}{\dot\gamma}.
+\end{align}
+El término de cedencia se evalúa por su límite $\tau_y m$ en corte cero,
+sin cap de viscosidad. $n=1$ representa Bingham regularizado; $n<1$ y $n>1$
+permiten adelgazamiento y espesamiento. $m$ y $\epsilon$ modifican la
+regularización y requieren estudios distintos del refinamiento de malla.
+
+El esquema usa RK4 adaptativo por estabilidad, esfuerzo en cuadratura
+ampliada y proyección de presión. La cuadratura elimina productos
+cuadráticos retenidos, pero no todos los armónicos de la ley no polinómica.
+Se informa su sensibilidad por separado. El balance periódico sin forzado es
+\begin{equation}
+ \frac{d}{dt}\frac{\rho}{2}\langle|\boldsymbol u|^2\rangle
+  =-\langle\eta_{app}\dot\gamma^2\rangle\le0.
+\end{equation}
+La superficie de cedencia sólo se estima con umbrales declarados: una ley
+regularizada no produce regiones rígidas exactamente no cedidas. La
+convergencia espacial observada es modesta y no acredita una DNS resuelta.
+La implementación y sus controles están en
+\path{docs/research/VISCOPLASTIC_2D.md} y
+\path{results/research/solver_validation_2d/viscoplastic.json}.
+
+\section{Proyección física y residuo de movimiento}
+Para dominios periódicos sin sólidos, la proyección de Helmholtz usa sólo la
+geometría y elimina la componente longitudinal:
+\begin{equation}
+ \widehat{P\boldsymbol u}_{\boldsymbol k}
+  =\widehat{\boldsymbol u}_{\boldsymbol k}
+   -\boldsymbol k\frac{\boldsymbol k\cdot
+    \widehat{\boldsymbol u}_{\boldsymbol k}}{|\boldsymbol k|^2}.
+\end{equation}
+La media se conserva; un corte 2/3 adicional es un prior de banda física
+declarado antes de observar el test. No utiliza velocidad limpia ni se aplica
+a canales o máscaras con obstáculos. En mallas pares, las primeras derivadas
+usan el operador real compatible, con Nyquist nulo; el Laplaciano difusivo
+conserva los números de onda completos. Confundir ambos operadores
+subestimaría la difusión de modos Nyquist.
+
+Para Newtoniano se calcula un residuo de vorticidad sin presión, mediante
+derivación temporal de las instantáneas y operadores espaciales. Se informa
+también el residuo adicional respecto al limpio, heredando su error de
+discretización. Una reconstrucción sólo de velocidad no permite certificar
+la PDE no newtoniana omitiendo el esfuerzo desconocido; esos residuos se
+marcan como no disponibles en vez de aplicar una ecuación newtoniana falsa.
+
+\section{Observables físicos y densidad}
+Para reconstrucción $\widehat{\boldsymbol u}$ y referencia
+$\boldsymbol u_{\mathrm{ref}}$, se mide
+\begin{equation}
+ e_u=\frac{\norm{\widehat{\boldsymbol u}-\boldsymbol u_{\mathrm{ref}}}_2}
+                  {\norm{\boldsymbol u_{\mathrm{ref}}}_2},\qquad
+ e_\omega=\frac{\norm{\widehat\omega-\omega_{\mathrm{ref}}}_2}
+                      {\norm{\omega_{\mathrm{ref}}}_2}.
+\end{equation}
+Estas normas se calculan sobre nodos de fluido y, para vorticidad,
+nodos válidos de derivación. El código usa derivadas espectrales en ejes
+periódicos y diferencias de segundo orden en ejes no periódicos. Cuando
+hay obstáculo, excluye un halo de una celda y usa diferencias locales.
+El mismo operador se aplica a referencia y reconstrucción. Si un
+denominador es cero con error no nulo, se informa métrica indefinida,
+sin introducir un pequeño número que oculte esa situación.
+
+La medida normalizada de divergencia adicional del piloto es
+\begin{equation}
+ d_{\mathrm{extra}}=
+ \frac{\RMS(\nabla\cdot\widehat{\boldsymbol u}
+              -\nabla\cdot\boldsymbol u_{\mathrm{ref}})}
+      {\RMS(\omega_{\mathrm{ref}})}.
+\end{equation}
+Se informa también divergencia absoluta. Restar el residuo de referencia
+ayuda a distinguir alteraciones de reconstrucción del residuo de datos
+limpios, pero no certifica el solver.
+
+Con pesos de integración $w_i$, por unidad de profundidad,
+\begin{equation}
+ M_\Omega=\sum_i\rho_iw_i,\qquad
+ E=\frac12\sum_i\rho_i|\boldsymbol u_i|^2w_i,\qquad
+ Z=\frac12\sum_{i\,\text{válido}}\omega_i^2w_i.
+\end{equation}
+Se utilizan rectángulos periódicos y trapecios sobre ejes nodales no
+periódicos. El balance global de materia es
+\begin{equation}
+ B_M=\frac{dM_\Omega}{dt}+
+        \int_{\partial\Omega}\rho\boldsymbol u\cdot\boldsymbol n\,ds.
+\end{equation}
+Las caras periódicas se emparejan. El flujo se normaliza con
+$\overline\rho\,U_{\mathrm{ref,RMS}}\sqrt{|\Omega_{\mathrm{fluido}}|}$.
+La reconstrucción del piloto sólo modifica velocidad; si copia densidad
+de referencia, la fidelidad de masa es condicional a esa suposición.
+Con densidad constante, $M_\Omega=\rho|\Omega|$ es trivial y no prueba
+conservación de la velocidad reconstruida.
+
+El flujo neto puede cancelar entradas y salidas no físicas por paredes.
+En canales se evalúan por separado velocidad de pared y penetración
+normal, normalizadas por la velocidad RMS del volumen. En el LBM legacy
+se asume flujo nulo sobre el sólido y el área se aproxima mediante su
+máscara; no se pretende una integración exacta del esfuerzo o la fuerza
+sobre el cilindro. Calcular residuo de momento, lift o drag exige presión,
+esfuerzos y condiciones de contorno compatibles; no se deducen
+automáticamente de estos diagnósticos de velocidad.
+
+\chapter{Desarrollo experimental}
+\section{Piloto preservado y procedencia física}
+Esta sección describe el baseline anterior, conservado con su procedencia en
+\path{results/research/baseline_2026-10-14/}; sus cifras no se atribuyen a una
+nueva ejecución de reissued. La tabla~\ref{tab:cases} resume sus ocho casos. Una malla se
+expresa como $N_x\times N_y$. El dominio periódico NS tiene lado $2\pi$;
+los canales reológicos tienen $H=1$, longitud $2$, $\rho=1$, $G=1$ y,
+para HB, $K=1$ y $\tau_y=0.2$ en unidades consistentes.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Banco piloto: configuraciones, no certificaciones automáticas de DNS.}
+\label{tab:cases}
+\begin{tabular}{@{}p{3.8cm}p{1.7cm}p{7.8cm}@{}}
+\toprule
+Caso & Malla & Referencia y parámetros\\
+\midrule
+Taylor--Green NS & $24\times24$ & Integración NS; $\nu=0.05$, $\Delta t=0.01$,
+  150 pasos, muestra cada 5; comparación analítica.\\
+Vórtices interactuantes & $48\times48$ & Integración NS de cuatro núcleos
+  periodizados; $\nu=0.02$, mismo tiempo/muestreo.\\
+Banda de vorticidad en decaimiento & $64\times64$ & Integración NS,
+  semilla física 19, $\nu=0.02$; el nombre del caso no acredita turbulencia resuelta.\\
+Arranque Oldroyd-B & $8\times33$ & Reducción 1D; $\eta_s=\eta_p=0.5$,
+  $\lambda=0.5$, $\Delta t=0.01$, 300 pasos, muestra cada 10.\\
+HB shear-thinning & $8\times33$ & Perfil exacto estacionario,
+  $n=0.6$; snapshots repetidos cada $0.05$ hasta $1.5$.\\
+Bingham & $8\times33$ & Perfil exacto estacionario, $n=1$;
+  mismo muestreo nominal.\\
+HB shear-thickening & $8\times33$ & Perfil exacto estacionario,
+  $n=1.4$; mismo muestreo nominal.\\
+Cilindro LBM legacy & $80\times40$ & D2Q9--BGK conservado,
+  $Re=80$, $u_{\mathrm{in}}=0.06$, 1100 pasos,
+  warmup 500, muestra cada 20.\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Los siete primeros casos producen 31 snapshots según la configuración.
+El LBM legacy conserva sus fronteras: streaming transversal periódico,
+entrada de equilibrio y salida por copia. Su metadata lo identifica como
+referencia no validada. No se sustituye esa geometría por el benchmark
+Schäfer--Turek \citep{schaefer1996cylinder} ni se comparan sus coeficientes
+con valores de un cilindro con otras fronteras.
+
+\section{Contaminación con presupuesto de energía comparable}
+El piloto preservado genera seis modelos de ruido de observación, todos con intensidad
+$\epsilon=0.2$. Después de generar su estructura, se normaliza la RMS
+realizada sobre componentes y nodos de fluido:
+\begin{equation}
+ M_{\mathrm{obs}}=M_{\mathrm{clean}}+N,\qquad
+ \frac{\RMS(N)}{\RMS(M_{\mathrm{clean}})}=0.2.
+\end{equation}
+Esta convención equivale a aproximadamente $13.98$ dB de SNR basado en
+energía. Igualar RMS no hace equivalentes las distribuciones o las
+correlaciones; permite separar presupuesto energético y estructura.
+
+\begin{enumerate}
+\item Gaussiano denso, generado inicialmente con entradas independientes y
+      luego renormalizado a la energía declarada.
+\item Impulsivo disperso, con selección Bernoulli de probabilidad $0.05$.
+\item Mixto, con fracciones de energía esperada $0.5$ gaussiana y $0.5$
+      impulsiva antes de la normalización final.
+\item Correlacionado espacialmente, mediante filtro gaussiano de escala
+      $1.5$ celdas y extensión periódica del ruido generado.
+\item Correlacionado temporalmente, mediante AR(1):
+      $N_k=0.8N_{k-1}+\sqrt{1-0.8^2}\,\xi_k$, con inicio estacionario.
+\item Outliers por columna, seleccionando snapshots completos;
+      se contamina $\max(1,\lceil0.05n\rceil)$ de ellos.
+\end{enumerate}
+La fracción realizada de columnas se registra: en una serie corta no
+necesariamente coincide exactamente con $5\%$. La correlación espacial
+periódica es una decisión del experimento de observación, no una afirmación
+sobre las fronteras físicas de un sensor real.
+
+Este ruido se añade a un campo ya calculado. Una perturbación del forzado,
+la condición inicial o la constitutiva es un experimento físico diferente
+y requiere integrar de nuevo el sistema. Las semillas de contaminación
+son 7, 23 y 61; no se confunden con la semilla 19 de la condición inicial
+del caso en decaimiento.
+
+\section{Estimadores y presupuesto}
+\begin{table}[htbp]
+\centering\small
+\caption{Once métodos o cadenas del piloto preservado.}
+\begin{tabular}{@{}p{3.9cm}p{9.3cm}@{}}
+\toprule Método & Función\\\midrule
+\code{identity} & Observación sin limpiar: baseline de daño.\\
+\code{pod} & Aproximación SVD de rango solicitado.\\
+\code{rpca} & PCP restringido a $M=L+S$ mediante IALM.\\
+\code{stable_rpca} & Modelo penalizado bajo rango + disperso + residuo denso.\\
+\code{outlier_pursuit} & Corrupción de columnas, penalización $\ell_{2,1}$.\\
+\code{dmd} & DMD exacta con amplitudes globales.\\
+\code{tls_dmd} & Proyección TLS de $X$ e $Y$, seguida de DMD.\\
+\code{fb_dmd} & Operador forward--backward en base común; raíz verificada.\\
+\code{optimized_dmd} & Ajuste exponencial por proyección variable.\\
+\code{rpca_dmd} & PCP seguido de DMD.\\
+\code{stable_rpca_dmd} & RPCA estable penalizada seguida de DMD.\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+En el piloto preservado el rango solicitado es cuatro para métodos que lo usan. Para los convexos
+se registra el rango efectivo seleccionado por regularización. Se fija
+tolerancia $10^{-5}$ y hasta 600 iteraciones; optimized DMD tiene dos
+inicios y presupuesto de 100 evaluaciones por inicio, con diagnósticos de
+su optimizador. Cada réplica tiene un límite de ajuste de 90 segundos.
+Esos límites forman parte del ensayo y un método que los excede permanece
+identificado como fracaso o ausencia de convergencia.
+
+El diseño nominal es $8\times6\times3\times11=1584$ condiciones, cada una
+con tres repeticiones de recursos: hasta 4752 ajustes. Estos conteos
+describen la configuración; el capítulo de resultados informa cuántos
+se ejecutaron efectivamente y cuántos convergieron. No se reemplazan
+resultados fallidos por el mejor ensayo ni se confunden tres réplicas de
+una misma entrada con nuevas realizaciones de ruido.
+
+\section{Ampliación ejecutada: flujos 2D y nuevas contaminaciones}
+La configuración de reconstrucción actual mantiene los tres casos
+newtonianos del piloto y sustituye las referencias de canal/legacy por cinco
+flujos periódicos realmente integrados. Oldroyd-B y FENE-P utilizan malla
+$32^2$, $\nu_s=.02$, $\nu_p=.04$, $\lambda=.5$, amplitud RMS inicial $.6$,
+$\Delta t=.005$ y duración $.6$; FENE-P usa $L^2=12$. Los tres flujos
+viscoplásticos utilizan $32^2$, $K=.02$, $\tau_y=.02$, $m=10$,
+$\epsilon=.001$, índices $.6,1,1.4$, paso nominal $.005$ y duración $2$.
+Los tiempos de muestreo y parámetros completos están en la configuración.
+
+A las seis contaminaciones del piloto se agregan Student-$t$ con tres
+grados de libertad, ruido heteroscedástico y deriva de sensor coherente.
+Todas tienen presupuesto RMS realizado del 20\% para reconstrucción.
+Colas pesadas, dependencia y sesgo cambian las hipótesis de identificación:
+una deriva coherente puede ser de bajo rango y no distinguirse de la señal
+mediante ese supuesto solamente. Las semillas siguen siendo 7, 23 y 61.
+
+Se predeclaran 13 opciones: identity, POD, PCP, RPCA estable, DMD exacta,
+TLS-DMD, optimized DMD, un dispatcher fbDMD con alternativa TLS explícita,
+identity/POD/TLS/RPCA estable con Helmholtz y TLS con Helmholtz más corte 2/3.
+El dispatcher conserva el fallo primario y suma el trabajo de ambos métodos;
+no registra esa recuperación como éxito puro de fbDMD. Outlier Pursuit y las
+cadenas RPCA--DMD permanecen implementadas y evaluadas en el piloto, aunque
+no integran las 13 opciones de esta campaña. Los convexos tienen hasta
+1200 iteraciones y optimized DMD dos inicios de hasta 200 evaluaciones;
+la tolerancia permanece $10^{-5}$ y el rango solicitado cuatro.
+
+El diseño ejecutado es $8\times9\times3\times13=2808$ condiciones,
+con tres repeticiones de recursos: 8424 ajustes. El costo medido incluye
+reconstrucción, retorno a campos vectoriales y posprocesamiento físico.
+Evaluación contra referencia y escritura de artefactos se contabilizan
+fuera del ajuste. No se intercambian las cifras de esta campaña con las
+1584 condiciones del piloto preservado.
+
+\section{Pronóstico sin acceso al futuro y control reológico común}
+La campaña de pronóstico separa cronológicamente 60\% de entrenamiento,
+20\% de validación y el resto de prueba. Evalúa cinco flujos (vórtices
+newtonianos, Taylor--Green Oldroyd-B/FENE-P y vórtices Oldroyd-B/FENE-P),
+cuatro ruidos y tres semillas: 60 escenarios. Las 29 opciones predeclaradas
+incluyen persistencia, POD autorregresivo ridge, DMD exacta/TLS/optimizada,
+preprocesamiento RPCA sólo en entrenamiento y variantes físicas. Los rangos
+son dos, cuatro y ocho. Los ajustes compartidos entre variantes físicas no
+se cuentan como entrenamientos independientes.
+
+La escala de contaminación se calibra sólo con la RMS de entrenamiento;
+el proceso temporal es causal y el soporte de outliers no depende de valores
+futuros. La selección minimiza error sobre validación ruidosa, sin usar
+referencia limpia ni observaciones de prueba y sin reajuste posterior.
+La interpretación de ese criterio como riesgo limpio requiere ruido de
+validación independiente y de media cero; no se presume para ruido AR(1).
+La persistencia filtrada controla cuánto beneficio procede del prior
+espacial. El costo de pronóstico mide la evaluación completa de candidatos
+en un proceso aislado, con una réplica por escenario, y no tiempos aislados
+de cada estimador.
+
+Una campaña adicional compara seis constitutivas con la misma velocidad
+inicial, densidad, dominio, malla $32^2$ y 31 tiempos hasta $1.2$.
+Newtoniano, Oldroyd-B y FENE-P comparten viscosidad nominal $.06$;
+las consistencias HB se ajustan para igualar esa viscosidad aparente en una
+tasa de corte declarada. Esto no iguala toda su respuesta constitutiva.
+Los cambios respecto al Newtoniano son diferencias físicas simuladas, no
+errores de reconstrucción. La animación y las tablas se conservan en
+\path{results/research/rheology_matched_2026-10-14/}.
+
+\section{Costo computacional y Pareto}
+El vector de costo registra tiempo wall, CPU, RSS pico absoluta del
+proceso, memoria visible a \code{tracemalloc}, dimensiones de entrada,
+llamadas SVD/mínimos cuadrados/eigensolver e iteraciones. Cada repetición
+usa un proceso nuevo para evitar atribuir al ajuste un máximo RSS
+histórico de otra corrida. La RSS incluye intérprete, dependencias y
+entrada; no se presenta como memoria adicional exclusiva del algoritmo.
+El pico de \code{tracemalloc} no mide toda la memoria nativa y su
+instrumentación añade sobrecarga.
+
+Se reportan mediana e intervalo intercuartílico. Tres réplicas permiten
+observar variabilidad inicial, sin establecer una caracterización
+exhaustiva de hardware. Se conservan arquitectura, versiones y hilos
+numéricos. No se mide energía en joules porque no hay un contador físico
+de energía en esta campaña.
+
+Como proxy de trabajo dominante, una SVD delgada de una matriz $m\times n$
+con $k=\min(m,n)$ se contabiliza mediante
+\begin{equation}
+ \widehat W_{\mathrm{SVD}}=4mnk+\frac83k^3,
+ \qquad \widehat W_{\mathrm{producto}}=2mnp.
+\end{equation}
+Los coeficientes y exclusiones están documentados por el código. Se
+omiten trabajo elemento a elemento, normas, factores de aritmética
+compleja y sobrecarga del optimizador, entre otros componentes; el proxy
+no es FLOPs medidos, instrucciones de hardware ni energía. Además se
+informa el conteo de llamadas reales, cuya mezcla puede variar por método.
+La relación entre cómputo y tráfico de memoria motiva esta separación
+\citep{williams2009roofline}.
+
+Una configuración domina otra si no empeora ninguna coordenada elegida
+de costo/error y mejora al menos una. La frontera Pareto se interpreta
+en grupos equivalentes de caso, ruido y semilla. No se mezclan mallas o
+cargas distintas en una clasificación global. El runner informa dos pertenencias: Pareto exploratoria entre configuraciones convergentes y Pareto físicamente admisible entre las que además superan todos los criterios. La primera puede incluir configuraciones que incumplen la aceptación física; ambas se mantienen diferenciadas en los artefactos.
+Los perfiles de desempeño de \citet{dolan2002profiles} son una extensión
+para comparar conjuntos de problemas sin reducirlos a un promedio que
+oculte fallos.
+
+\section{Criterios de aceptación física predeclarados}
+El piloto y la ampliación de reconstrucción exigen
+\begin{equation}
+ e_u\leq0.15,\quad e_\omega\leq0.25,\quad
+ d_{\mathrm{extra}}\leq0.10,\quad e_E\leq0.15.
+\end{equation}
+En canales exige adicionalmente error de velocidad de pared normalizado
+menor o igual a $0.02$ y velocidad normal de pared normalizada menor o
+igual a $0.02$. Deben converger todas las repeticiones. Una métrica
+ausente o indefinida no supera el criterio.
+
+Estos umbrales son decisiones explícitas de una campaña piloto, no
+estándares universales publicados para cualquier aplicación. Se informa
+también enstrofía y balance de materia, aunque no integren todos ellos el
+criterio de aceptación del piloto. Un ensayo posterior debe ajustar sus
+umbrales al uso físico y declararlos antes de interpretar el test.
+
+\section{Verificación y trazabilidad}
+Se verifica el solver frente a soluciones exactas, límites constitutivos,
+residuos y refinamiento; las comprobaciones y sus configuraciones forman
+parte de los artefactos. Un residuo algebraico pequeño en Euler implícito
+no equivale a error de discretización pequeño. Taylor--Green de un modo
+no sustituye refinamiento no lineal; una máscara de cilindro no sustituye
+una geometría convergida de esfuerzos y fronteras.
+
+Los hashes de fuentes y configuración acompañan los artefactos del baseline y corresponden a aquella ejecución; no verifican automáticamente el código integrado de fase 8. Cada campaña nueva registra su propia procedencia. La matriz observada y los parámetros quedan identificados por caso,
+distribución, semilla y método. El runner registra fallos, convergencia,
+configuración y recursos por réplica; produce tablas crudas y resúmenes
+derivados. No se eligen hiperparámetros con el campo limpio. Las cifras
+de resultados deben enlazar estos artefactos y distinguir reconstrucción
+in-sample de cualquier análisis futuro fuera de muestra.
+
+\chapter{Resultados y discusión}
+\label{chap:results}
+El contenido numérico de este capítulo se genera a partir de la campaña
+y de sus archivos de validación. Las comparaciones se restringen a los
+casos, intensidad, configuraciones y resoluciones efectivamente
+registrados. Los conteos previstos del capítulo anterior no sustituyen
+los conteos observados; los fallos y las condiciones que no satisfacen
+los criterios permanecen visibles.
+
+\input{docs/research/results_generated.tex}
+\input{docs/research/extended_generated.tex}
+
+\section{Límites comunes de interpretación}
+Una ventaja de un método bajo una distribución no acredita superioridad
+en todas las demás. El promedio sobre casos analíticos estacionarios,
+campos no lineales y un LBM no validado puede reflejar su mezcla; por eso
+las comparaciones físicas se leen primero por caso y contaminación.
+Tres semillas aportan una exploración inicial, sin representar toda la
+variabilidad posible de la medición.
+
+El error de vorticidad depende de la derivación y resolución; los
+residuos adicionales aíslan alteraciones de reconstrucción respecto al
+campo limpio, pero heredan sus limitaciones. Copiar la densidad permite
+diagnosticar velocidad con una hipótesis de densidad conocida, no
+recuperar densidad corrupta. El balance neto de flujo no sustituye las
+comprobaciones locales de continuidad y pared.
+
+La campaña de reconstrucción ajusta el intervalo observado y la campaña
+cronológica evalúa un futuro separado. No se ejecutaron entrenamiento
+profundo, online, GPU ni estelas externas de cilindro Oldroyd-B/FENE-P/EVP.
+Los nuevos campos periódicos tienen memoria constitutiva o esfuerzo variable,
+pero no reproducen por sí solos una calle de vórtices ni demuestran caos.
+Los residuos constitutivos y de cuadratura no se sustituyen por cero.
+
+\chapter{Conclusiones y líneas de trabajo futuro}
+\section{Conclusiones metodológicas y alcance}
+La ampliación establece una comparación verificable entre estructura de
+contaminación, estimador, referencia física y recursos. El juicio de éxito
+separa convergencia del algoritmo, fidelidad de reconstrucción,
+conservación observada y costo. Un único tiempo o error escalar no
+resuelve todas estas preguntas.
+
+Las conclusiones numéricas se limitan a los artefactos del
+capítulo~\ref{chap:results}. No se infiere la superioridad universal de
+RPCA ni la inutilidad general de DMD a partir del estudio impulsivo
+o del piloto. La SVD, los modelos dispersos y los ajustes
+dinámicos tienen hipótesis y objetivos diferentes; sus fallos y
+tradeoffs deben permanecer documentados.
+
+El marco académico combina LBM--RPCA--DMD con pruebas de reconstrucción y física. No se reclama primera aplicación de DMD a
+fluidos viscoelásticos o EVP. Las referencias de canal y los nuevos flujos periódicos bidimensionales
+amplían las constitutivas observadas. Los estudios de refinamiento respaldan
+regímenes concretos; no certifican una estela externa de cilindro, alto
+Weissenberg ni una transición turbulenta tridimensional.
+
+\section{Pronóstico y generalización fuera del ajuste}
+La campaña cronológica ejecutada utiliza entrenamiento, validación y prueba
+sin snapshots futuros durante la limpieza. Su selección ruidosa mejora la
+persistencia en parte del banco, pero conserva errores altos de vorticidad en
+flujos no lineales. El siguiente paso es evaluar horizontes más largos,
+transferencia a condiciones no usadas en ajuste y cobertura de incertidumbre
+cuando el método la entregue. El costo debe incluir entrenamiento y reajustes;
+su amortización requiere declarar cuántas predicciones se producen.
+
+Se amplían niveles de intensidad, rangos y correlaciones mediante la
+configuración de resolución/rango. El ruido heteroscedástico, las colas pesadas y la deriva de sensor ya se
+incluyeron en la ampliación. La deriva y la correlación temporal no alcanzan
+las tolerancias de reconstrucción en este banco, y requieren modelos de
+sesgo/memoria más específicos. Los datos faltantes y las perturbaciones de
+forzado siguen pendientes de diseños separados. Los datos faltantes se representan con máscara y no se
+convierten automáticamente en ceros observados. La selección de
+hiperparámetros utiliza validación separada y presupuesto comparable.
+
+\section{Wakes no newtonianos y campaña HPC pendiente}
+La extensión física avanza por etapas: benchmark newtoniano con
+geometría/fronteras reproducidas, HB/Bingham regularizado en wake,
+Oldroyd-B/FENE-P con tensor de conformación y, finalmente,
+Saramito--Herschel--Bulkley EVP. Los parámetros Re, Wi, Bn, $\beta$,
+extensibilidad y regularización se declaran junto con sus escalas.
+
+El manifiesto externo toma $Re=100$ como línea de comparación con
+antecedentes, sin sustituir la verificación del solver. Antes de analizar
+modos se exige refinamiento espacial/temporal, sensibilidad a dominio y
+fronteras, resolución de capas de esfuerzo y checks constitutivos.
+Log-conformation aporta estabilización, pero no elimina esas
+necesidades. La campaña de \citet{corrochano2026evp} ilustra la escala
+de cómputo de wakes EVP; citarla o preparar un manifiesto no significa
+haber reproducido sus simulaciones.
+
+La integración de RheoTool o Basilisk fija versión/commit,
+configuración, dependencias, licencia y pruebas del solver. Los
+manifiestos mantienen estado pendiente hasta producir y verificar
+campos. Una viscosidad espacial variable no reemplaza la ecuación de
+memoria de esfuerzos ni la constitutiva EVP. Clasificar un campo como
+caótico requiere evidencia dinámica; la apariencia de una imagen no
+es una prueba.
+
+\section{Escala 3D, GPU, online y validación PIV}
+Los campos 3D, los modelos incrementales y la aceleración GPU se
+abordan después de verificar precisión y conservación. La SVD
+truncada/aleatoria, las pasadas sobre datos y el movimiento de memoria
+se comparan explícitamente. Un objetivo de reconstrucción sub-segundo requiere medición propia; no se deriva automáticamente de utilizar una GPU.
+
+La validación con PIV real requiere calibración de incertidumbre,
+máscaras de observación y datos que permitan evaluar sin una
+referencia limpia perfecta. Las comparaciones con autoencoders u otros
+modelos aprendidos separan realizaciones, regímenes y conjuntos de
+entrenamiento/test, contabilizan costo de entrenamiento y reportan
+degradación física además de error visual. La integración de uso se
+apoya en esquemas de datos y scripts reproducibles, una vez validadas
+las etapas científicas.
+
+\backmatter
+\bibliographystyle{plainnat}
+\bibliography{docs/research/references}
+\end{document}

@@ -8,6 +8,9 @@ data/raw/*
 .venv/
 .pytest_cache/
 results/research/_work/
+results/research/smoke/
+results/research/extended_smoke/
+results/research/forecast_smoke/
 results/research/*/datasets/*.npz
 results/research/*/reconstructions/
 results/research/*/predictions/*.npz

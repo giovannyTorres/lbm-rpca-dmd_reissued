@@ -160,6 +160,51 @@ def run_baseline_pipeline(
     input_config = dict(config_payload.get("input", {}))
     output_config = dict(config_payload.get("output", {}))
 
+    repository_root = Path(__file__).resolve().parents[3]
+    base_dir = (repository_root if config_path is None or config_payload.get("path_base") == "repository"
+                else Path(config_path).resolve().parent)
+    if source_config.get("run_dir") == "latest_valid_noisy":
+        # Choose a traceable pair, never unrelated newest clean/noisy folders.
+        candidates = sorted((repository_root / "data" / "noisy").glob("*/metadata.json"),
+                            key=lambda p: (p.stat().st_mtime_ns, str(p)), reverse=True)
+        chosen = None
+        for metadata_path in candidates:
+            try:
+                metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+                clean_source = metadata["source"]
+                source_id = clean_source["source_experiment_id"]
+                if not isinstance(source_id, str) or not source_id:
+                    raise ValueError("Missing clean source experiment ID")
+                recorded_path = Path(clean_source["clean_run_dir"])
+                if not recorded_path.is_absolute():
+                    recorded_path = repository_root / recorded_path
+                clean_candidates = (recorded_path, repository_root / "data" / "clean" / source_id)
+                for clean_path in dict.fromkeys(clean_candidates):
+                    try:
+                        pair = align_model_runs(metadata_path.parent, clean_path)
+                        if pair.reference.experiment_id != source_id:
+                            continue
+                        chosen = (metadata_path.parent, clean_path)
+                        break
+                    except (OSError, ValueError, KeyError, TypeError, AttributeError):
+                        continue
+                if chosen is not None:
+                    break
+            except (OSError, ValueError, KeyError, TypeError, AttributeError):
+                continue
+        if chosen is None:
+            raise FileNotFoundError("No valid noisy/clean pair found. Run FASE 2/3 or the pipeline first.")
+        source_config["run_dir"] = str(chosen[0])
+        if source_config.get("reference_run_dir") == "source_clean":
+            source_config["reference_run_dir"] = str(chosen[1])
+    for key in ("run_dir", "reference_run_dir"):
+        value = source_config.get(key)
+        if value is not None:
+            path = Path(value)
+            source_config[key] = str(path if path.is_absolute() else (base_dir/path).resolve())
+    path = Path(output_config.get("root", "data/processed/baselines"))
+    output_config["root"] = str(path if path.is_absolute() else (base_dir/path).resolve())
+
     run_dir = source_config.get("run_dir")
     if run_dir is None:
         raise ValueError("Baseline config requires source.run_dir")

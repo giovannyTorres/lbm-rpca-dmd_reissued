@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 def tex_escape(value):
-    return str(value).replace("_", r"\_").replace("%", r"\%")
+    return str(value).replace("_", r"\_\allowbreak ").replace("%", r"\%")
 
 
 def percentage(value, latex=False):
@@ -158,7 +158,7 @@ def analyze(campaign, update_docs=False):
     for noise, row in noise_acceptance.iterrows():
         doc.append(f"| {noise} | {int(row['sum'])}/{int(row['size'])} |")
     doc.extend(["", "En Taylor–Green gaussiano, la familia DMD alcanza menor error de velocidad que PCP en este rango y presupuesto. "
-                "Esa mejora no basta para cumplir simultáneamente los criterios físicos. La diferencia entre las columnas de velocidad, vorticidad y aceptación "
+                "Una mejora de velocidad por sí sola no garantiza cumplir simultáneamente los criterios físicos. La diferencia entre las columnas de velocidad, vorticidad y aceptación "
                 "justifica investigar restricciones físicas, sensibilidad de rango y parámetros en validación independiente. Los conteos son descriptivos del banco; "
                 "no representan probabilidades de éxito en flujos reales."])
     validation_prefix = os.path.relpath(ROOT / "docs" / "research", directory)
@@ -196,14 +196,16 @@ def analyze(campaign, update_docs=False):
              f"La campaña ejecutó {completion['conditions']} condiciones y {completion['fits']} ajustes. "
              f"Hubo {completion['failed_fits']} ajustes fallidos y {completion['not_converged_conditions']} condiciones sin convergencia completa. "
              f"Cumplieron convergencia declarada y umbrales físicos {completion['quality_pass_conditions']} condiciones.",
-             r"\begin{table}[htbp]\centering\scriptsize",
-             r"\caption{Menor error mediano de velocidad entre estimadores convergidos en todas las semillas declaradas. AP: semillas aceptadas físicamente.}",
-             r"\begin{tabular}{llllrr}\toprule Caso & Ruido & Método & $e_u$ [\%] & $e_\omega$ [\%] & AP \\\midrule"]
+             r"{\scriptsize\setlength{\tabcolsep}{3pt}",
+             r"\begin{longtable}{p{.17\textwidth}p{.16\textwidth}p{.30\textwidth}rrr}",
+             r"\caption{Menor error mediano de velocidad entre estimadores convergidos en todas las semillas declaradas. AP: semillas aceptadas físicamente.}\\",
+             r"\toprule Caso & Ruido & Método & $e_u$ [\%] & $e_\omega$ [\%] & AP \\\midrule\endfirsthead",
+             r"\toprule Caso & Ruido & Método & $e_u$ [\%] & $e_\omega$ [\%] & AP \\\midrule\endhead"]
     for row in selected:
         case = row['case'].replace('_ns','').replace('_legacy','').replace('hb_shear_','HB ')
         noise = {"gaussian": "gaussiano", "sparse_impulsive": "impulsivo"}.get(row["noise"], row["noise"])
-        latex.append(f"{tex_escape(case)} & {noise} & {tex_escape(row['method'])} & {percentage(row['velocity_relative_l2'], True)} & {percentage(row['vorticity_relative_l2'], True)} & {int(row['quality_pass_seeds'])}/{expected_seed_count} " + r"\\")
-    latex.extend([r"\bottomrule\end{tabular}\end{table}",
+        latex.append(f"{tex_escape(case)} & {tex_escape(noise)} & {tex_escape(row['method'])} & {percentage(row['velocity_relative_l2'], True)} & {percentage(row['vorticity_relative_l2'], True)} & {int(row['quality_pass_seeds'])}/{expected_seed_count} " + r"\\")
+    latex.extend([r"\bottomrule\end{longtable}}",
                   f"Sólo {feasible_count} de {group_count} grupos caso/ruido/semilla tienen algún estimador admisible a estos umbrales. "
                   f"Los {group_count-feasible_count} restantes no ofrecen solución al costo y fidelidad fijados. "
                   "Los valores pequeños se indican mediante desigualdad para no representar una aproximación como error exactamente cero. "

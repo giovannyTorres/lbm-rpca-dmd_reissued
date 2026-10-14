@@ -1,0 +1,358 @@
+{
+  "oldroyd_b": {
+    "model": "oldroyd_b",
+    "case": "interacting_vortices",
+    "duration": 0.6,
+    "parameters": {
+      "model": "oldroyd_b",
+      "case": "interacting_vortices",
+      "viscosity_s": 0.02,
+      "viscosity_p": 0.04,
+      "relaxation_time": 0.5,
+      "amplitude": 0.6,
+      "extensibility_squared": 12.0,
+      "stress_diffusivity": 0.0
+    },
+    "grid_refinement": [
+      {
+        "nx": 24,
+        "initial_velocity_relative_error": 5.167982237555866e-07,
+        "final_velocity_relative_error": 0.0006997931681086183,
+        "final_conformation_relative_error": 0.00250093409591877,
+        "final_energy_rate_residual": 4.06050889549224e-05
+      },
+      {
+        "nx": 32,
+        "initial_velocity_relative_error": 1.7251090972158388e-11,
+        "final_velocity_relative_error": 3.2637616544301296e-05,
+        "final_conformation_relative_error": 0.0006978704744314807,
+        "final_energy_rate_residual": 4.563350091857377e-06
+      },
+      {
+        "nx": 48,
+        "initial_velocity_relative_error": 4.1870036213728024e-16,
+        "final_velocity_relative_error": 2.4302866337101854e-06,
+        "final_conformation_relative_error": 0.0001071886199868233,
+        "final_energy_rate_residual": 1.2908471636041696e-07
+      }
+    ],
+    "reference_nx": 64,
+    "temporal_refinement": [
+      {
+        "dt": 0.01,
+        "actual_dt_max": 0.01,
+        "nominal_dt_capped": false,
+        "velocity_relative_error": 2.6702222719745495e-09,
+        "conformation_relative_error": 2.0061010250240992e-08,
+        "stress_relative_error": 7.258808356185113e-08,
+        "observed_velocity_order": null
+      },
+      {
+        "dt": 0.005,
+        "actual_dt_max": 0.005,
+        "nominal_dt_capped": false,
+        "velocity_relative_error": 1.6528293301072613e-10,
+        "conformation_relative_error": 1.2486924391893097e-09,
+        "stress_relative_error": 4.518226646209051e-09,
+        "observed_velocity_order": 4.013950172443609
+      },
+      {
+        "dt": 0.0025,
+        "actual_dt_max": 0.0025,
+        "nominal_dt_capped": false,
+        "velocity_relative_error": 9.694408541404995e-12,
+        "conformation_relative_error": 7.343330017786585e-11,
+        "stress_relative_error": 2.657085793780589e-10,
+        "observed_velocity_order": 4.09164106872275
+      }
+    ],
+    "reference_dt": 0.0025,
+    "numerical_reference": "grid: nx64 dt=.0025, restricted to coarse active bands; time: nx48 dt=.00125",
+    "uniform_shear_oldroyd_b_relative_error": 4.882404606018064e-12,
+    "zero_polymer_newtonian_relative_error": 3.918710040236222e-16,
+    "oldroyd_b_small_relaxation_limit": [
+      {
+        "relaxation_time": 0.02,
+        "relative_velocity_error": 0.000764607233051574,
+        "actual_dt_max": 0.0025
+      },
+      {
+        "relaxation_time": 0.01,
+        "relative_velocity_error": 0.000381549185582889,
+        "actual_dt_max": 0.002
+      },
+      {
+        "relaxation_time": 0.005,
+        "relative_velocity_error": 0.00019058697019670666,
+        "actual_dt_max": 0.001
+      }
+    ],
+    "small_relaxation_limit_scope": "weak Taylor-Green for both models, C(0)=I includes initial stress layer; fixed viscosities .02+.02; FENE L\u00b2=12",
+    "finite_fields": true,
+    "minimum_conformation_eigenvalue": 0.44740714854324404,
+    "maximum_conformation_trace": 4.66633223728608,
+    "max_divergence_rms": 2.064711999475566e-15,
+    "max_kinetic_exchange_residual": 1.3877787807814457e-17,
+    "max_total_energy_rate_residual": 2.2755797732254557e-09,
+    "stress_diffusion_sensitivity": null,
+    "dns_certified": false,
+    "limitations": [
+      "same-solver numerical references require further refinement before a DNS claim",
+      "FENE rational constitutive factor is filtered; residual aliasing assessed by spatial refinement",
+      "positive grid-point conformation is checked; positivity between collocation points is not certified",
+      "no high-Weissenberg, chaotic flow, walls or cylinder wake validation"
+    ],
+    "moderate_snapshot_run": {
+      "npz": "viscoelastic_oldroyd_b.npz",
+      "metadata": "viscoelastic_oldroyd_b.metadata.json",
+      "snapshot_count": 31,
+      "constitutive_residual_rms_max": 0.0009358226755841094,
+      "boundary": "periodic",
+      "constitutive_pde_residual_rms_max": 0.0024276245540959447,
+      "constitutive_spatial_projection_defect_rms_max": 0.002334938646479188,
+      "stress_max_abs": 0.11485094875890826,
+      "weissenberg_reference": 0.7345612758087474,
+      "reynolds_reference": 4.08407044966673
+    },
+    "initial_capped_temporal_refinement": [
+      {
+        "dt": 0.02,
+        "actual_dt_max": 0.016539565155465515,
+        "nominal_dt_capped": true,
+        "velocity_relative_error": 1.635112008359818e-08,
+        "conformation_relative_error": 1.275641170838033e-07,
+        "observed_velocity_order": null
+      },
+      {
+        "dt": 0.01,
+        "actual_dt_max": 0.01,
+        "nominal_dt_capped": false,
+        "velocity_relative_error": 2.6605423144620014e-09,
+        "conformation_relative_error": 1.9987809410159216e-08,
+        "observed_velocity_order": null
+      },
+      {
+        "dt": 0.005,
+        "actual_dt_max": 0.005,
+        "nominal_dt_capped": false,
+        "velocity_relative_error": 1.5559016465090232e-10,
+        "conformation_relative_error": 1.1752855656901753e-09,
+        "observed_velocity_order": 4.0958975779967375
+      }
+    ],
+    "temporal_reference_dt": 0.00125,
+    "temporal_nx": 48,
+    "grid_reference_dt": 0.0025,
+    "fine_reference_check": {
+      "refined_nx": 96,
+      "base_nx": 64,
+      "dt": 0.0025,
+      "grid_relative_velocity_change": 5.690645839244196e-07,
+      "halved_dt": 0.00125,
+      "time_relative_velocity_change": 9.694725102203494e-12,
+      "base_energy_rate_residual": 2.2755797732254557e-09,
+      "refined_energy_rate_residual": 2.312528640802114e-12,
+      "restriction": "scipy periodic Fourier resampling of96 grid to64; retains all64 representable modes, including filtered-tail difference"
+    },
+    "fene_p_small_relaxation_limit": [
+      {
+        "relaxation_time": 0.02,
+        "relative_velocity_error": 0.0007646364774144539,
+        "actual_dt_max": 0.0025
+      },
+      {
+        "relaxation_time": 0.01,
+        "relative_velocity_error": 0.0003815571359703601,
+        "actual_dt_max": 0.002
+      },
+      {
+        "relaxation_time": 0.005,
+        "relative_velocity_error": 0.00019058903693477809,
+        "actual_dt_max": 0.001
+      }
+    ],
+    "reported_diagnostic_sample_times": [
+      0.0,
+      0.6
+    ],
+    "diagnostic_maximum_scope": "maxima among recorded reference endpoints; stage admissibility separately checked at every RK evaluation"
+  },
+  "fene_p": {
+    "model": "fene_p",
+    "case": "interacting_vortices",
+    "duration": 0.6,
+    "parameters": {
+      "model": "fene_p",
+      "case": "interacting_vortices",
+      "viscosity_s": 0.02,
+      "viscosity_p": 0.04,
+      "relaxation_time": 0.5,
+      "amplitude": 0.6,
+      "extensibility_squared": 12.0,
+      "stress_diffusivity": 0.0
+    },
+    "grid_refinement": [
+      {
+        "nx": 24,
+        "initial_velocity_relative_error": 5.167982237555866e-07,
+        "final_velocity_relative_error": 0.000699427280979173,
+        "final_conformation_relative_error": 0.002402289441094171,
+        "final_energy_rate_residual": 2.6197857421292325e-05
+      },
+      {
+        "nx": 32,
+        "initial_velocity_relative_error": 1.7251090972158388e-11,
+        "final_velocity_relative_error": 2.7635255289072565e-05,
+        "final_conformation_relative_error": 0.000603968665605248,
+        "final_energy_rate_residual": 2.6437302897801274e-06
+      },
+      {
+        "nx": 48,
+        "initial_velocity_relative_error": 4.1870036213728024e-16,
+        "final_velocity_relative_error": 3.091905127571797e-06,
+        "final_conformation_relative_error": 8.333353101715411e-05,
+        "final_energy_rate_residual": 6.0396321846512e-08
+      }
+    ],
+    "reference_nx": 64,
+    "temporal_refinement": [
+      {
+        "dt": 0.01,
+        "actual_dt_max": 0.01,
+        "nominal_dt_capped": false,
+        "velocity_relative_error": 2.6028385520491725e-09,
+        "conformation_relative_error": 1.608896541789164e-08,
+        "stress_relative_error": 6.79925769283075e-08,
+        "observed_velocity_order": null
+      },
+      {
+        "dt": 0.005,
+        "actual_dt_max": 0.005,
+        "nominal_dt_capped": false,
+        "velocity_relative_error": 1.609851352291912e-10,
+        "conformation_relative_error": 9.99332528124852e-10,
+        "stress_relative_error": 4.226910608446451e-09,
+        "observed_velocity_order": 4.015086441049948
+      },
+      {
+        "dt": 0.0025,
+        "actual_dt_max": 0.0025,
+        "nominal_dt_capped": false,
+        "velocity_relative_error": 9.438678075213504e-12,
+        "conformation_relative_error": 5.870855717494437e-11,
+        "stress_relative_error": 2.484260438890753e-10,
+        "observed_velocity_order": 4.092198852652418
+      }
+    ],
+    "reference_dt": 0.0025,
+    "numerical_reference": "grid: nx64 dt=.0025, restricted to coarse active bands; time: nx48 dt=.00125",
+    "uniform_shear_oldroyd_b_relative_error": 4.882404606018064e-12,
+    "zero_polymer_newtonian_relative_error": 3.918710040236222e-16,
+    "oldroyd_b_small_relaxation_limit": [
+      {
+        "relaxation_time": 0.02,
+        "relative_velocity_error": 0.000764607233051574,
+        "actual_dt_max": 0.0025
+      },
+      {
+        "relaxation_time": 0.01,
+        "relative_velocity_error": 0.000381549185582889,
+        "actual_dt_max": 0.002
+      },
+      {
+        "relaxation_time": 0.005,
+        "relative_velocity_error": 0.00019058697019670666,
+        "actual_dt_max": 0.001
+      }
+    ],
+    "small_relaxation_limit_scope": "weak Taylor-Green for both models, C(0)=I includes initial stress layer; fixed viscosities .02+.02; FENE L\u00b2=12",
+    "finite_fields": true,
+    "minimum_conformation_eigenvalue": 0.4281074030824986,
+    "maximum_conformation_trace": 4.355466894403753,
+    "max_divergence_rms": 2.0461178043965642e-15,
+    "max_kinetic_exchange_residual": 1.3877787807814457e-17,
+    "max_total_energy_rate_residual": 8.085315750250288e-10,
+    "stress_diffusion_sensitivity": null,
+    "dns_certified": false,
+    "limitations": [
+      "same-solver numerical references require further refinement before a DNS claim",
+      "FENE rational constitutive factor is filtered; residual aliasing assessed by spatial refinement",
+      "positive grid-point conformation is checked; positivity between collocation points is not certified",
+      "no high-Weissenberg, chaotic flow, walls or cylinder wake validation"
+    ],
+    "moderate_snapshot_run": {
+      "npz": "viscoelastic_fene_p.npz",
+      "metadata": "viscoelastic_fene_p.metadata.json",
+      "snapshot_count": 31,
+      "constitutive_residual_rms_max": 0.0009548947843780424,
+      "boundary": "periodic",
+      "constitutive_pde_residual_rms_max": 0.0016882708789292598,
+      "constitutive_spatial_projection_defect_rms_max": 0.0015933628677140977,
+      "stress_max_abs": 0.13159128909956802,
+      "weissenberg_reference": 0.7345612758087474,
+      "reynolds_reference": 4.08407044966673
+    },
+    "initial_capped_temporal_refinement": [
+      {
+        "dt": 0.02,
+        "actual_dt_max": 0.01656055378964843,
+        "nominal_dt_capped": true,
+        "velocity_relative_error": 1.59445080919523e-08,
+        "conformation_relative_error": 1.0244647018178689e-07,
+        "observed_velocity_order": null
+      },
+      {
+        "dt": 0.01,
+        "actual_dt_max": 0.01,
+        "nominal_dt_capped": false,
+        "velocity_relative_error": 2.593412458113471e-09,
+        "conformation_relative_error": 1.6030433443630787e-08,
+        "observed_velocity_order": null
+      },
+      {
+        "dt": 0.005,
+        "actual_dt_max": 0.005,
+        "nominal_dt_capped": false,
+        "velocity_relative_error": 1.5154788321380627e-10,
+        "conformation_relative_error": 9.406440403362452e-10,
+        "observed_velocity_order": 4.097006065516307
+      }
+    ],
+    "temporal_reference_dt": 0.00125,
+    "temporal_nx": 48,
+    "grid_reference_dt": 0.0025,
+    "fine_reference_check": {
+      "refined_nx": 96,
+      "base_nx": 64,
+      "dt": 0.0025,
+      "grid_relative_velocity_change": 9.580244461381787e-07,
+      "halved_dt": 0.00125,
+      "time_relative_velocity_change": 9.442156207114961e-12,
+      "base_energy_rate_residual": 8.085315750250288e-10,
+      "refined_energy_rate_residual": 3.917491331328904e-13,
+      "restriction": "scipy periodic Fourier resampling of96 grid to64; retains all64 representable modes, including filtered-tail difference"
+    },
+    "fene_p_small_relaxation_limit": [
+      {
+        "relaxation_time": 0.02,
+        "relative_velocity_error": 0.0007646364774144539,
+        "actual_dt_max": 0.0025
+      },
+      {
+        "relaxation_time": 0.01,
+        "relative_velocity_error": 0.0003815571359703601,
+        "actual_dt_max": 0.002
+      },
+      {
+        "relaxation_time": 0.005,
+        "relative_velocity_error": 0.00019058903693477809,
+        "actual_dt_max": 0.001
+      }
+    ],
+    "reported_diagnostic_sample_times": [
+      0.0,
+      0.6
+    ],
+    "diagnostic_maximum_scope": "maxima among recorded reference endpoints; stage admissibility separately checked at every RK evaluation"
+  }
+}

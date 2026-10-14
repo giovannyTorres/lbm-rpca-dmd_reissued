@@ -745,6 +745,30 @@ def load_noisy_run(run_dir: Path | str) -> NoisyRun:
         )
 
 
+def resolve_source_clean_dir(run: NoisyRun) -> Path:
+    """Resolve the declared source identity after moving a clean/noisy dataset tree."""
+    source = run.metadata["source"]
+    source_id = source["source_experiment_id"]
+    if not isinstance(source_id, str) or not source_id:
+        raise ValueError("Missing clean source experiment ID")
+    recorded = Path(source["clean_run_dir"])
+    repository_root = Path(__file__).resolve().parents[3]
+    if not recorded.is_absolute():
+        recorded = repository_root / recorded
+    candidates = (recorded, run.run_dir.parent.parent / "clean" / source_id,
+                  repository_root / "data" / "clean" / source_id)
+    for candidate in dict.fromkeys(candidates):
+        try:
+            metadata = json.loads((candidate / "metadata.json").read_text(encoding="utf-8"))
+            if metadata["experiment_id"] != source_id:
+                continue
+            validate_clean_dataset(candidate)
+            return candidate.resolve()
+        except (OSError, ValueError, KeyError, TypeError, AttributeError):
+            continue
+    raise FileNotFoundError(f"No valid clean dataset for source experiment {source_id}")
+
+
 def validate_noisy_dataset(run_dir: Path | str, *, speed_tolerance: float = 1e-6) -> NoisyDatasetSummary:
     run = load_noisy_run(run_dir)
     metadata = run.metadata
@@ -801,8 +825,7 @@ def validate_noisy_dataset(run_dir: Path | str, *, speed_tolerance: float = 1e-6
     if not np.allclose(run.speed, expected_speed, atol=speed_tolerance, rtol=0.0):
         raise ValueError("speed array is inconsistent with noisy ux and uy")
 
-    source_clean_dir = Path(metadata["source"]["clean_run_dir"]).resolve()
-    validate_clean_dataset(source_clean_dir)
+    source_clean_dir = resolve_source_clean_dir(run)
     clean_run = load_clean_run(source_clean_dir)
 
     if list(clean_run.steps.tolist()) != expected_steps:
@@ -877,7 +900,7 @@ def save_noisy_comparison_figure(
     import matplotlib.pyplot as plt
 
     noisy_run = load_noisy_run(noisy_run_dir)
-    clean_run = load_clean_run(Path(noisy_run.metadata["source"]["clean_run_dir"]))
+    clean_run = load_clean_run(resolve_source_clean_dir(noisy_run))
 
     if step is None:
         step = int(noisy_run.steps[-1])
